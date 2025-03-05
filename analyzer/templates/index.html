@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>配件分析</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <span class="logo-icon">🖥️</span> 配件分析
+        </div>
+        <a href="#" class="active" onclick="showSection('search')">
+            <span class="icon">🔍</span> 搜索
+        </a>
+        <a href="#" onclick="showSection('price')">
+            <span class="icon">📈</span> 价格涨幅
+        </a>
+        <a href="#" onclick="showSection('new')">
+            <span class="icon">🆕</span> 新品发布
+        </a>
+        <a href="#" onclick="showSection('config')">
+            <span class="icon">⚙️</span> 配置单
+        </a>
+    </div>
+    <main class="main">
+        <!-- 搜索 -->
+        <div class="section active" id="search">
+            <h2>搜索配件</h2>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="搜索配件...">
+            </div>
+            <div id="searchResult" class="result">请输入关键词开始搜索</div>
+        </div>
+
+        <!-- 价格涨幅信息 -->
+        <div class="section" id="price">
+            <h2>配件价格涨幅</h2>
+            <div id="priceList" class="result"></div>
+        </div>
+
+        <!-- 新品发布信息 -->
+        <div class="section" id="new">
+            <h2>新品发布</h2>
+            <div id="newList" class="result"></div>
+        </div>
+
+        <!-- 查询配置单 -->
+        <div class="section" id="config">
+            <h2>生成配置单</h2>
+            <div class="budget-form">
+                <input type="number" id="budgetInput" placeholder="输入预算 (¥)">
+                <button onclick="generateConfig()">生成</button>
+                <div id="config-result" class="result"></div>
+            </div>
+        </div>
+    </main>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
