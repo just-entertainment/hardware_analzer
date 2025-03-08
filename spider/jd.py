@@ -10,6 +10,7 @@ csv_writer = csv.DictWriter(f, fieldnames=['品牌','商品名称','规格', '�
 # 写入表头
 csv_writer.writeheader()
 
+
 # 搜索部分
 dp = ChromiumPage()
 dp.get('https://search.jd.com/search?keyword=%E5%86%85%E5%AD%98&spm=a.0.0&wq=%E5%86%85%E5%AD%98&cid3=680&psort=3')

@@ -1,32 +1,44 @@
-from django.shortcuts import render
-
-# Create your views here.
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET, require_POST
 from django.shortcuts import render
+from .models import CPU
 
 
 # 主页面
 def index(request):
     return render(request, 'index.html')
 
-
-# 搜索 API
 @require_GET
 def search(request):
     query = request.GET.get('q', '')
-    if query:
-        # 模拟搜索结果（可替换为数据库查询）
-        results = [f"找到配件: {query} - 示例结果{i}" for i in range(3)]
-    else:
-        results = []
-    return JsonResponse({'results': results})
+    brand = request.GET.get('brand', '')
+    series = request.GET.get('series', '')
+    type = request.GET.get('type', '')
 
+    cpus = CPU.objects.all()
+    if query:
+        cpus = cpus.filter(name__icontains=query)
+    if brand:
+        cpus = cpus.filter(brand=brand)
+    if series:
+        cpus = cpus.filter(series=series)
+    if type:
+        cpus = cpus.filter(type=type)
+
+    results = [
+        {
+            'name': cpu.name,
+            'brand': cpu.brand,
+            'series': cpu.series,
+            'type': cpu.type,
+            'price': str(cpu.price)
+        } for cpu in cpus
+    ]
+    return JsonResponse({'results': results})
 
 # 价格涨幅 API
 @require_GET
 def price_changes(request):
-    # 模拟数据（可替换为数据库查询）
     data = [
         {'name': 'RTX 4090', 'change': '价格上涨 15%', 'price': 12000},
         {'name': 'Ryzen 7 7800X3D', 'change': '价格下跌 5%', 'price': 2800},
@@ -37,7 +49,6 @@ def price_changes(request):
 # 新品发布 API
 @require_GET
 def new_releases(request):
-    # 模拟数据（可替换为数据库查询）
     data = [
         {'name': 'Intel Core i9-14900K', 'date': '2025-03-01', 'price': 4500},
         {'name': 'AMD RX 7900 XTX', 'date': '2025-02-20', 'price': 8000},
@@ -54,7 +65,6 @@ def generate_config(request):
         if budget < 1000:
             return JsonResponse({'error': '预算需至少 ¥1000'})
 
-        # 模拟配置数据（可替换为数据库查询和算法）
         configs = [
             {'name': 'CPU', 'item': 'Ryzen 5 5600X', 'price': 1500},
             {'name': 'GPU', 'item': 'RTX 3060', 'price': 2500},
@@ -77,3 +87,4 @@ def generate_config(request):
         return JsonResponse({'config': selected_config, 'total': total})
     except ValueError:
         return JsonResponse({'error': '请输入有效的预算'})
+
