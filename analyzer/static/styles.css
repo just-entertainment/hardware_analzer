@@ -175,3 +175,24 @@ body {
     margin: 8px 0;
     padding: 5px 0;
 }
+.filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filters select {
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    background-color: #f7f7f7;
+    outline: none;
+    color: #000;
+    min-width: 120px;
+}
+
+.filters select:focus {
+    border-color: #000;
+    background-color: #fff;
+}

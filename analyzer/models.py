@@ -12,3 +12,12 @@ class CPU(models.Model):
 
     def __str__(self):
         return self.name
+class RAM(models.Model):
+    name = models.CharField(max_length=100)  # 内存条名称
+    capacity = models.IntegerField()         # 容量 (GB)
+    ram_type = models.CharField(max_length=50)  # 类型 (DDR4/DDR5)
+    frequency = models.IntegerField()        # 频率 (MHz)
+    price = models.DecimalField(max_digits=10, decimal_places=2)  # 价格
+
+    def __str__(self):
+        return self.name

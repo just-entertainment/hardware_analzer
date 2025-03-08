@@ -19,18 +19,74 @@ const navigation = {
 
 // 搜索模块
 const search = {
-    searchCPU() {
-        const query = document.getElementById('searchInput').value;
-        const brand = document.getElementById('cpuBrand').value;
-        const series = document.getElementById('cpuSeries').value;
-        const type = document.getElementById('cpuType').value;
+    updateFilters() {
+        const componentType = document.getElementById('componentType').value;
+        const filterContainer = document.getElementById('dynamicFilters');
+        filterContainer.innerHTML = '';
+
+        if (componentType === 'cpu') {
+            filterContainer.innerHTML = `
+                <select id="cpuBrand">
+                    <option value="">品牌</option>
+                    <option value="Intel">Intel</option>
+                    <option value="AMD">AMD</option>
+                </select>
+                <select id="cpuSeries">
+                    <option value="">系列</option>
+                    <option value="Core i">Core i</option>
+                    <option value="Ryzen">Ryzen</option>
+                </select>
+            `;
+        } else if (componentType === 'ram') {
+            filterContainer.innerHTML = `
+                <select id="ramCapacity">
+                    <option value="">容量</option>
+                    <option value="8">8GB</option>
+                    <option value="16">16GB</option>
+                    <option value="32">32GB</option>
+                </select>
+                <select id="ramType">
+                    <option value="">类型</option>
+                    <option value="DDR4">DDR4</option>
+                    <option value="DDR5">DDR5</option>
+                </select>
+                <select id="ramFrequency">
+                    <option value="">频率</option>
+                    <option value="3200">3200MHz</option>
+                    <option value="3600">3600MHz</option>
+                    <option value="4800">4800MHz</option>
+                </select>
+            `;
+        }
+    },
+
+    searchComponent() {
+        const componentType = document.getElementById('componentType').value;
+        const query = document.getElementById('searchInput').value.trim();
         const resultDiv = document.getElementById('searchResult');
 
+        if (!componentType) {
+            resultDiv.innerHTML = '请选择配件类型';
+            return;
+        }
+
         const params = new URLSearchParams();
+        params.append('type', componentType);
         if (query) params.append('q', query);
-        if (brand) params.append('brand', brand);
-        if (series) params.append('series', series);
-        if (type) params.append('type', type);
+
+        if (componentType === 'cpu') {
+            const brand = document.getElementById('cpuBrand')?.value || '';
+            const series = document.getElementById('cpuSeries')?.value || '';
+            if (brand) params.append('brand', brand);
+            if (series) params.append('series', series);
+        } else if (componentType === 'ram') {
+            const capacity = document.getElementById('ramCapacity')?.value || '';
+            const ramType = document.getElementById('ramType')?.value || '';
+            const frequency = document.getElementById('ramFrequency')?.value || '';
+            if (capacity) params.append('capacity', capacity);
+            if (ramType) params.append('ram_type', ramType);
+            if (frequency) params.append('frequency', frequency);
+        }
 
         resultDiv.innerHTML = '搜索中...';
         fetch(`/api/search/?${params.toString()}`)
@@ -40,17 +96,26 @@ const search = {
                     resultDiv.innerHTML = data.results.map(item => `
                         <div class="post">
                             <div class="title">${item.name}</div>
-                            <div class="info">品牌: ${item.brand} | 系列: ${item.series} | 类型: ${item.type} | 价格: ¥${item.price}</div>
+                            <div class="info">${search.formatInfo(item)}</div>
                         </div>
                     `).join('');
                 } else {
-                    resultDiv.innerHTML = '未找到符合条件的 CPU';
+                    resultDiv.innerHTML = '未找到符合条件的配件';
                 }
             })
             .catch(error => {
                 resultDiv.innerHTML = '搜索出错，请稍后重试';
                 console.error(error);
             });
+    },
+
+    formatInfo(item) {
+        if (item.type === 'cpu') {
+            return `品牌: ${item.brand} | 系列: ${item.series} | 价格: ¥${item.price}`;
+        } else if (item.type === 'ram') {
+            return `容量: ${item.capacity}GB | 类型: ${item.ram_type} | 频率: ${item.frequency}MHz | 价格: ¥${item.price}`;
+        }
+        return '';
     }
 };
 

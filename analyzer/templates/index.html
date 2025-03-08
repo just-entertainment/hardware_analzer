@@ -26,37 +26,35 @@
         </a>
     </div>
     <main class="main">
+        <!-- 搜索 -->
         <div class="section active" id="search">
             <h2>搜索配件</h2>
             <div class="search-bar">
+                <select id="componentType" onchange="search.updateFilters()">
+                    <option value="">选择配件类型</option>
+                    <option value="cpu">CPU</option>
+                    <option value="ram">内存条</option>
+                </select>
                 <input type="text" id="searchInput" placeholder="输入关键词...">
-                <select id="cpuBrand">
-                    <option value="">品牌</option>
-                    <option value="Intel">Intel</option>
-                    <option value="AMD">AMD</option>
-                </select>
-                <select id="cpuSeries">
-                    <option value="">系列</option>
-                    <option value="Core i">Core i</option>
-                    <option value="Ryzen">Ryzen</option>
-                </select>
-                <select id="cpuType">
-                    <option value="">适用类型</option>
-                    <option value="PC">PC</option>
-                    <option value="Laptop">笔记本</option>
-                </select>
-                <button onclick="search.searchCPU()">搜索</button>
+                <div id="dynamicFilters" class="filters"></div>
+                <button onclick="search.searchComponent()">搜索</button>
             </div>
-            <div id="searchResult" class="result">请输入条件开始搜索</div>
+            <div id="searchResult" class="result">请选择配件类型或输入条件开始搜索</div>
         </div>
+
+        <!-- 价格涨幅信息 -->
         <div class="section" id="price">
             <h2>配件价格涨幅</h2>
             <div id="priceList" class="result"></div>
         </div>
+
+        <!-- 新品发布信息 -->
         <div class="section" id="new">
             <h2>新品发布</h2>
             <div id="newList" class="result"></div>
         </div>
+
+        <!-- 查询配置单 -->
         <div class="section" id="config">
             <h2>生成配置单</h2>
             <div class="budget-form">

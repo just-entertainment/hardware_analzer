@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET, require_POST
 from django.shortcuts import render
-from .models import CPU
+from .models import CPU,RAM
 
 
 # 主页面
@@ -10,30 +10,56 @@ def index(request):
 
 @require_GET
 def search(request):
+    component_type = request.GET.get('type', '')
     query = request.GET.get('q', '')
-    brand = request.GET.get('brand', '')
-    series = request.GET.get('series', '')
-    type = request.GET.get('type', '')
 
-    cpus = CPU.objects.all()
-    if query:
-        cpus = cpus.filter(name__icontains=query)
-    if brand:
-        cpus = cpus.filter(brand=brand)
-    if series:
-        cpus = cpus.filter(series=series)
-    if type:
-        cpus = cpus.filter(type=type)
+    if not component_type:
+        return JsonResponse({'results': []})
 
-    results = [
-        {
-            'name': cpu.name,
-            'brand': cpu.brand,
-            'series': cpu.series,
-            'type': cpu.type,
-            'price': str(cpu.price)
-        } for cpu in cpus
-    ]
+    results = []
+    if component_type == 'cpu':
+        cpus = CPU.objects.all()
+        brand = request.GET.get('brand', '')
+        series = request.GET.get('series', '')
+        if query:
+            cpus = cpus.filter(name__icontains=query)
+        if brand:
+            cpus = cpus.filter(brand=brand)
+        if series:
+            cpus = cpus.filter(series=series)
+        results = [
+            {
+                'type': 'cpu',
+                'name': cpu.name,
+                'brand': cpu.brand,
+                'series': cpu.series,
+                'price': str(cpu.price)
+            } for cpu in cpus
+        ]
+    elif component_type == 'ram':
+        rams = RAM.objects.all()
+        capacity = request.GET.get('capacity', '')
+        ram_type = request.GET.get('ram_type', '')
+        frequency = request.GET.get('frequency', '')
+        if query:
+            rams = rams.filter(name__icontains=query)
+        if capacity:
+            rams = rams.filter(capacity=int(capacity))
+        if ram_type:
+            rams = rams.filter(ram_type=ram_type)
+        if frequency:
+            rams = rams.filter(frequency=int(frequency))
+        results = [
+            {
+                'type': 'ram',
+                'name': ram.name,
+                'capacity': ram.capacity,
+                'ram_type': ram.ram_type,
+                'frequency': ram.frequency,
+                'price': str(ram.price)
+            } for ram in rams
+        ]
+
     return JsonResponse({'results': results})
 
 # 价格涨幅 API
@@ -87,4 +113,6 @@ def generate_config(request):
         return JsonResponse({'config': selected_config, 'total': total})
     except ValueError:
         return JsonResponse({'error': '请输入有效的预算'})
+
+
 
