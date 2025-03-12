@@ -14,28 +14,52 @@ def index(request):
     return render(request, 'index.html')
 
 
+from django.shortcuts import render
+from django.http import JsonResponse
+from django.views.decorators.http import require_GET
+from django.core.paginator import Paginator
+from .models import RAM
+
+def index(request):
+    return render(request, 'index.html')
+
 @require_GET
 def search(request):
-    """搜索内存条"""
     query = request.GET.get('q', '')
-    component_type = request.GET.get('type', '')
+    page_number = request.GET.get('page', 1)  # 默认第1页
+    per_page = request.GET.get('per_page', 10)  # 每页10条，可通过参数调整
 
+    # 查询数据
     rams = RAM.objects.all()
-    if component_type and component_type != 'ram':
-        results = []  # 仅支持 ram
-    else:
-        if query:
-            rams = rams.filter(title__icontains=query)
-        results = [
-            {
-                'type': 'ram',
-                'title': ram.title,
-                'reference_price': ram.reference_price if ram.reference_price is not None else '暂无',
-                'jd_price': ram.jd_price if ram.jd_price is not None else '暂无'
-            } for ram in rams
-        ]
+    if query:
+        rams = rams.filter(title__icontains=query)
 
-    return JsonResponse({'results': results})
+    # 分页
+    paginator = Paginator(rams, per_page)
+    try:
+        page_obj = paginator.page(page_number)
+    except:
+        page_obj = paginator.page(1)  # 如果页码无效，默认第1页
+
+    # 构造返回数据
+    results = [
+        {
+            'type': 'ram',
+            'title': ram.title,
+            'reference_price': ram.reference_price if ram.reference_price is not None else '暂无',
+            'jd_price': ram.jd_price if ram.jd_price is not None else '暂无'
+        } for ram in page_obj
+    ]
+
+    # 返回分页信息
+    return JsonResponse({
+        'results': results,
+        'total': paginator.count,         # 总记录数
+        'pages': paginator.num_pages,     # 总页数
+        'current_page': page_obj.number,  # 当前页码
+        'has_next': page_obj.has_next(),  # 是否有下一页
+        'has_previous': page_obj.has_previous()  # 是否有上一页
+    })
 
 # 价格涨幅 API
 @require_GET

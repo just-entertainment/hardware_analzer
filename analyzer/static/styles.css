@@ -175,3 +175,28 @@ body {
     margin: 8px 0;
     padding: 5px 0;
 }
+
+.pagination {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.pagination button {
+    padding: 8px 15px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #333;
+}
+
+.pagination span {
+    font-size: 14px;
+    color: #666;
+}

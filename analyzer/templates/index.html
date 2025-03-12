@@ -32,34 +32,31 @@
             <div class="search-bar">
                 <select id="componentType" onchange="search.updateFilters()">
                     <option value="">选择配件类型</option>
-                    <option value="ram">内存（RAM）</option>
+                    <option value="ram">内存条</option>
                 </select>
-                <input type="text" id="searchInput" placeholder="输入关键词">
+                <input type="text" id="searchInput" placeholder="输入关键词（如 DDR4）">
                 <div id="dynamicFilters" class="filters"></div>
-                <button onclick="search.searchComponent()">搜索</button>
+                <button onclick="search.searchComponent(1)">搜索</button>
             </div>
             <div id="searchResult" class="result">请输入关键词开始搜索</div>
+            <div id="pagination" class="pagination"></div>
         </div>
 
-        <!-- 价格涨幅信息 -->
+        <!-- 其他部分（占位，未实现） -->
         <div class="section" id="price">
             <h2>配件价格涨幅</h2>
-            <div id="priceList" class="result"></div>
+            <div id="priceList" class="result">功能暂未实现</div>
         </div>
-
-        <!-- 新品发布信息 -->
         <div class="section" id="new">
             <h2>新品发布</h2>
-            <div id="newList" class="result"></div>
+            <div id="newList" class="result">功能暂未实现</div>
         </div>
-
-        <!-- 查询配置单 -->
         <div class="section" id="config">
             <h2>生成配置单</h2>
             <div class="budget-form">
                 <input type="number" id="budgetInput" placeholder="输入预算 (¥)">
                 <button onclick="config.generateConfig()">生成</button>
-                <div id="config-result" class="result"></div>
+                <div id="config-result" class="result">功能暂未实现</div>
             </div>
         </div>
     </main>

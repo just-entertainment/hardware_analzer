@@ -41,19 +41,19 @@ const search = {
         }
     },
 
-    searchComponent() {
-        const componentType = document.getElementById('componentType').value;
+    searchComponent(page) {
         const query = document.getElementById('searchInput').value.trim();
         const resultDiv = document.getElementById('searchResult');
+        const paginationDiv = document.getElementById('pagination');
 
-        if (!query && !componentType) {
-            resultDiv.innerHTML = '请输入关键词或选择配件类型';
+        if (!query) {
+            resultDiv.innerHTML = '请输入关键词';
             return;
         }
 
         const params = new URLSearchParams();
-        if (componentType) params.append('type', componentType);
-        if (query) params.append('q', query);
+        params.append('q', query);
+        params.append('page', page);
 
         resultDiv.innerHTML = '搜索中...';
         fetch(`/api/search/?${params.toString()}`)
@@ -68,6 +68,20 @@ const search = {
                     `).join('');
                 } else {
                     resultDiv.innerHTML = '未找到符合条件的配件';
+                }
+
+                // 分页控件
+                paginationDiv.innerHTML = '';
+                if (data.pages > 1) {
+                    let paginationHTML = '';
+                    if (data.has_previous) {
+                        paginationHTML += `<button onclick="search.searchComponent(${data.current_page - 1})">上一页</button>`;
+                    }
+                    paginationHTML += `<span>第 ${data.current_page} 页 / 共 ${data.pages} 页 (总 ${data.total} 条)</span>`;
+                    if (data.has_next) {
+                        paginationHTML += `<button onclick="search.searchComponent(${data.current_page + 1})">下一页</button>`;
+                    }
+                    paginationDiv.innerHTML = paginationHTML;
                 }
             })
             .catch(error => {
