@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>配件分析</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}?v={% now 'U' %}">
 </head>
 <body>
     <div class="sidebar">
@@ -32,14 +32,13 @@
             <div class="search-bar">
                 <select id="componentType" onchange="search.updateFilters()">
                     <option value="">选择配件类型</option>
-                    <option value="cpu">CPU</option>
-                    <option value="ram">内存条</option>
+                    <option value="ram">内存（RAM）</option>
                 </select>
-                <input type="text" id="searchInput" placeholder="输入关键词...">
+                <input type="text" id="searchInput" placeholder="输入关键词">
                 <div id="dynamicFilters" class="filters"></div>
                 <button onclick="search.searchComponent()">搜索</button>
             </div>
-            <div id="searchResult" class="result">请选择配件类型或输入条件开始搜索</div>
+            <div id="searchResult" class="result">请输入关键词开始搜索</div>
         </div>
 
         <!-- 价格涨幅信息 -->
@@ -64,6 +63,6 @@
             </div>
         </div>
     </main>
-    <script src="{% static 'script.js' %}"></script>
+    <script src="{% static 'script.js' %}?v={% now 'U' %}"></script>
 </body>
 </html>

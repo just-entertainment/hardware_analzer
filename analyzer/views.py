@@ -1,62 +1,37 @@
-from django.http import JsonResponse
-from django.views.decorators.http import require_GET, require_POST
 from django.shortcuts import render
-from .models import CPU,RAM
+from django.http import JsonResponse
+from django.views.decorators.http import require_GET
+from .models import RAM
 
 
 # 主页面
 def index(request):
     return render(request, 'index.html')
 
+
+def index(request):
+    """渲染主页"""
+    return render(request, 'index.html')
+
+
 @require_GET
 def search(request):
-    component_type = request.GET.get('type', '')
+    """搜索内存条"""
     query = request.GET.get('q', '')
+    component_type = request.GET.get('type', '')
 
-    if not component_type:
-        return JsonResponse({'results': []})
-
-    results = []
-    if component_type == 'cpu':
-        cpus = CPU.objects.all()
-        brand = request.GET.get('brand', '')
-        series = request.GET.get('series', '')
+    rams = RAM.objects.all()
+    if component_type and component_type != 'ram':
+        results = []  # 仅支持 ram
+    else:
         if query:
-            cpus = cpus.filter(name__icontains=query)
-        if brand:
-            cpus = cpus.filter(brand=brand)
-        if series:
-            cpus = cpus.filter(series=series)
-        results = [
-            {
-                'type': 'cpu',
-                'name': cpu.name,
-                'brand': cpu.brand,
-                'series': cpu.series,
-                'price': str(cpu.price)
-            } for cpu in cpus
-        ]
-    elif component_type == 'ram':
-        rams = RAM.objects.all()
-        capacity = request.GET.get('capacity', '')
-        ram_type = request.GET.get('ram_type', '')
-        frequency = request.GET.get('frequency', '')
-        if query:
-            rams = rams.filter(name__icontains=query)
-        if capacity:
-            rams = rams.filter(capacity=int(capacity))
-        if ram_type:
-            rams = rams.filter(ram_type=ram_type)
-        if frequency:
-            rams = rams.filter(frequency=int(frequency))
+            rams = rams.filter(title__icontains=query)
         results = [
             {
                 'type': 'ram',
-                'name': ram.name,
-                'capacity': ram.capacity,
-                'ram_type': ram.ram_type,
-                'frequency': ram.frequency,
-                'price': str(ram.price)
+                'title': ram.title,
+                'reference_price': ram.reference_price if ram.reference_price is not None else '暂无',
+                'jd_price': ram.jd_price if ram.jd_price is not None else '暂无'
             } for ram in rams
         ]
 
