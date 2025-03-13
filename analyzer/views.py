@@ -23,12 +23,23 @@ from .models import RAM,GPU
 def index(request):
     return render(request, 'index.html')
 
+from django.shortcuts import render
+from django.http import JsonResponse
+from django.views.decorators.http import require_GET
+from django.core.paginator import Paginator
+from .models import RAM, GPU
+
+def index(request):
+    return render(request, 'index.html')
+
 @require_GET
 def search(request):
     query = request.GET.get('q', '')
     component_type = request.GET.get('type', '')
     page_number = request.GET.get('page', 1)
     per_page = request.GET.get('per_page', 10)
+    sort_by = request.GET.get('sort_by', '')  # 排序字段: reference_price 或 jd_price
+    sort_order = request.GET.get('sort_order', 'asc')  # 排序方向: asc 或 desc
 
     # 根据类型查询
     if component_type == 'ram':
@@ -36,11 +47,18 @@ def search(request):
     elif component_type == 'gpu':
         items = GPU.objects.all()
     else:
-        items = RAM.objects.none()  # 默认空查询集
+        items = RAM.objects.none()
 
     # 应用搜索过滤
     if query:
         items = items.filter(title__icontains=query)
+
+    # 应用排序
+    if sort_by in ['reference_price', 'jd_price']:
+        order_prefix = '' if sort_order == 'asc' else '-'
+        items = items.order_by(f"{order_prefix}{sort_by}")
+    # 处理 NULL 值（放到最后）
+    items = items.order_by(f"{sort_by}__isnull" if sort_by else 'id')
 
     # 分页
     paginator = Paginator(items, per_page)

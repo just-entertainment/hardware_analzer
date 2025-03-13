@@ -34,6 +34,7 @@ const search = {
     searchComponent(page) {
         const query = document.getElementById('searchInput').value.trim();
         const componentType = document.getElementById('componentType').value;
+        const sortValue = document.getElementById('sortBy').value;
         const resultDiv = document.getElementById('searchResult');
         const paginationDiv = document.getElementById('pagination');
 
@@ -46,6 +47,11 @@ const search = {
         if (componentType) params.append('type', componentType);
         if (query) params.append('q', query);
         params.append('page', page);
+        if (sortValue) {
+            const [sortBy, sortOrder] = sortValue.split('_');
+            params.append('sort_by', sortBy);
+            params.append('sort_order', sortOrder);
+        }
 
         resultDiv.innerHTML = '搜索中...';
         fetch(`/api/search/?${params.toString()}`)

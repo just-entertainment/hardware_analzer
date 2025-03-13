@@ -37,6 +37,14 @@
                 <input type="text" id="searchInput" placeholder="输入关键词（如 DDR4 或 RTX）">
                 <div id="dynamicFilters" class="filters"></div>
                 <button onclick="search.searchComponent(1)">搜索</button>
+                <!-- 排序控件 -->
+                <select id="sortBy" onchange="search.searchComponent(1)">
+                    <option value="">默认排序</option>
+                    <option value="reference_price_asc">参考价升序</option>
+                    <option value="reference_price_desc">参考价降序</option>
+                    <option value="jd_price_asc">京东价升序</option>
+                    <option value="jd_price_desc">京东价降序</option>
+                </select>
             </div>
             <div id="searchResult" class="result">请输入关键词开始搜索</div>
             <div id="pagination" class="pagination"></div>
