@@ -26,23 +26,21 @@
         </a>
     </div>
     <main class="main">
-        <!-- 搜索 -->
         <div class="section active" id="search">
             <h2>搜索配件</h2>
             <div class="search-bar">
                 <select id="componentType" onchange="search.updateFilters()">
                     <option value="">选择配件类型</option>
                     <option value="ram">内存条</option>
+                    <option value="gpu">显卡</option>
                 </select>
-                <input type="text" id="searchInput" placeholder="输入关键词（如 DDR4）">
+                <input type="text" id="searchInput" placeholder="输入关键词（如 DDR4 或 RTX）">
                 <div id="dynamicFilters" class="filters"></div>
                 <button onclick="search.searchComponent(1)">搜索</button>
             </div>
             <div id="searchResult" class="result">请输入关键词开始搜索</div>
             <div id="pagination" class="pagination"></div>
         </div>
-
-        <!-- 其他部分（占位，未实现） -->
         <div class="section" id="price">
             <h2>配件价格涨幅</h2>
             <div id="priceList" class="result">功能暂未实现</div>

@@ -10,3 +10,13 @@ class RAM(models.Model):
 
     def __str__(self):
         return self.title
+class GPU(models.Model):
+    title = models.TextField()  # GPU 标题
+    reference_price = models.IntegerField(null=True, blank=True)  # 参考价
+    jd_price = models.FloatField(null=True, blank=True)  # 京东价
+
+    class Meta:
+        db_table = 'gpu'  # 表名为 'gpu'
+
+    def __str__(self):
+        return self.title

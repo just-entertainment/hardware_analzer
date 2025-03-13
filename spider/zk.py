@@ -5,7 +5,7 @@ import time
 
 
 # 创建文件对象
-f = open('csv/ramDDR40310.csv', mode='w', encoding='utf-8', newline='')
+f = open('csv/gpuamd.csv', mode='w', encoding='utf-8', newline='')
 # csv字典写入的方法
 csv_writer = csv.DictWriter(f, fieldnames=['标题', '参考价','京东价'])
 # 写入表头
@@ -14,7 +14,7 @@ csv_writer.writeheader()
 
 dp = ChromiumPage()
 dp.get(""
-       "https://detail.zol.com.cn/memory/s2951_p26895/hebei/"
+       "https://detail.zol.com.cn/vga/s2235/cheap.html"
        "")
 #
 # for size in sizes:

@@ -18,7 +18,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET
 from django.core.paginator import Paginator
-from .models import RAM
+from .models import RAM,GPU
 
 def index(request):
     return render(request, 'index.html')
@@ -26,39 +26,47 @@ def index(request):
 @require_GET
 def search(request):
     query = request.GET.get('q', '')
-    page_number = request.GET.get('page', 1)  # 默认第1页
-    per_page = request.GET.get('per_page', 10)  # 每页10条，可通过参数调整
+    component_type = request.GET.get('type', '')
+    page_number = request.GET.get('page', 1)
+    per_page = request.GET.get('per_page', 10)
 
-    # 查询数据
-    rams = RAM.objects.all()
+    # 根据类型查询
+    if component_type == 'ram':
+        items = RAM.objects.all()
+    elif component_type == 'gpu':
+        items = GPU.objects.all()
+    else:
+        items = RAM.objects.none()  # 默认空查询集
+
+    # 应用搜索过滤
     if query:
-        rams = rams.filter(title__icontains=query)
+        items = items.filter(title__icontains=query)
 
     # 分页
-    paginator = Paginator(rams, per_page)
+    paginator = Paginator(items, per_page)
     try:
         page_obj = paginator.page(page_number)
     except:
-        page_obj = paginator.page(1)  # 如果页码无效，默认第1页
+        page_obj = paginator.page(1)
 
     # 构造返回数据
     results = [
         {
-            'type': 'ram',
-            'title': ram.title,
-            'reference_price': ram.reference_price if ram.reference_price is not None else '暂无',
-            'jd_price': ram.jd_price if ram.jd_price is not None else '暂无'
-        } for ram in page_obj
+            'type': component_type or 'unknown',
+            'title': item.title,
+            'reference_price': item.reference_price if item.reference_price is not None else '暂无',
+            'jd_price': item.jd_price if item.jd_price is not None else '暂无'
+        } for item in page_obj
     ]
 
     # 返回分页信息
     return JsonResponse({
         'results': results,
-        'total': paginator.count,         # 总记录数
-        'pages': paginator.num_pages,     # 总页数
-        'current_page': page_obj.number,  # 当前页码
-        'has_next': page_obj.has_next(),  # 是否有下一页
-        'has_previous': page_obj.has_previous()  # 是否有上一页
+        'total': paginator.count,
+        'pages': paginator.num_pages,
+        'current_page': page_obj.number,
+        'has_next': page_obj.has_next(),
+        'has_previous': page_obj.has_previous()
     })
 
 # 价格涨幅 API

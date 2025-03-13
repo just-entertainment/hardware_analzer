@@ -19,40 +19,32 @@ const search = {
 
         if (componentType === 'ram') {
             filterContainer.innerHTML = `
-                <select id="ramCapacity">
-                    <option value="">容量</option>
-                    <option value="8">8GB</option>
-                    <option value="16">16GB</option>
-                    <option value="32">32GB</option>
-                </select>
-                <select id="ramType">
-                    <option value="">类型</option>
-                    <option value="DDR3">DDR3</option>
-                    <option value="DDR4">DDR4</option>
-                    <option value="DDR5">DDR5</option>
-                </select>
-                <select id="ramFrequency">
-                    <option value="">频率</option>
-                    <option value="3200">3200MHz</option>
-                    <option value="3600">3600MHz</option>
-                    <option value="4800">4800MHz</option>
-                </select>
+                <select id="ramCapacity"><option value="">容量</option><option value="8">8GB</option><option value="16">16GB</option><option value="32">32GB</option></select>
+                <select id="ramType"><option value="">类型</option><option value="DDR4">DDR4</option><option value="DDR5">DDR5</option></select>
+                <select id="ramFrequency"><option value="">频率</option><option value="3200">3200MHz</option><option value="3600">3600MHz</option><option value="4800">4800MHz</option></select>
+            `;
+        } else if (componentType === 'gpu') {
+            filterContainer.innerHTML = `
+                <select id="gpuBrand"><option value="">品牌</option><option value="NVIDIA">NVIDIA</option><option value="AMD">AMD</option></select>
+                <select id="gpuMemory"><option value="">显存</option><option value="8">8GB</option><option value="16">16GB</option><option value="24">24GB</option></select>
             `;
         }
     },
 
     searchComponent(page) {
         const query = document.getElementById('searchInput').value.trim();
+        const componentType = document.getElementById('componentType').value;
         const resultDiv = document.getElementById('searchResult');
         const paginationDiv = document.getElementById('pagination');
 
-        if (!query) {
-            resultDiv.innerHTML = '请输入关键词';
+        if (!query && !componentType) {
+            resultDiv.innerHTML = '请输入关键词或选择配件类型';
             return;
         }
 
         const params = new URLSearchParams();
-        params.append('q', query);
+        if (componentType) params.append('type', componentType);
+        if (query) params.append('q', query);
         params.append('page', page);
 
         resultDiv.innerHTML = '搜索中...';
@@ -70,7 +62,6 @@ const search = {
                     resultDiv.innerHTML = '未找到符合条件的配件';
                 }
 
-                // 分页控件
                 paginationDiv.innerHTML = '';
                 if (data.pages > 1) {
                     let paginationHTML = '';
