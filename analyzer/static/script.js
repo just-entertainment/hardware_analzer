@@ -47,16 +47,30 @@ const search = {
         if (componentType) params.append('type', componentType);
         if (query) params.append('q', query);
         params.append('page', page);
+
         if (sortValue) {
-            const [sortBy, sortOrder] = sortValue.split('_');
+            // 从最后一个 _ 分割
+            const lastUnderscore = sortValue.lastIndexOf('_');
+            const sortBy = sortValue.substring(0, lastUnderscore);
+            const sortOrder = sortValue.substring(lastUnderscore + 1);
+            console.log('Sort Value:', sortValue, 'Sort By:', sortBy, 'Sort Order:', sortOrder);
             params.append('sort_by', sortBy);
             params.append('sort_order', sortOrder);
         }
 
+        const url = `/api/search/?${params.toString()}`;
         resultDiv.innerHTML = '搜索中...';
-        fetch(`/api/search/?${params.toString()}`)
-            .then(response => response.json())
+        console.log('Request URL:', url);
+        fetch(url)
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                return response.json();
+            })
             .then(data => {
+                if (data.error) {
+                    resultDiv.innerHTML = `错误: ${data.error}`;
+                    return;
+                }
                 if (data.results.length > 0) {
                     resultDiv.innerHTML = data.results.map(item => `
                         <div class="post">
@@ -82,8 +96,8 @@ const search = {
                 }
             })
             .catch(error => {
-                resultDiv.innerHTML = '搜索出错，请稍后重试';
-                console.error(error);
+                resultDiv.innerHTML = `搜索出错: ${error.message}`;
+                console.error('Fetch error:', error);
             });
     }
 };
