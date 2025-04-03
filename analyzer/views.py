@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET
 from django.core.paginator import Paginator
-from .models import RAM, GPU
+from .models import RAM, GPU,CPU
 
 def index(request):
     return render(request, 'index.html')
@@ -23,6 +23,8 @@ def search(request):
             items = RAM.objects.all()
         elif component_type == 'gpu':
             items = GPU.objects.all()
+        elif component_type == 'cpu':
+            items = CPU.objects.all()
         else:
             items = RAM.objects.none()
 

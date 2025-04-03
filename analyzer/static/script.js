@@ -25,8 +25,23 @@ const search = {
             `;
         } else if (componentType === 'gpu') {
             filterContainer.innerHTML = `
-                <select id="gpuBrand"><option value="">品牌</option><option value="NVIDIA">NVIDIA</option><option value="AMD">AMD</option></select>
-                <select id="gpuMemory"><option value="">显存</option><option value="8">8GB</option><option value="16">16GB</option><option value="24">24GB</option></select>
+                <select id="gpuBrand">
+                    <option value="">品牌</option>
+                    <option value="NVIDIA">NVIDIA</option>
+                    <option value="AMD">AMD</option>
+                    <option value="intel">intel</option>
+                </select>
+<!--                <select id="gpuMemory"><option value="">显存</option><option value="8">8GB</option><option value="16">16GB</option><option value="24">24GB</option></select>-->
+            `;
+        }
+        else if (componentType === 'cpu') {
+            filterContainer.innerHTML = `
+                <select id="gpuBrand">
+                    <option value="">品牌</option>
+                    <option value="intel">intel</option>
+                    <option value="AMD">AMD</option>
+                </select>
+<!--                <select id="gpuMemory"><option value="">显存</option><option value="8">8GB</option><option value="16">16GB</option><option value="24">24GB</option></select>-->
             `;
         }
     },
