@@ -5,7 +5,7 @@ from django.core.paginator import Paginator
 from .models import RAM, GPU, CPU, Motherboard, SSD, Cooler, PowerSupply
 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'analyzer/index.html')
 
 @require_GET
 def search(request):
