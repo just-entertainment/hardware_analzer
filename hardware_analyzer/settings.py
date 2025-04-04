@@ -125,9 +125,25 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),           # 全局静态文件
     os.path.join(BASE_DIR, 'analyzer/static'),  # analyzer静态文件
-    # os.path.join(BASE_DIR, 'accounts/static'),
+    os.path.join(BASE_DIR, 'accounts/static'),
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'accounts.User'
+
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+]
+
+# 防止暴力破解
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend'
+]
+
+# 登录尝试限制
+LOGIN_ATTEMPTS_LIMIT = 5

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}个人资料{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <h2>个人资料</h2>
+    <div class="profile-info">
+        <p><strong>用户名:</strong> {{ user.username }}</p>
+        <p><strong>邮箱:</strong> {{ user.email }}</p>
+        <p><strong>电话:</strong> {{ user.phone|default:"未设置" }}</p>
+    </div>
+</div>
+{% endblock %}
