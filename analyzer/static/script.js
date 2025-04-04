@@ -150,6 +150,14 @@ function showDetail(componentType, id) {
             document.getElementById('detailImage').src = data.product_image;
             document.getElementById('detailSpecs').innerHTML = data.product_parameters.split('\n').map(param => `<li>${param}</li>`).join('');
 
+            const detailJDLink = document.getElementById('detailJDLink');
+            if (data.jd_link) {
+                detailJDLink.href = data.jd_link;
+                detailJDLink.style.display = 'block';
+            } else {
+                detailJDLink.style.display = 'none';
+            }
+
             modalLoading.style.display = 'none';
             modalContent.style.display = 'block';
         })

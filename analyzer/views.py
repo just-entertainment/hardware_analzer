@@ -40,7 +40,7 @@ def search(request):
         # 排序
         valid_sort_fields = ['reference_price', 'jd_price']
         valid_sort_orders = ['asc', 'desc']
-        if sort_by in valid_sort_fields and sort_order in valid_sort_orders:
+        if (sort_by in valid_sort_fields and sort_order in valid_sort_orders):
             order_prefix = '' if sort_order == 'asc' else '-'
             items = items.order_by(f"{sort_by}__isnull")  # 先按 NULL 排序
             items = items.order_by(f"{order_prefix}{sort_by}")  # 再按值排序

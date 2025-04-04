@@ -394,3 +394,33 @@ body {
     background-color: #f0f0f0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.modal-body {
+    max-height: 400px; /* 设置一个固定高度 */
+    overflow-y: auto; /* 启用垂直滚动条 */
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.specs-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.specs-list li {
+    margin-bottom: 10px;
+}

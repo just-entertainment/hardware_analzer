@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -45,6 +44,11 @@
                         <h3>详细参数</h3>
                         <ul id="detailSpecs" class="specs-list"></ul>
                     </div>
+                    <!-- 添加京东链接 -->
+                    <div class="jd-link-section">
+                        <h3>京东链接</h3>
+                        <a id="detailJDLink" href="" target="_blank">点击这里查看</a>
+                    </div>
                 </div>
             </div>
             <div id="modalError" class="error" style="display:none;"></div>
@@ -52,33 +56,33 @@
     </div>
     <main class="main">
         <div class="section active" id="search">
-    <h2>搜索配件</h2>
-    <div class="search-bar">
-        <select id="componentType" onchange="search.updateFilters()">
-            <option value="">选择配件类型</option>
-            <option value="ram">内存条</option>
-            <option value="gpu">显卡</option>
-            <option value="cpu">CPU</option>
-            <option value="motherboard">主板</option>
-            <option value="ssd">固态硬盘</option>
-            <option value="cooler">散热</option>
-            <option value="power_supply">电源</option>
-        </select>
-        <input type="text" id="searchInput" placeholder="输入关键词（如 DDR4 或 RTX）">
-        <div id="dynamicFilters" class="filters"></div>
-        <button onclick="search.searchComponent(1)">搜索</button>
-        <!-- 排序控件 -->
-        <select id="sortBy" onchange="search.searchComponent(1)">
-            <option value="">默认排序</option>
-            <option value="reference_price_asc">参考价升序</option>
-            <option value="reference_price_desc">参考价降序</option>
-            <option value="jd_price_asc">京东价升序</option>
-            <option value="jd_price_desc">京东价降序</option>
-        </select>
-    </div>
-    <div id="searchResult" class="result">请输入关键词开始搜索</div>
-    <div id="pagination" class="pagination"></div>
-</div>
+            <h2>搜索配件</h2>
+            <div class="search-bar">
+                <select id="componentType" onchange="search.updateFilters()">
+                    <option value="">选择配件类型</option>
+                    <option value="ram">内存条</option>
+                    <option value="gpu">显卡</option>
+                    <option value="cpu">CPU</option>
+                    <option value="motherboard">主板</option>
+                    <option value="ssd">固态硬盘</option>
+                    <option value="cooler">散热</option>
+                    <option value="power_supply">电源</option>
+                </select>
+                <input type="text" id="searchInput" placeholder="输入关键词（如 DDR4 或 RTX）">
+                <div id="dynamicFilters" class="filters"></div>
+                <button onclick="search.searchComponent(1)">搜索</button>
+                <!-- 排序控件 -->
+                <select id="sortBy" onchange="search.searchComponent(1)">
+                    <option value="">默认排序</option>
+                    <option value="reference_price_asc">参考价升序</option>
+                    <option value="reference_price_desc">参考价降序</option>
+                    <option value="jd_price_asc">京东价升序</option>
+                    <option value="jd_price_desc">京东价降序</option>
+                </select>
+            </div>
+            <div id="searchResult" class="result">请输入关键词开始搜索</div>
+            <div id="pagination" class="pagination"></div>
+        </div>
 
         <div class="section" id="price">
             <h2>配件价格涨幅</h2>
