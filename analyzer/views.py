@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET
 from django.core.paginator import Paginator
@@ -53,6 +53,7 @@ def search(request):
 
         results = [
             {
+                'id': item.id,
                 'type': component_type or 'unknown',
                 'title': item.title,
                 'reference_price': item.reference_price if item.reference_price is not None else '暂无',
@@ -68,5 +69,38 @@ def search(request):
             'has_next': page_obj.has_next(),
             'has_previous': page_obj.has_previous()
         })
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
+
+@require_GET
+def detail(request, component_type, id):
+    try:
+        if component_type == 'ram':
+            item = get_object_or_404(RAM, id=id)
+        elif component_type == 'gpu':
+            item = get_object_or_404(GPU, id=id)
+        elif component_type == 'cpu':
+            item = get_object_or_404(CPU, id=id)
+        elif component_type == 'motherboard':
+            item = get_object_or_404(Motherboard, id=id)
+        elif component_type == 'ssd':
+            item = get_object_or_404(SSD, id=id)
+        elif component_type == 'cooler':
+            item = get_object_or_404(Cooler, id=id)
+        elif component_type == 'power_supply':
+            item = get_object_or_404(PowerSupply, id=id)
+        else:
+            return JsonResponse({'error': 'Invalid component type'}, status=400)
+
+        data = {
+            'title': item.title,
+            'reference_price': item.reference_price if item.reference_price is not None else '暂无',
+            'jd_price': item.jd_price if item.jd_price is not None else '暂无',
+            'jd_link': item.jd_link,
+            'product_image': item.product_image,
+            'product_parameters': item.product_parameters or ''
+        }
+
+        return JsonResponse(data)
     except Exception as e:
         return JsonResponse({'error': str(e)}, status=500)

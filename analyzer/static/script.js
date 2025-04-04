@@ -91,7 +91,7 @@ const search = {
                 }
                 if (data.results.length > 0) {
                     resultDiv.innerHTML = data.results.map(item => `
-                        <div class="post">
+                        <div class="post" onclick="showDetail('${item.type}', ${item.id})">
                             <div class="title">${item.title}</div>
                             <div class="info">参考价: ¥${item.reference_price} | 京东价: ¥${item.jd_price}</div>
                         </div>
@@ -119,6 +119,51 @@ const search = {
             });
     }
 };
+
+function showDetail(componentType, id) {
+    const modal = document.getElementById('detailModal');
+    const modalLoading = document.getElementById('modalLoading');
+    const modalContent = document.getElementById('modalContent');
+    const modalError = document.getElementById('modalError');
+
+    modal.style.display = 'block';
+    modalLoading.style.display = 'block';
+    modalContent.style.display = 'none';
+    modalError.style.display = 'none';
+
+    fetch(`/api/detail/${componentType}/${id}/`)
+        .then(response => {
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+            return response.json();
+        })
+        .then(data => {
+            if (data.error) {
+                modalLoading.style.display = 'none';
+                modalError.innerHTML = `错误: ${data.error}`;
+                modalError.style.display = 'block';
+                return;
+            }
+
+            document.getElementById('detailTitle').innerText = data.title;
+            document.getElementById('detailRefPrice').innerText = data.reference_price;
+            document.getElementById('detailJDPrice').innerText = data.jd_price;
+            document.getElementById('detailImage').src = data.product_image;
+            document.getElementById('detailSpecs').innerHTML = data.product_parameters.split('\n').map(param => `<li>${param}</li>`).join('');
+
+            modalLoading.style.display = 'none';
+            modalContent.style.display = 'block';
+        })
+        .catch(error => {
+            modalLoading.style.display = 'none';
+            modalError.innerHTML = `加载详情出错: ${error.message}`;
+            modalError.style.display = 'block';
+            console.error('Fetch error:', error);
+        });
+}
+
+function closeModal() {
+    document.getElementById('detailModal').style.display = 'none';
+}
 
 const config = {
     generateConfig() {
