@@ -31,17 +31,23 @@ const search = {
                     <option value="AMD">AMD</option>
                     <option value="intel">intel</option>
                 </select>
-<!--                <select id="gpuMemory"><option value="">显存</option><option value="8">8GB</option><option value="16">16GB</option><option value="24">24GB</option></select>-->
             `;
-        }
-        else if (componentType === 'cpu') {
+        } else if (componentType === 'cpu') {
             filterContainer.innerHTML = `
-                <select id="gpuBrand">
+                <select id="cpuBrand">
                     <option value="">品牌</option>
                     <option value="intel">intel</option>
                     <option value="AMD">AMD</option>
                 </select>
-<!--                <select id="gpuMemory"><option value="">显存</option><option value="8">8GB</option><option value="16">16GB</option><option value="24">24GB</option></select>-->
+            `;
+        } else if (componentType === 'motherboard') {
+            filterContainer.innerHTML = `
+                <select id="motherboardBrand">
+                    <option value="">品牌</option>
+                    <option value="ASUS">ASUS</option>
+                    <option value="Gigabyte">Gigabyte</option>
+                    <option value="MSI">MSI</option>
+                </select>
             `;
         }
     },
@@ -64,18 +70,15 @@ const search = {
         params.append('page', page);
 
         if (sortValue) {
-            // 从最后一个 _ 分割
             const lastUnderscore = sortValue.lastIndexOf('_');
             const sortBy = sortValue.substring(0, lastUnderscore);
             const sortOrder = sortValue.substring(lastUnderscore + 1);
-            console.log('Sort Value:', sortValue, 'Sort By:', sortBy, 'Sort Order:', sortOrder);
             params.append('sort_by', sortBy);
             params.append('sort_order', sortOrder);
         }
 
         const url = `/api/search/?${params.toString()}`;
         resultDiv.innerHTML = '搜索中...';
-        console.log('Request URL:', url);
         fetch(url)
             .then(response => {
                 if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);

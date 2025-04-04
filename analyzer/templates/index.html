@@ -25,6 +25,30 @@
             <span class="icon">⚙️</span> 配置单
         </a>
     </div>
+    <!-- 详情模态框 -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalLoading" class="loading">加载中...</div>
+            <div id="modalContent" style="display:none;">
+                <div class="modal-header">
+                    <h2 id="detailTitle"></h2>
+                    <div class="price-info">
+                        <span>参考价: ¥<span id="detailRefPrice"></span></span>
+                        <span>京东价: ¥<span id="detailJDPrice"></span></span>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <img id="detailImage" src="" class="product-image">
+                    <div class="specs-section">
+                        <h3>详细参数</h3>
+                        <ul id="detailSpecs" class="specs-list"></ul>
+                    </div>
+                </div>
+            </div>
+            <div id="modalError" class="error" style="display:none;"></div>
+        </div>
+    </div>
     <main class="main">
         <div class="section active" id="search">
             <h2>搜索配件</h2>
@@ -34,11 +58,10 @@
                     <option value="ram">内存条</option>
                     <option value="gpu">显卡</option>
                     <option value="cpu">CPU</option>
-                    <option value="cpu">主板</option>
-                    <option value="cpu">固态硬盘</option>
-                    <option value="cpu">散热</option>
-                    <option value="cpu">电源</option>
-
+                    <option value="motherboard">主板</option>
+                    <option value="ssd">固态硬盘</option>
+                    <option value="cooler">散热</option>
+                    <option value="power_supply">电源</option>
                 </select>
                 <input type="text" id="searchInput" placeholder="输入关键词（如 DDR4 或 RTX）">
                 <div id="dynamicFilters" class="filters"></div>
@@ -55,20 +78,39 @@
             <div id="searchResult" class="result">请输入关键词开始搜索</div>
             <div id="pagination" class="pagination"></div>
         </div>
+
         <div class="section" id="price">
             <h2>配件价格涨幅</h2>
             <div id="priceList" class="result">功能暂未实现</div>
         </div>
+
         <div class="section" id="new">
             <h2>新品发布</h2>
             <div id="newList" class="result">功能暂未实现</div>
         </div>
+
         <div class="section" id="config">
             <h2>生成配置单</h2>
-            <div class="budget-form">
-                <input type="number" id="budgetInput" placeholder="输入预算 (¥)">
-                <button onclick="config.generateConfig()">生成</button>
-                <div id="config-result" class="result">功能暂未实现</div>
+            <div class="config-form">
+                <div class="form-group">
+                    <label>预算 (¥)</label>
+                    <input type="number" id="budgetInput" min="2000" max="50000" value="8000">
+                </div>
+
+                <div class="form-group">
+                    <label>主要用途</label>
+                    <select id="usageSelect">
+                        <option value="gaming">游戏电竞</option>
+                        <option value="design">设计创作</option>
+                        <option value="office">办公学习</option>
+                    </select>
+                </div>
+
+                <button class="generate-btn" onclick="generateConfig()">生成配置</button>
+
+                <div id="configResults" class="config-results">
+                    <!-- 配置单将在这里动态生成 -->
+                </div>
             </div>
         </div>
     </main>
