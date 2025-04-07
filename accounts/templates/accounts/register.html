@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册 - 配件分析</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'accounts/css/styles.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="logo">
+                <span class="logo-icon">🖥️</span> 配件分析
+            </div>
+            <h1>注册</h1>
+
+            {% if form.errors %}
+            <div class="message">
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <div class="alert-error">{{ error }}</div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <form method="post">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="text" name="username" autofocus autocapitalize="none"
+                           autocomplete="username" maxlength="150" required
+                           id="id_username" placeholder="用户名">
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password1"
+                           autocomplete="new-password" required
+                           id="id_password1" placeholder="密码">
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password2"
+                           autocomplete="new-password" required
+                           id="id_password2" placeholder="确认密码">
+                </div>
+                <button type="submit">注册</button>
+            </form>
+            <p class="signup-link">
+                已有账号？ <a href="{% url 'login' %}">登录</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

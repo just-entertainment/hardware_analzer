@@ -5,7 +5,7 @@ import time
 
 
 # 创建文件对
-f = open('csv/机箱.csv', mode='w', encoding='utf-8', newline='')
+f = open('csv/RAM.csv', mode='w', encoding='utf-8', newline='')
 # csv字典写入的方法
 csv_writer = csv.DictWriter(f, fieldnames=['标题', '参考价','京东价','京东链接', '产品图片','产品参数'])
 # 写入表头
@@ -14,7 +14,7 @@ csv_writer.writeheader()
 
 dp = ChromiumPage()
 dp.get(""
-       "https://detail.zol.com.cn/case/good.html"
+       "https://detail.zol.com.cn/memory/hebei/good.html"
        "")
 #
 # for size in sizes:
@@ -34,8 +34,8 @@ while(1):
                 ##打开新页面
             good_link = good.ele('tag:h3').ele('tag:a')
             tab = dp.new_tab(good_link.link)
-            # good_x=tab.ele('@class=section-content').ele('@class=clearfix').text
-            good_x = tab.ele('@class=section-content').ele('@class=product-param-item pi-10 clearfix').text
+            # good_x=tab.ele("@id=proParamSection").ele('@class=section-content').ele('@class=clearfix').text
+            good_x = tab.ele('@class=section-content').ele('@class=product-param-item pi-3 clearfix').text
             image=tab.ele('@class=big-pic').ele('tag:a').ele('tag:img').attr('src')
             dit = {
                 '标题': title,
@@ -44,6 +44,7 @@ while(1):
                 '京东链接':jd_href,
                 '产品图片':image,
                 '产品参数':good_x,
+
             }
             csv_writer.writerow(dit)
             print(dit)

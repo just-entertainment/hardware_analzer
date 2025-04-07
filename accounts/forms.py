@@ -1,15 +1,8 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from .models import User
+from .models import CustomUser
 
-class SignUpForm(UserCreationForm):
-    email = forms.EmailField(required=True)
-    phone = forms.CharField(max_length=15, required=False)
-
+class CustomUserCreationForm(UserCreationForm):
     class Meta:
-        model = User
-        fields = ('username', 'email', 'phone', 'password1', 'password2')
-
-class LoginForm(forms.Form):
-    username = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput)
+        model = CustomUser
+        fields = ('username', 'email')  # 包含您需要的字段

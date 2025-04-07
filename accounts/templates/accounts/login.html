@@ -1,15 +1,46 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 配件分析</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'accounts/css/styles.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="logo">
+                <span class="logo-icon">🖥️</span> 配件分析
+            </div>
+            <h1>登录</h1>
 
-{% block title %}登录{% endblock %}
+            {% if messages %}
+            <div class="message">
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
 
-{% block content %}
-<div class="auth-container">
-    <h2>用户登录</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn">登录</button>
-    </form>
-    <p>没有账号？<a href="{% url 'accounts:signup' %}">立即注册</a></p>
-</div>
-{% endblock %}
+            <form method="post">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="text" name="username" autofocus autocapitalize="none"
+                           autocomplete="username" maxlength="150" required
+                           id="id_username" placeholder="用户名">
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password"
+                           autocomplete="current-password" required
+                           id="id_password" placeholder="密码">
+                </div>
+                <button type="submit">登录</button>
+            </form>
+            <p class="signup-link">
+                还没有账号？ <a href="{% url 'register' %}">注册</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

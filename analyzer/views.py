@@ -2,7 +2,19 @@ from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET
 from django.core.paginator import Paginator
-from .models import RAM, GPU, CPU, Motherboard, SSD, Cooler, PowerSupply
+from .models import RAM, GPU, CPU, Motherboard, SSD, Cooler, PowerSupply,Chassis
+
+# 定义一个字典来映射组件类型到模型类
+COMPONENT_MODELS = {
+    'ram': RAM,
+    'gpu': GPU,
+    'cpu': CPU,
+    'motherboard': Motherboard,
+    'ssd': SSD,
+    'cooler': Cooler,
+    'power_supply': PowerSupply,
+    'case': Chassis,
+}
 
 def index(request):
     return render(request, 'analyzer/index.html')
@@ -17,20 +29,9 @@ def search(request):
         sort_by = request.GET.get('sort_by', '')
         sort_order = request.GET.get('sort_order', 'asc')
 
-        if component_type == 'ram':
-            items = RAM.objects.all()
-        elif component_type == 'gpu':
-            items = GPU.objects.all()
-        elif component_type == 'cpu':
-            items = CPU.objects.all()
-        elif component_type == 'motherboard':
-            items = Motherboard.objects.all()
-        elif component_type == 'ssd':
-            items = SSD.objects.all()
-        elif component_type == 'cooler':
-            items = Cooler.objects.all()
-        elif component_type == 'power_supply':
-            items = PowerSupply.objects.all()
+        model = COMPONENT_MODELS.get(component_type)
+        if model:
+            items = model.objects.all()
         else:
             items = RAM.objects.none()
 
@@ -40,7 +41,7 @@ def search(request):
         # 排序
         valid_sort_fields = ['reference_price', 'jd_price']
         valid_sort_orders = ['asc', 'desc']
-        if (sort_by in valid_sort_fields and sort_order in valid_sort_orders):
+        if sort_by in valid_sort_fields and sort_order in valid_sort_orders:
             order_prefix = '' if sort_order == 'asc' else '-'
             items = items.order_by(f"{sort_by}__isnull")  # 先按 NULL 排序
             items = items.order_by(f"{order_prefix}{sort_by}")  # 再按值排序
@@ -75,20 +76,9 @@ def search(request):
 @require_GET
 def detail(request, component_type, id):
     try:
-        if component_type == 'ram':
-            item = get_object_or_404(RAM, id=id)
-        elif component_type == 'gpu':
-            item = get_object_or_404(GPU, id=id)
-        elif component_type == 'cpu':
-            item = get_object_or_404(CPU, id=id)
-        elif component_type == 'motherboard':
-            item = get_object_or_404(Motherboard, id=id)
-        elif component_type == 'ssd':
-            item = get_object_or_404(SSD, id=id)
-        elif component_type == 'cooler':
-            item = get_object_or_404(Cooler, id=id)
-        elif component_type == 'power_supply':
-            item = get_object_or_404(PowerSupply, id=id)
+        model = COMPONENT_MODELS.get(component_type)
+        if model:
+            item = get_object_or_404(model, id=id)
         else:
             return JsonResponse({'error': 'Invalid component type'}, status=400)
 
