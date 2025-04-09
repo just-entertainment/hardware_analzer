@@ -6,6 +6,22 @@
     <title>配件分析</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}?v={% now 'U' %}">
+    <style>
+        .loading-spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(0,0,0,0.1);
+            border-radius: 50%;
+            border-top-color: #3498db;
+            animation: spin 1s ease-in-out infinite;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
     <div class="sidebar">
@@ -16,7 +32,7 @@
             <span class="icon">🔍</span> 搜索
         </a>
         <a href="#" onclick="navigation.showSection('price')">
-            <span class="icon">📈</span> 价格涨幅
+            <span class="icon">📈</span> 价格分析
         </a>
         <a href="#" onclick="navigation.showSection('new')">
             <span class="icon">🆕</span> 新品发布
@@ -25,6 +41,7 @@
             <span class="icon">⚙️</span> 配置单
         </a>
     </div>
+
     <!-- 详情模态框 -->
     <div id="detailModal" class="modal">
         <div class="modal-content">
@@ -44,16 +61,16 @@
                         <h3>详细参数</h3>
                         <ul id="detailSpecs" class="specs-list"></ul>
                     </div>
-                    <!-- 添加京东链接 -->
                     <div class="jd-link-section">
                         <h3>京东链接</h3>
-                        <a id="detailJDLink" href="" target="_blank">点击这里查看</a>
+                        <a id="detailJDLink" href="" target="_blank" style="display:none;">点击这里查看</a>
                     </div>
                 </div>
             </div>
             <div id="modalError" class="error" style="display:none;"></div>
         </div>
     </div>
+
     <main class="main">
         <div class="section active" id="search">
             <h2>搜索配件</h2>
@@ -72,23 +89,36 @@
                 <input type="text" id="searchInput" placeholder="输入关键词（如 DDR4 或 RTX）">
                 <div id="dynamicFilters" class="filters"></div>
                 <button onclick="search.searchComponent(1)">搜索</button>
-                <!-- 排序控件 -->
-                <select id="sortBy" onchange="search.searchComponent(1)">
-                    <option value="">默认排序</option>
-                    <option value="reference_price_asc">参考价升序</option>
-                    <option value="reference_price_desc">参考价降序</option>
-                    <option value="jd_price_asc">京东价升序</option>
-                    <option value="jd_price_desc">京东价降序</option>
-                </select>
+                <div class="sort-control">
+                    <select id="sortBy" onchange="search.searchComponent(1)">
+                        <option value="">默认排序</option>
+                        <option value="reference_price_asc">参考价升序</option>
+                        <option value="reference_price_desc">参考价降序</option>
+                        <option value="jd_price_asc">京东价升序</option>
+                        <option value="jd_price_desc">京东价降序</option>
+                    </select>
+                </div>
             </div>
             <div id="searchResult" class="result">请输入关键词开始搜索</div>
             <div id="pagination" class="pagination"></div>
         </div>
 
-        <div class="section" id="price">
-            <h2>配件价格涨幅</h2>
-            <div id="priceList" class="result">功能暂未实现</div>
-        </div>
+       <!-- 在price section中添加 -->
+<div class="section" id="price">
+    <h2>配件价格分析</h2>
+    <div class="viz-controls">
+        <!-- 控件... -->
+    </div>
+
+    <div class="chart-container">
+        <canvas id="priceDistributionChart"></canvas>
+        <canvas id="brandDistributionChart"></canvas>
+    </div>
+</div>
+
+<!-- 引入Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 
         <div class="section" id="new">
             <h2>新品发布</h2>
@@ -96,6 +126,7 @@
         </div>
 
         <div class="section" id="config">
+
             <h2>生成配置单</h2>
             <div class="config-form">
                 <div class="form-group">
@@ -121,6 +152,5 @@
         </div>
     </main>
     <script src="{% static 'js/script.js' %}?v={% now 'U' %}"></script>
-
 </body>
 </html>
