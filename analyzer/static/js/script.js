@@ -1,28 +1,15 @@
-/**
- * 硬件配件分析系统 - 主JavaScript文件
- * 包含功能：导航控制、搜索组件、详情展示、数据可视化
- */
-
-// 全局图表引用
-const globalCharts = {};
-
-// 主应用模块
 const App = {
     init() {
-        // 初始化所有模块
         Navigation.init();
         Search.init();
         Visualization.init();
-        
-        // 默认加载第一个标签页内容
+        Config.init();
         Navigation.showSection('search');
     }
 };
 
-// 导航控制模块
 const Navigation = {
     init() {
-        // 绑定侧边栏点击事件
         document.querySelectorAll('.sidebar a').forEach(link => {
             const sectionId = link.getAttribute('onclick').match(/'([^']+)'/)[1];
             link.addEventListener('click', (e) => {
@@ -33,51 +20,26 @@ const Navigation = {
     },
 
     showSection(sectionId) {
-        // 隐藏所有内容区
-        document.querySelectorAll('.section').forEach(section => {
-            section.classList.remove('active');
-        });
-        
-        // 显示目标内容区
+        document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
         document.getElementById(sectionId).classList.add('active');
-        
-        // 更新侧边栏活动状态
-        document.querySelectorAll('.sidebar a').forEach(link => {
-            link.classList.remove('active');
-        });
+        document.querySelectorAll('.sidebar a').forEach(link => link.classList.remove('active'));
         document.querySelector(`.sidebar a[onclick*="${sectionId}"]`).classList.add('active');
-        
-        // 特殊处理可视化标签页
-        if (sectionId === 'price') {
-            Visualization.loadData();
-        }
+        if (sectionId === 'price') Visualization.loadData();
     }
 };
 
-// 搜索功能模块
 const Search = {
     currentPage: 1,
     currentType: '',
     currentSort: '',
 
     init() {
-        // 初始化组件类型下拉框
         document.getElementById('componentType').addEventListener('change', () => {
             this.updateFilters();
             this.currentPage = 1;
         });
-        
-        // 初始化搜索按钮
-        document.querySelector('.search-bar button').addEventListener('click', () => {
-            this.searchComponent(1);
-        });
-        
-        // 初始化排序下拉框
-        document.getElementById('sortBy').addEventListener('change', () => {
-            this.searchComponent(1);
-        });
-        
-        // 回车键搜索
+        document.querySelector('.search-bar button').addEventListener('click', () => this.searchComponent(1));
+        document.getElementById('sortBy').addEventListener('change', () => this.searchComponent(1));
         document.getElementById('searchInput').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') this.searchComponent(1);
         });
@@ -88,10 +50,7 @@ const Search = {
         this.currentType = componentType;
         const filterContainer = document.getElementById('dynamicFilters');
         filterContainer.innerHTML = '';
-
         if (!componentType) return;
-
-        // CPU特殊过滤条件
         if (componentType === 'cpu') {
             filterContainer.innerHTML = `
                 <select id="cpuBrand" class="filter-select">
@@ -103,20 +62,15 @@ const Search = {
                     <option value="">所有系列</option>
                 </select>
             `;
-            
-            // 品牌选择事件
             document.getElementById('cpuBrand').addEventListener('change', function() {
                 const brand = this.value;
                 const seriesSelect = document.getElementById('cpuSeries');
                 seriesSelect.innerHTML = '<option value="">所有系列</option>';
-                
                 if (!brand) return;
-                
-                // 加载系列数据
                 fetch(`/api/get_cpu_series/?brand=${brand}`)
                     .then(response => response.json())
                     .then(data => {
-                        if (data.series && data.series.length > 0) {
+                        if (data.series) {
                             data.series.forEach(series => {
                                 const option = document.createElement('option');
                                 option.value = series;
@@ -127,7 +81,6 @@ const Search = {
                     });
             });
         }
-        // 其他组件类型的过滤条件可以在这里添加...
     },
 
     searchComponent(page) {
@@ -138,31 +91,23 @@ const Search = {
         const resultDiv = document.getElementById('searchResult');
         const paginationDiv = document.getElementById('pagination');
 
-        // 构建查询参数
         const params = new URLSearchParams();
         if (componentType) params.append('type', componentType);
         if (query) params.append('q', query);
         params.append('page', page);
-
-        // 添加CPU过滤参数
         if (componentType === 'cpu') {
             const brand = document.getElementById('cpuBrand')?.value || '';
             const series = document.getElementById('cpuSeries')?.value || '';
             if (brand) params.append('brand', brand);
             if (series) params.append('series', series);
         }
-
-        // 添加排序参数
         if (sortValue) {
             const [sortBy, sortOrder] = sortValue.split('_');
             params.append('sort_by', sortBy);
             params.append('sort_order', sortOrder);
         }
 
-        // 显示加载状态
         resultDiv.innerHTML = '<div class="loading-spinner"></div> 搜索中...';
-        
-        // 发送请求
         fetch(`/api/search/?${params.toString()}`)
             .then(response => {
                 if (!response.ok) throw new Error(`HTTP错误! 状态码: ${response.status}`);
@@ -173,8 +118,6 @@ const Search = {
                     resultDiv.innerHTML = `<div class="error">错误: ${data.error}</div>`;
                     return;
                 }
-                
-                // 渲染结果
                 this.renderResults(data, resultDiv, paginationDiv);
             })
             .catch(error => {
@@ -185,72 +128,60 @@ const Search = {
 
     renderResults(data, resultDiv, paginationDiv) {
         if (data.results.length > 0) {
-        resultDiv.innerHTML = data.results.map(item => `
-            <div class="post" onclick="Detail.show('${item.type}', ${item.id})">
-                <div class="title">${item.title}</div>
-                <div class="info">
-                    <span>参考价: ¥${item.reference_price}</span>
-                    <span>京东价: ¥${item.jd_price}</span>
+            resultDiv.innerHTML = data.results.map(item => `
+                <div class="post" onclick="Detail.show('${item.type}', ${item.id})">
+                    <div class="title">${item.title}</div>
+                    <div class="info">
+                        <span>参考价: ¥${item.reference_price}</span>
+                        <span>京东价: ¥${item.jd_price}</span>
+                    </div>
                 </div>
-            </div>
-        `).join('');} else {resultDiv.innerHTML = '<div class="no-results">未找到符合条件的配件</div>';
-    }
-
-        // 渲染分页
+            `).join('');
+        } else {
+            resultDiv.innerHTML = '<div class="no-results">未找到符合条件的配件</div>';
+        }
         this.renderPagination(data, paginationDiv);
     },
 
     renderPagination(data, container) {
         container.innerHTML = '';
-        
         if (data.pages > 1) {
             const pagination = document.createElement('div');
             pagination.className = 'pagination';
-            
-            // 上一页按钮
             if (data.has_previous) {
                 const prevBtn = document.createElement('button');
-                prevBtn.className = 'page-btn';
-                prevBtn.innerHTML = '&laquo; 上一页';
+                prevBtn.innerHTML = '« 上一页';
                 prevBtn.addEventListener('click', () => this.searchComponent(data.current_page - 1));
                 pagination.appendChild(prevBtn);
             }
-            
-            // 页码信息
             const pageInfo = document.createElement('span');
-            pageInfo.className = 'page-info';
             pageInfo.textContent = `第 ${data.current_page} 页 / 共 ${data.pages} 页`;
             pagination.appendChild(pageInfo);
-            
-            // 下一页按钮
             if (data.has_next) {
                 const nextBtn = document.createElement('button');
-                nextBtn.className = 'page-btn';
-                nextBtn.innerHTML = '下一页 &raquo;';
+                nextBtn.innerHTML = '下一页 »';
                 nextBtn.addEventListener('click', () => this.searchComponent(data.current_page + 1));
                 pagination.appendChild(nextBtn);
             }
-            
             container.appendChild(pagination);
         }
     }
 };
 
-// 详情展示模块
 const Detail = {
     show(componentType, id) {
         const modal = document.getElementById('detailModal');
         const modalContent = document.getElementById('modalContent');
         const modalLoading = document.getElementById('modalLoading');
         const modalError = document.getElementById('modalError');
-        
-        // 显示模态框和加载状态
+
         modal.style.display = 'block';
         modalLoading.style.display = 'block';
-        modalContent.style.display = 'none';
+        র
+
+modalContent.style.display = 'none';
         modalError.style.display = 'none';
-        
-        // 获取详情数据
+
         fetch(`/api/detail/${componentType}/${id}/`)
             .then(response => {
                 if (!response.ok) throw new Error(`HTTP错误! 状态码: ${response.status}`);
@@ -258,14 +189,10 @@ const Detail = {
             })
             .then(data => {
                 if (data.error) throw new Error(data.error);
-                
-                // 填充数据
                 document.getElementById('detailTitle').textContent = data.title;
                 document.getElementById('detailRefPrice').textContent = data.reference_price;
                 document.getElementById('detailJDPrice').textContent = data.jd_price;
                 document.getElementById('detailImage').src = data.product_image;
-                
-                // 处理参数列表
                 const specsList = document.getElementById('detailSpecs');
                 specsList.innerHTML = '';
                 if (data.product_parameters) {
@@ -277,8 +204,6 @@ const Detail = {
                         }
                     });
                 }
-                
-                // 处理京东链接
                 const jdLink = document.getElementById('detailJDLink');
                 if (data.jd_link) {
                     jdLink.href = data.jd_link;
@@ -286,13 +211,10 @@ const Detail = {
                 } else {
                     jdLink.style.display = 'none';
                 }
-                
-                // 显示内容
                 modalLoading.style.display = 'none';
                 modalContent.style.display = 'block';
             })
             .catch(error => {
-                console.error('详情加载错误:', error);
                 modalLoading.style.display = 'none';
                 modalError.textContent = `加载失败: ${error.message}`;
                 modalError.style.display = 'block';
@@ -304,155 +226,321 @@ const Detail = {
     }
 };
 
-// 数据可视化模块
-const Visualization = {
-    charts: {},
-    chartContainers: null,
-    currentComponent: 'cpu',
-
+const Config = {
     init() {
-        // 初始化图表容器
-        this.chartContainers = {
-            price: document.getElementById('priceDistributionChart'),
-            brand: document.getElementById('brandDistributionChart')
-        };
-
-        // 验证元素
-        if (!this.chartContainers.price || !this.chartContainers.brand) {
-            console.error('图表容器元素未找到:', {
-                price: !!this.chartContainers.price,
-                brand: !!this.chartContainers.brand
-            });
-            return;
-        }
-
-        // 初始化控件事件
-        document.getElementById('vizComponentType').addEventListener('change', (e) => {
-            this.currentComponent = e.target.value;
-            this.loadData();
-        });
-
-        this.loadData();
+        document.querySelector('.generate-btn').addEventListener('click', () => this.generateConfig());
     },
 
-    loadData() {
-        // 显示加载状态
-        this.showLoading();
+    async generateConfig() {
+        const budget = document.getElementById('budgetInput').value;
+        const usage = document.getElementById('usageSelect').value;
+        const resultsDiv = document.getElementById('configResults');
 
-        fetch(`/api/price_stats/?type=${this.currentComponent}`)
-            .then(response => {
-                if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                return response.json();
-            })
-            .then(data => {
-                if (data.status === 'error') throw new Error(data.message);
-                this.renderCharts(data);
-            })
-            .catch(error => {
-                console.error('加载数据失败:', error);
-                this.showError(error);
-            });
-    },
+        resultsDiv.innerHTML = '<div class="loading-spinner"></div> 生成中...';
 
-    renderCharts(data) {
         try {
-            // 销毁旧图表
-            if (this.charts.price) this.charts.price.destroy();
-            if (this.charts.brand) this.charts.brand.destroy();
+            const components = [
+                { type: 'cpu', budgetShare: 0.3 },
+                { type: 'gpu', budgetShare: 0.3 },
+                { type: 'ram', budgetShare: 0.1 },
+                { type: 'motherboard', budgetShare: 0.1 },
+                { type: 'ssd', budgetShare: 0.1 },
+                { type: 'power_supply', budgetShare: 0.05 },
+                { type: 'case', budgetShare: 0.05 }
+            ];
 
-            // 渲染价格图表
-            this.renderPriceChart(data.price_distribution);
+            let totalPrice = 0;
+            const configItems = await Promise.all(components.map(async (comp) => {
+                const priceLimit = budget * comp.budgetShare;
+                const response = await fetch(`/api/search/?type=${comp.type}&sort_by=reference_price&sort_order=asc&per_page=1`);
+                const data = await response.json();
+                if (data.results && data.results.length > 0) {
+                    const item = data.results[0];
+                    totalPrice += parseFloat(item.reference_price !== '暂无' ? item.reference_price : 0);
+                    return { type: comp.type, title: item.title, price: item.reference_price };
+                }
+                return null;
+            }));
 
-            // 渲染品牌图表（如果有数据）
-            if (data.brand_distribution?.length > 0) {
-                this.renderBrandChart(data.brand_distribution);
-            } else {
-                this.showNoData(this.chartContainers.brand, '无品牌数据');
-            }
-        } catch (e) {
-            console.error('渲染图表失败:', e);
-            this.showError(e);
+            resultsDiv.innerHTML = `
+                <div class="config-card">
+                    <div class="config-header">
+                        <span class="config-title">推荐配置 (${usage})</span>
+                        <span class="config-price">总价: ¥${totalPrice.toFixed(2)}</span>
+                    </div>
+                    <div class="config-items">
+                        ${configItems.filter(item => item).map(item => `
+                            <div class="config-item">
+                                <div class="item-name">${this.getComponentName(item.type)}: ${item.title}</div>
+                                <div class="item-price">¥${item.price}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        } catch (error) {
+            resultsDiv.innerHTML = `<div class="error">生成配置失败: ${error.message}</div>`;
+            console.error('配置生成错误:', error);
         }
     },
 
-    renderPriceChart(data) {
-        this.charts.price = new Chart(
-            this.chartContainers.price.getContext('2d'),
-            {
-                type: 'bar',
-                data: {
-                    labels: data.map(d => d.range),
-                    datasets: [{
-                        label: '产品数量',
-                        data: data.map(d => d.count),
-                        backgroundColor: 'rgba(54, 162, 235, 0.7)'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        title: { display: true, text: '价格分布' }
-                    }
-                }
-            }
-        );
-    },
-
-    renderBrandChart(data) {
-        this.charts.brand = new Chart(
-            this.chartContainers.brand.getContext('2d'),
-            {
-                type: 'pie',
-                data: {
-                    labels: data.map(d => d.brand),
-                    datasets: [{
-                        data: data.map(d => d.count),
-                        backgroundColor: [
-                            '#4e79a7', '#f28e2b', '#e15759', '#76b7b2'
-                        ]
-                    }]
-                }
-            }
-        );
-    },
-
-    showLoading() {
-        // 可以添加加载动画
-    },
-
-    showError(error) {
-        // 显示错误信息
-        const msg = error.message.includes('<!DOCTYPE')
-            ? '服务器返回HTML而不是JSON'
-            : error.message;
-
-        [this.chartContainers.price, this.chartContainers.brand].forEach(el => {
-            el.style.display = 'none';
-            el.insertAdjacentHTML('afterend', `
-                <div class="chart-error">${msg}</div>
-            `);
-        });
-    },
-
-    showNoData(element, message) {
-        element.style.display = 'none';
-        element.insertAdjacentHTML('afterend', `
-            <div class="chart-no-data">${message}</div>
-        `);
+    getComponentName(type) {
+        const names = {
+            'cpu': 'CPU',
+            'gpu': '显卡',
+            'ram': '内存',
+            'motherboard': '主板',
+            'ssd': '固态硬盘',
+            'cooler': '散热器',
+            'power_supply': '电源',
+            'case': '机箱'
+        };
+        return names[type] || type;
     }
 };
 
-// 页面加载完成后初始化应用
+const Visualization = {
+    charts: {},
+    currentType: 'cpu',
+
+    init() {
+        this.renderControls();
+        this.loadData();
+        this.bindEvents();
+    },
+
+    renderControls() {
+        const controlsDiv = document.querySelector('.viz-controls');
+        controlsDiv.innerHTML = `
+            <select id="vizComponentType" class="filter-select">
+                <option value="cpu">CPU</option>
+                <option value="gpu">显卡</option>
+                <option value="ram">内存</option>
+                <option value="ssd">固态硬盘</option>
+                <option value="motherboard">主板</option>
+                <option value="cooler">散热器</option>
+                <option value="power_supply">电源</option>
+                <option value="case">机箱</option>
+            </select>
+            <button onclick="Visualization.loadData()">刷新数据</button>
+        `;
+    },
+
+    bindEvents() {
+        document.getElementById('vizComponentType').addEventListener('change', (e) => {
+            this.currentType = e.target.value;
+            this.loadData();
+        });
+        window.addEventListener('resize', () => {
+            Object.values(this.charts).forEach(chart => chart?.resize());
+        });
+    },
+
+    loadData: debounce(async function() {
+        const priceChartCanvas = document.getElementById('priceDistributionChart');
+        const trendChartCanvas = document.getElementById('averagePriceTrendChart');
+        const statsSummary = document.getElementById('statsSummary');
+
+        if (!priceChartCanvas || !trendChartCanvas || !statsSummary) return;
+
+        priceChartCanvas.parentElement.classList.add('chart-loading');
+        trendChartCanvas.parentElement.classList.add('chart-loading');
+        statsSummary.innerHTML = '<div class="loading-spinner"></div>加载中...';
+
+        try {
+            const [statsResponse, trendResponse] = await Promise.all([
+                fetch(`/api/price_stats/?type=${this.currentType}`),
+                fetch(`/api/average_price_trend/?type=${this.currentType}`)
+            ]);
+
+            if (!statsResponse.ok || !trendResponse.ok) {
+                throw new Error(`网络错误: ${statsResponse.status}, ${trendResponse.status}`);
+            }
+
+            const statsData = await statsResponse.json();
+            const trendData = await trendResponse.json();
+
+            priceChartCanvas.parentElement.classList.remove('chart-loading');
+            trendChartCanvas.parentElement.classList.remove('chart-loading');
+
+            if (statsData.status === 'error') {
+                throw new Error(statsData.message);
+            }
+            if (trendData.error) {
+                throw new Error(trendData.error);
+            }
+
+            this.renderPriceDistributionChart(statsData);
+            this.renderAveragePriceTrendChart(trendData);
+            this.renderStatsSummary(statsData);
+        } catch (error) {
+            priceChartCanvas.parentElement.innerHTML = `<div class="chart-error">加载失败: ${error.message}</div>`;
+            trendChartCanvas.parentElement.innerHTML = `<div class="chart-error">加载失败: ${error.message}</div>`;
+            statsSummary.innerHTML = `<div class="error">加载失败: ${error.message}</div>`;
+            console.error('可视化数据加载失败:', error);
+        }
+    }, 300),
+
+    renderPriceDistributionChart(statsData) {
+        const ctx = document.getElementById('priceDistributionChart')?.getContext('2d');
+        if (!ctx) return;
+
+        if (this.charts.priceDistribution) {
+            this.charts.priceDistribution.destroy();
+        }
+
+        const priceData = statsData.price_distribution || [];
+        if (!priceData.length) {
+            ctx.canvas.parentElement.innerHTML = `<div class="chart-error">${statsData.message || '暂无价格分布数据'}</div>`;
+            return;
+        }
+
+        this.charts.priceDistribution = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: priceData.map(x => x.range),
+                datasets: [{
+                    label: '产品数量',
+                    data: priceData.map(x => x.count),
+                    backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: `${this.getComponentName(this.currentType)} 价格分布`,
+                        font: { size: 16 }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: ctx => `${ctx.parsed.y} 款产品`
+                        }
+                    },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'top',
+                        formatter: value => value > 0 ? value : '',
+                        color: '#333'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: '产品数量' }
+                    },
+                    x: {
+                        title: { display: true, text: '价格区间 (¥)' }
+                    }
+                }
+            },
+            plugins: [ChartDataLabels]
+        });
+    },
+
+    renderAveragePriceTrendChart(trendData) {
+        const ctx = document.getElementById('averagePriceTrendChart')?.getContext('2d');
+        if (!ctx) return;
+
+        if (this.charts.averagePriceTrend) {
+            this.charts.averagePriceTrend.destroy();
+        }
+
+        const data = trendData.data || [];
+        if (!data.length) {
+            ctx.canvas.parentElement.innerHTML = `<div class="chart-error">${trendData.message || '暂无价格趋势数据'}</div>`;
+            return;
+        }
+
+        this.charts.averagePriceTrend = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.map(x => x.date),
+                datasets: [{
+                    label: '平均价格',
+                    data: data.map(x => x.avg_price),
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: `${this.getComponentName(this.currentType)} 平均价格趋势`,
+                        font: { size: 16 }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: ctx => `¥${ctx.parsed.y.toFixed(2)}`
+                        }
+                    }
+                },
+                scales: {
+                    x: { title: { display: true, text: '日期' } },
+                    y: {
+                        title: { display: true, text: '平均价格 (¥)' },
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+    },
+
+    renderStatsSummary(statsData) {
+        const statsSummary = document.getElementById('statsSummary');
+        if (!statsData || statsData.total_count === 0) {
+            statsSummary.innerHTML = `<div class="error">${statsData.message || '暂无统计数据'}</div>`;
+            return;
+        }
+
+        statsSummary.innerHTML = `
+            <p>总产品数: ${statsData.total_count}</p>
+            <p>中位数价格: ¥${statsData.median_price ? statsData.median_price.toFixed(2) : '未知'}</p>
+            <p>平均价格: ¥${statsData.avg_price ? statsData.avg_price.toFixed(2) : '未知'}</p>
+            <p>价格标准差: ¥${statsData.std_dev_price ? statsData.std_dev_price.toFixed(2) : '未知'}</p>
+        `;
+    },
+
+    getComponentName(type) {
+        const names = {
+            'cpu': 'CPU',
+            'gpu': '显卡',
+            'ram': '内存',
+            'ssd': '固态硬盘',
+            'motherboard': '主板',
+            'cooler': '散热器',
+            'power_supply': '电源',
+            'case': '机箱'
+        };
+        return names[type] || type;
+    }
+};
+
+// 防抖函数
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     App.init();
-    
-    // 绑定模态框关闭事件
     document.querySelector('.modal .close').addEventListener('click', () => Detail.close());
     document.querySelector('.modal').addEventListener('click', (e) => {
         if (e.target === document.querySelector('.modal')) Detail.close();
     });
 });
 
-// 全局函数（为了兼容HTML中的onclick属性）
 window.showDetail = Detail.show;
 window.closeModal = Detail.close;
+window.generateConfig = Config.generateConfig;

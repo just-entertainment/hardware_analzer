@@ -146,3 +146,11 @@ AUTHENTICATION_BACKENDS = [
 
 # 登录尝试限制
 LOGIN_ATTEMPTS_LIMIT = 5
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+}

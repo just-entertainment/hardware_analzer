@@ -6,6 +6,8 @@
     <title>配件分析</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}?v={% now 'U' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <style>
         .loading-spinner {
             display: inline-block;
@@ -28,25 +30,21 @@
         <div class="logo">
             <span class="logo-icon">🖥️</span> 配件分析
         </div>
-        <a href="#" class="active" onclick="navigation.showSection('search')">
+        <a href="#" class="active" onclick="Navigation.showSection('search')">
             <span class="icon">🔍</span> 搜索
         </a>
-        <a href="#" onclick="navigation.showSection('price')">
+        <a href="#" onclick="Navigation.showSection('price')">
             <span class="icon">📈</span> 价格分析
         </a>
-        <a href="#" onclick="navigation.showSection('new')">
-            <span class="icon">🆕</span> 新品发布
-        </a>
-        <a href="#" onclick="navigation.showSection('config')">
+        <a href="#" onclick="Navigation.showSection('config')">
             <span class="icon">⚙️</span> 配置单
         </a>
     </div>
 
-    <!-- 详情模态框 -->
     <div id="detailModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div id="modalLoading" class="loading">加载中...</div>
+            <span class="close" onclick="closeModal()">×</span>
+            <div id="modalLoading" class="loading"><div class="loading-spinner"></div>加载中...</div>
             <div id="modalContent" style="display:none;">
                 <div class="modal-header">
                     <h2 id="detailTitle"></h2>
@@ -56,7 +54,7 @@
                     </div>
                 </div>
                 <div class="modal-body">
-                    <img id="detailImage" src="" class="product-image">
+                    <img id="detailImage" src="" class="product-image" alt="产品图片">
                     <div class="specs-section">
                         <h3>详细参数</h3>
                         <ul id="detailSpecs" class="specs-list"></ul>
@@ -75,7 +73,7 @@
         <div class="section active" id="search">
             <h2>搜索配件</h2>
             <div class="search-bar">
-                <select id="componentType" onchange="search.updateFilters()">
+                <select id="componentType" onchange="Search.updateFilters()">
                     <option value="">选择配件类型</option>
                     <option value="ram">内存条</option>
                     <option value="gpu">显卡</option>
@@ -88,9 +86,9 @@
                 </select>
                 <input type="text" id="searchInput" placeholder="输入关键词（如 DDR4 或 RTX）">
                 <div id="dynamicFilters" class="filters"></div>
-                <button onclick="search.searchComponent(1)">搜索</button>
+                <button onclick="Search.searchComponent(1)">搜索</button>
                 <div class="sort-control">
-                    <select id="sortBy" onchange="search.searchComponent(1)">
+                    <select id="sortBy" onchange="Search.searchComponent(1)">
                         <option value="">默认排序</option>
                         <option value="reference_price_asc">参考价升序</option>
                         <option value="reference_price_desc">参考价降序</option>
@@ -103,37 +101,29 @@
             <div id="pagination" class="pagination"></div>
         </div>
 
-       <!-- 在price section中添加 -->
-<div class="section" id="price">
-    <h2>配件价格分析</h2>
-    <div class="viz-controls">
-        <!-- 控件... -->
-    </div>
-
-    <div class="chart-container">
-        <canvas id="priceDistributionChart"></canvas>
-        <canvas id="brandDistributionChart"></canvas>
-    </div>
-</div>
-
-<!-- 引入Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
-
-        <div class="section" id="new">
-            <h2>新品发布</h2>
-            <div id="newList" class="result">功能暂未实现</div>
+        <div class="section" id="price">
+            <h2>配件价格分析</h2>
+            <div class="viz-controls">
+                <!-- 动态控件由 JS 填充 -->
+            </div>
+            <div class="chart-container">
+                <div class="chart">
+                    <canvas id="priceDistributionChart"></canvas>
+                </div>
+                <div class="chart">
+                    <canvas id="averagePriceTrendChart"></canvas>
+                </div>
+            </div>
+            <div id="statsSummary" class="stats-summary"></div>
         </div>
 
         <div class="section" id="config">
-
             <h2>生成配置单</h2>
             <div class="config-form">
                 <div class="form-group">
                     <label>预算 (¥)</label>
                     <input type="number" id="budgetInput" min="2000" max="50000" value="8000">
                 </div>
-
                 <div class="form-group">
                     <label>主要用途</label>
                     <select id="usageSelect">
@@ -142,15 +132,12 @@
                         <option value="office">办公学习</option>
                     </select>
                 </div>
-
                 <button class="generate-btn" onclick="generateConfig()">生成配置</button>
-
-                <div id="configResults" class="config-results">
-                    <!-- 配置单将在这里动态生成 -->
-                </div>
+                <div id="configResults" class="config-results"></div>
             </div>
         </div>
     </main>
+
     <script src="{% static 'js/script.js' %}?v={% now 'U' %}"></script>
 </body>
 </html>
