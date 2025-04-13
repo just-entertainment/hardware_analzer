@@ -177,7 +177,6 @@ const Detail = {
 
         modal.style.display = 'block';
         modalLoading.style.display = 'block';
-        র
 
 modalContent.style.display = 'none';
         modalError.style.display = 'none';
