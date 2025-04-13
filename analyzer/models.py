@@ -359,13 +359,26 @@ class PowerSupply(models.Model):
 
     def __str__(self):
         return self.title
+
+
 class Chassis(models.Model):
+    # 原有字段保持不变
     title = models.CharField(max_length=255, verbose_name='标题')
     reference_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00, verbose_name='参考价')
     jd_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, verbose_name='京东价')
     jd_link = models.URLField(max_length=500, null=True, blank=True, verbose_name='京东链接')
     product_image = models.URLField(max_length=500, default='https://example.com/default.jpg', verbose_name='产品图片')
     product_parameters = models.TextField(null=True, blank=True, verbose_name='产品参数')
+
+    # 新增字段
+    chassis_type = models.CharField(max_length=100, null=True, blank=True, verbose_name='机箱类型')
+    chassis_structure = models.CharField(max_length=100, null=True, blank=True, verbose_name='机箱结构')
+    compatible_motherboard = models.CharField(max_length=255, null=True, blank=True, verbose_name='适用主板')
+    power_design = models.CharField(max_length=100, null=True, blank=True, verbose_name='电源设计')
+    expansion_slots = models.CharField(max_length=100, null=True, blank=True, verbose_name='扩展插槽')
+    front_interface = models.CharField(max_length=255, null=True, blank=True, verbose_name='前置接口')
+    chassis_material = models.CharField(max_length=100, null=True, blank=True, verbose_name='机箱材质')
+    panel_thickness = models.CharField(max_length=50, null=True, blank=True, verbose_name='板材厚度')
 
     class Meta:
         verbose_name = '机箱'
