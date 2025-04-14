@@ -11,7 +11,7 @@ import statistics
 import math
 import re
 import logging
-
+from django.db.models import Case, When, Value, IntegerField
 from . import models
 from .models import RAM, GPU, CPU, Motherboard, SSD, Cooler, PowerSupply, Chassis, PriceHistory
 
@@ -34,7 +34,8 @@ COMPONENT_MODELS = {
 def index(request):
     return render(request, 'analyzer/index.html')
 
-# 搜索视图
+# 搜索视图from django.db.models import Case, When, Value, IntegerField
+#
 @require_GET
 def search(request):
     try:
@@ -50,7 +51,6 @@ def search(request):
         model = COMPONENT_MODELS.get(component_type)
         if model:
             items = model.objects.all()
-            # CPU专用过滤
             if component_type == 'cpu':
                 if brand:
                     if brand.lower() == 'amd':
@@ -62,20 +62,24 @@ def search(request):
         else:
             items = RAM.objects.none()
 
-        # SQLite 使用 icontains 查询
         if query:
             items = items.filter(title__icontains=query)
 
-        # 排序
         valid_sort_fields = ['reference_price', 'jd_price']
         valid_sort_orders = ['asc', 'desc']
         if sort_by in valid_sort_fields and sort_order in valid_sort_orders:
             order_prefix = '' if sort_order == 'asc' else '-'
-            items = items.order_by(f"{sort_by}__isnull", f"{order_prefix}{sort_by}")
+            # 使用 annotate 和 Case 处理 NULL 值
+            items = items.annotate(
+                is_null=Case(
+                    When(**{f"{sort_by}__isnull": True}, then=Value(1)),
+                    default=Value(0),
+                    output_field=IntegerField()
+                )
+            ).order_by('is_null', f"{order_prefix}{sort_by}")
         else:
             items = items.order_by('id')
 
-        # 分页
         paginator = Paginator(items, per_page)
         page_obj = paginator.page(page_number)
 
@@ -84,8 +88,8 @@ def search(request):
                 'id': item.id,
                 'type': component_type or 'unknown',
                 'title': item.title,
-                'reference_price': str(item.reference_price) if item.reference_price is not None else '暂无',
-                'jd_price': str(item.jd_price) if item.jd_price is not None else '暂无'
+                'reference_price': float(item.reference_price) if item.reference_price is not None else '暂无',
+                'jd_price': float(item.jd_price) if item.jd_price is not None else '暂无'
             } for item in page_obj
         ]
 
@@ -97,8 +101,11 @@ def search(request):
             'has_next': page_obj.has_next(),
             'has_previous': page_obj.has_previous()
         })
+    except ValueError as ve:
+        logger.error(f"Search error: {str(ve)}", exc_info=True)
+        return JsonResponse({'error': f'参数错误: {str(ve)}'}, status=400)
     except Exception as e:
-        logger.error(f"Error in search view: {str(e)}")
+        logger.error(f"Search error for type {component_type}: {str(e)}", exc_info=True)
         return JsonResponse({'error': str(e)}, status=500)
 
 # 获取 CPU 系列视图
@@ -137,28 +144,32 @@ def get_cpu_series(request):
         logger.error(f"Error in get_cpu_series: {str(e)}")
         return JsonResponse({'error': str(e)}, status=500)
 
-# 配件详情视图
+
 @require_GET
 def detail(request, component_type, id):
     try:
         model = COMPONENT_MODELS.get(component_type)
         if not model:
-            return JsonResponse({'error': 'Invalid component type'}, status=400)
-        item = get_object_or_404(model, id=id)
+            logger.error(f"Invalid component type: {component_type}")
+            return JsonResponse({'error': f'无效的配件类型: {component_type}'}, status=400)
 
+        item = model.objects.get(id=id)
         data = {
             'title': item.title,
-            'reference_price': str(item.reference_price) if item.reference_price is not None else '暂无',
-            'jd_price': str(item.jd_price) if item.jd_price is not None else '暂无',
+            'reference_price': float(item.reference_price) if item.reference_price is not None else '暂无',
+            'jd_price': float(item.jd_price) if item.jd_price is not None else '暂无',
             'jd_link': item.jd_link,
             'product_image': item.product_image,
             'product_parameters': item.product_parameters or ''
         }
         return JsonResponse(data)
-    except Exception as e:
-        logger.error(f"Error in detail view: {str(e)}")
-        return JsonResponse({'error': str(e)}, status=500)
 
+    except model.ObjectDoesNotExist:
+        logger.error(f"Component not found: {component_type} ID {id}")
+        return JsonResponse({'error': f'未找到配件: {component_type} ID {id}'}, status=404)
+    except Exception as e:
+        logger.error(f"Detail error for {component_type} {id}: {str(e)}", exc_info=True)
+        return JsonResponse({'error': f'服务器错误: {str(e)}'}, status=500)
 # 价格统计视图
 @require_GET
 def price_stats(request):
