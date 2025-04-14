@@ -225,9 +225,11 @@ modalContent.style.display = 'none';
     }
 };
 
+
 const Config = {
-    init() {
-        document.querySelector('.generate-btn').addEventListener('click', () => this.generateConfig());
+     init() {
+        console.log('Config initialized');
+        // 初始化逻辑
     },
 
     async generateConfig() {
@@ -238,40 +240,27 @@ const Config = {
         resultsDiv.innerHTML = '<div class="loading-spinner"></div> 生成中...';
 
         try {
-            const components = [
-                { type: 'cpu', budgetShare: 0.3 },
-                { type: 'gpu', budgetShare: 0.3 },
-                { type: 'ram', budgetShare: 0.1 },
-                { type: 'motherboard', budgetShare: 0.1 },
-                { type: 'ssd', budgetShare: 0.1 },
-                { type: 'power_supply', budgetShare: 0.05 },
-                { type: 'case', budgetShare: 0.05 }
-            ];
+            const response = await fetch(`/api/generate_configuration/?budget=${budget}&usage=${usage}`);
+            const data = await response.json();
 
-            let totalPrice = 0;
-            const configItems = await Promise.all(components.map(async (comp) => {
-                const priceLimit = budget * comp.budgetShare;
-                const response = await fetch(`/api/search/?type=${comp.type}&sort_by=reference_price&sort_order=asc&per_page=1`);
-                const data = await response.json();
-                if (data.results && data.results.length > 0) {
-                    const item = data.results[0];
-                    totalPrice += parseFloat(item.reference_price !== '暂无' ? item.reference_price : 0);
-                    return { type: comp.type, title: item.title, price: item.reference_price };
-                }
-                return null;
-            }));
+            if (data.error) {
+                resultsDiv.innerHTML = `<div class="error">生成配置失败: ${data.error}</div>`;
+                return;
+            }
 
+            // 渲染配置单
+            const totalPrice = parseFloat(data.total_price);
             resultsDiv.innerHTML = `
                 <div class="config-card">
                     <div class="config-header">
-                        <span class="config-title">推荐配置 (${usage})</span>
-                        <span class="config-price">总价: ¥${totalPrice.toFixed(2)}</span>
+                        <span class="config-title">推荐配置</span>
+                        <span class="config-price">总价: ¥${data.total_price.toFixed(2)}</span>
                     </div>
                     <div class="config-items">
-                        ${configItems.filter(item => item).map(item => `
+                        ${data.configuration.map(item => `
                             <div class="config-item">
-                                <div class="item-name">${this.getComponentName(item.type)}: ${item.title}</div>
-                                <div class="item-price">¥${item.price}</div>
+                                <div class="item-name">${item.type.toUpperCase()}: ${item.title}</div>
+                                <div class="item-price">¥${item.price.toFixed(2)}</div>
                             </div>
                         `).join('')}
                     </div>
@@ -279,22 +268,7 @@ const Config = {
             `;
         } catch (error) {
             resultsDiv.innerHTML = `<div class="error">生成配置失败: ${error.message}</div>`;
-            console.error('配置生成错误:', error);
         }
-    },
-
-    getComponentName(type) {
-        const names = {
-            'cpu': 'CPU',
-            'gpu': '显卡',
-            'ram': '内存',
-            'motherboard': '主板',
-            'ssd': '固态硬盘',
-            'cooler': '散热器',
-            'power_supply': '电源',
-            'case': '机箱'
-        };
-        return names[type] || type;
     }
 };
 
@@ -531,6 +505,114 @@ function debounce(func, wait) {
         timeout = setTimeout(() => func.apply(this, args), wait);
     };
 }
+
+function generateConfiguration() {
+    const budget = document.getElementById('budget').value;
+    const usage = document.getElementById('usage').value;
+    const brandPreference = document.getElementById('brand-preference').value;
+
+    fetch(`/generate-configuration?budget=${budget}&usage=${usage}&brand_preference=${brandPreference}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert('生成配置失败: ' + data.error);
+                return;
+            }
+
+            // 显示配置结果
+            displayConfiguration(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('生成配置时出错');
+        });
+}
+
+function displayConfiguration(data) {
+    const container = document.getElementById('configuration-result');
+    container.innerHTML = '';
+
+    // 显示总价和预算使用情况
+    const summary = document.createElement('div');
+    summary.className = 'configuration-summary';
+    summary.innerHTML = `
+        <h3>配置单总价: ¥${data.total_price.toFixed(2)} (预算: ¥${data.budget})</h3>
+        <p>预算使用率: ${(data.budget_usage * 100).toFixed(2)}%</p>
+    `;
+    container.appendChild(summary);
+
+    // 显示各个配件
+    for (const [type, component] of Object.entries(data.configuration)) {
+        const componentDiv = document.createElement('div');
+        componentDiv.className = 'configuration-component';
+        componentDiv.innerHTML = `
+            <h4>${getComponentName(type)}</h4>
+            <p>${component.title}</p>
+            <p class="price">¥${component.price.toFixed(2)}</p>
+            <a href="/detail/${type}/${component.id}" target="_blank">查看详情</a>
+        `;
+        container.appendChild(componentDiv);
+    }
+}
+
+function getComponentName(type) {
+    const names = {
+        'cpu': '处理器',
+        'gpu': '显卡',
+        'ram': '内存',
+        'motherboard': '主板',
+        'ssd': '固态硬盘',
+        'power_supply': '电源',
+        'case': '机箱',
+        'cooler': '散热器'
+    };
+    return names[type] || type;
+}
+
+const SearchByPrice = {
+    search() {
+        const minPrice = parseFloat(document.getElementById('minPriceInput').value);
+        const maxPrice = parseFloat(document.getElementById('maxPriceInput').value);
+        const componentType = document.getElementById('priceComponentType').value;
+        const resultsDiv = document.getElementById('priceSearchResults');
+
+        // 验证价格输入
+        if (isNaN(minPrice) || isNaN(maxPrice) || minPrice < 0 || maxPrice < 0 || minPrice > maxPrice) {
+            resultsDiv.innerHTML = '<div class="error">请输入有效的价格范围</div>';
+            return;
+        }
+
+        resultsDiv.innerHTML = '<div class="loading-spinner"></div> 搜索中...';
+
+        fetch(`/api/get_components_by_price/?min_price=${minPrice}&max_price=${maxPrice}&type=${componentType}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    resultsDiv.innerHTML = `<div class="error">${data.error}</div>`;
+                    return;
+                }
+
+                if (data.results.length === 0) {
+                    resultsDiv.innerHTML = '<div class="no-results">未找到符合条件的配件</div>';
+                    return;
+                }
+
+                resultsDiv.innerHTML = data.results.map(item => `
+                    <div class="post">
+                        <div class="title">${item.title}</div>
+                        <div class="info">
+                            <span>参考价: ¥${item.reference_price}</span>
+                            <span>京东价: ¥${item.jd_price}</span>
+                        </div>
+                    </div>
+                `).join('');
+            })
+            .catch(error => {
+                resultsDiv.innerHTML = `<div class="error">搜索出错: ${error.message}</div>`;
+            });
+    }
+};
+
 
 document.addEventListener('DOMContentLoaded', () => {
     App.init();

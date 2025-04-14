@@ -8,22 +8,6 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}?v={% now 'U' %}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
-    <style>
-        .loading-spinner {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            border: 2px solid rgba(0,0,0,0.1);
-            border-radius: 50%;
-            border-top-color: #3498db;
-            animation: spin 1s ease-in-out infinite;
-            vertical-align: middle;
-            margin-right: 8px;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-    </style>
 </head>
 <body>
     <div class="sidebar">

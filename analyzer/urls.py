@@ -10,4 +10,7 @@ urlpatterns = [
     path('api/detail/<str:component_type>/<int:id>/', views.detail, name='detail'),
     path('api/price_stats/', views.price_stats, name='price_stats'),
     path('api/average_price_trend/', views.average_price_trend, name='average_price_trend'),
+    path('api/generate_configuration/', views.generate_configuration, name='generate_configuration'),
+    # path('api/get_components_by_price/', views.get_components_by_price, name='get_components_by_price'),
+
 ]

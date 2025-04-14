@@ -1,19 +1,19 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import JsonResponse
+from django.shortcuts import render
 from django.views.decorators.http import require_GET
 from django.core.paginator import Paginator
 from django.core.cache import cache
-from django.db.models import Q, Count, Avg, StdDev
+from django.db.models import Q, Avg, StdDev
 from django.db.models.functions import TruncDate
 from django.utils import timezone
 from datetime import timedelta
 import statistics
 import math
 import re
-import logging
-from django.db.models import Case, When, Value, IntegerField
-from . import models
+from django.db.models import IntegerField
 from .models import RAM, GPU, CPU, Motherboard, SSD, Cooler, PowerSupply, Chassis, PriceHistory
+from django.db.models import F, FloatField, Case, When, Value
+from django.http import JsonResponse
+import logging
 
 # 设置日志
 logger = logging.getLogger(__name__)
@@ -280,3 +280,71 @@ def average_price_trend(request):
     except Exception as e:
         logger.error(f"Error in average_price_trend: {str(e)}")
         return JsonResponse({'error': str(e)}, status=500)
+
+
+
+logger = logging.getLogger(__name__)
+
+
+from django.http import JsonResponse
+
+@require_GET
+def generate_configuration(request):
+    try:
+        # 获取用户输入
+        budget = float(request.GET.get('budget', 5000))
+        usage = request.GET.get('usage', 'general')  # 默认用途为通用
+        brand_preference = request.GET.get('brand_preference', '').lower()  # 品牌偏好
+
+        # 配件预算比例（可根据用途调整）
+        component_weights = {
+            'cpu': 0.3,
+            'gpu': 0.3,
+            'ram': 0.1,
+            'motherboard': 0.1,
+            'ssd': 0.1,
+            'power_supply': 0.05,
+            'case': 0.05,
+            'cooler': 0.05
+        }
+
+        # 计算每种配件的预算
+        component_budgets = {k: v * budget for k, v in component_weights.items()}
+
+        # 初始化配置单
+        configuration = []
+        total_price = 0
+
+        # 定义每种配件的选择逻辑
+        for component, comp_budget in component_budgets.items():
+            model = COMPONENT_MODELS[component]
+            queryset = model.objects.filter(reference_price__lte=comp_budget).order_by('reference_price')
+
+            # 品牌过滤
+            if brand_preference:
+                queryset = queryset.filter(title__icontains=brand_preference)
+
+            # 获取最优配件
+            selected = queryset.first()
+            if selected:
+                configuration.append({
+                    'type': component,
+                    'title': selected.title,
+                    'price': float(selected.reference_price),
+                })
+                total_price += selected.reference_price
+
+        # 检查总价是否超出预算
+        if total_price > budget:
+            return JsonResponse({'error': '无法在预算内生成配置单，请增加预算或减少需求'}, status=400)
+
+        return JsonResponse({
+            'configuration': configuration,
+            'total_price': float(total_price),
+            'budget': budget,
+            'status': 'success'
+        })
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
+
+
