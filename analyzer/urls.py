@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import favorite_delete, favorite
 
 app_name = 'analyzer'
 
@@ -11,6 +12,9 @@ urlpatterns = [
     path('api/price_stats/', views.price_stats, name='price_stats'),
     path('api/average_price_trend/', views.average_price_trend, name='average_price_trend'),
     path('api/generate_configuration/', views.generate_configuration, name='generate_configuration'),
-    # path('api/get_components_by_price/', views.get_components_by_price, name='get_components_by_price'),
+    path('api/favorite/', favorite, name='favorite'),
+    path('api/favorite/', favorite_delete, name='favorite_delete'),
+    path('api/favorite/delete/', favorite_delete, name='favorite_delete'),
+
 
 ]

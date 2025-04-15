@@ -1,7 +1,46 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<h2>Profile Page</h2>
-<p>Welcome, {{ user.username }}!</p>
-<a href="{% url 'logout' %}">Logout</a>
-{% endblock %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人资料</title>
+    <link rel="stylesheet" href="{% static 'analyzer/css/styles.css' %}">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <span>硬件分析</span>
+        </div>
+        <a href="{% url 'index' %}">
+            <span class="icon">🔍</span>搜索配件
+        </a>
+        <a href="{% url 'index' %}">
+            <span class="icon">📊</span>价格分析
+        </a>
+        <a href="{% url 'index' %}">
+            <span class="icon">⚙️</span>配置推荐
+        </a>
+        {% if user.is_authenticated %}
+        <div class="user-profile">
+            <img src="{% if user.avatar %}{{ user.avatar.url }}{% else %}{% static 'analyzer/images/default_avatar.png' %}{% endif %}" alt="用户头像" class="user-avatar">
+            <span class="user-name">{{ user.username }}</span>
+        </div>
+        {% endif %}
+    </div>
+    <div class="main">
+        <h2>个人资料</h2>
+        <div class="config-card">
+            <div class="config-header">
+                <span class="config-title">用户信息</span>
+            </div>
+            <p>用户名: {{ user.username }}</p>
+            {% if user.avatar %}
+            <img src="{{ user.avatar.url }}" alt="头像" class="user-avatar">
+            {% else %}
+            <p>未设置头像</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

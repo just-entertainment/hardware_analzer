@@ -14,6 +14,13 @@ from .models import RAM, GPU, CPU, Motherboard, SSD, Cooler, PowerSupply, Chassi
 from django.db.models import F, FloatField, Case, When, Value
 from django.http import JsonResponse
 import logging
+from django.db import models
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.contenttypes.models import ContentType
+from .models import Favorite
+import json
+from django.middleware.csrf import get_token
 
 # 设置日志
 logger = logging.getLogger(__name__)
@@ -31,8 +38,10 @@ COMPONENT_MODELS = {
 }
 
 # 主页视图
+@require_GET
 def index(request):
-    return render(request, 'analyzer/index.html')
+    print(f"User: {request.user}, Authenticated: {request.user.is_authenticated}")
+    return render(request, 'analyzer/index.html', {'user': request.user})
 
 # 搜索视图from django.db.models import Case, When, Value, IntegerField
 #
@@ -89,7 +98,13 @@ def search(request):
                 'type': component_type or 'unknown',
                 'title': item.title,
                 'reference_price': float(item.reference_price) if item.reference_price is not None else '暂无',
-                'jd_price': float(item.jd_price) if item.jd_price is not None else '暂无'
+                'jd_price': float(item.jd_price) if item.jd_price is not None else '暂无',
+                # 检查是否已收藏
+                'is_favorited': request.user.is_authenticated and Favorite.objects.filter(
+                    user=request.user,
+                    content_type=ContentType.objects.get_for_model(model),
+                    object_id=item.id
+                ).exists()
             } for item in page_obj
         ]
 
@@ -99,7 +114,8 @@ def search(request):
             'pages': paginator.num_pages,
             'current_page': page_obj.number,
             'has_next': page_obj.has_next(),
-            'has_previous': page_obj.has_previous()
+            'has_previous': page_obj.has_previous(),
+            'csrf_token': get_token(request)
         })
     except ValueError as ve:
         logger.error(f"Search error: {str(ve)}", exc_info=True)
@@ -348,3 +364,30 @@ def generate_configuration(request):
         return JsonResponse({'error': str(e)}, status=500)
 
 
+
+
+@csrf_exempt
+def favorite(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({'error': '请登录'}, status=401)
+    data = json.loads(request.body)
+    content_type = ContentType.objects.get(model=data['type'])
+    Favorite.objects.get_or_create(
+        user=request.user,
+        content_type=content_type,
+        object_id=data['id']
+    )
+    return JsonResponse({'status': 'success'})
+
+@csrf_exempt
+def favorite_delete(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({'error': '请登录'}, status=401)
+    data = json.loads(request.body)
+    content_type = ContentType.objects.get(model=data['type'])
+    Favorite.objects.filter(
+        user=request.user,
+        content_type=content_type,
+        object_id=data['id']
+    ).delete()
+    return JsonResponse({'status': 'success'})

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>配件分析</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v={% now 'U' %}">
+    <link rel="stylesheet" href="{% static 'analyzer/css/styles.css' %}?v={% now 'U' %}">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 </head>
@@ -23,8 +23,13 @@
         <a href="#" onclick="Navigation.showSection('config')">
             <span class="icon">⚙️</span> 配置单
         </a>
+        {% if user.is_authenticated %}
+        <div class="user-profile">
+            <img src="{% if user.avatar %}{{ user.avatar.url }}{% else %}{% static 'analyzer/images/default.png' %}{% endif %}" alt="用户头像" class="user-avatar">
+            <span class="user-name">{{ user.username }}</span>
+        </div>
+        {% endif %}
     </div>
-
     <div id="detailModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">×</span>
@@ -47,6 +52,7 @@
                         <h3>京东链接</h3>
                         <a id="detailJDLink" href="" target="_blank" style="display:none;">点击这里查看</a>
                     </div>
+                    <button id="favoriteBtn" class="generate-btn" onclick="toggleFavorite()">收藏</button>
                 </div>
             </div>
             <div id="modalError" class="error" style="display:none;"></div>
@@ -122,6 +128,6 @@
         </div>
     </main>
 
-    <script src="{% static 'js/script.js' %}?v={% now 'U' %}"></script>
+    <script src="{% static 'analyzer/js/script.js' %}?v={% now 'U' %}"></script>
 </body>
 </html>

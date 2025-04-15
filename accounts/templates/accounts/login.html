@@ -1,46 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>登录 - 配件分析</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'accounts/css/styles.css' %}">
+    <title>登录</title>
+    <link rel="stylesheet" href="{% static 'analyzer/css/styles.css' %}">
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-box">
-            <div class="logo">
-                <span class="logo-icon">🖥️</span> 配件分析
+    <div class="main">
+        <h2>登录</h2>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+        <form method="post" class="config-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>用户名:</label>
+                <input type="text" name="username" required>
             </div>
-            <h1>登录</h1>
-
-            {% if messages %}
-            <div class="message">
-                {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-                {% endfor %}
+            <div class="form-group">
+                <label>密码:</label>
+                <input type="password" name="password" required>
             </div>
-            {% endif %}
-
-            <form method="post">
-                {% csrf_token %}
-                <div class="input-group">
-                    <input type="text" name="username" autofocus autocapitalize="none"
-                           autocomplete="username" maxlength="150" required
-                           id="id_username" placeholder="用户名">
-                </div>
-                <div class="input-group">
-                    <input type="password" name="password"
-                           autocomplete="current-password" required
-                           id="id_password" placeholder="密码">
-                </div>
-                <button type="submit">登录</button>
-            </form>
-            <p class="signup-link">
-                还没有账号？ <a href="{% url 'register' %}">注册</a>
-            </p>
-        </div>
+            <button type="submit" class="generate-btn">登录</button>
+        </form>
     </div>
 </body>
 </html>
