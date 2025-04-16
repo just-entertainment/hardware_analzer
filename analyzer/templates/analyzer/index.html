@@ -6,8 +6,6 @@
     <title>配件分析</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'analyzer/css/styles.css' %}?v={% now 'U' %}">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 </head>
 <body>
     <div class="sidebar">
@@ -23,6 +21,9 @@
         <a href="#" onclick="Navigation.showSection('config')">
             <span class="icon">⚙️</span> 配置单
         </a>
+        <a href="#" onclick="Navigation.showSection('favorites')">
+            <span class="icon">⭐</span> 我的收藏
+        </a>
         {% if user.is_authenticated %}
         <div class="user-profile">
             <img src="{% if user.avatar %}{{ user.avatar.url }}{% else %}{% static 'analyzer/images/default.png' %}{% endif %}" alt="用户头像" class="user-avatar">
@@ -30,32 +31,13 @@
         </div>
         {% endif %}
     </div>
+
+    <!-- 详情弹窗 -->
     <div id="detailModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()">×</span>
-            <div id="modalLoading" class="loading"><div class="loading-spinner"></div>加载中...</div>
-            <div id="modalContent" style="display:none;">
-                <div class="modal-header">
-                    <h2 id="detailTitle"></h2>
-                    <div class="price-info">
-                        <span>参考价: ¥<span id="detailRefPrice"></span></span>
-                        <span>京东价: ¥<span id="detailJDPrice"></span></span>
-                    </div>
-                </div>
-                <div class="modal-body">
-                    <img id="detailImage" src="" class="product-image" alt="产品图片">
-                    <div class="specs-section">
-                        <h3>详细参数</h3>
-                        <ul id="detailSpecs" class="specs-list"></ul>
-                    </div>
-                    <div class="jd-link-section">
-                        <h3>京东链接</h3>
-                        <a id="detailJDLink" href="" target="_blank" style="display:none;">点击这里查看</a>
-                    </div>
-                    <button id="favoriteBtn" class="generate-btn" onclick="toggleFavorite()">收藏</button>
-                </div>
-            </div>
-            <div id="modalError" class="error" style="display:none;"></div>
+            <span class="close-btn" onclick="Detail.close()">×</span>
+            <h2 id="detailTitle"></h2>
+            <div id="detailContent"></div>
         </div>
     </div>
 
@@ -93,9 +75,7 @@
 
         <div class="section" id="price">
             <h2>配件价格分析</h2>
-            <div class="viz-controls">
-                <!-- 动态控件由 JS 填充 -->
-            </div>
+            <div class="viz-controls"></div>
             <div class="chart-container">
                 <div class="chart">
                     <canvas id="priceDistributionChart"></canvas>
@@ -126,8 +106,17 @@
                 <div id="configResults" class="config-results"></div>
             </div>
         </div>
+
+        <section id="favorites" class="section">
+            <h2>我的收藏</h2>
+            <div id="favoritesResult" class="favorites-list">
+                <div class="loading-spinner"></div>
+            </div>
+        </section>
     </main>
 
+    <!-- 脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="{% static 'analyzer/js/script.js' %}?v={% now 'U' %}"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-/* analyzer/static/analyzer/css/styles.css */
+/* 全局重置 */
 * {
     margin: 0;
     padding: 0;
@@ -6,202 +6,252 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* 页面基础样式 */
 body {
-    background-color: #fff;
-    color: #000;
+    background-color: #f7f9fa;
+    color: #0f1419;
     line-height: 1.5;
     display: flex;
     min-height: 100vh;
 }
 
+/* 侧边栏 */
 .sidebar {
     width: 280px;
     height: 100vh;
     position: fixed;
     background-color: #fff;
-    padding: 16px 0;
+    padding: 20px 0;
     display: flex;
     flex-direction: column;
-    border-right: 1px solid #e6ecf0;
+    border-right: 1px solid #e1e8ed;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+/* Logo 区域 */
 .sidebar .logo {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 900;
-    padding: 12px 16px;
+    padding: 16px 20px;
     display: flex;
     align-items: center;
     gap: 12px;
-    color: #000;
+    color: #0f1419;
 }
 
+/* 导航链接 */
 .sidebar a {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px 16px;
-    color: #000;
+    padding: 12px 20px;
+    color: #0f1419;
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
     border-radius: 9999px;
-    margin: 4px 12px;
+    margin: 6px 12px;
     transition: background-color 0.2s;
 }
 
+/* 导航悬停和选中 */
 .sidebar a:hover, .sidebar a.active {
-    background-color: #e6ecf0;
-    color: #000;
+    background-color: #e8f0fe;
+    color: #1DA1F2;
 }
 
+/* 导航图标 */
 .sidebar .icon {
     font-size: 22px;
     width: 24px;
     text-align: center;
 }
 
+/* 用户区域 */
 .user-profile {
     margin-top: auto;
     display: flex;
     align-items: center;
-    padding: 12px 16px;
-    margin: 4px 12px;
+    padding: 12px 20px;
+    margin: 6px 12px;
     border-radius: 9999px;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
+/* 用户区域悬停 */
 .user-profile:hover {
-    background-color: #e6ecf0;
+    background-color: #e8f0fe;
 }
 
+/* 用户头像 */
 .user-avatar {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     margin-right: 12px;
     object-fit: cover;
+    border: 2px solid #e1e8ed;
 }
 
+/* 用户名 */
 .user-name {
-    color: #000;
+    color: #0f1419;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
+/* 主内容区 */
 .main {
     margin-left: 280px;
     flex: 1;
-    padding: 20px;
-    max-width: 1200px;
+    padding: 24px;
+    max-width: 1240px;
 }
 
+/* 隐藏非活跃区域 */
 .section {
     display: none;
 }
 
+/* 显示活跃区域 */
 .section.active {
     display: block;
 }
 
+/* 区域标题 */
 .section h2 {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 800;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     padding-bottom: 12px;
-    border-bottom: 1px solid #e6ecf0;
-    color: #000;
+    border-bottom: 1px solid #e1e8ed;
+    color: #0f1419;
 }
 
+/* 搜索栏 */
 .search-bar {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
-}
-
-.search-bar input, .search-bar select {
-    padding: 12px 16px;
-    border: 1px solid #e6ecf0;
-    border-radius: 9999px;
-    font-size: 15px;
-    background-color: #f5f8fa;
-    outline: none;
-    color: #000;
-    flex: 1;
-    min-width: 150px;
-    transition: border-color 0.2s, background-color 0.2s;
-}
-
-.search-bar input:focus, .search-bar select:focus {
-    border-color: #1DA1F2;
-    background-color: #fff;
-}
-
-.search-bar button {
-    padding: 12px 24px;
-    background-color: #1DA1F2;
-    color: #fff;
-    border: none;
-    border-radius: 9999px;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.search-bar button:hover {
-    background-color: #1991db;
-}
-
-.sort-control select {
-    padding: 10px 16px;
-    border: 1px solid #e6ecf0;
-    border-radius: 9999px;
-    background-color: #f5f8fa;
-    font-size: 15px;
-}
-
-.post {
-    padding: 16px;
-    border-bottom: 1px solid #e6ecf0;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.post:hover {
-    background-color: #f5f8fa;
-}
-
-.post .title {
-    font-weight: 700;
-    font-size: 16px;
-    color: #000;
-    margin-bottom: 8px;
-}
-
-.post .info {
-    color: #657786;
-    font-size: 14px;
-    display: flex;
-    gap: 16px;
-}
-
-.result {
-    margin-top: 16px;
-    font-size: 14px;
-    color: #000;
-}
-
-.pagination {
-    margin-top: 20px;
-    display: flex;
-    gap: 12px;
     align-items: center;
 }
 
-.pagination button {
+/* 搜索输入框和下拉框 */
+.search-bar input, .search-bar select {
+    padding: 12px 20px;
+    border: 1px solid #e1e8ed;
+    border-radius: 9999px;
+    font-size: 15px;
+    background-color: #fff;
+    outline: none;
+    color: #0f1419;
+    flex: 1;
+    min-width: 160px;
+    transition: border-color 0.2s;
+}
+
+/* 搜索框聚焦 */
+.search-bar input:focus, .search-bar select:focus {
+    border-color: #1DA1F2;
+}
+
+/* 搜索按钮 */
+.search-bar button {
+    padding: 12px 28px;
+    background-color: #1DA1F2;
+    color: #fff;
+    border: none;
+    border-radius: 9999px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* 搜索按钮悬停 */
+.search-bar button:hover {
+    background-color: #0a85c2;
+}
+
+/* 排序下拉框 */
+.sort-control select {
+    padding: 10px 20px;
+    border: 1px solid #e1e8ed;
+    border-radius: 9999px;
+    background-color: #fff;
+    font-size: 15px;
+}
+
+/* 搜索结果卡片 */
+.post {
+    padding: 16px;
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s; /* 简化动画 */
+}
+
+/* 搜索卡片悬停 */
+.post:hover {
+    background-color: #f7f9fa;
+}
+
+/* 卡片标题 */
+.post .title {
+    font-weight: 700;
+    font-size: 17px;
+    color: #0f1419;
+    margin-bottom: 10px;
+}
+
+/* 卡片信息 */
+.post .info {
+    color: #536471;
+    font-size: 14px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* 收藏按钮 */
+.favorite-btn {
     padding: 8px 16px;
+    background-color: #fff;
+    border: 1px solid #1DA1F2;
+    border-radius: 9999px;
+    color: #1DA1F2;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* 收藏按钮悬停 */
+.favorite-btn:hover {
+    background-color: #e8f0fe;
+}
+
+/* 已收藏状态 */
+.favorite-btn.favorited {
+    background-color: #1DA1F2;
+    color: #fff;
+}
+
+/* 分页 */
+.pagination {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 分页按钮 */
+.pagination button {
+    padding: 10px 20px;
     background-color: #1DA1F2;
     color: #fff;
     border: none;
@@ -211,15 +261,82 @@ body {
     transition: background-color 0.2s;
 }
 
+/* 分页按钮悬停 */
 .pagination button:hover {
-    background-color: #1991db;
+    background-color: #0a85c2;
 }
 
+/* 分页信息 */
 .pagination span {
     font-size: 14px;
-    color: #657786;
+    color: #536471;
 }
 
+/* 收藏列表容器 */
+.favorites-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 0;
+}
+
+/* 收藏项 */
+.favorite-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s; /* 简化动画 */
+    position: relative; /* 确保子元素不干扰点击 */
+}
+
+/* 收藏项悬停 */
+.favorite-item:hover {
+    background-color: #f7f9fa;
+}
+
+/* 收藏标题 */
+.favorite-item .title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #0f1419;
+    pointer-events: none; /* 防止拦截点击 */
+}
+
+/* 收藏信息 */
+.favorite-item .info {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    color: #536471;
+    flex-wrap: wrap;
+    pointer-events: none; /* 防止拦截点击 */
+}
+
+/* 删除按钮 */
+.favorite-item .delete-btn {
+    padding: 8px 16px;
+    background-color: #fff;
+    border: 1px solid #ff4d4f;
+    border-radius: 9999px;
+    color: #ff4d4f;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    z-index: 1; /* 确保可点击 */
+}
+
+/* 删除按钮悬停 */
+.favorite-item .delete-btn:hover {
+    background-color: #ffe6e6;
+}
+
+/* 详情弹窗 */
 .modal {
     display: none;
     position: fixed;
@@ -227,213 +344,255 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 1000;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+/* 弹窗显示状态 */
+.modal.active {
+    display: flex;
 }
 
+/* 弹窗内容 */
 .modal-content {
     background-color: #fff;
-    padding: 24px;
+    padding: 28px;
     width: 90%;
-    max-width: 600px;
+    max-width: 640px;
+    max-height: 80vh; /* 限制高度，防止溢出 */
     border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* 内容多时可滚动 */
     position: relative;
+    margin: auto; /* 增强居中 */
+}
+/* 关闭按钮 */
+.close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 26px;
+    cursor: pointer;
+    color: #536471;
+    transition: color 0.2s;
 }
 
-.modal-header {
-    padding-bottom: 16px;
-    margin-bottom: 16px;
-    border-bottom: 1px solid #e6ecf0;
+/* 关闭按钮悬停 */
+.close-btn:hover {
+    color: #0f1419;
 }
 
+/* 产品图片 */
 .product-image {
     width: 100%;
     max-width: 400px;
     border-radius: 12px;
-    margin-bottom: 20px;
+    margin: 16px 0;
+    object-fit: cover;
 }
 
+/* 参数列表 */
 .specs-list {
     list-style: none;
     padding: 0;
     column-count: 2;
     column-gap: 24px;
+    margin: 16px 0;
 }
 
+/* 参数项 */
 .specs-list li {
-    padding: 8px 0;
-    border-bottom: 1px solid #f5f8fa;
+    padding: 10px 0;
+    border-bottom: 1px solid #e1e8ed;
     break-inside: avoid;
     font-size: 14px;
-    color: #000;
+    color: #0f1419;
 }
 
+/* 价格信息 */
 .price-info {
     display: flex;
     gap: 24px;
     margin: 16px 0;
     font-size: 15px;
-    color: #000;
+    color: #0f1419;
 }
 
-.close {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #657786;
-}
-
-.close:hover {
-    color: #000;
-}
-
-.modal-body {
-    max-height: 60vh;
-    overflow-y: auto;
-}
-
+/* 加载和错误提示 */
 .loading, .error, .chart-error {
     padding: 20px;
     text-align: center;
-    color: #657786;
+    color: #536471;
+    font-size: 15px;
+}
+/* 加载动画 */
+.loading-spinner {
+    text-align: center;
+    padding: 20px;
+    color: #536471;
     font-size: 15px;
 }
 
+/* 错误提示 */
+.error {
+    color: #dc3545;
+    text-align: center;
+    padding: 20px;
+    font-size: 15px;
+}
+
+/* 错误提示 */
 .error, .chart-error {
     color: #dc3545;
     background-color: #fff;
     border-radius: 8px;
 }
 
+/* 配置表单 */
 .config-form {
-    background-color: #f5f8fa;
-    padding: 20px;
+    background-color: #fff;
+    padding: 24px;
     border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 表单组 */
+.form-group {
     margin-bottom: 20px;
 }
 
-.form-group {
-    margin-bottom: 16px;
-}
-
+/* 表单标签 */
 .form-group label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
     font-size: 15px;
-    color: #000;
+    color: #0f1419;
 }
 
+/* 表单输入框 */
 .form-group input, .form-group select {
-    padding: 10px 16px;
+    padding: 12px 20px;
     width: 100%;
-    max-width: 200px;
-    border: 1px solid #e6ecf0;
+    max-width: 240px;
+    border: 1px solid #e1e8ed;
     border-radius: 9999px;
     font-size: 15px;
     background-color: #fff;
-    color: #000;
+    color: #0f1419;
     outline: none;
+    transition: border-color 0.2s;
 }
 
+/* 表单聚焦 */
 .form-group input:focus, .form-group select:focus {
     border-color: #1DA1F2;
 }
 
+/* 生成按钮 */
 .generate-btn {
     background-color: #1DA1F2;
     color: #fff;
-    padding: 12px 24px;
+    padding: 12px 28px;
     border: none;
     border-radius: 9999px;
     font-size: 15px;
     font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s;
+    transition: background-color 0.2s;
 }
 
+/* 生成按钮悬停 */
 .generate-btn:hover {
-    background-color: #1991db;
-    transform: translateY(-1px);
+    background-color: #0a85c2;
 }
 
+/* 配置结果 */
 .config-results {
     margin-top: 24px;
 }
 
+/* 配置卡片 */
 .config-card {
     background-color: #fff;
     border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* 配置头部 */
 .config-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     padding-bottom: 12px;
-    border-bottom: 1px solid #e6ecf0;
+    border-bottom: 1px solid #e1e8ed;
 }
 
+/* 配置标题 */
 .config-title {
     font-weight: 700;
-    font-size: 18px;
-    color: #000;
+    font-size: 19px;
+    color: #0f1419;
 }
 
+/* 配置价格 */
 .config-price {
     color: #e53935;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 17px;
 }
 
+/* 配置项列表 */
 .config-items {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 16px;
 }
 
+/* 配置项 */
 .config-item {
-    padding: 12px;
+    padding: 16px;
     border-radius: 8px;
-    background-color: #f5f8fa;
+    background-color: #f7f9fa;
 }
 
+/* 配置项名称 */
 .item-name {
     font-weight: 600;
     font-size: 15px;
     margin-bottom: 8px;
-    color: #000;
+    color: #0f1419;
 }
 
+/* 配置项价格 */
 .item-price {
-    color: #657786;
+    color: #536471;
     font-size: 14px;
 }
 
+/* 可视化控件 */
 .viz-controls {
     display: flex;
     gap: 12px;
-    margin: 20px 0;
+    margin: 24px 0;
     align-items: center;
 }
 
+/* 可视化选择框和按钮 */
 .viz-controls select, .viz-controls button {
-    padding: 10px 16px;
-    border: 1px solid #e6ecf0;
+    padding: 12px 20px;
+    border: 1px solid #e1e8ed;
     border-radius: 9999px;
-    background-color: #f5f8fa;
+    background-color: #fff;
     font-size: 15px;
-    color: #000;
+    color: #0f1419;
 }
 
+/* 可视化按钮 */
 .viz-controls button {
     background-color: #1DA1F2;
     color: #fff;
@@ -441,26 +600,30 @@ body {
     cursor: pointer;
 }
 
+/* 可视化按钮悬停 */
 .viz-controls button:hover {
-    background-color: #1991db;
+    background-color: #0a85c2;
 }
 
+/* 图表容器 */
 .chart-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 24px;
     margin-bottom: 24px;
 }
 
+/* 图表 */
 .chart {
     position: relative;
-    height: 350px;
+    height: 360px;
     background-color: #fff;
     border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* 图表加载状态 */
 .chart-loading::before {
     content: '';
     position: absolute;
@@ -473,87 +636,170 @@ body {
     border-radius: 12px;
 }
 
+/* 图表加载提示 */
 .chart-loading::after {
     content: '加载中...';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #657786;
+    color: #536471;
     font-size: 15px;
 }
 
+/* 统计摘要 */
 .stats-summary {
     background-color: #fff;
-    padding: 16px;
+    padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 24px;
 }
 
+/* 统计摘要内容 */
 .stats-summary p {
-    margin: 8px 0;
+    margin: 10px 0;
     font-size: 14px;
-    color: #000;
+    color: #0f1419;
 }
 
+/* 响应式：平板 */
 @media (max-width: 768px) {
     .sidebar {
-        width: 220px;
+        width: 240px;
     }
-
     .main {
-        margin-left: 220px;
+        margin-left: 240px;
+        padding: 20px;
     }
-
     .modal-content {
         width: 95%;
-        margin: 10% auto;
+        margin: 15% auto;
     }
-
     .specs-list {
         column-count: 1;
     }
-
     .config-items {
         grid-template-columns: 1fr;
     }
-
     .chart {
-        height: 300px;
+        height: 320px;
+    }
+    .favorite-item .info {
+        gap: 12px;
     }
 }
 
+/* 响应式：手机 */
 @media (max-width: 480px) {
     .sidebar {
         width: 100%;
         height: auto;
         position: relative;
         padding-bottom: 80px;
+        box-shadow: none;
     }
-
     .main {
         margin-left: 0;
         padding: 16px;
     }
-
     .user-profile {
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
         background-color: #fff;
-        border-top: 1px solid #e6ecf0;
+        border-top: 1px solid #e1e8ed;
         border-radius: 0;
         padding: 12px 16px;
         margin: 0;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
     }
-
     .search-bar {
         flex-direction: column;
+        gap: 8px;
     }
-
     .search-bar input, .search-bar select {
         width: 100%;
+        min-width: 0;
     }
+    .post, .favorite-item {
+        padding: 12px;
+        margin-bottom: 8px;
+    }
+    .favorite-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .favorite-item .info {
+        flex-direction: column;
+        gap: 6px;
+    }
+}
+
+/* 暗色模式 */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #15202b;
+        color: #e7e9ea;
+    }
+    .sidebar {
+        background-color: #192734;
+        border-right-color: #38444d;
+    }
+    .sidebar .logo, .sidebar a, .user-name {
+        color: #e7e9ea;
+    }
+    .sidebar a:hover, .sidebar a.active, .user-profile:hover {
+        background-color: #22303c;
+    }
+    .main {
+        background-color: #15202b;
+    }
+    .section h2 {
+        color: #e7e9ea;
+        border-bottom-color: #38444d;
+    }
+    .post, .favorite-item, .config-card, .stats-summary {
+        background-color: #192734;
+        border-color: #38444d;
+        color: #e7e9ea;
+    }
+    .post .info, .favorite-item .info, .item-price {
+        color: #8b98a5;
+    }
+    .modal-content {
+        background-color: #192734;
+        color: #e7e9ea;
+    }
+    .search-bar input, .search-bar select, .form-group input, .form-group select {
+        background-color: #253341;
+        color: #e7e9ea;
+        border-color: #38444d;
+    }
+}
+
+.price-history {
+    margin-top: 24px;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 12px;
+    border: 1px solid #e1e8ed;
+}
+
+/* 历史价格标题 */
+.price-history h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f1419;
+    margin-bottom: 16px;
+}
+
+/* 无数据提示 */
+.no-data {
+    color: #536471;
+    font-size: 14px;
+    text-align: center;
+    padding: 16px;
 }

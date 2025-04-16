@@ -7,26 +7,166 @@ const App = {
         Navigation.showSection('search');
     }
 };
+const Detail = {
+    show(type, id) {
+        const modal = document.getElementById('detailModal');
+        const title = document.getElementById('detailTitle');
+        const content = document.getElementById('detailContent');
 
-const Navigation = {
-    init() {
-        document.querySelectorAll('.sidebar a').forEach(link => {
-            const sectionId = link.getAttribute('onclick').match(/'([^']+)'/)[1];
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.showSection(sectionId);
+        if (!modal || !title || !content) {
+            console.error('弹窗元素缺失:', { modal, title, content });
+            return;
+        }
+
+        modal.classList.add('active');
+        content.innerHTML = '<div class="loading-spinner">加载中...</div>';
+
+        fetch(`/api/detail/${type}/${id}/`)
+            .then(res => {
+                if (!res.ok) throw new Error(`加载失败: ${res.status}`);
+                return res.json();
+            })
+            .then(data => {
+                console.log('API 响应:', data);
+                title.textContent = data.title;
+                content.innerHTML = `
+                    <img src="${data.product_image}" alt="${data.title}" class="product-image">
+                    <div class="price-info">
+                        <span>参考价: ¥${data.reference_price}</span>
+                        <span>京东价: ¥${data.jd_price}</span>
+                    </div>
+                    <p>京东链接: <a href="${data.jd_link || '#'}" target="_blank">${data.jd_link ? '点击购买' : '暂无链接'}</a></p>
+                    <div class="specs-list">
+                        <p>${data.product_parameters.replace(/\n/g, '<br>')}</p>
+                    </div>
+                    <div class="price-history">
+                        <h3>历史价格趋势</h3>
+                        <canvas id="priceChart" height="200"></canvas>
+                    </div>
+                `;
+
+                const priceHistory = data.price_history || [];
+                console.log('价格历史:', priceHistory);
+                if (priceHistory.length > 0) {
+                    const ctx = document.getElementById('priceChart').getContext('2d');
+                    new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: priceHistory.map(item => item.date),
+                            datasets: [{
+                                label: '价格 (¥)',
+                                data: priceHistory.map(item => item.price),
+                                borderColor: '#1DA1F2',
+                                backgroundColor: 'rgba(29, 161, 242, 0.1)',
+                                fill: true,
+                                tension: 0.3,
+                                pointRadius: 4,
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            scales: {
+                                x: {
+                                    title: { display: true, text: '日期' },
+                                    ticks: { maxTicksLimit: 10 }
+                                },
+                                y: {
+                                    title: { display: true, text: '价格 (¥)' },
+                                    beginAtZero: false
+                                }
+                            },
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: {
+                                    callbacks: {
+                                        label: ctx => `¥${ctx.parsed.y.toFixed(2)}`
+                                    }
+                                }
+                            }
+                        }
+                    });
+                } else {
+                    document.querySelector('.price-history').innerHTML = '<p class="no-data">暂无历史价格</p>';
+                }
+            })
+            .catch(err => {
+                console.error('加载详情失败:', err);
+                content.innerHTML = '<div class="error">加载失败，请稍后重试</div>';
             });
-        });
     },
-
-    showSection(sectionId) {
-        document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
-        document.getElementById(sectionId).classList.add('active');
-        document.querySelectorAll('.sidebar a').forEach(link => link.classList.remove('active'));
-        document.querySelector(`.sidebar a[onclick*="${sectionId}"]`).classList.add('active');
-        if (sectionId === 'price') Visualization.loadData();
+    close() {
+        const modal = document.getElementById('detailModal');
+        if (modal) modal.classList.remove('active');
     }
 };
+const Favorites = {
+    load() {
+        const resultDiv = document.getElementById('favoritesResult');
+        if (!resultDiv) {
+            console.error('favoritesResult 元素缺失');
+            return;
+        }
+        resultDiv.innerHTML = '<div class="loading-spinner">加载中...</div>';
+        fetch('/api/favorites/')
+            .then(res => {
+                if (!res.ok) throw new Error('加载失败');
+                return res.json();
+            })
+            .then(data => {
+                if (data.results.length > 0) {
+                    resultDiv.innerHTML = data.results.map(item => `
+                        <div class="favorite-item" data-type="${item.type}" data-id="${item.id}"
+                             onclick="Detail.show('${item.type}', ${item.id})">
+                            <div class="title">${item.title}</div>
+                            <div class="info">
+                                <span>参考价: ¥${item.reference_price}</span>
+                                <span>京东价: ¥${item.jd_price}</span>
+                            </div>
+                            <button class="delete-btn" onclick="Favorites.delete(this, '${item.type}', ${item.id}); event.stopPropagation()">
+                                删除
+                            </button>
+                        </div>
+                    `).join('');
+                } else {
+                    resultDiv.innerHTML = '<div class="no-results">暂无收藏</div>';
+                }
+            })
+            .catch(err => {
+                console.error('加载收藏失败:', err);
+                resultDiv.innerHTML = '<div class="error">加载失败，请稍后重试</div>';
+            });
+    },
+    delete(btn, type, id) {
+        if (confirm('确定删除此收藏？')) {
+            fetch(`/api/favorites/${type}/${id}/`, { method: 'DELETE' })
+                .then(res => {
+                    if (!res.ok) throw new Error('删除失败');
+                    btn.closest('.favorite-item').remove();
+                })
+                .catch(err => {
+                    console.error('删除收藏失败:', err);
+                    alert('删除失败，请稍后重试');
+                });
+        }
+    }
+};
+const Navigation = {
+    showSection(sectionId) {
+        document.querySelectorAll('.section').forEach(section => {
+            section.classList.remove('active');
+        });
+        document.querySelectorAll('.sidebar a').forEach(link => {
+            link.classList.remove('active');
+        });
+        document.getElementById(sectionId).classList.add('active');
+        document.querySelector(`a[onclick*="showSection('${sectionId}')"]`).classList.add('active');
+
+        if (sectionId === 'favorites') {
+            Favorites.load();
+        }
+    }
+};
+
 const Search = {
     currentPage: 1,
     currentType: '',
@@ -217,61 +357,12 @@ const Search = {
 }
 };
 
-const Detail = {
-    show(componentType, id) {
-        const modal = document.getElementById('detailModal');
-        const modalContent = document.getElementById('modalContent');
-        const modalLoading = document.getElementById('modalLoading');
-        const modalError = document.getElementById('modalError');
 
-        modal.style.display = 'block';
-        modalLoading.style.display = 'block';
-        modalContent.style.display = 'none';
-        modalError.style.display = 'none';
+// 详情弹窗模块
+// 确保 DOM 加载完成
+// 详情弹窗模块
 
-        fetch(`/api/detail/${componentType}/${id}/`)
-            .then(response => {
-                if (!response.ok) throw new Error(`HTTP错误! 状态码: ${response.status}`);
-                return response.json();
-            })
-            .then(data => {
-                if (data.error) throw new Error(data.error);
-                document.getElementById('detailTitle').textContent = data.title;
-                document.getElementById('detailRefPrice').textContent = data.reference_price;
-                document.getElementById('detailJDPrice').textContent = data.jd_price;
-                document.getElementById('detailImage').src = data.product_image;
-                const specsList = document.getElementById('detailSpecs');
-                specsList.innerHTML = '';
-                if (data.product_parameters) {
-                    data.product_parameters.split('\n').forEach(param => {
-                        if (param.trim()) {
-                            const li = document.createElement('li');
-                            li.textContent = param;
-                            specsList.appendChild(li);
-                        }
-                    });
-                }
-                const jdLink = document.getElementById('detailJDLink');
-                if (data.jd_link) {
-                    jdLink.href = data.jd_link;
-                    jdLink.style.display = 'inline-block';
-                } else {
-                    jdLink.style.display = 'none';
-                }
-                modalLoading.style.display = 'none';
-                modalContent.style.display = 'block';
-            })
-            .catch(error => {
-                modalLoading.style.display = 'none';
-                modalError.textContent = `加载失败: ${error.message}`;
-                modalError.style.display = 'block';
-            });
-    },
 
-    close() {
-        document.getElementById('detailModal').style.display = 'none';
-    }
-};
 
 
 const Config = {
@@ -681,6 +772,7 @@ function toggleFavorite() {
         btn.classList.toggle('favorited');
     });
 }
+// 收藏列表模块
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -691,6 +783,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// 暴露全局对象
+window.Navigation = Navigation;
+window.Search = Search;
+window.Favorites = Favorites;
+window.Detail = Detail;
+window.generateConfig = generateConfig;
 window.showDetail = Detail.show;
 window.closeModal = Detail.close;
 window.generateConfig = Config.generateConfig;
+
+document.addEventListener('DOMContentLoaded', () => {
+    const favoritesSection = document.getElementById('favorites');
+    if (favoritesSection && favoritesSection.classList.contains('active')) {
+        Favorites.load();
+    }
+});

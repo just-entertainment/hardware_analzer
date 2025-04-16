@@ -2,24 +2,19 @@ from DrissionPage import ChromiumPage
 from DrissionPage.common import Keys
 import csv
 import time
+import os
 
 dp = ChromiumPage()
-# dp.get(""
-#        "https://detail.zol.com.cn/solid_state_drive/good.html"
-#        "")
-# #
-# # for size in sizes:
-# dp.scroll.to_bottom()
-# while(1):
-#     # goods = dp.ele("@id=J_PicMode").eles("@@tag:li@!class=pic-mode-ads")
-#     goods = dp.ele("@id=J_PicMode").eles("tag:li@!class=pic-mode-ads")
-#     for good in goods:
-#         good_link=good.ele('tag:h3').ele('tag:a')
-tab = dp.new_tab('https://detail.zol.com.cn/vga/index1309963.shtml')
-good_x=tab.ele("@id=proParamSection").ele('@class=section-content').ele('@class=clearfix').text
-# image=tab.ele('@class=item 0').ele('tag:a').ele('tag:img').attr('src')
-# text=tab.ele('@class=product-param-item pi-5 clearfix').text
-print(good_x)
-# print(text)
-#
-# tab.close()
+# JD=dp.new_tab('https://item.jd.com/100120799071.html')
+# shop_name=JD.ele('@class=crumb-wrap').ele('@class=w').ele('@class=contact fr clearfix shieldShopInfo').ele('@class=item').text
+# comment_count=JD.ele('@id=comment-count').ele('tag:a').text
+# print(comment_count)
+hp=dp.new_tab('https://www.hisprice.cn/')
+hp.ele('@class=search d1').ele('@id=kValId').input('https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100145512952.html')
+hp.actions.type('\n')  # 模拟按 Enter 键
+time.sleep(5)
+history_items = hp.ele('@id=youhuiUl').eles('tag:li')
+for history in history_items:
+    history_price = history.ele('@class=time').text
+    history_date = history.ele('@class=sinfo').text
+    print(history_price)

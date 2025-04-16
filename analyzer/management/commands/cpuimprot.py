@@ -16,17 +16,11 @@ if __name__ == "__main__":
     # 现在可以正常导入模型和命令
     from analyzer.models import Motherboard
 
-    # 定义CSV路径（三种指定方式任选其一）
 
     # 方式1：硬编码绝对路径
     csv_path = '../../../spider/clearcsv/motherborad01.csv'
 
-    # 方式2：相对于本脚本的路径
-    # csv_path = os.path.join(os.path.dirname(__file__), "data", "motherboards.csv")
 
-    # 方式3：使用Django的BASE_DIR
-    # from django.conf import settings
-    # csv_path = os.path.join(settings.BASE_DIR, "data", "motherboards.csv")
 
     # 验证路径
     if not os.path.exists(csv_path):

@@ -10,9 +10,8 @@ import statistics
 import math
 import re
 from django.db.models import IntegerField
-from .models import RAM, GPU, CPU, Motherboard, SSD, Cooler, PowerSupply, Chassis, PriceHistory
+from .models import RAM, GPU, CPU, Motherboard, SSD, Cooler, PowerSupply, Chassis, PriceHistory, CPUPriceHistory
 from django.db.models import F, FloatField, Case, When, Value
-from django.http import JsonResponse
 import logging
 from django.db import models
 from django.http import JsonResponse
@@ -163,29 +162,40 @@ def get_cpu_series(request):
 
 @require_GET
 def detail(request, component_type, id):
+    """获取 CPU 详情，包含历史价格"""
     try:
-        model = COMPONENT_MODELS.get(component_type)
-        if not model:
-            logger.error(f"Invalid component type: {component_type}")
-            return JsonResponse({'error': f'无效的配件类型: {component_type}'}, status=400)
+        if component_type != 'cpu':
+            return JsonResponse({'error': '暂不支持该类型'}, status=400)
 
-        item = model.objects.get(id=id)
+        item = CPU.objects.filter(id=id).first()
+        if not item:
+            return JsonResponse({'error': '配件不存在'}, status=404)
+
+        price_history = CPUPriceHistory.objects.filter(
+            cpu=item,
+            date__gte=timezone.now().date() - timedelta(days=90)
+        ).order_by('date')
+
+        logger.info(f"Price history for CPU {id}: {price_history.count()} records")
+
         data = {
             'title': item.title,
             'reference_price': float(item.reference_price) if item.reference_price is not None else '暂无',
             'jd_price': float(item.jd_price) if item.jd_price is not None else '暂无',
-            'jd_link': item.jd_link,
+            'jd_link': item.jd_link or '',
             'product_image': item.product_image,
-            'product_parameters': item.product_parameters or ''
+            'product_parameters': item.product_parameters or '',
+            'price_history': [
+                {
+                    'date': item.date.strftime('%Y-%m-%d'),
+                    'price': float(item.price)
+                } for item in price_history
+            ]
         }
         return JsonResponse(data)
-
-    except model.ObjectDoesNotExist:
-        logger.error(f"Component not found: {component_type} ID {id}")
-        return JsonResponse({'error': f'未找到配件: {component_type} ID {id}'}, status=404)
     except Exception as e:
-        logger.error(f"Detail error for {component_type} {id}: {str(e)}", exc_info=True)
-        return JsonResponse({'error': f'服务器错误: {str(e)}'}, status=500)
+        logger.error(f"Detail error for {component_type}/{id}: {str(e)}")
+        return JsonResponse({'error': str(e)}, status=500)
 # 价格统计视图
 @require_GET
 def price_stats(request):
@@ -365,7 +375,7 @@ def generate_configuration(request):
 
 
 
-
+# 收藏
 @csrf_exempt
 def favorite(request):
     if not request.user.is_authenticated:
@@ -391,3 +401,36 @@ def favorite_delete(request):
         object_id=data['id']
     ).delete()
     return JsonResponse({'status': 'success'})
+
+
+
+@require_GET
+def favorites_list(request):
+    """获取用户收藏列表"""
+    if not request.user.is_authenticated:
+        return JsonResponse({'error': '请登录'}, status=401)
+    try:
+        # 查询用户收藏
+        favorites = Favorite.objects.filter(user=request.user).select_related('content_type')
+        results = []
+        for fav in favorites:
+            # 获取硬件对象
+            model = ContentType.objects.get(id=fav.content_type_id).model_class()
+            item = model.objects.filter(id=fav.object_id).first()
+            if item:
+                results.append({
+                    'id': item.id,
+                    'type': fav.content_type.model,
+                    'title': item.title,
+                    'reference_price': float(item.reference_price) if item.reference_price else '暂无',
+                    'jd_price': float(item.jd_price) if item.jd_price else '暂无'
+                })
+        # 返回结果
+        return JsonResponse({
+            'results': results,
+            'total': len(results),
+            'csrf_token': get_token(request)
+        })
+    except Exception as e:
+        logger.error(f"Favorites list error: {str(e)}")
+        return JsonResponse({'error': str(e)}, status=500)

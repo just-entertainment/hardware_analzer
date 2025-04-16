@@ -1,5 +1,6 @@
 from django.db import models
-
+from django.db import models
+from django.core.validators import MinValueValidator
 
 class Motherboard(models.Model):
     title = models.CharField(max_length=255, verbose_name='标题')
@@ -18,6 +19,9 @@ class Motherboard(models.Model):
     dimensions = models.CharField(max_length=100, verbose_name='外形尺寸', blank=True, null=True)
     power_connector = models.CharField(max_length=100, verbose_name='电源插口', blank=True, null=True)
     power_phase = models.CharField(max_length=50, verbose_name='供电模式', blank=True, null=True)
+    # 新添加的字段
+    jd_store = models.CharField(max_length=100, null=True, blank=True, verbose_name='京东店铺')
+    comment_count = models.CharField(max_length=50, null=True, blank=True, verbose_name='评论数')
 
     class Meta:
         verbose_name = '主板'
@@ -28,8 +32,14 @@ class Motherboard(models.Model):
         return self.title
 
 
-
 class CPU(models.Model):
+    product_id = models.CharField(
+        max_length=50,
+        unique=True,
+        verbose_name='产品ID',
+        help_text='从京东URL提取的SKU或自定义唯一ID'
+    )
+
     title = models.CharField(max_length=255, verbose_name='标题')
     reference_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00, verbose_name='参考价')
     jd_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, verbose_name='京东价')
@@ -51,14 +61,51 @@ class CPU(models.Model):
     turbo_boost_frequency = models.CharField(max_length=100, null=True, blank=True, verbose_name='动态加速频率')
     package_size = models.CharField(max_length=100, null=True, blank=True, verbose_name='封装大小')
 
+    # 新添加的字段
+    jd_store = models.CharField(max_length=100, null=True, blank=True, verbose_name='京东店铺')
+    comment_count = models.CharField(max_length=50, null=True, blank=True, verbose_name='评论数')
+
     class Meta:
         verbose_name = 'CPU'
         verbose_name_plural = 'CPU'
         db_table = 'cpus'
 
     def __str__(self):
-        return self.title
+        return f"{self.title} (ID: {self.product_id})"
 
+
+
+class CPUPriceHistory(models.Model):
+    """
+    CPU专属历史价格模型
+    命名规范：<硬件类型>PriceHistory
+    """
+    cpu = models.ForeignKey(
+        CPU,
+        on_delete=models.CASCADE,
+        related_name='price_history',  # 保持反向查询名不变
+        verbose_name='关联CPU'
+    )
+
+    price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        validators=[MinValueValidator(0.01)],
+        verbose_name='价格（元）'
+    )
+
+    date = models.DateField(verbose_name='记录日期')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='入库时间')
+
+    class Meta:
+        verbose_name = 'CPU历史价格'
+        verbose_name_plural = 'CPU历史价格'
+        ordering = ['-date']  # 默认最新价格在前
+        unique_together = ['cpu', 'date']  # 唯一约束
+        db_table = 'cpu_price_history'  # 明确表名
+
+    def __str__(self):
+        return f"[CPU] {self.cpu.title} | {self.date} | ¥{self.price}"
 
 from django.db import models
 
@@ -253,6 +300,9 @@ class GPU(models.Model):
         blank=True,
         null=True
     )
+    # 新添加的字段
+    jd_store = models.CharField(max_length=100, null=True, blank=True, verbose_name='京东店铺')
+    comment_count = models.CharField(max_length=50, null=True, blank=True, verbose_name='评论数')
 
     class Meta:
         verbose_name = '显卡'
@@ -279,6 +329,10 @@ class RAM(models.Model):
     capacity = models.CharField(max_length=50, verbose_name='内存容量', blank=True, null=True)
     memory_type = models.CharField(max_length=50, verbose_name='内存类型', blank=True, null=True)
     frequency = models.CharField(max_length=50, verbose_name='内存主频', blank=True, null=True)
+
+    # 新添加的字段
+    jd_store = models.CharField(max_length=100, null=True, blank=True, verbose_name='京东店铺')
+    comment_count = models.CharField(max_length=50, null=True, blank=True, verbose_name='评论数')
 
     class Meta:
         verbose_name = '内存'
@@ -309,6 +363,9 @@ class SSD(models.Model):
     write_speed = models.CharField(max_length=50, verbose_name='写入速度', blank=True, null=True)
     seek_time = models.CharField(max_length=50, verbose_name='平均寻道时间', blank=True, null=True)
     mtbf = models.CharField(max_length=50, verbose_name='平均无故障时间', blank=True, null=True)
+    # 新添加的字段
+    jd_store = models.CharField(max_length=100, null=True, blank=True, verbose_name='京东店铺')
+    comment_count = models.CharField(max_length=50, null=True, blank=True, verbose_name='评论数')
 
     class Meta:
         verbose_name = '固态硬盘'
@@ -324,6 +381,9 @@ class Cooler(models.Model):
     jd_link = models.URLField(max_length=500, null=True, blank=True, verbose_name='京东链接')
     product_image = models.URLField(max_length=500, default='https://example.com/default.jpg', verbose_name='产品图片')
     product_parameters = models.TextField(null=True, blank=True, verbose_name='产品参数')
+    # 新添加的字段
+    jd_store = models.CharField(max_length=100, null=True, blank=True, verbose_name='京东店铺')
+    comment_count = models.CharField(max_length=50, null=True, blank=True, verbose_name='评论数')
 
     class Meta:
         verbose_name = '散热器'
@@ -351,6 +411,9 @@ class PowerSupply(models.Model):
     hdd_connector = models.CharField(max_length=100, verbose_name='硬盘接口', blank=True, null=True)
     pfc_type = models.CharField(max_length=50, verbose_name='PFC类型', blank=True, null=True)
     efficiency = models.CharField(max_length=50, verbose_name='转换效率', blank=True, null=True)
+    # 新添加的字段
+    jd_store = models.CharField(max_length=100, null=True, blank=True, verbose_name='京东店铺')
+    comment_count = models.CharField(max_length=50, null=True, blank=True, verbose_name='评论数')
 
     class Meta:
         verbose_name = '电源'
@@ -379,6 +442,9 @@ class Chassis(models.Model):
     front_interface = models.CharField(max_length=255, null=True, blank=True, verbose_name='前置接口')
     chassis_material = models.CharField(max_length=100, null=True, blank=True, verbose_name='机箱材质')
     panel_thickness = models.CharField(max_length=50, null=True, blank=True, verbose_name='板材厚度')
+    # 新添加的字段
+    jd_store = models.CharField(max_length=100, null=True, blank=True, verbose_name='京东店铺')
+    comment_count = models.CharField(max_length=50, null=True, blank=True, verbose_name='评论数')
 
     class Meta:
         verbose_name = '机箱'
