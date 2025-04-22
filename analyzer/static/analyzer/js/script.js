@@ -137,18 +137,35 @@ const Favorites = {
             });
     },
     delete(btn, type, id) {
-        if (confirm('确定删除此收藏？')) {
-            fetch(`/api/favorites/${type}/${id}/`, { method: 'DELETE' })
-                .then(res => {
-                    if (!res.ok) throw new Error('删除失败');
+    if (confirm('确定删除此收藏？')) {
+        fetch('/api/favorite/', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCsrfToken(), // 确保有此函数获取 CSRF 令牌
+            },
+            body: JSON.stringify({ type, id }),
+        })
+            .then(res => {
+                if (!res.ok) throw new Error(`删除失败: ${res.status}`);
+                return res.json();
+            })
+            .then(data => {
+                if (data.status === 'success') {
                     btn.closest('.favorite-item').remove();
-                })
-                .catch(err => {
-                    console.error('删除收藏失败:', err);
-                    alert('删除失败，请稍后重试');
-                });
-        }
+                    // 检查收藏列表是否为空
+                    const resultDiv = document.getElementById('favoritesResult');
+                    if (!resultDiv.querySelector('.favorite-item')) {
+                        resultDiv.innerHTML = '<div class="no-results">暂无收藏</div>';
+                    }
+                }
+            })
+            .catch(err => {
+                console.error('删除收藏失败:', err);
+                alert('删除失败，请稍后重试');
+            });
     }
+}
 };
 const Navigation = {
     showSection(sectionId) {
@@ -316,7 +333,6 @@ const Search = {
 
     // 收藏切换函数
         toggleFavorite(btn) {
-    // 获取 CSRF 令牌
     const csrfToken = btn.dataset.csrf;
     if (!csrfToken) {
         alert('CSRF 令牌缺失，请刷新页面！');
@@ -325,35 +341,38 @@ const Search = {
     const type = btn.dataset.type;
     const id = btn.dataset.id;
     const isFavorited = btn.classList.contains('favorited');
-    // 发送 AJAX 请求，POST 添加收藏，DELETE 取消收藏
-    fetch(isFavorited ? '/api/favorite/delete/' : '/api/favorite/', {
+
+    fetch('/api/favorite/', {
         method: isFavorited ? 'DELETE' : 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'X-CSRFToken': csrfToken
+            'X-CSRFToken': csrfToken,
         },
-        body: JSON.stringify({ type, id })
+        body: JSON.stringify({ type, id }),
     })
-    .then(res => {
-        if (res.status === 401) {
-            alert('会话过期，请重新登录！');
-            window.location.href = '/accounts/login/';
-            return null;
-        }
-        if (!res.ok) throw new Error('请求失败');
-        return res.json();
-    })
-    .then(data => {
-        if (data && data.status === 'success') {
-            // 更新按钮状态
-            btn.textContent = isFavorited ? '收藏' : '取消收藏';
-            btn.classList.toggle('favorited');
-        }
-    })
-    .catch(err => {
-        console.error('收藏失败:', err);
-        alert('操作失败，请稍后重试');
-    });
+        .then(res => {
+            if (res.status === 401) {
+                alert('会话过期，请重新登录！');
+                window.location.href = '/accounts/login/';
+                return null;
+            }
+            if (!res.ok) throw new Error(`请求失败: ${res.status}`);
+            return res.json();
+        })
+        .then(data => {
+            if (data && data.status === 'success') {
+                btn.textContent = isFavorited ? '收藏' : '取消收藏';
+                btn.classList.toggle('favorited');
+                // 可选：如果在收藏页面，刷新收藏列表
+                if (document.getElementById('favorites').classList.contains('active')) {
+                    Favorites.load();
+                }
+            }
+        })
+        .catch(err => {
+            console.error('收藏操作失败:', err);
+            alert('操作失败，请稍后重试');
+        });
 }
 };
 
@@ -752,28 +771,13 @@ const SearchByPrice = {
     }
 };
 
-
-function toggleFavorite() {
-    const btn = document.getElementById('favoriteBtn');
-    const type = btn.dataset.type;
-    const id = btn.dataset.id;
-    const isFavorited = btn.classList.contains('favorited');
-    fetch('/api/favorite/', {
-        method: isFavorited ? 'DELETE' : 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
-        },
-        body: JSON.stringify({ type, id })
-    })
-    .then(res => res.json())
-    .then(data => {
-        btn.textContent = isFavorited ? '收藏' : '取消收藏';
-        btn.classList.toggle('favorited');
-    });
-}
 // 收藏列表模块
 
+function getCsrfToken() {
+    const token = document.querySelector('meta[name="csrf-token"]')?.content ||
+                  document.querySelector('[name=csrfmiddlewaretoken]')?.value;
+    return token || '';
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     App.init();

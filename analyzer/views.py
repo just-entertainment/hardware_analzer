@@ -380,28 +380,36 @@ def generate_configuration(request):
 def favorite(request):
     if not request.user.is_authenticated:
         return JsonResponse({'error': '请登录'}, status=401)
-    data = json.loads(request.body)
-    content_type = ContentType.objects.get(model=data['type'])
-    Favorite.objects.get_or_create(
-        user=request.user,
-        content_type=content_type,
-        object_id=data['id']
-    )
-    return JsonResponse({'status': 'success'})
 
-@csrf_exempt
-def favorite_delete(request):
-    if not request.user.is_authenticated:
-        return JsonResponse({'error': '请登录'}, status=401)
-    data = json.loads(request.body)
-    content_type = ContentType.objects.get(model=data['type'])
-    Favorite.objects.filter(
-        user=request.user,
-        content_type=content_type,
-        object_id=data['id']
-    ).delete()
-    return JsonResponse({'status': 'success'})
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            content_type = ContentType.objects.get(model=data['type'])
+            Favorite.objects.get_or_create(
+                user=request.user,
+                content_type=content_type,
+                object_id=data['id']
+            )
+            return JsonResponse({'status': 'success'})
+        except Exception as e:
+            logger.error(f"Favorite add error: {str(e)}", exc_info=True)
+            return JsonResponse({'error': str(e)}, status=500)
 
+    elif request.method == 'DELETE':
+        try:
+            data = json.loads(request.body)
+            content_type = ContentType.objects.get(model=data['type'])
+            Favorite.objects.filter(
+                user=request.user,
+                content_type=content_type,
+                object_id=data['id']
+            ).delete()
+            return JsonResponse({'status': 'success'})
+        except Exception as e:
+            logger.error(f"Favorite delete error: {str(e)}", exc_info=True)
+            return JsonResponse({'error': str(e)}, status=500)
+
+    return JsonResponse({'error': '不支持的请求方法'}, status=405)
 
 
 @require_GET
