@@ -8,8 +8,9 @@ import re
 
 class CPUCrawler:
     def __init__(self):
-        self.products_file = 'csv/cpu_products.csv'
-        self.prices_file = 'csv/cpu_price_history.csv'
+#############################################################
+        self.products_file = 'csv/gpu_products.csv'
+        self.prices_file = 'csv/gpu_price_history.csv'
         self._init_csv_files()
 
     def _init_csv_files(self):
@@ -112,7 +113,8 @@ class CPUCrawler:
     def crawl(self):
         """主爬虫函数"""
         dp = ChromiumPage()
-        dp.get("https://detail.zol.com.cn/cpu/intel/")
+        ########################################################################
+        dp.get("https://detail.zol.com.cn/vga/")
 
         while True:
             dp.scroll.to_bottom()
@@ -122,6 +124,7 @@ class CPUCrawler:
                 try:
                     # 1. 提取基本信息
                     title = good.ele('tag:h3').ele('tag:a').texts()[0].strip()
+
                     reference_price = good.ele("@class=price-row").ele("@class=price price-normal").text
                     jd_price = good.ele('.:item-b2cprice').text
                     jd_href = good.ele('.:item-b2cprice').ele('tag:a').attr('href') if jd_price else ''
@@ -133,7 +136,9 @@ class CPUCrawler:
                     # 3. 获取详情页信息
                     good_link = good.ele('tag:h3').ele('tag:a')
                     tab = dp.new_tab(good_link.link)
-                    specs = tab.ele('@class=section-content').ele('@class=product-param-item pi-28 clearfix').text
+                    ##################################################################################################
+                    # specs = tab.ele('@class=section-content').ele('@class=product-param-item pi-10 clearfix').text
+                    specs =tab.ele("@id=proParamSection").ele('@class=section-content').ele('@class=clearfix').text
                     image = tab.ele('@class=big-pic').ele('tag:a').ele('tag:img').attr('src')
 
                     # 4. 获取京东信息

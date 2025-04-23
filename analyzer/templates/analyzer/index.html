@@ -18,9 +18,9 @@
         <a href="#" onclick="Navigation.showSection('price')">
             <span class="icon">📈</span> 价格分析
         </a>
-        <a href="#" onclick="Navigation.showSection('config')">
-            <span class="icon">⚙️</span> 配置单
-        </a>
+{#        <a href="#" onclick="Navigation.showSection('config')">#}
+{#            <span class="icon">⚙️</span> 配置单#}
+{#        </a>#}
         <a href="#" onclick="Navigation.showSection('favorites')">
             <span class="icon">⭐</span> 我的收藏
         </a>
@@ -74,18 +74,18 @@
         </div>
 
         <div class="section" id="price">
-            <h2>配件价格分析</h2>
-            <div class="viz-controls"></div>
-            <div class="chart-container">
-                <div class="chart">
-                    <canvas id="priceDistributionChart"></canvas>
-                </div>
-                <div class="chart">
-                    <canvas id="averagePriceTrendChart"></canvas>
-                </div>
+        <h2>配件价格分析</h2>
+        <div class="viz-controls"></div>
+        <div class="chart-container">
+            <div class="chart">
+                <canvas id="priceDistributionChart"></canvas>
             </div>
-            <div id="statsSummary" class="stats-summary"></div>
+            <div class="chart">
+                <canvas id="averagePriceTrendChart"></canvas>
+            </div>
         </div>
+        <div id="statsSummary" class="stats-summary"></div>
+    </div>
 
         <div class="section" id="config">
             <h2>生成配置单</h2>
@@ -118,5 +118,26 @@
     <!-- 脚本 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="{% static 'analyzer/js/script.js' %}?v={% now 'U' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+    <script src="{% static 'analyzer/js/script.js' %}?v={% now 'U' %}"></script>
+    <script>
+        // 确保 Chart.js 和 ChartDataLabels 加载后注册插件
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof Chart === 'undefined') {
+                console.error('Chart.js 未加载');
+                return;
+            }
+            if (typeof ChartDataLabels === 'undefined') {
+                console.error('ChartDataLabels 未加载');
+                return;
+            }
+            Chart.register(ChartDataLabels);
+            // 初始化价格分析（如果页面激活）
+            if (document.getElementById('price').classList.contains('active')) {
+                Visualization.init();
+            }
+        });
+    </script>
 </body>
 </html>

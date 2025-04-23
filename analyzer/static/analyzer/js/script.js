@@ -23,12 +23,36 @@ const Detail = {
 
         fetch(`/api/detail/${type}/${id}/`)
             .then(res => {
-                if (!res.ok) throw new Error(`加载失败: ${res.status}`);
+                if (!res.ok) throw new Error(res.status === 400 ? res.json().then(data => data.error) : `加载失败: ${res.status}`);
                 return res.json();
             })
             .then(data => {
                 console.log('API 响应:', data);
                 title.textContent = data.title;
+
+                // 构建组件特定字段
+                let specificFields = '';
+                if (type === 'cpu') {
+                    specificFields = `
+                        <p><strong>系列:</strong> ${data.cpu_series || '未知'}</p>
+                        <p><strong>核心数:</strong> ${data.core_count || '未知'}</p>
+                        <p><strong>线程数:</strong> ${data.thread_count || '未知'}</p>
+                        <p><strong>主频:</strong> ${data.cpu_frequency || '未知'}</p>
+                    `;
+                } else if (type === 'gpu') {
+                    specificFields = `
+                        <p><strong>芯片厂商:</strong> ${data.chip_manufacturer || '未知'}</p>
+                        <p><strong>显存容量:</strong> ${data.memory_size || '未知'}</p>
+                        <p><strong>核心频率:</strong> ${data.core_clock || '未知'}</p>
+                    `;
+                } else if (type === 'motherboard') {
+                    specificFields = `
+                        <p><strong>主芯片组:</strong> ${data.chipset || '未知'}</p>
+                        <p><strong>内存类型:</strong> ${data.memory_type || '未知'}</p>
+                        <p><strong>板型:</strong> ${data.form_factor || '未知'}</p>
+                    `;
+                }
+
                 content.innerHTML = `
                     <img src="${data.product_image}" alt="${data.title}" class="product-image">
                     <div class="price-info">
@@ -37,61 +61,64 @@ const Detail = {
                     </div>
                     <p>京东链接: <a href="${data.jd_link || '#'}" target="_blank">${data.jd_link ? '点击购买' : '暂无链接'}</a></p>
                     <div class="specs-list">
-                        <p>${data.product_parameters.replace(/\n/g, '<br>')}</p>
+                        <h3>规格参数</h3>
+                        ${specificFields}
+                        <p>${data.product_parameters.replace(/\n/g, '<br>') || '暂无详细参数'}</p>
                     </div>
                     <div class="price-history">
                         <h3>历史价格趋势</h3>
                         <canvas id="priceChart" height="200"></canvas>
+                        <p class="price-note">${
+                            data.price_history.length === 91 && data.price_history.every(item => item.price === data.price_history[0].price)
+                            ? '注：无历史价格记录，显示当前参考价格'
+                            : ''
+                        }</p>
                     </div>
                 `;
 
                 const priceHistory = data.price_history || [];
                 console.log('价格历史:', priceHistory);
-                if (priceHistory.length > 0) {
-                    const ctx = document.getElementById('priceChart').getContext('2d');
-                    new Chart(ctx, {
-                        type: 'line',
-                        data: {
-                            labels: priceHistory.map(item => item.date),
-                            datasets: [{
-                                label: '价格 (¥)',
-                                data: priceHistory.map(item => item.price),
-                                borderColor: '#1DA1F2',
-                                backgroundColor: 'rgba(29, 161, 242, 0.1)',
-                                fill: true,
-                                tension: 0.3,
-                                pointRadius: 4,
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            scales: {
-                                x: {
-                                    title: { display: true, text: '日期' },
-                                    ticks: { maxTicksLimit: 10 }
-                                },
-                                y: {
-                                    title: { display: true, text: '价格 (¥)' },
-                                    beginAtZero: false
-                                }
+                const ctx = document.getElementById('priceChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: priceHistory.map(item => item.date),
+                        datasets: [{
+                            label: '价格 (¥)',
+                            data: priceHistory.map(item => item.price),
+                            borderColor: '#1DA1F2',
+                            backgroundColor: 'rgba(29, 161, 242, 0.1)',
+                            fill: true,
+                            tension: 0.3,
+                            pointRadius: 4,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: {
+                                title: { display: true, text: '日期' },
+                                ticks: { maxTicksLimit: 10 }
                             },
-                            plugins: {
-                                legend: { display: false },
-                                tooltip: {
-                                    callbacks: {
-                                        label: ctx => `¥${ctx.parsed.y.toFixed(2)}`
-                                    }
+                            y: {
+                                title: { display: true, text: '价格 (¥)' },
+                                beginAtZero: false
+                            }
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    label: ctx => `¥${ctx.parsed.y.toFixed(2)}`
                                 }
                             }
                         }
-                    });
-                } else {
-                    document.querySelector('.price-history').innerHTML = '<p class="no-data">暂无历史价格</p>';
-                }
+                    }
+                });
             })
             .catch(err => {
                 console.error('加载详情失败:', err);
-                content.innerHTML = '<div class="error">加载失败，请稍后重试</div>';
+                content.innerHTML = `<div class="error">加载失败：${err.message || '请稍后重试'}</div>`;
             });
     },
     close() {
@@ -180,6 +207,8 @@ const Navigation = {
 
         if (sectionId === 'favorites') {
             Favorites.load();
+        }else if (sectionId === 'price') {
+            Visualization.loadData();
         }
     }
 };
@@ -429,12 +458,15 @@ const Config = {
         }
     }
 };
-
 const Visualization = {
-    charts: {},
+    charts: {
+        priceDistribution: null,
+        averagePriceTrend: null
+    },
     currentType: 'cpu',
 
     init() {
+        console.log('Visualization init');
         this.renderControls();
         this.loadData();
         this.bindEvents();
@@ -444,7 +476,7 @@ const Visualization = {
         const controlsDiv = document.querySelector('.viz-controls');
         controlsDiv.innerHTML = `
             <select id="vizComponentType" class="filter-select">
-                <option value="cpu">CPU</option>
+                <option value="cpu" selected>CPU</option>
                 <option value="gpu">显卡</option>
                 <option value="ram">内存</option>
                 <option value="ssd">固态硬盘</option>
@@ -468,11 +500,15 @@ const Visualization = {
     },
 
     loadData: debounce(async function() {
+        console.log('Loading visualization data for type:', this.currentType);
         const priceChartCanvas = document.getElementById('priceDistributionChart');
         const trendChartCanvas = document.getElementById('averagePriceTrendChart');
         const statsSummary = document.getElementById('statsSummary');
 
-        if (!priceChartCanvas || !trendChartCanvas || !statsSummary) return;
+        if (!priceChartCanvas || !trendChartCanvas || !statsSummary) {
+            console.error('图表元素缺失:', { priceChartCanvas, trendChartCanvas, statsSummary });
+            return;
+        }
 
         priceChartCanvas.parentElement.classList.add('chart-loading');
         trendChartCanvas.parentElement.classList.add('chart-loading');
@@ -484,6 +520,9 @@ const Visualization = {
                 fetch(`/api/average_price_trend/?type=${this.currentType}`)
             ]);
 
+            console.log('Price stats response:', statsResponse.status, await statsResponse.clone().json());
+            console.log('Trend response:', trendResponse.status, await trendResponse.clone().json());
+
             if (!statsResponse.ok || !trendResponse.ok) {
                 throw new Error(`网络错误: ${statsResponse.status}, ${trendResponse.status}`);
             }
@@ -494,8 +533,8 @@ const Visualization = {
             priceChartCanvas.parentElement.classList.remove('chart-loading');
             trendChartCanvas.parentElement.classList.remove('chart-loading');
 
-            if (statsData.status === 'error') {
-                throw new Error(statsData.message);
+            if (statsData.error) {
+                throw new Error(statsData.error);
             }
             if (trendData.error) {
                 throw new Error(trendData.error);
@@ -505,16 +544,20 @@ const Visualization = {
             this.renderAveragePriceTrendChart(trendData);
             this.renderStatsSummary(statsData);
         } catch (error) {
-            priceChartCanvas.parentElement.innerHTML = `<div class="chart-error">加载失败: ${error.message}</div>`;
-            trendChartCanvas.parentElement.innerHTML = `<div class="chart-error">加载失败: ${error.message}</div>`;
-            statsSummary.innerHTML = `<div class="error">加载失败: ${error.message}</div>`;
             console.error('可视化数据加载失败:', error);
+            const errorMessage = error.message.includes('ChartDataLabels') ? '图表插件加载失败，请刷新页面' : error.message;
+            priceChartCanvas.parentElement.innerHTML = `<div class="chart-error">${errorMessage} <button onclick="Visualization.loadData()">重试</button></div>`;
+            trendChartCanvas.parentElement.innerHTML = `<div class="chart-error">${errorMessage} <button onclick="Visualization.loadData()">重试</button></div>`;
+            statsSummary.innerHTML = `<div class="error">${errorMessage}</div>`;
         }
     }, 300),
 
     renderPriceDistributionChart(statsData) {
         const ctx = document.getElementById('priceDistributionChart')?.getContext('2d');
-        if (!ctx) return;
+        if (!ctx) {
+            console.error('Price distribution canvas not found');
+            return;
+        }
 
         if (this.charts.priceDistribution) {
             this.charts.priceDistribution.destroy();
@@ -522,8 +565,14 @@ const Visualization = {
 
         const priceData = statsData.price_distribution || [];
         if (!priceData.length) {
-            ctx.canvas.parentElement.innerHTML = `<div class="chart-error">${statsData.message || '暂无价格分布数据'}</div>`;
+            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${statsData.message || '暂无价格分布数据，请尝试其他配件类型或稍后重试'}</div>`;
             return;
+        }
+
+        // 检查 ChartDataLabels 是否可用
+        const plugins = typeof ChartDataLabels !== 'undefined' ? [ChartDataLabels] : [];
+        if (!plugins.length) {
+            console.warn('ChartDataLabels 未加载，柱状图将不显示数据标签');
         }
 
         this.charts.priceDistribution = new Chart(ctx, {
@@ -552,12 +601,12 @@ const Visualization = {
                             label: ctx => `${ctx.parsed.y} 款产品`
                         }
                     },
-                    datalabels: {
+                    datalabels: plugins.length ? {
                         anchor: 'end',
                         align: 'top',
                         formatter: value => value > 0 ? value : '',
                         color: '#333'
-                    }
+                    } : undefined
                 },
                 scales: {
                     y: {
@@ -569,13 +618,16 @@ const Visualization = {
                     }
                 }
             },
-            plugins: [ChartDataLabels]
+            plugins: plugins
         });
     },
 
     renderAveragePriceTrendChart(trendData) {
         const ctx = document.getElementById('averagePriceTrendChart')?.getContext('2d');
-        if (!ctx) return;
+        if (!ctx) {
+            console.error('Average price trend canvas not found');
+            return;
+        }
 
         if (this.charts.averagePriceTrend) {
             this.charts.averagePriceTrend.destroy();
@@ -583,7 +635,7 @@ const Visualization = {
 
         const data = trendData.data || [];
         if (!data.length) {
-            ctx.canvas.parentElement.innerHTML = `<div class="chart-error">${trendData.message || '暂无价格趋势数据'}</div>`;
+            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${trendData.message || '暂无价格趋势数据，请尝试其他配件类型或稍后重试'}</div>`;
             return;
         }
 
@@ -596,7 +648,9 @@ const Visualization = {
                     data: data.map(x => x.avg_price),
                     borderColor: 'rgba(255, 99, 132, 1)',
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    fill: true
+                    fill: true,
+                    tension: 0.3,
+                    pointRadius: 4
                 }]
             },
             options: {
@@ -618,7 +672,9 @@ const Visualization = {
                     x: { title: { display: true, text: '日期' } },
                     y: {
                         title: { display: true, text: '平均价格 (¥)' },
-                        beginAtZero: false
+                        beginAtZero: false,
+                        suggestedMin: Math.max(0, Math.min(...data.map(x => x.avg_price)) - 50),
+                        suggestedMax: Math.max(...data.map(x => x.avg_price)) + 50
                     }
                 }
             }
@@ -628,7 +684,7 @@ const Visualization = {
     renderStatsSummary(statsData) {
         const statsSummary = document.getElementById('statsSummary');
         if (!statsData || statsData.total_count === 0) {
-            statsSummary.innerHTML = `<div class="error">${statsData.message || '暂无统计数据'}</div>`;
+            statsSummary.innerHTML = `<div class="no-data">${statsData.message || '暂无统计数据，请尝试其他配件类型'}</div>`;
             return;
         }
 
@@ -654,6 +710,15 @@ const Visualization = {
         return names[type] || type;
     }
 };
+
+// 防抖函数
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
 
 // 防抖函数
 function debounce(func, wait) {
