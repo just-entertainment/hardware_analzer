@@ -1,45 +1,57 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人资料</title>
-    <link rel="stylesheet" href="{% static 'analyzer/css/styles.css' %}">
+    <title>个人资料 - 配件分析</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'accounts/css/styles.css' %}">
 </head>
 <body>
-    <div class="sidebar">
-        <div class="logo">
-            <span>硬件分析</span>
-        </div>
-        <a href="{% url 'index' %}">
-            <span class="icon">🔍</span>搜索配件
-        </a>
-        <a href="{% url 'index' %}">
-            <span class="icon">📊</span>价格分析
-        </a>
-        <a href="{% url 'index' %}">
-            <span class="icon">⚙️</span>配置推荐
-        </a>
-        {% if user.is_authenticated %}
-        <div class="user-profile">
-            <img src="{% if user.avatar %}{{ user.avatar.url }}{% else %}{% static 'analyzer/images/default_avatar.png' %}{% endif %}" alt="用户头像" class="user-avatar">
-            <span class="user-name">{{ user.username }}</span>
-        </div>
-        {% endif %}
-    </div>
-    <div class="main">
-        <h2>个人资料</h2>
-        <div class="config-card">
-            <div class="config-header">
-                <span class="config-title">用户信息</span>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="logo">
+                <span class="logo-icon">🖥️</span> 配件分析
             </div>
-            <p>用户名: {{ user.username }}</p>
-            {% if user.avatar %}
-            <img src="{{ user.avatar.url }}" alt="头像" class="user-avatar">
-            {% else %}
-            <p>未设置头像</p>
+            <h1>个人资料</h1>
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="message alert-{{ message.tags }}">{{ message }}</div>
+                {% endfor %}
             {% endif %}
+
+            {% if user.avatar %}
+                <img src="{{ user.avatar.url }}" alt="头像" class="avatar">
+            {% else %}
+                <p>无头像</p>
+            {% endif %}
+            <p><strong>用户名：</strong> {{ user.username }}</p>
+            <p><strong>邮箱：</strong> {{ user.email }}</p>
+            <p><strong>手机：</strong> {{ user.phone|default:"未设置" }}</p>
+
+            <h2>收藏的硬件</h2>
+            {% if favorite_objects %}
+                <ul>
+                    {% for favorite in favorite_objects %}
+                        <li>{{ favorite.content_object.title }} -
+                            {% if favorite.content_object.current_price %}
+                                ￥{{ favorite.content_object.current_price }}
+                            {% else %}
+                                无价格信息
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>暂无收藏硬件</p>
+            {% endif %}
+
+            <div class="input-group">
+                <a href="{% url 'accounts:edit_profile' %}" class="button">编辑资料</a>
+                <a href="{% url 'accounts:change_password' %}" class="button">修改密码</a>
+                <a href="{% url 'accounts:logout' %}" class="button">登出</a>
+            </div>
         </div>
     </div>
 </body>

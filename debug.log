@@ -1,0 +1,295 @@
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\accounts\models.py changed, reloading.
+Watching for file changes with StatReloader
+尝试认证: login_field=15631128911
+认证失败: login_field=15631128911
+Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "Z:\desk\code\hardware_analyzer\accounts\views.py", line 42, in post
+    logger.error(f"登录失败: {form.errors}")
+NameError: name 'logger' is not defined
+尝试认证: login_field=15631128911
+认证失败: login_field=15631128911
+Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "Z:\desk\code\hardware_analyzer\accounts\views.py", line 42, in post
+    logger.error(f"登录失败: {form.errors}")
+NameError: name 'logger' is not defined
+Z:\desk\code\hardware_analyzer\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+尝试认证: login_field=15631128911
+认证失败: login_field=15631128911
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=entertainment
+认证失败: login_field=entertainment
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=entertainment
+认证失败: login_field=entertainment
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=15631128911
+认证失败: login_field=15631128911
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+Not Found: /favicon.ico
+尝试认证: login_field=15631128911
+认证失败: login_field=15631128911
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=15631128911
+认证失败: login_field=15631128911
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+Z:\desk\code\hardware_analyzer\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+尝试认证: login_field=entertainment
+认证失败: login_field=entertainment
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=15631128911
+认证失败: login_field=15631128911
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=15631128911
+认证失败: login_field=15631128911
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=entertainment
+认证失败: login_field=entertainment
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+Z:\desk\code\hardware_analyzer\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+尝试认证: login_field=entertainment
+认证失败: login_field=entertainment
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+Watching for file changes with StatReloader
+尝试认证: login_field=entertainment
+认证失败: login_field=entertainment
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=entertainment
+认证失败: login_field=entertainment
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=entertainment
+认证失败: login_field=entertainment
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=entertainment
+认证失败: login_field=entertainment
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=entertainment
+认证失败: login_field=entertainment
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=entertainment
+认证失败: login_field=entertainment
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=entertainment
+认证失败: login_field=entertainment
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=entertainment
+认证失败: login_field=entertainment
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=entertainment
+认证失败: login_field=entertainment
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=entertainment
+认证失败: login_field=entertainment
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=654
+认证失败: login_field=654
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+Watching for file changes with StatReloader
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+Watching for file changes with StatReloader
+尝试认证: login_field=15631128911
+认证失败: login_field=15631128911
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+Z:\desk\code\hardware_analyzer\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+尝试认证: login_field=ent
+Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "Z:\desk\code\hardware_analyzer\accounts\views.py", line 38, in post
+    if form.is_valid():
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\forms\forms.py", line 205, in is_valid
+    return self.is_bound and not self.errors
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\forms\forms.py", line 200, in errors
+    self.full_clean()
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\forms\forms.py", line 438, in full_clean
+    self._clean_form()
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\forms\forms.py", line 459, in _clean_form
+    cleaned_data = self.clean()
+  File "Z:\desk\code\hardware_analyzer\accounts\forms.py", line 65, in clean
+    user = authenticate(request=self.request, login_field=login_field, password=password)
+AttributeError: 'CustomAuthenticationForm' object has no attribute 'request'
+Z:\desk\code\hardware_analyzer\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=15631128911
+认证失败: login_field=15631128911
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
+Watching for file changes with StatReloader
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+Z:\desk\code\hardware_analyzer\accounts\models.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\accounts\models.py changed, reloading.
+Watching for file changes with StatReloader
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+Unauthorized: /api/favorites/
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+Price history for cpu/4: 10 records
+Price history for cpu/9: 2 records
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+Z:\desk\code\hardware_analyzer\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+Z:\desk\code\hardware_analyzer\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+Watching for file changes with StatReloader
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+Z:\desk\code\hardware_analyzer\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+Z:\desk\code\hardware_analyzer\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配forms</li></ul></li></ul>
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配forms</li></ul></li></ul>
+Z:\desk\code\hardware_analyzer\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配forms</li></ul></li></ul>
+Z:\desk\code\hardware_analyzer\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配forms</li></ul></li></ul>
+Z:\desk\code\hardware_analyzer\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+Z:\desk\code\hardware_analyzer\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+尝试认证: login_field=ent
+认证失败: login_field=ent
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+Z:\desk\code\hardware_analyzer\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\accounts\forms.py changed, reloading.
+Watching for file changes with StatReloader
+尝试认证: login_field=ent
+认证成功: 用户 ent
+用户 ent 登录成功
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\__init__.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader

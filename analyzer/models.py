@@ -2,6 +2,9 @@ from django.db import models
 from django.db import models
 from django.core.validators import MinValueValidator
 
+from hardware_analyzer import settings
+
+
 class Motherboard(models.Model):
     title = models.CharField(max_length=255, verbose_name='标题')
     reference_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00, verbose_name='参考价')
@@ -478,7 +481,7 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 from accounts.models import CustomUser
 
 class Favorite(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='favorites')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='favorites')
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'object_id')
@@ -491,3 +494,39 @@ class Favorite(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.content_object.title}"
+
+
+
+class PriceAlert(models.Model):
+    """
+    降价提醒模型，记录发送给用户的降价通知。
+    """
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='price_alerts',
+        verbose_name="用户"
+    )
+    favorite = models.ForeignKey(
+        Favorite,
+        on_delete=models.CASCADE,
+        related_name='price_alerts',
+        verbose_name="收藏"
+    )
+    previous_price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="之前价格")
+    current_price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="当前价格")
+    sent_at = models.DateTimeField(auto_now_add=True, verbose_name="发送时间")
+    method = models.CharField(
+        max_length=20,
+        choices=[('email', '邮件'), ('sms', '短信')],
+        default='email',
+        verbose_name="通知方式"
+    )
+    is_read = models.BooleanField(default=False, verbose_name="是否已读")
+
+    class Meta:
+        verbose_name = '降价提醒'
+        verbose_name_plural = '降价提醒'
+
+    def __str__(self):
+        return f"{self.user.username} - {self.favorite.content_object.title} 降价通知"

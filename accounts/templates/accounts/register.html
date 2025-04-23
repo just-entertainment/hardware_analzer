@@ -15,22 +15,43 @@
             </div>
             <h1>注册</h1>
 
-            {% if form.errors %}
-            <div class="message">
-                {% for field in form %}
-                    {% for error in field.errors %}
-                        <div class="alert-error">{{ error }}</div>
-                    {% endfor %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="message alert-{{ message.tags }}">{{ message }}</div>
                 {% endfor %}
-            </div>
             {% endif %}
 
-            <form method="post">
+            {% if form.errors %}
+                <div class="message">
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <div class="alert-error">{{ error }}</div>
+                        {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                        <div class="alert-error">{{ error }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="input-group">
                     <input type="text" name="username" autofocus autocapitalize="none"
                            autocomplete="username" maxlength="150" required
                            id="id_username" placeholder="用户名">
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" autocomplete="email" required
+                           id="id_email" placeholder="邮箱">
+                </div>
+                <div class="input-group">
+                    <input type="text" name="phone" autocomplete="tel" required
+                           id="id_phone" placeholder="手机号码">
+                </div>
+                <div class="input-group">
+                    <input type="file" name="avatar" accept="image/*"
+                           id="id_avatar" placeholder="上传头像">
                 </div>
                 <div class="input-group">
                     <input type="password" name="password1"
@@ -45,7 +66,7 @@
                 <button type="submit">注册</button>
             </form>
             <p class="signup-link">
-                已有账号？ <a href="{% url 'login' %}">登录</a>
+                已有账号？ <a href="{% url 'accounts:login' %}">登录</a>
             </p>
         </div>
     </div>

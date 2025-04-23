@@ -5,13 +5,7 @@ import csv
 from django.conf import settings
 
 # 设置Django环境（关键步骤！）
-if __name__ == "__main__":
-    # 指定项目根目录（根据实际位置调整）
-    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    sys.path.append(project_root)
-
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hardware_analyzer.settings')
-    django.setup()
+c
 
     # 现在可以正常导入模型和命令
     from analyzer.models import Motherboard
