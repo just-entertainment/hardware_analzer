@@ -5,8 +5,7 @@ from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from .forms import CustomUserCreationForm, CustomAuthenticationForm, CustomUserChangeForm
-from django.contrib.auth import authenticate
-from analyzer.models import Favorite
+from analyzer.models import Favorite, PriceAlert
 import logging
 
 # 初始化日志记录器
@@ -61,13 +60,15 @@ class LogoutView(View):
         return redirect('accounts:login')
 
 class ProfileView(LoginRequiredMixin, View):
-    """显示用户个人资料和收藏"""
+    """显示用户个人资料、收藏和降价提醒"""
     def get(self, request):
-        """查询用户收藏并渲染个人资料页面"""
+        """查询用户收藏和降价提醒，渲染个人资料页面"""
         favorite_objects = Favorite.objects.filter(user=request.user).select_related('content_type')
+        price_alerts = PriceAlert.objects.filter(user=request.user).select_related('favorite__content_type')
         return render(request, 'accounts/profile.html', {
             'user': request.user,
-            'favorite_objects': favorite_objects
+            'favorite_objects': favorite_objects,
+            'price_alerts': price_alerts
         })
 
 class ChangePasswordView(LoginRequiredMixin, View):

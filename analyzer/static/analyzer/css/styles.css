@@ -77,6 +77,7 @@ body {
     border-radius: 9999px;
     cursor: pointer;
     transition: background-color 0.2s;
+    position: relative; /* 为下拉菜单定位 */
 }
 
 /* 用户区域悬停 */
@@ -94,11 +95,61 @@ body {
     border: 2px solid #e1e8ed;
 }
 
+/* 默认头像 */
+.default-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #e1e8ed;
+    color: #536471;
+    font-size: 24px;
+    margin-right: 12px;
+    border: 2px solid #e1e8ed;
+}
+
 /* 用户名 */
 .user-name {
     color: #0f1419;
     font-size: 16px;
     font-weight: 600;
+}
+
+/* 下拉菜单 */
+.user-menu {
+    display: none;
+    position: absolute;
+    bottom: 60px; /* 定位在 user-profile 上方 */
+    left: 12px;
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 160px;
+}
+
+/* 下拉菜单显示状态 */
+.user-menu.active {
+    display: block;
+}
+
+/* 菜单项 */
+.menu-item {
+    display: block;
+    padding: 12px 20px;
+    color: #0f1419;
+    text-decoration: none;
+    font-size: 15px;
+    transition: background-color 0.2s;
+}
+
+/* 菜单项悬停 */
+.menu-item:hover {
+    background-color: #e8f0fe;
+    color: #1DA1F2;
 }
 
 /* 主内容区 */
@@ -109,6 +160,87 @@ body {
     max-width: 1240px;
 }
 
+
+/* 响应式：平板 */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 240px;
+    }
+    .main {
+        margin-left: 240px;
+        padding: 20px;
+    }
+    .user-menu {
+        left: 8px;
+        min-width: 140px;
+    }
+}
+
+/* 响应式：手机 */
+@media (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding-bottom: 80px;
+        box-shadow: none;
+    }
+    .main {
+        margin-left: 0;
+        padding: 16px;
+    }
+    .user-profile {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        border-top: 1px solid #e1e8ed;
+        border-radius: 0;
+        padding: 12px 16px;
+        margin: 0;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+    }
+    .user-menu {
+        bottom: 64px; /* 适配手机端固定底部的 user-profile */
+        left: 8px;
+        width: calc(100% - 16px);
+    }
+}
+
+/* 暗色模式 */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #15202b;
+        color: #e7e9ea;
+    }
+    .sidebar {
+        background-color: #192734;
+        border-right-color: #38444d;
+    }
+    .sidebar .logo, .sidebar a, .user-name {
+        color: #e7e9ea;
+    }
+    .sidebar a:hover, .sidebar a.active, .user-profile:hover {
+        background-color: #22303c;
+    }
+    .user-menu {
+        background-color: #192734;
+        border-color: #38444d;
+    }
+    .menu-item {
+        color: #e7e9ea;
+    }
+    .menu-item:hover {
+        background-color: #22303c;
+        color: #1DA1F2;
+    }
+    .default-avatar {
+        background-color: #38444d;
+        color: #e7e9ea;
+        border-color: #38444d;
+    }
+}
 /* 隐藏非活跃区域 */
 .section {
     display: none;

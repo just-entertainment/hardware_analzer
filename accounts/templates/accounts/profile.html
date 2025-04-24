@@ -34,7 +34,8 @@
             {% if favorite_objects %}
                 <ul>
                     {% for favorite in favorite_objects %}
-                        <li>{{ favorite.content_object.title }} -
+                        <li>
+                            {{ favorite.content_object.title }} -
                             {% if favorite.content_object.current_price %}
                                 ￥{{ favorite.content_object.current_price }}
                             {% else %}
@@ -45,6 +46,21 @@
                 </ul>
             {% else %}
                 <p>暂无收藏硬件</p>
+            {% endif %}
+
+            <h2>降价提醒</h2>
+            {% if price_alerts %}
+                <ul>
+                    {% for alert in price_alerts %}
+                        <li>
+                            {{ alert.favorite.content_object.title }}
+                            从 ￥{{ alert.previous_price }} 降至 ￥{{ alert.current_price }}
+                            （{{ alert.sent_at|date:"Y-m-d H:i" }}，{% if alert.is_read %}已读{% else %}未读{% endif %}）
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>暂无降价提醒</p>
             {% endif %}
 
             <div class="input-group">

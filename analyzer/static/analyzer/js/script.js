@@ -194,7 +194,19 @@ const Favorites = {
     }
 }
 };
+
 const Navigation = {
+    init() {
+        // 初始化导航事件
+        document.addEventListener('click', (event) => {
+            const userProfile = document.querySelector('.user-profile');
+            const userMenu = document.getElementById('userMenu');
+            if (userProfile && userMenu && !userProfile.contains(event.target) && !userMenu.contains(event.target)) {
+                userMenu.classList.remove('active');
+            }
+        });
+    },
+
     showSection(sectionId) {
         document.querySelectorAll('.section').forEach(section => {
             section.classList.remove('active');
@@ -207,8 +219,15 @@ const Navigation = {
 
         if (sectionId === 'favorites') {
             Favorites.load();
-        }else if (sectionId === 'price') {
+        } else if (sectionId === 'price') {
             Visualization.loadData();
+        }
+    },
+
+    toggleUserMenu() {
+        const userMenu = document.getElementById('userMenu');
+        if (userMenu) {
+            userMenu.classList.toggle('active');
         }
     }
 };

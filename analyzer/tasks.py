@@ -1,17 +1,25 @@
 from celery import shared_task
 from django.core.mail import send_mail
 from django.contrib.contenttypes.models import ContentType
-from .models import Favorite, Hardware, PriceHistory, PriceAlert
+from .models import Favorite,  PriceHistory, PriceAlert
 from django.utils import timezone
 import logging
+from aliyunsdkcore.client import AcsClient
+from aliyunsdkdysmsapi.request.v20170525.SendSmsRequest import SendSmsRequest
 
 # 初始化日志记录器
 logger = logging.getLogger(__name__)
 
+# 阿里云 SMS 配置（替换为你的密钥和模板）
+ALICLOUD_ACCESS_KEY = 'your_access_key'
+ALICLOUD_ACCESS_SECRET = 'your_access_secret'
+ALICLOUD_SIGN_NAME = 'your_sign_name'
+ALICLOUD_TEMPLATE_CODE = 'your_template_code'
+
 @shared_task
 def check_price_drops():
     """
-    定时任务：检查收藏的硬件价格是否降低，并发送通知。
+    定时任务：检查收藏的硬件价格是否降低，并发送邮件或短信通知。
     """
     logger.info("开始检查硬件价格降价")
     # 获取 Hardware 的 ContentType
@@ -58,11 +66,30 @@ def check_price_drops():
                 send_mail(
                     subject=subject,
                     message=message,
-                    from_email=None,  # 使用 DEFAULT_FROM_EMAIL
+                    from_email=None,
                     recipient_list=[user.email],
                     fail_silently=False
                 )
                 logger.info(f"邮件发送成功: {user.email}")
             except Exception as e:
                 logger.error(f"邮件发送失败: {user.email}, 错误: {str(e)}")
-                alert.delete()  # 删除失败的提醒记录
+                alert.delete()
+
+            # 发送短信通知（可选）
+            try:
+                client = AcsClient(ALICLOUD_ACCESS_KEY, ALICLOUD_ACCESS_SECRET, 'cn-hangzhou')
+                request = SendSmsRequest()
+                request.set_accept_format('json')
+                request.set_SignName(ALICLOUD_SIGN_NAME)
+                request.set_TemplateCode(ALICLOUD_TEMPLATE_CODE)
+                request.set_PhoneNumbers(user.phone)
+                request.set_TemplateParam({
+                    "product": hardware.title,
+                    "price": str(hardware.current_price)
+                })
+                response = client.do_action_with_exception(request)
+                logger.info(f"短信发送成功: {user.phone}")
+                alert.method = 'sms'
+                alert.save()
+            except Exception as e:
+                logger.error(f"短信发送失败: {user.phone}, 错误: {str(e)}")

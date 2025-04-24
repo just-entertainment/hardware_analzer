@@ -25,11 +25,26 @@
             <span class="icon">⭐</span> 我的收藏
         </a>
         {% if user.is_authenticated %}
-        <div class="user-profile">
-            <img src="{% if user.avatar %}{{ user.avatar.url }}{% else %}{% static 'analyzer/images/default.png' %}{% endif %}" alt="用户头像" class="user-avatar">
+        <div class="user-profile" onclick="Navigation.toggleUserMenu()">
+            {% if user.avatar %}
+                <img src="{{ user.avatar.url }}" alt="头像" class="user-avatar">
+            {% else %}
+                <span class="user-avatar default-avatar">👤</span>
+            {% endif %}
             <span class="user-name">{{ user.username }}</span>
+            <div class="user-menu" id="userMenu">
+                <a href="{% url 'accounts:change_password' %}" class="menu-item">修改密码</a>
+                <a href="{% url 'accounts:logout' %}" class="menu-item">退出登录</a>
+            </div>
         </div>
-        {% endif %}
+    {% else %}
+        <a href="{% url 'accounts:login' %}">
+            <span class="icon">🔑</span> 登录
+        </a>
+        <a href="{% url 'accounts:register' %}">
+            <span class="icon">✨</span> 注册
+        </a>
+    {% endif %}
     </div>
 
     <!-- 详情弹窗 -->
