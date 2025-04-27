@@ -6,6 +6,12 @@ from hardware_analyzer import settings
 
 
 class Motherboard(models.Model):
+    product_id = models.CharField(
+        max_length=50,
+        unique=True,
+        verbose_name='产品ID',
+        help_text='从京东URL提取的SKU或自定义唯一ID'
+    )
     title = models.CharField(max_length=255, verbose_name='标题')
     reference_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00, verbose_name='参考价')
     jd_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, verbose_name='京东价')
@@ -34,6 +40,37 @@ class Motherboard(models.Model):
     def __str__(self):
         return self.title
 
+
+class MotherboardPriceHistory(models.Model):
+    """
+    主板专属历史价格模型
+    """
+    motherboard = models.ForeignKey(
+        Motherboard,
+        on_delete=models.CASCADE,
+        related_name='price_history',
+        verbose_name='关联主板'
+    )
+
+    price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        validators=[MinValueValidator(0.01)],
+        verbose_name='价格（元）'
+    )
+
+    date = models.DateField(verbose_name='记录日期')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='入库时间')
+
+    class Meta:
+        verbose_name = '主板历史价格'
+        verbose_name_plural = '主板历史价格'
+        ordering = ['-date']  # 默认最新价格在前
+        unique_together = ['motherboard', 'date']  # 唯一约束
+        db_table = 'motherboard_price_history'
+
+    def __str__(self):
+        return f"[主板] {self.motherboard.title} | {self.date} | ¥{self.price}"
 
 class CPU(models.Model):
     product_id = models.CharField(
@@ -114,6 +151,12 @@ from django.db import models
 
 class GPU(models.Model):
     # 基础信息
+    product_id = models.CharField(
+        max_length=50,
+        unique=True,
+        verbose_name='产品ID',
+        help_text='从京东URL提取的SKU或自定义唯一ID'
+    )
     title = models.CharField(max_length=255, verbose_name='标题')
     reference_price = models.DecimalField(
         max_digits=10,
@@ -316,6 +359,41 @@ class GPU(models.Model):
 
 
 from django.db import models
+from django.core.validators import MinValueValidator
+
+class GPUPriceHistory(models.Model):
+    """
+    GPU专属历史价格模型
+    """
+    gpu = models.ForeignKey(
+        GPU,
+        on_delete=models.CASCADE,
+        related_name='price_history',
+        verbose_name='关联显卡'
+    )
+
+    price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        validators=[MinValueValidator(0.01)],
+        verbose_name='价格（元）'
+    )
+
+    date = models.DateField(verbose_name='记录日期')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='入库时间')
+
+    class Meta:
+        verbose_name = '显卡历史价格'
+        verbose_name_plural = '显卡历史价格'
+        ordering = ['-date']  # 默认最新价格在前
+        unique_together = ['gpu', 'date']  # 唯一约束
+        db_table = 'gpu_price_history'
+
+    def __str__(self):
+        return f"[显卡] {self.gpu.title} | {self.date} | ¥{self.price}"
+
+
+from django.db import models
 
 
 class RAM(models.Model):
@@ -458,6 +536,12 @@ class SSDPriceHistory(models.Model):
 
 
 class Cooler(models.Model):
+    product_id = models.CharField(
+        max_length=50,
+        # unique=True,
+        verbose_name='产品ID',
+        help_text='从京东URL提取的SKU或自定义唯一ID'
+    )
     title = models.CharField(max_length=255, verbose_name='标题')
     reference_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00, verbose_name='参考价')
     jd_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, verbose_name='京东价')
@@ -475,6 +559,42 @@ class Cooler(models.Model):
 
     def __str__(self):
         return self.title
+from django.db import models
+from django.core.validators import MinValueValidator
+
+class CoolerPriceHistory(models.Model):
+    """
+    散热器专属历史价格模型
+    命名规范：<硬件类型>PriceHistory
+    """
+    cooler = models.ForeignKey(
+        Cooler,
+        on_delete=models.CASCADE,
+        related_name='price_history',  # 保持反向查询名一致
+        verbose_name='关联散热器'
+    )
+
+    price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        validators=[MinValueValidator(0.01)],
+        verbose_name='价格（元）'
+    )
+
+    date = models.DateField(verbose_name='记录日期')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='入库时间')
+
+    class Meta:
+        verbose_name = '散热器历史价格'
+        verbose_name_plural = '散热器历史价格'
+        ordering = ['-date']  # 默认最新价格在前
+        unique_together = ['cooler', 'date']  # 唯一约束
+        db_table = 'cooler_price_history'  # 明确表名
+
+    def __str__(self):
+        return f"[散热器] {self.cooler.title} | {self.date} | ¥{self.price}"
+
+
 
 
 class PowerSupply(models.Model):

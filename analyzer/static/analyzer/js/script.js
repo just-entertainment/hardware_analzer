@@ -79,7 +79,7 @@ const Detail = {
                         <p><strong>效率认证:</strong> ${data.efficiency_rating || '未知'}</p>
                         <p><strong>模组化:</strong> ${data.modular || '未知'}</p>
                     `;
-                } else if (type === 'case') {
+                } else if (type === 'chassis') {
                     specificFields = `
                         <p><strong>板型:</strong> ${data.form_factor || '未知'}</p>
                         <p><strong>最大显卡长度:</strong> ${data.max_gpu_length || '未知'}</p>
@@ -536,7 +536,7 @@ const Visualization = {
                 <option value="motherboard">主板</option>
                 <option value="cooler">散热器</option>
                 <option value="power_supply">电源</option>
-                <option value="case">机箱</option>
+                <option value="chassis">机箱</option>
             </select>
             <button onclick="Visualization.loadData()">刷新数据</button>
         `;
@@ -758,7 +758,7 @@ const Visualization = {
             'motherboard': '主板',
             'cooler': '散热器',
             'power_supply': '电源',
-            'case': '机箱'
+            'chassis': '机箱'
         };
         return names[type] || type;
     }
@@ -839,7 +839,7 @@ function getComponentName(type) {
         'motherboard': '主板',
         'ssd': '固态硬盘',
         'power_supply': '电源',
-        'case': '机箱',
+        'chassis': '机箱',
         'cooler': '散热器'
     };
     return names[type] || type;

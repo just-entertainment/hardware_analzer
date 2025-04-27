@@ -1095,3 +1095,355 @@ Price history for cpu/1: 4 records
 Not Found: /favicon.ico
 Price history for ram/1: 0 records
 Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /api/detail/motherboard/1/
+Internal Server Error: /api/detail/motherboard/1/
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Watching for file changes with StatReloader
+Price history for motherboard/1: 2 records
+Price history for motherboard/4: 1 records
+Price history for motherboard/4: 1 records
+Price history for motherboard/9: 0 records
+Price history for motherboard/5: 5 records
+Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
+Watching for file changes with StatReloader
+Price history for motherboard/4: 1 records
+Price history for motherboard/9: 0 records
+Price history for motherboard/10: 0 records
+Price history for motherboard/1: 2 records
+Price history for motherboard/2: 0 records
+Price history for motherboard/9: 0 records
+Price history for motherboard/3: 0 records
+Price history for motherboard/2: 0 records
+Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
+Watching for file changes with StatReloader
+Price history for motherboard/2: 0 records
+Price history for motherboard/5: 5 records
+Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/detail/gpu/1/
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Watching for file changes with StatReloader
+Price history for gpu/1: 1 records
+Price history for gpu/8: 0 records
+Price history for gpu/10: 3 records
+Price history for gpu/7: 0 records
+Price history for gpu/9: 0 records
+Price history for gpu/7: 0 records
+Price history for gpu/30: 5 records
+Price history for gpu/29: 0 records
+Price history for gpu/27: 0 records
+Price history for gpu/25: 0 records
+Price history for gpu/21: 3 records
+Watching for file changes with StatReloader
+Internal Server Error: /api/detail/power_supply/1/
+Price history for ssd/1787: 4 records
+Price history for ssd/1788: 0 records
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Watching for file changes with StatReloader
+Price history for cooler/1: 0 records
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Watching for file changes with StatReloader
+Detail error for case/1777: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Traceback (most recent call last):
+  File "Z:\desk\code\hardware_analyzer\analyzer\views.py", line 206, in detail
+    price_history = price_history_model.objects.filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Internal Server Error: /api/detail/case/1777/
+Detail error for case/1780: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Traceback (most recent call last):
+  File "Z:\desk\code\hardware_analyzer\analyzer\views.py", line 206, in detail
+    price_history = price_history_model.objects.filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Internal Server Error: /api/detail/case/1780/
+Detail error for case/1780: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Traceback (most recent call last):
+  File "Z:\desk\code\hardware_analyzer\analyzer\views.py", line 206, in detail
+    price_history = price_history_model.objects.filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Internal Server Error: /api/detail/case/1780/
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Price history for gpu/1: 1 records
+Price history for gpu/1: 1 records
+Internal Server Error: /api/detail/power_supply/1/
+Detail error for case/1777: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Traceback (most recent call last):
+  File "Z:\desk\code\hardware_analyzer\analyzer\views.py", line 206, in detail
+    price_history = price_history_model.objects.filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Internal Server Error: /api/detail/case/1777/
+Price history for cooler/1: 0 records
+Price history for cooler/3: 0 records
+Watching for file changes with StatReloader
+Detail error for case/1778: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Traceback (most recent call last):
+  File "Z:\desk\code\hardware_analyzer\analyzer\views.py", line 206, in detail
+    price_history = price_history_model.objects.filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Internal Server Error: /api/detail/case/1778/
+Not Found: /favicon.ico
+Detail error for case/1777: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Traceback (most recent call last):
+  File "Z:\desk\code\hardware_analyzer\analyzer\views.py", line 206, in detail
+    price_history = price_history_model.objects.filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Internal Server Error: /api/detail/case/1777/
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /api/detail/case/1777/
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Detail error for case/1777: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Traceback (most recent call last):
+  File "Z:\desk\code\hardware_analyzer\analyzer\views.py", line 206, in detail
+    price_history = price_history_model.objects.filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Internal Server Error: /api/detail/case/1777/
+Detail error for case/1777: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Traceback (most recent call last):
+  File "Z:\desk\code\hardware_analyzer\analyzer\views.py", line 206, in detail
+    price_history = price_history_model.objects.filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Internal Server Error: /api/detail/case/1777/
+Detail error for case/1784: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Traceback (most recent call last):
+  File "Z:\desk\code\hardware_analyzer\analyzer\views.py", line 206, in detail
+    price_history = price_history_model.objects.filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Internal Server Error: /api/detail/case/1784/
+Detail error for case/1780: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Traceback (most recent call last):
+  File "Z:\desk\code\hardware_analyzer\analyzer\views.py", line 206, in detail
+    price_history = price_history_model.objects.filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Internal Server Error: /api/detail/case/1780/
+Detail error for case/1780: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Traceback (most recent call last):
+  File "Z:\desk\code\hardware_analyzer\analyzer\views.py", line 206, in detail
+    price_history = price_history_model.objects.filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'case' into field. Choices are: chassis, chassis_id, created_at, date, id, price
+Internal Server Error: /api/detail/case/1780/
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Price history for chassis/1777: 0 records
+Price history for chassis/1785: 0 records
+Price history for chassis/1786: 0 records
+Price history for chassis/1780: 0 records
+Price history for chassis/1796: 1 records
+Price history for chassis/1802: 0 records
+Price history for chassis/1806: 0 records
+Price history for chassis/1824: 0 records
+Price history for chassis/1832: 0 records
+Price history for chassis/1844: 0 records
+Price history for chassis/1846: 1 records
+Price history for chassis/1852: 0 records

@@ -6,7 +6,8 @@ from celery import shared_task
 from django.utils import timezone
 from django.core.mail import send_mail
 from django.conf import settings
-from analyzer.models import Favorite, PriceChangeNotification
+from analyzer.models import Favorite, PriceChangeNotification, GPUPriceHistory, MotherboardPriceHistory, \
+    SSDPriceHistory, CoolerPriceHistory, ChassisPriceHistory
 from datetime import timedelta
 import logging
 
@@ -16,12 +17,12 @@ from datetime import timedelta
 COMPONENT_PRICE_HISTORY_MODELS = {
     'cpu': CPUPriceHistory,
     'ram': RAMPriceHistory,
-    # 'gpu': GPUPriceHistory,
-    # 'motherboard': MotherboardPriceHistory,
-    # 'ssd': SSDPriceHistory,
-    # 'cooler': CoolerPriceHistory,
+    'gpu': GPUPriceHistory,
+    'motherboard': MotherboardPriceHistory,
+    'ssd': SSDPriceHistory,
+    'cooler': CoolerPriceHistory,
     # 'power_supply': PowerSupplyPriceHistory,
-    # 'case': ChassisPriceHistory,
+    'case': ChassisPriceHistory,
 }
 
 logger = logging.getLogger(__name__)

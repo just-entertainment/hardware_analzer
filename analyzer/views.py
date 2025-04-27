@@ -12,7 +12,7 @@ import math
 import re
 from django.db.models import IntegerField
 from .models import RAM, GPU, CPU, Motherboard, SSD, Cooler, PowerSupply, Chassis, PriceHistory, CPUPriceHistory, \
-    RAMPriceHistory, SSDPriceHistory
+    RAMPriceHistory, SSDPriceHistory, MotherboardPriceHistory, GPUPriceHistory, CoolerPriceHistory, ChassisPriceHistory
 from django.db.models import F, FloatField, Case, When, Value
 import logging
 from django.db import models
@@ -35,19 +35,19 @@ COMPONENT_MODELS = {
     'ssd': SSD,
     'cooler': Cooler,
     'power_supply': PowerSupply,
-    'case': Chassis,
+    'chassis': Chassis,
 }
 
 # 定义组件类型到历史价格模型的映射
 COMPONENT_PRICE_HISTORY_MODELS = {
     'cpu': CPUPriceHistory,
     'ram': RAMPriceHistory,
-    # 'gpu': GPUPriceHistory,
-    # 'motherboard': MotherboardPriceHistory,
+    'gpu': GPUPriceHistory,
+    'motherboard': MotherboardPriceHistory,
     'ssd': SSDPriceHistory,
-    # 'cooler': CoolerPriceHistory,
+    'cooler': CoolerPriceHistory,
     # 'power_supply': PowerSupplyPriceHistory,
-    # 'case': ChassisPriceHistory,
+    'chassis': ChassisPriceHistory,
 }
 
 # 主页视图
@@ -56,7 +56,7 @@ def index(request):
     print(f"User: {request.user}, Authenticated: {request.user.is_authenticated}")
     return render(request, 'analyzer/index.html', {'user': request.user})
 
-# 搜索视图from django.db.models import Case, When, Value, IntegerField
+
 #
 @require_GET
 def search(request):
@@ -388,64 +388,64 @@ logger = logging.getLogger(__name__)
 
 from django.http import JsonResponse
 
-@require_GET
-def generate_configuration(request):
-    try:
-        # 获取用户输入
-        budget = float(request.GET.get('budget', 5000))
-        usage = request.GET.get('usage', 'general')  # 默认用途为通用
-        brand_preference = request.GET.get('brand_preference', '').lower()  # 品牌偏好
-
-        # 配件预算比例（可根据用途调整）
-        component_weights = {
-            'cpu': 0.3,
-            'gpu': 0.3,
-            'ram': 0.1,
-            'motherboard': 0.1,
-            'ssd': 0.1,
-            'power_supply': 0.05,
-            'case': 0.05,
-            'cooler': 0.05
-        }
-
-        # 计算每种配件的预算
-        component_budgets = {k: v * budget for k, v in component_weights.items()}
-
-        # 初始化配置单
-        configuration = []
-        total_price = 0
-
-        # 定义每种配件的选择逻辑
-        for component, comp_budget in component_budgets.items():
-            model = COMPONENT_MODELS[component]
-            queryset = model.objects.filter(reference_price__lte=comp_budget).order_by('reference_price')
-
-            # 品牌过滤
-            if brand_preference:
-                queryset = queryset.filter(title__icontains=brand_preference)
-
-            # 获取最优配件
-            selected = queryset.first()
-            if selected:
-                configuration.append({
-                    'type': component,
-                    'title': selected.title,
-                    'price': float(selected.reference_price),
-                })
-                total_price += selected.reference_price
-
-        # 检查总价是否超出预算
-        if total_price > budget:
-            return JsonResponse({'error': '无法在预算内生成配置单，请增加预算或减少需求'}, status=400)
-
-        return JsonResponse({
-            'configuration': configuration,
-            'total_price': float(total_price),
-            'budget': budget,
-            'status': 'success'
-        })
-    except Exception as e:
-        return JsonResponse({'error': str(e)}, status=500)
+# @require_GET
+# def generate_configuration(request):
+#     try:
+#         # 获取用户输入
+#         budget = float(request.GET.get('budget', 5000))
+#         usage = request.GET.get('usage', 'general')  # 默认用途为通用
+#         brand_preference = request.GET.get('brand_preference', '').lower()  # 品牌偏好
+#
+#         # 配件预算比例（可根据用途调整）
+#         component_weights = {
+#             'cpu': 0.3,
+#             'gpu': 0.3,
+#             'ram': 0.1,
+#             'motherboard': 0.1,
+#             'ssd': 0.1,
+#             'power_supply': 0.05,
+#             'case': 0.05,
+#             'cooler': 0.05
+#         }
+#
+#         # 计算每种配件的预算
+#         component_budgets = {k: v * budget for k, v in component_weights.items()}
+#
+#         # 初始化配置单
+#         configuration = []
+#         total_price = 0
+#
+#         # 定义每种配件的选择逻辑
+#         for component, comp_budget in component_budgets.items():
+#             model = COMPONENT_MODELS[component]
+#             queryset = model.objects.filter(reference_price__lte=comp_budget).order_by('reference_price')
+#
+#             # 品牌过滤
+#             if brand_preference:
+#                 queryset = queryset.filter(title__icontains=brand_preference)
+#
+#             # 获取最优配件
+#             selected = queryset.first()
+#             if selected:
+#                 configuration.append({
+#                     'type': component,
+#                     'title': selected.title,
+#                     'price': float(selected.reference_price),
+#                 })
+#                 total_price += selected.reference_price
+#
+#         # 检查总价是否超出预算
+#         if total_price > budget:
+#             return JsonResponse({'error': '无法在预算内生成配置单，请增加预算或减少需求'}, status=400)
+#
+#         return JsonResponse({
+#             'configuration': configuration,
+#             'total_price': float(total_price),
+#             'budget': budget,
+#             'status': 'success'
+#         })
+#     except Exception as e:
+#         return JsonResponse({'error': str(e)}, status=500)
 
 
 
