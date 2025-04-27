@@ -9,8 +9,8 @@ import re
 class CPUCrawler:
     def __init__(self):
 #############################################################
-        self.products_file = 'csv/gpu_products.csv'
-        self.prices_file = 'csv/gpu_price_history.csv'
+        self.products_file = 'csv/borad_products.csv'
+        self.prices_file = 'csv/broad_price_history.csv'
         self._init_csv_files()
 
     def _init_csv_files(self):
@@ -79,7 +79,7 @@ class CPUCrawler:
             hp = page.new_tab('https://www.hisprice.cn/')
             hp.ele('@class=search d1').ele('@id=kValId').input(jd_url)
             hp.actions.type('\n')
-            time.sleep(3)  # 等待加载
+            time.sleep(7)  # 等待加载
 
             history = []
             price_list = hp.ele('@id=youhuiUl', timeout=3).eles('tag:li') if hp.ele('@id=youhuiUl', timeout=3) else []
@@ -114,7 +114,7 @@ class CPUCrawler:
         """主爬虫函数"""
         dp = ChromiumPage()
         ########################################################################
-        dp.get("https://detail.zol.com.cn/vga/")
+        dp.get("https://detail.zol.com.cn/motherboard/")
 
         while True:
             dp.scroll.to_bottom()
@@ -137,15 +137,14 @@ class CPUCrawler:
                     good_link = good.ele('tag:h3').ele('tag:a')
                     tab = dp.new_tab(good_link.link)
                     ##################################################################################################
-                    # specs = tab.ele('@class=section-content').ele('@class=product-param-item pi-10 clearfix').text
-                    specs =tab.ele("@id=proParamSection").ele('@class=section-content').ele('@class=clearfix').text
+                    specs = tab.ele('@class=section-content').ele('@class=product-param-item pi-5 clearfix').text
+                    # specs =tab.ele("@id=proParamSection").ele('@class=section-content').ele('@class=clearfix').text
                     image = tab.ele('@class=big-pic').ele('tag:a').ele('tag:img').attr('src')
 
                     # 4. 获取京东信息
                     if jd_href:
                         JD = dp.new_tab(jd_href)
-                        shop_name = JD.ele('@class=crumb-wrap').ele('@class=w').ele(
-                            '@class=contact fr clearfix shieldShopInfo').ele('@class=item').text
+                        shop_name = JD.ele('@class=top-name').text
                         comment_count = JD.ele('@id=comment-count').ele('tag:a').text
                         JD.close()
                     else:

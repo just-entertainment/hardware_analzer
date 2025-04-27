@@ -1061,3 +1061,37 @@ Price history for cpu/11: 2 records
 尝试认证: login_field=entertainment33@qq.com
 认证成功: 用户 entertainment33@qq.com
 用户 entertainment33@qq.com 登录成功
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+尝试认证: login_field=entertainment33@qq.com
+认证成功: 用户 entertainment33@qq.com
+用户 entertainment33@qq.com 登录成功
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+尝试认证: login_field=root
+认证成功: 用户 root
+用户 root 登录成功
+尝试认证: login_field=user
+认证失败: 用户不存在 for user
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=textuser
+认证失败: 用户不存在 for textuser
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=textuser
+认证失败: 用户不存在 for textuser
+登录失败: <ul class="errorlist"><li>__all__<ul class="errorlist nonfield"><li>用户名、邮箱或手机与密码不匹配</li></ul></li></ul>
+尝试认证: login_field=root
+认证成功: 用户 root
+用户 root 登录成功
+Price history for cpu/1: 4 records
+Price history for cpu/6: 10 records
+Price history for cpu/6: 10 records
+Price history for cpu/5: 1 records
+Price history for cpu/1: 4 records
+Price history for cpu/1: 4 records
+尝试认证: login_field=15631128911
+认证成功: 用户 testuser
+用户 testuser 登录成功
+Not Found: /favicon.ico
+Price history for ram/1: 0 records
+Watching for file changes with StatReloader

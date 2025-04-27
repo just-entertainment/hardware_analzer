@@ -207,3 +207,8 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Asia/Shanghai'
 
 SITE_URL = 'http://127.0.0.1:8000'
+
+
+ADMIN_SITE_HEADER = '硬件价格监控后台'
+ADMIN_SITE_TITLE = '硬件价格监控'
+ADMIN_INDEX_TITLE = '欢迎使用硬件价格监控后台'
