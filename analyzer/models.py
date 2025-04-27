@@ -319,6 +319,12 @@ from django.db import models
 
 
 class RAM(models.Model):
+    product_id = models.CharField(
+        max_length=50,
+        unique=True,
+        verbose_name='产品ID',
+        help_text='从京东URL提取的SKU或自定义唯一ID'
+    )
     title = models.CharField(max_length=255, verbose_name='标题')
     reference_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00, verbose_name='参考价')
     jd_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, verbose_name='京东价')
@@ -345,10 +351,49 @@ class RAM(models.Model):
         return self.title
 
 
+class RAMPriceHistory(models.Model):
+    """
+    RAM专属历史价格模型
+    命名规范：<硬件类型>PriceHistory
+    """
+    ram = models.ForeignKey(
+        RAM,
+        on_delete=models.CASCADE,
+        related_name='price_history',  # 保持反向查询名不变
+        verbose_name='关联内存'
+    )
+
+    price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        validators=[MinValueValidator(0.01)],
+        verbose_name='价格（元）'
+    )
+
+    date = models.DateField(verbose_name='记录日期')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='入库时间')
+
+    class Meta:
+        verbose_name = '内存历史价格'
+        verbose_name_plural = '内存历史价格'
+        ordering = ['-date']  # 默认最新价格在前
+        unique_together = ['ram', 'date']  # 唯一约束
+        db_table = 'ram_price_history'  # 明确表名
+
+    def __str__(self):
+        return f"[内存] {self.ram.title} | {self.date} | ¥{self.price}"
+
+
 from django.db import models
 
 
 class SSD(models.Model):
+    product_id = models.CharField(
+        max_length=50,
+        # unique=True,
+        verbose_name='产品ID',
+        help_text='从京东URL提取的SKU或自定义唯一ID'
+    )
     title = models.CharField(max_length=255, verbose_name='标题')
     reference_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00, verbose_name='参考价')
     jd_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, verbose_name='京东价')
@@ -376,6 +421,42 @@ class SSD(models.Model):
 
     def __str__(self):
         return self.title
+
+class SSDPriceHistory(models.Model):
+    """
+    SSD专属历史价格模型
+    命名规范：<硬件类型>PriceHistory
+    """
+    ssd = models.ForeignKey(
+        SSD,
+        on_delete=models.CASCADE,
+        related_name='price_history',  # 保持反向查询名不变
+        verbose_name='关联SSD'
+    )
+
+    price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        validators=[MinValueValidator(0.01)],
+        verbose_name='价格（元）'
+    )
+
+    date = models.DateField(verbose_name='记录日期')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='入库时间')
+
+    class Meta:
+        verbose_name = 'SSD历史价格'
+        verbose_name_plural = 'SSD历史价格'
+        ordering = ['-date']  # 默认最新价格在前
+        unique_together = ['ssd', 'date']  # 唯一约束
+        db_table = 'ssd_price_history'  # 明确表名
+
+    def __str__(self):
+        return f"[SSD] {self.ssd.title} | {self.date} | ¥{self.price}"
+
+
+
+
 class Cooler(models.Model):
     title = models.CharField(max_length=255, verbose_name='标题')
     reference_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00, verbose_name='参考价')
@@ -427,6 +508,12 @@ class PowerSupply(models.Model):
 
 
 class Chassis(models.Model):
+    product_id = models.CharField(
+        max_length=50,
+        # unique=True,
+        verbose_name='产品ID',
+        help_text='从京东URL提取的SKU或自定义唯一ID'
+    )
     # 原有字段保持不变
     title = models.CharField(max_length=255, verbose_name='标题')
     reference_price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00, verbose_name='参考价')
@@ -456,6 +543,37 @@ class Chassis(models.Model):
     def __str__(self):
         return self.title
 
+class ChassisPriceHistory(models.Model):
+    """
+    机箱专属历史价格模型
+    命名规范：<硬件类型>PriceHistory
+    """
+    chassis = models.ForeignKey(
+        Chassis,
+        on_delete=models.CASCADE,
+        related_name='price_history',  # 反向查询名
+        verbose_name='关联机箱'
+    )
+
+    price = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        validators=[MinValueValidator(0.01)],
+        verbose_name='价格（元）'
+    )
+
+    date = models.DateField(verbose_name='记录日期')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='入库时间')
+
+    class Meta:
+        verbose_name = '机箱历史价格'
+        verbose_name_plural = '机箱历史价格'
+        ordering = ['-date']  # 默认最新价格在前
+        unique_together = ['chassis', 'date']  # 唯一约束
+        db_table = 'chassis_price_history'  # 明确表名
+
+    def __str__(self):
+        return f"[机箱] {self.chassis.title} | {self.date} | ¥{self.price}"
 
 from django.db import models
 
@@ -530,3 +648,18 @@ class PriceAlert(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.favorite.content_object.title} 降价通知"
+
+
+class PriceChangeNotification(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='price_notifications')
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    component = GenericForeignKey('content_type', 'object_id')
+    current_price = models.DecimalField(max_digits=10, decimal_places=2)
+    previous_price = models.DecimalField(max_digits=10, decimal_places=2)
+    notified_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['user', 'content_type', 'object_id']),
+        ]

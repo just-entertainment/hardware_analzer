@@ -304,3 +304,760 @@ Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
 Watching for file changes with StatReloader
 Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
 Watching for file changes with StatReloader
+Price history for cpu/2: 17 records
+Unauthorized: /api/favorites/
+Price history for motherboard/1: 0 records
+Unauthorized: /api/favorite/
+尝试认证: login_field=ent
+认证成功: 用户 ent
+用户 ent 登录成功
+尝试认证: login_field=ent
+认证成功: 用户 ent
+用户 ent 登录成功
+尝试认证: login_field=ent
+认证成功: 用户 ent
+用户 ent 登录成功
+Price history for motherboard/1: 0 records
+Price history for motherboard/2: 0 records
+Price history for motherboard/5: 0 records
+尝试认证: login_field=ent
+认证成功: 用户 ent
+用户 ent 登录成功
+Watching for file changes with StatReloader
+Price history for ram/1: 0 records
+Price history for ram/6: 0 records
+Price history for ram/1: 0 records
+Price history for ram/9: 0 records
+Price history for cpu/7: 0 records
+Price history for cpu/6: 10 records
+Price history for ram/1: 0 records
+Price history for ram/7: 0 records
+Price history for ram/9: 0 records
+Price history for ram/10: 0 records
+Not Found: /favicon.ico
+Price history for ram/1: 0 records
+Price history for motherboard/1: 0 records
+Price history for ram/4: 0 records
+Price history for ram/1: 0 records
+Price history for ram/10: 0 records
+Price history for ram/18: 0 records
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Watching for file changes with StatReloader
+Price history for ram/1: 0 records
+Price history for ram/2: 0 records
+Price history for ram/7: 0 records
+Price history for ram/1: 0 records
+Internal Server Error: /api/detail/gpu/1/
+Price history for ram/1: 0 records
+Price history for ram/6: 4 records
+Price history for ram/8: 0 records
+Price history for ram/10: 1 records
+Price history for ram/17: 0 records
+Price history for ram/14: 2 records
+Price history for ram/19: 0 records
+Price history for ram/20: 0 records
+Price history for cpu/1: 4 records
+Price history for cpu/7: 0 records
+Price history for cpu/9: 2 records
+Price history for cpu/10: 3 records
+Price history for cpu/5: 1 records
+Price history for cpu/29: 8 records
+Price history for cpu/28: 0 records
+Price history for cpu/25: 0 records
+Price history for cpu/30: 0 records
+Price history for cpu/24: 8 records
+Price history for cpu/21: 9 records
+Price history for cpu/22: 3 records
+Price history for ram/1: 0 records
+Price history for ram/59: 0 records
+Price history for ram/109: 0 records
+Price history for ram/110: 1 records
+Price history for ram/118: 0 records
+Price history for ram/118: 0 records
+Price history for ram/116: 0 records
+Price history for ram/130: 7 records
+Price history for ram/140: 0 records
+Price history for ram/167: 7 records
+Price history for ram/170: 2 records
+Price history for ram/168: 10 records
+Price history for ram/168: 10 records
+Price history for ram/167: 7 records
+Price history for cpu/29: 8 records
+Price history for cpu/21: 9 records
+Price history for cpu/22: 3 records
+Price history for ram/168: 10 records
+尝试认证: login_field=ent
+认证成功: 用户 ent
+用户 ent 登录成功
+尝试认证: login_field=ent
+认证成功: 用户 ent
+用户 ent 登录成功
+Price history for ram/1: 0 records
+Internal Server Error: /api/detail/gpu/1/
+Price history for cpu/1: 4 records
+Price history for cpu/7: 0 records
+Price history for cpu/9: 2 records
+Price history for cpu/10: 3 records
+Watching for file changes with StatReloader
+Price history for cpu/9: 2 records
+Price history for cpu/24: 8 records
+Price history for cpu/7: 0 records
+Price history for cpu/3: 10 records
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Unauthorized: /api/favorites/
+Unauthorized: /api/favorites/
+Price history for cpu/3: 10 records
+Price history for cpu/1: 4 records
+Price history for ram/7: 0 records
+Internal Server Error: /api/detail/gpu/5/
+Internal Server Error: /api/detail/power_supply/1/
+尝试认证: login_field=ent
+认证成功: 用户 ent
+用户 ent 登录成功
+尝试认证: login_field=ent
+认证成功: 用户 ent
+用户 ent 登录成功
+Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /accounts/profile/
+Traceback (most recent call last):
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 216, in get
+    context = self.get_context_data(**kwargs)
+  File "Z:\desk\code\hardware_analyzer\accounts\views.py", line 127, in get_context_data
+    alerts = PriceAlert.objects.filter(user=self.request.user, is_active=True)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'is_active' into field. Choices are: current_price, favorite, favorite_id, id, is_read, method, previous_price, sent_at, user, user_id
+尝试认证: login_field=ent
+认证成功: 用户 ent
+用户 ent 登录成功
+Internal Server Error: /accounts/profile/
+Traceback (most recent call last):
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 216, in get
+    context = self.get_context_data(**kwargs)
+  File "Z:\desk\code\hardware_analyzer\accounts\views.py", line 127, in get_context_data
+    alerts = PriceAlert.objects.filter(user=self.request.user, is_active=True)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'is_active' into field. Choices are: current_price, favorite, favorite_id, id, is_read, method, previous_price, sent_at, user, user_id
+Z:\desk\code\hardware_analyzer\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /accounts/profile/
+Traceback (most recent call last):
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 216, in get
+    context = self.get_context_data(**kwargs)
+  File "Z:\desk\code\hardware_analyzer\accounts\views.py", line 129, in get_context_data
+    alerts = PriceAlert.objects.filter(user=self.request.user, is_active=True)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'is_active' into field. Choices are: current_price, favorite, favorite_id, id, is_read, method, previous_price, sent_at, user, user_id
+Internal Server Error: /accounts/profile/
+Traceback (most recent call last):
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 216, in get
+    context = self.get_context_data(**kwargs)
+  File "Z:\desk\code\hardware_analyzer\accounts\views.py", line 129, in get_context_data
+    alerts = PriceAlert.objects.filter(user=self.request.user, is_active=True)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'is_active' into field. Choices are: current_price, favorite, favorite_id, id, is_read, method, previous_price, sent_at, user, user_id
+尝试认证: login_field=ent
+认证成功: 用户 ent
+用户 ent 登录成功
+Internal Server Error: /accounts/profile/
+Traceback (most recent call last):
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\auth\mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\generic\base.py", line 216, in get
+    context = self.get_context_data(**kwargs)
+  File "Z:\desk\code\hardware_analyzer\accounts\views.py", line 129, in get_context_data
+    alerts = PriceAlert.objects.filter(user=self.request.user, is_active=True)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1420, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1438, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 1445, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1407, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1217, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'is_active' into field. Choices are: current_price, favorite, favorite_id, id, is_read, method, previous_price, sent_at, user, user_id
+Z:\desk\code\hardware_analyzer\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def check_price_changes():
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def check_price_changes():
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def check_price_changes():
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Price history for ram/168: 10 records
+Price history for ram/168: 10 records
+Price history for cpu/4: 10 records
+Price history for cpu/3: 10 records
+Price history for cpu/3: 10 records
+Price history for cpu/3: 10 records
+Price history for cpu/3: 10 records
+Not Found: /favicon.ico
+Price history for cpu/3: 10 records
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+尝试认证: login_field=ent
+认证成功: 用户 ent
+用户 ent 登录成功
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Watching for file changes with StatReloader
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def check_price_changes():
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+尝试认证: login_field=testuser
+认证成功: 用户 testuser
+用户 testuser 登录成功
+Price history for ram/1865: 2 records
+尝试认证: login_field=15631128911
+认证成功: 用户 testuser
+用户 testuser 登录成功
+Price history for ram/1866: 2 records
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def check_price_changes():
+    return 1
+
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def check_price_changes():
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+Using proactor: IocpProactor
+Price history for ram/1866: 2 records
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def check_price_changes():
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def check_price_changes():
+    return 1
+
+Starting check_price_changes task
+Processing favorite 73 for user 15631128911, component_type: ram
+Item Test RAM: current_price=450.00, previous_price=480.00
+Sending email for Test RAM to 1696995719@eqq.com
+Email sent and notification recorded for Test RAM
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Using proactor: IocpProactor
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Using proactor: IocpProactor
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+尝试认证: login_field=15631128911
+认证成功: 用户 testuser
+用户 testuser 登录成功
+尝试认证: login_field=15631128911
+认证成功: 用户 testuser
+用户 testuser 登录成功
+Price history for ram/1869: 2 records
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /api/detail/ssd/1787/
+Internal Server Error: /api/detail/ssd/1787/
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Watching for file changes with StatReloader
+Price history for ssd/1787: 4 records
+Price history for ssd/1795: 2 records
+Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Price history for cpu/1: 4 records
+Price history for cpu/8: 5 records
+Price history for cpu/10: 3 records
+Price history for cpu/19: 0 records
+Price history for cpu/11: 2 records
+尝试认证: login_field=entertainment33@qq.com
+认证成功: 用户 entertainment33@qq.com
+用户 entertainment33@qq.com 登录成功

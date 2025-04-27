@@ -1,95 +1,93 @@
 from celery import shared_task
-from django.core.mail import send_mail
-from django.contrib.contenttypes.models import ContentType
-from .models import Favorite,  PriceHistory, PriceAlert
 from django.utils import timezone
+from django.core.mail import send_mail
+from django.conf import settings
+from celery import shared_task
+from django.utils import timezone
+from django.core.mail import send_mail
+from django.conf import settings
+from analyzer.models import Favorite, PriceChangeNotification
+from datetime import timedelta
 import logging
-from aliyunsdkcore.client import AcsClient
-from aliyunsdkdysmsapi.request.v20170525.SendSmsRequest import SendSmsRequest
 
-# 初始化日志记录器
+from analyzer.models import Favorite, PriceChangeNotification,  CPUPriceHistory, \
+    RAMPriceHistory
+from datetime import timedelta
+COMPONENT_PRICE_HISTORY_MODELS = {
+    'cpu': CPUPriceHistory,
+    'ram': RAMPriceHistory,
+    # 'gpu': GPUPriceHistory,
+    # 'motherboard': MotherboardPriceHistory,
+    # 'ssd': SSDPriceHistory,
+    # 'cooler': CoolerPriceHistory,
+    # 'power_supply': PowerSupplyPriceHistory,
+    # 'case': ChassisPriceHistory,
+}
+
 logger = logging.getLogger(__name__)
-
-# 阿里云 SMS 配置（替换为你的密钥和模板）
-ALICLOUD_ACCESS_KEY = 'your_access_key'
-ALICLOUD_ACCESS_SECRET = 'your_access_secret'
-ALICLOUD_SIGN_NAME = 'your_sign_name'
-ALICLOUD_TEMPLATE_CODE = 'your_template_code'
-
 @shared_task
-def check_price_drops():
-    """
-    定时任务：检查收藏的硬件价格是否降低，并发送邮件或短信通知。
-    """
-    logger.info("开始检查硬件价格降价")
-    # 获取 Hardware 的 ContentType
-    hardware_content_type = ContentType.objects.get_for_model(Hardware)
-
-    # 遍历所有收藏的硬件
-    favorites = Favorite.objects.filter(content_type=hardware_content_type).select_related('user', 'content_object')
-    for favorite in favorites:
-        hardware = favorite.content_object
-        user = favorite.user
-
-        # 获取最近的价格历史
-        latest_price_history = PriceHistory.objects.filter(
-            component_type=hardware.component_type,
-            component_id=hardware.product_id
-        ).order_by('-date').first()
-
-        if latest_price_history and hardware.current_price < latest_price_history.price:
-            # 检测到降价
-            price_drop = latest_price_history.price - hardware.current_price
-            logger.info(f"检测到降价: {hardware.title} 从 {latest_price_history.price} 降到 {hardware.current_price}")
-
-            # 创建降价提醒记录
-            alert = PriceAlert.objects.create(
-                user=user,
-                favorite=favorite,
-                previous_price=latest_price_history.price,
-                current_price=hardware.current_price,
-                method='email'
-            )
-
-            # 发送邮件通知
-            subject = f"硬件降价提醒: {hardware.title}"
-            message = (
-                f"尊敬的 {user.username}，\n\n"
-                f"您收藏的硬件 {hardware.title} 已降价！\n"
-                f"- 之前价格: ￥{latest_price_history.price}\n"
-                f"- 当前价格: ￥{hardware.current_price}\n"
-                f"- 降价幅度: ￥{price_drop}\n\n"
-                f"点击查看详情: {hardware.jd_url}\n\n"
-                f"感谢使用配件分析平台！"
-            )
-            try:
-                send_mail(
-                    subject=subject,
-                    message=message,
-                    from_email=None,
-                    recipient_list=[user.email],
-                    fail_silently=False
-                )
-                logger.info(f"邮件发送成功: {user.email}")
-            except Exception as e:
-                logger.error(f"邮件发送失败: {user.email}, 错误: {str(e)}")
-                alert.delete()
-
-            # 发送短信通知（可选）
-            try:
-                client = AcsClient(ALICLOUD_ACCESS_KEY, ALICLOUD_ACCESS_SECRET, 'cn-hangzhou')
-                request = SendSmsRequest()
-                request.set_accept_format('json')
-                request.set_SignName(ALICLOUD_SIGN_NAME)
-                request.set_TemplateCode(ALICLOUD_TEMPLATE_CODE)
-                request.set_PhoneNumbers(user.phone)
-                request.set_TemplateParam({
-                    "product": hardware.title,
-                    "price": str(hardware.current_price)
-                })
-                response = client.do_action_with_exception(request)
-                logger.info(f"短信发送成功: {user.phone}")
-                alert.method = 'sms'
-                alert.save()
-            except Exception as e:
-                logger.error(f"短信发送失败: {user.phone}, 错误: {str(e)}")
+def check_price_changes():
+    logger.info("Starting check_price_changes task")
+    for favorite in Favorite.objects.select_related('user', 'content_type').all():
+        try:
+            user = favorite.user
+            logger.info(f"Processing favorite {favorite.id} for user {user.phone}, component_type: {favorite.content_type.model}")
+            component_type = favorite.content_type.model
+            item = favorite.content_object  # 修复：使用 content_object
+            if not item:
+                logger.warning(f"Item not found for favorite {favorite.id}")
+                continue
+            price_history_model = COMPONENT_PRICE_HISTORY_MODELS.get(component_type)
+            if not price_history_model:
+                logger.warning(f"No price history model for {component_type}")
+                continue
+            latest_price_record = price_history_model.objects.filter(
+                **{component_type: item}
+            ).order_by('-date').first()
+            current_price = latest_price_record.price if latest_price_record else (item.jd_price or item.reference_price)
+            if not current_price:
+                logger.warning(f"No current price for item {item.title}")
+                continue
+            previous_price_record = price_history_model.objects.filter(
+                **{component_type: item},
+                date__lt=latest_price_record.date if latest_price_record else timezone.now().date()
+            ).order_by('-date').first()
+            previous_price = previous_price_record.price if previous_price_record else current_price
+            logger.info(f"Item {item.title}: current_price={current_price}, previous_price={previous_price}")
+            if current_price != previous_price:
+                recent_notification = PriceChangeNotification.objects.filter(
+                    user=user,
+                    content_type=favorite.content_type,
+                    object_id=favorite.object_id,
+                    notified_at__gte=timezone.now() - timedelta(days=1)
+                ).exists()
+                if not recent_notification:
+                    logger.info(f"Sending email for {item.title} to {user.email}")
+                    subject = f'价格变化通知：{item.title}'
+                    message = (
+                        f'您收藏的配件 {item.title} 价格发生变化！\n'
+                        f'当前价格：¥{current_price}\n'
+                        f'前一天价格：¥{previous_price}\n'
+                        f'查看详情：{settings.SITE_URL}/api/detail/{component_type}/{item.id}/'
+                    )
+                    send_mail(
+                        subject=subject,
+                        message=message,
+                        from_email=settings.DEFAULT_FROM_EMAIL,
+                        recipient_list=[user.email],
+                        fail_silently=True
+                    )
+                    PriceChangeNotification.objects.create(
+                        user=user,
+                        content_type=favorite.content_type,
+                        object_id=favorite.object_id,
+                        current_price=current_price,
+                        previous_price=previous_price
+                    )
+                    logger.info(f"Email sent and notification recorded for {item.title}")
+                else:
+                    logger.info(f"Recent notification exists for {item.title}")
+            else:
+                logger.info(f"No price change for {item.title}")
+        except Exception as e:
+            logger.error(f"Error checking price change for favorite {favorite.id}: {e}", exc_info=True)

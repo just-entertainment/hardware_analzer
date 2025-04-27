@@ -50,18 +50,23 @@
 
             <h2>降价提醒</h2>
             {% if price_alerts %}
-                <ul>
-                    {% for alert in price_alerts %}
-                        <li>
-                            {{ alert.favorite.content_object.title }}
-                            从 ￥{{ alert.previous_price }} 降至 ￥{{ alert.current_price }}
-                            （{{ alert.sent_at|date:"Y-m-d H:i" }}，{% if alert.is_read %}已读{% else %}未读{% endif %}）
-                        </li>
-                    {% endfor %}
-                </ul>
-            {% else %}
-                <p>暂无降价提醒</p>
-            {% endif %}
+        <ul>
+            {% for alert in price_alerts %}
+                <li>
+                    {{ alert.title }}：
+                    当前价 ¥{{ alert.current_price|default:"未知" }}
+                    {% if alert.threshold_price %}
+                        （目标价 ¥{{ alert.threshold_price }}）
+                    {% endif %}
+                    {% if alert.is_triggered %}
+                        <span style="color: red;">已降价！</span>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>暂无降价提醒</p>
+    {% endif %}
 
             <div class="input-group">
                 <a href="{% url 'accounts:edit_profile' %}" class="button">编辑资料</a>

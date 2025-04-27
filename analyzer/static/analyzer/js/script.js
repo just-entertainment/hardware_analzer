@@ -23,7 +23,11 @@ const Detail = {
 
         fetch(`/api/detail/${type}/${id}/`)
             .then(res => {
-                if (!res.ok) throw new Error(res.status === 400 ? res.json().then(data => data.error) : `加载失败: ${res.status}`);
+                if (!res.ok) {
+                    return res.json().then(data => {
+                        throw new Error(data.error || `加载失败: ${res.status}`);
+                    });
+                }
                 return res.json();
             })
             .then(data => {
@@ -50,6 +54,36 @@ const Detail = {
                         <p><strong>主芯片组:</strong> ${data.chipset || '未知'}</p>
                         <p><strong>内存类型:</strong> ${data.memory_type || '未知'}</p>
                         <p><strong>板型:</strong> ${data.form_factor || '未知'}</p>
+                    `;
+                } else if (type === 'ram') {
+                    specificFields = `
+                        <p><strong>内存类型:</strong> ${data.memory_type || '未知'}</p>
+                        <p><strong>容量:</strong> ${data.capacity || '未知'}</p>
+                        <p><strong>频率:</strong> ${data.frequency || '未知'}</p>
+                    `;
+                } else if (type === 'ssd') {
+                    specificFields = `
+                        <p><strong>容量:</strong> ${data.capacity || '未知'}</p>
+                        <p><strong>接口类型:</strong> ${data.interface_type || '未知'}</p>
+                        <p><strong>读取速度:</strong> ${data.read_speed || '未知'}</p>
+                    `;
+                } else if (type === 'cooler') {
+                    specificFields = `
+                        <p><strong>散热器类型:</strong> ${data.cooler_type || '未知'}</p>
+                        <p><strong>风扇尺寸:</strong> ${data.fan_size || '未知'}</p>
+                        <p><strong>兼容性:</strong> ${data.compatibility || '未知'}</p>
+                    `;
+                } else if (type === 'power_supply') {
+                    specificFields = `
+                        <p><strong>功率:</strong> ${data.wattage || '未知'}</p>
+                        <p><strong>效率认证:</strong> ${data.efficiency_rating || '未知'}</p>
+                        <p><strong>模组化:</strong> ${data.modular || '未知'}</p>
+                    `;
+                } else if (type === 'case') {
+                    specificFields = `
+                        <p><strong>板型:</strong> ${data.form_factor || '未知'}</p>
+                        <p><strong>最大显卡长度:</strong> ${data.max_gpu_length || '未知'}</p>
+                        <p><strong>风扇位:</strong> ${data.fan_slots || '未知'}</p>
                     `;
                 }
 

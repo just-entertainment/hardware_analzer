@@ -11,7 +11,8 @@ import statistics
 import math
 import re
 from django.db.models import IntegerField
-from .models import RAM, GPU, CPU, Motherboard, SSD, Cooler, PowerSupply, Chassis, PriceHistory, CPUPriceHistory
+from .models import RAM, GPU, CPU, Motherboard, SSD, Cooler, PowerSupply, Chassis, PriceHistory, CPUPriceHistory, \
+    RAMPriceHistory, SSDPriceHistory
 from django.db.models import F, FloatField, Case, When, Value
 import logging
 from django.db import models
@@ -35,6 +36,18 @@ COMPONENT_MODELS = {
     'cooler': Cooler,
     'power_supply': PowerSupply,
     'case': Chassis,
+}
+
+# 定义组件类型到历史价格模型的映射
+COMPONENT_PRICE_HISTORY_MODELS = {
+    'cpu': CPUPriceHistory,
+    'ram': RAMPriceHistory,
+    # 'gpu': GPUPriceHistory,
+    # 'motherboard': MotherboardPriceHistory,
+    'ssd': SSDPriceHistory,
+    # 'cooler': CoolerPriceHistory,
+    # 'power_supply': PowerSupplyPriceHistory,
+    # 'case': ChassisPriceHistory,
 }
 
 # 主页视图
@@ -161,7 +174,6 @@ def get_cpu_series(request):
         return JsonResponse({'error': str(e)}, status=500)
 
 
-from django.http import JsonResponse
 from django.views.decorators.http import require_GET
 from django.utils import timezone
 from datetime import timedelta
@@ -170,17 +182,7 @@ from .models import RAM, GPU, CPU, Motherboard, SSD, Cooler, PowerSupply, Chassi
 
 logger = logging.getLogger(__name__)
 
-# 定义组件类型到模型类的映射
-COMPONENT_MODELS = {
-    'ram': RAM,
-    'gpu': GPU,
-    'cpu': CPU,
-    'motherboard': Motherboard,
-    'ssd': SSD,
-    'cooler': Cooler,
-    'power_supply': PowerSupply,
-    'case': Chassis,
-}
+
 
 @require_GET
 def detail(request, component_type, id):
@@ -197,17 +199,16 @@ def detail(request, component_type, id):
             return JsonResponse({'error': '配件不存在'}, status=404)
 
         # 获取历史价格
-        if component_type == 'cpu':
-            price_history = CPUPriceHistory.objects.filter(
-                cpu=item,
+        price_history_model = COMPONENT_PRICE_HISTORY_MODELS.get(component_type)
+        if price_history_model:
+            # 动态查询历史价格，假设每个模型有外键字段名为小写组件类型（例如 'ram', 'cpu'）
+            filter_kwargs = {component_type: item}
+            price_history = price_history_model.objects.filter(
+                **filter_kwargs,
                 date__gte=timezone.now().date() - timedelta(days=90)
             ).order_by('date')
         else:
-            price_history = PriceHistory.objects.filter(
-                component_type=component_type,
-                component_id=item.id,
-                date__gte=timezone.now().date() - timedelta(days=90)
-            ).order_by('date')
+            return JsonResponse({'error': f'历史价格模型未定义: {component_type}'}, status=500)
 
         logger.info(f"Price history for {component_type}/{id}: {price_history.count()} records")
 

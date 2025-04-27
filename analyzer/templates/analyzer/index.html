@@ -18,9 +18,6 @@
         <a href="#" onclick="Navigation.showSection('price')">
             <span class="icon">📈</span> 价格分析
         </a>
-{#        <a href="#" onclick="Navigation.showSection('config')">#}
-{#            <span class="icon">⚙️</span> 配置单#}
-{#        </a>#}
         <a href="#" onclick="Navigation.showSection('favorites')">
             <span class="icon">⭐</span> 我的收藏
         </a>
@@ -34,7 +31,10 @@
             <span class="user-name">{{ user.username }}</span>
             <div class="user-menu" id="userMenu">
                 <a href="{% url 'accounts:change_password' %}" class="menu-item">修改密码</a>
+                <a href="{% url 'accounts:profile' %}" class="menu-item">查看个人资料</a>
+                <a href="{% url 'accounts:edit_profile' %}" class="menu-item">修改个人资料</a>
                 <a href="{% url 'accounts:logout' %}" class="menu-item">退出登录</a>
+
             </div>
         </div>
     {% else %}

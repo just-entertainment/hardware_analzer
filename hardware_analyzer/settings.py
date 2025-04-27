@@ -187,12 +187,16 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # 邮件配置
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'entertainment33@qq.com'  # 替换为你的邮箱
-EMAIL_HOST_PASSWORD = 'ytjebotiwdcecahd'  # 替换为应用专用密码
-DEFAULT_FROM_EMAIL = 'Hardware Analyzer <yusefswinhart972900@gmail.com>'
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_USE_TLS = False
+
+EMAIL_HOST_USER = '1696995719@qq.com'  # 替换为你的邮箱
+EMAIL_HOST_PASSWORD = 'lcyxgqibclcidheg'  # 替换为应用专用密码
+EMAIL_FROM='1696995719@qq.com'
+DEFAULT_FROM_EMAIL='1696995719@qq.com'
+
 
 # Celery 配置
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
@@ -201,3 +205,5 @@ CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Asia/Shanghai'
+
+SITE_URL = 'http://127.0.0.1:8000'

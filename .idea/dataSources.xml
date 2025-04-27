@@ -17,5 +17,12 @@
       <jdbc-url>jdbc:sqlite:Z:\desk\code\hardware_analyzer\db.sqlite3</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="default@192.168.80.128" uuid="363e51db-15d3-4acf-b1f7-e0123f023c7d">
+      <driver-ref>hive</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.apache.hive.jdbc.HiveDriver</jdbc-driver>
+      <jdbc-url>jdbc:hive2://192.168.80.128:10000/default;auth=noSasl</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

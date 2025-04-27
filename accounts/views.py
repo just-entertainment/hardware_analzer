@@ -4,6 +4,8 @@ from django.contrib import messages
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
+
+from analyzer.views import COMPONENT_PRICE_HISTORY_MODELS
 from .forms import CustomUserCreationForm, CustomAuthenticationForm, CustomUserChangeForm
 from analyzer.models import Favorite, PriceAlert
 import logging
@@ -112,3 +114,34 @@ class EditProfileView(LoginRequiredMixin, View):
             return redirect('accounts:profile')
         messages.error(request, "更新失败，请检查输入信息")
         return render(request, 'accounts/edit_profile.html', {'form': form})
+
+
+
+# from django.contrib.auth.mixins import LoginRequiredMixin
+# from django.views.generic import TemplateView
+# from analyzer.models import PriceAlert
+#
+# class ProfileView(LoginRequiredMixin, TemplateView):
+#     template_name = 'accounts/profile.html'
+#
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         alerts = PriceAlert.objects.filter(user=self.request.user, is_active=True)
+#         alert_data = []
+#         for alert in alerts:
+#             item = alert.component
+#             component_type = alert.content_type.model
+#             price_history_model = COMPONENT_PRICE_HISTORY_MODELS.get(component_type)
+#             if price_history_model:
+#                 latest_price = price_history_model.objects.filter(**{component_type: item}).order_by('-date').first()
+#                 current_price = latest_price.price if latest_price else (item.jd_price or item.reference_price)
+#             else:
+#                 current_price = item.jd_price or item.reference_price
+#             alert_data.append({
+#                 'title': item.title,
+#                 'current_price': current_price,
+#                 'threshold_price': alert.threshold_price,
+#                 'is_triggered': current_price and alert.threshold_price and current_price < alert.threshold_price
+#             })
+#         context['price_alerts'] = alert_data
+#         return context
