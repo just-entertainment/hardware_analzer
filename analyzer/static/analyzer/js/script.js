@@ -93,7 +93,6 @@ const Detail = {
                         <span>参考价: ¥${data.reference_price}</span>
                         <span>京东价: ¥${data.jd_price}</span>
                     </div>
-                    
                     <p>京东链接: <a href="${data.jd_link || '#'}" target="_blank">${data.jd_link ? '点击购买' : '暂无链接'}</a></p>
                     <div class="specs-list">
                         <h3>规格参数</h3>
@@ -460,60 +459,15 @@ const Search = {
 };
 
 
+// 详情弹窗模块
+// 确保 DOM 加载完成
+// 详情弹窗模块
 
 
-
-
-const Config = {
-     init() {
-        console.log('Config initialized');
-        // 初始化逻辑
-    },
-
-    async generateConfig() {
-        const budget = document.getElementById('budgetInput').value;
-        const usage = document.getElementById('usageSelect').value;
-        const resultsDiv = document.getElementById('configResults');
-
-        resultsDiv.innerHTML = '<div class="loading-spinner"></div> 生成中...';
-
-        try {
-            const response = await fetch(`/api/generate_configuration/?budget=${budget}&usage=${usage}`);
-            const data = await response.json();
-
-            if (data.error) {
-                resultsDiv.innerHTML = `<div class="error">生成配置失败: ${data.error}</div>`;
-                return;
-            }
-
-            // 渲染配置单
-            const totalPrice = parseFloat(data.total_price);
-            resultsDiv.innerHTML = `
-                <div class="config-card">
-                    <div class="config-header">
-                        <span class="config-title">推荐配置</span>
-                        <span class="config-price">总价: ¥${data.total_price.toFixed(2)}</span>
-                    </div>
-                    <div class="config-items">
-                        ${data.configuration.map(item => `
-                            <div class="config-item">
-                                <div class="item-name">${item.type.toUpperCase()}: ${item.title}</div>
-                                <div class="item-price">¥${item.price.toFixed(2)}</div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-            `;
-        } catch (error) {
-            resultsDiv.innerHTML = `<div class="error">生成配置失败: ${error.message}</div>`;
-        }
-    }
-};
 const Visualization = {
     charts: {
         priceDistribution: null,
-        averagePriceTrend: null,
-        priceComment: null  // 新增散点图
+        averagePriceTrend: null
     },
     currentType: 'cpu',
 
@@ -555,52 +509,51 @@ const Visualization = {
         console.log('Loading visualization data for type:', this.currentType);
         const priceChartCanvas = document.getElementById('priceDistributionChart');
         const trendChartCanvas = document.getElementById('averagePriceTrendChart');
-        const commentChartCanvas = document.getElementById('priceCommentChart');  // 新增
         const statsSummary = document.getElementById('statsSummary');
 
-        if (!priceChartCanvas || !trendChartCanvas || !commentChartCanvas || !statsSummary) {
-            console.error('图表元素缺失:', { priceChartCanvas, trendChartCanvas, commentChartCanvas, statsSummary });
+        if (!priceChartCanvas || !trendChartCanvas || !statsSummary) {
+            console.error('图表元素缺失:', { priceChartCanvas, trendChartCanvas, statsSummary });
             return;
         }
 
         priceChartCanvas.parentElement.classList.add('chart-loading');
         trendChartCanvas.parentElement.classList.add('chart-loading');
-        commentChartCanvas.parentElement.classList.add('chart-loading');
         statsSummary.innerHTML = '<div class="loading-spinner"></div>加载中...';
 
         try {
-            const [statsResponse, trendResponse, commentResponse] = await Promise.all([
+            const [statsResponse, trendResponse] = await Promise.all([
                 fetch(`/api/price_stats/?type=${this.currentType}`),
-                fetch(`/api/average_price_trend/?type=${this.currentType}`),
-                fetch(`/api/price_comment_analysis/?type=${this.currentType}`)  // 新增请求
+                fetch(`/api/average_price_trend/?type=${this.currentType}`)
             ]);
 
-            if (!statsResponse.ok || !trendResponse.ok || !commentResponse.ok) {
-                throw new Error(`网络错误: ${statsResponse.status}, ${trendResponse.status}, ${commentResponse.status}`);
+            console.log('Price stats response:', statsResponse.status, await statsResponse.clone().json());
+            console.log('Trend response:', trendResponse.status, await trendResponse.clone().json());
+
+            if (!statsResponse.ok || !trendResponse.ok) {
+                throw new Error(`网络错误: ${statsResponse.status}, ${trendResponse.status}`);
             }
 
             const statsData = await statsResponse.json();
             const trendData = await trendResponse.json();
-            const commentData = await commentResponse.json();
 
             priceChartCanvas.parentElement.classList.remove('chart-loading');
             trendChartCanvas.parentElement.classList.remove('chart-loading');
-            commentChartCanvas.parentElement.classList.remove('chart-loading');
 
-            if (statsData.error) throw new Error(statsData.error);
-            if (trendData.error) throw new Error(trendData.error);
-            if (commentData.error) throw new Error(commentData.error);
+            if (statsData.error) {
+                throw new Error(statsData.error);
+            }
+            if (trendData.error) {
+                throw new Error(trendData.error);
+            }
 
             this.renderPriceDistributionChart(statsData);
             this.renderAveragePriceTrendChart(trendData);
-            this.renderPriceCommentChart(commentData);
             this.renderStatsSummary(statsData);
         } catch (error) {
             console.error('可视化数据加载失败:', error);
             const errorMessage = error.message.includes('ChartDataLabels') ? '图表插件加载失败，请刷新页面' : error.message;
             priceChartCanvas.parentElement.innerHTML = `<div class="chart-error">${errorMessage} <button onclick="Visualization.loadData()">重试</button></div>`;
             trendChartCanvas.parentElement.innerHTML = `<div class="chart-error">${errorMessage} <button onclick="Visualization.loadData()">重试</button></div>`;
-            commentChartCanvas.parentElement.innerHTML = `<div class="chart-error">${errorMessage} <button onclick="Visualization.loadData()">重试</button></div>`;
             statsSummary.innerHTML = `<div class="error">${errorMessage}</div>`;
         }
     }, 300),
@@ -622,7 +575,12 @@ const Visualization = {
             return;
         }
 
+        // 检查 ChartDataLabels 是否可用
         const plugins = typeof ChartDataLabels !== 'undefined' ? [ChartDataLabels] : [];
+        if (!plugins.length) {
+            console.warn('ChartDataLabels 未加载，柱状图将不显示数据标签');
+        }
+
         this.charts.priceDistribution = new Chart(ctx, {
             type: 'bar',
             data: {
@@ -657,8 +615,13 @@ const Visualization = {
                     } : undefined
                 },
                 scales: {
-                    y: { beginAtZero: true, title: { display: true, text: '产品数量' } },
-                    x: { title: { display: true, text: '价格区间 (¥)' } }
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: '产品数量' }
+                    },
+                    x: {
+                        title: { display: true, text: '价格区间 (¥)' }
+                    }
                 }
             },
             plugins: plugins
@@ -724,79 +687,6 @@ const Visualization = {
         });
     },
 
-    renderPriceCommentChart(commentData) {
-        const ctx = document.getElementById('priceCommentChart')?.getContext('2d');
-        if (!ctx) {
-            console.error('Price-comment canvas not found');
-            return;
-        }
-
-        if (this.charts.priceComment) {
-            this.charts.priceComment.destroy();
-        }
-
-        const data = commentData.price_comment_data || [];
-        if (!data.length) {
-            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${commentData.message || '暂无价格-评论数据，请尝试其他配件类型'}</div>`;
-            return;
-        }
-
-        this.charts.priceComment = new Chart(ctx, {
-            type: 'scatter',
-            data: {
-                datasets: [{
-                    label: '价格-评论数',
-                    data: data.map(item => ({ x: item.price, y: item.comment_count })),
-                    backgroundColor: 'rgba(75, 192, 192, 0.7)',
-                    pointRadius: 5,
-                    pointHoverRadius: 8
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: `${this.getComponentName(this.currentType)} 价格与评论数关系 (相关系数: ${commentData.correlation.toFixed(3)})`,
-                        font: { size: 16 }
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: ctx => `价格: ¥${ctx.raw.x.toFixed(2)}, 评论数: ${ctx.raw.y}`
-                        }
-                    }
-                },
-                scales: {
-                    x: {
-                        title: { display: true, text: '价格 (¥)' },
-                        beginAtZero: false,
-                        suggestedMin: Math.max(0, Math.min(...data.map(item => item.price)) - 50),
-                        suggestedMax: Math.max(...data.map(item => item.price)) + 50
-                    },
-                    y: {
-                        title: { display: true, text: '评论数' },
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-        // 显示区间统计
-        const statsSummary = document.getElementById('statsSummary');
-        let summaryHtml = statsSummary.innerHTML;
-        summaryHtml += `
-            <p>价格-评论相关系数: ${commentData.correlation.toFixed(3)}</p>
-            <h4>价格区间平均评论数:</h4>
-            <ul>
-                ${commentData.price_range_stats.map(stat => 
-                    `<li>${stat.range}: ${stat.avg_comments} 条评论</li>`
-                ).join('')}
-            </ul>
-        `;
-        statsSummary.innerHTML = summaryHtml;
-    },
-
     renderStatsSummary(statsData) {
         const statsSummary = document.getElementById('statsSummary');
         if (!statsData || statsData.total_count === 0) {
@@ -828,13 +718,7 @@ const Visualization = {
 };
 
 // 防抖函数
-function debounce(func, wait) {
-    let timeout;
-    return function (...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(this, args), wait);
-    };
-}
+
 
 // 防抖函数
 function debounce(func, wait) {
@@ -843,28 +727,6 @@ function debounce(func, wait) {
         clearTimeout(timeout);
         timeout = setTimeout(() => func.apply(this, args), wait);
     };
-}
-
-function generateConfiguration() {
-    const budget = document.getElementById('budget').value;
-    const usage = document.getElementById('usage').value;
-    const brandPreference = document.getElementById('brand-preference').value;
-
-    fetch(`/generate-configuration?budget=${budget}&usage=${usage}&brand_preference=${brandPreference}`)
-        .then(response => response.json())
-        .then(data => {
-            if (data.error) {
-                alert('生成配置失败: ' + data.error);
-                return;
-            }
-
-            // 显示配置结果
-            displayConfiguration(data);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('生成配置时出错');
-        });
 }
 
 function displayConfiguration(data) {
@@ -908,49 +770,6 @@ function getComponentName(type) {
     return names[type] || type;
 }
 
-const SearchByPrice = {
-    search() {
-        const minPrice = parseFloat(document.getElementById('minPriceInput').value);
-        const maxPrice = parseFloat(document.getElementById('maxPriceInput').value);
-        const componentType = document.getElementById('priceComponentType').value;
-        const resultsDiv = document.getElementById('priceSearchResults');
-
-        // 验证价格输入
-        if (isNaN(minPrice) || isNaN(maxPrice) || minPrice < 0 || maxPrice < 0 || minPrice > maxPrice) {
-            resultsDiv.innerHTML = '<div class="error">请输入有效的价格范围</div>';
-            return;
-        }
-
-        resultsDiv.innerHTML = '<div class="loading-spinner"></div> 搜索中...';
-
-        fetch(`/api/get_components_by_price/?min_price=${minPrice}&max_price=${maxPrice}&type=${componentType}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.error) {
-                    resultsDiv.innerHTML = `<div class="error">${data.error}</div>`;
-                    return;
-                }
-
-                if (data.results.length === 0) {
-                    resultsDiv.innerHTML = '<div class="no-results">未找到符合条件的配件</div>';
-                    return;
-                }
-
-                resultsDiv.innerHTML = data.results.map(item => `
-                    <div class="post">
-                        <div class="title">${item.title}</div>
-                        <div class="info">
-                            <span>参考价: ¥${item.reference_price}</span>
-                            <span>京东价: ¥${item.jd_price}</span>
-                        </div>
-                    </div>
-                `).join('');
-            })
-            .catch(error => {
-                resultsDiv.innerHTML = `<div class="error">搜索出错: ${error.message}</div>`;
-            });
-    }
-};
 
 // 收藏列表模块
 

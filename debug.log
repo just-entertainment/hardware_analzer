@@ -5298,3 +5298,6 @@ Price history for ssd/1788: 0 records
 Forbidden (CSRF token from POST incorrect.): /admin/analyzer/cpu/add/
 Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Watching for file changes with StatReloader

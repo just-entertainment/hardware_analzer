@@ -265,6 +265,7 @@ def detail(request, component_type, id):
         return JsonResponse({'error': str(e)}, status=500)
 # 价格统计视图
 
+
 @require_GET
 def price_stats(request):
     """获取价格分布统计"""
@@ -374,6 +375,7 @@ def average_price_trend(request):
     except Exception as e:
         logger.error(f"Error in average_price_trend: {str(e)}", exc_info=True)
         return JsonResponse({'error': str(e)}, status=500)
+
 
 logger = logging.getLogger(__name__)
 
