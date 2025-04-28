@@ -340,15 +340,13 @@ def average_price_trend(request):
             return JsonResponse(cached_data)
 
         ninety_days_ago = timezone.now().date() - timedelta(days=90)
-        if component_type == 'cpu':
-            trend_data = CPUPriceHistory.objects.filter(
-                date__gte=ninety_days_ago
-            ).values('date').annotate(avg_price=Avg('price')).order_by('date')
-        else:
-            trend_data = PriceHistory.objects.filter(
-                component_type=component_type,
-                date__gte=ninety_days_ago
-            ).values('date').annotate(avg_price=Avg('price')).order_by('date')
+        price_history_model = COMPONENT_PRICE_HISTORY_MODELS.get(component_type)
+        if not price_history_model:
+            return JsonResponse({'error': f'未定义 {component_type} 的历史价格模型'}, status=400)
+
+        trend_data = price_history_model.objects.filter(
+            date__gte=ninety_days_ago
+        ).values('date').annotate(avg_price=Avg('price')).order_by('date')
 
         data = [
             {
@@ -360,8 +358,9 @@ def average_price_trend(request):
         if not data:
             # 生成模拟数据
             model = COMPONENT_MODELS[component_type]
-            avg_price = model.objects.filter(reference_price__isnull=False, reference_price__gt=0).aggregate(
-                Avg('reference_price'))['reference_price__avg']
+            avg_price = model.objects.filter(
+                reference_price__isnull=False, reference_price__gt=0
+            ).aggregate(Avg('reference_price'))['reference_price__avg']
             if avg_price is None:
                 return JsonResponse({
                     'data': [],
@@ -381,7 +380,6 @@ def average_price_trend(request):
     except Exception as e:
         logger.error(f"Error in average_price_trend: {str(e)}", exc_info=True)
         return JsonResponse({'error': str(e)}, status=500)
-
 
 logger = logging.getLogger(__name__)
 

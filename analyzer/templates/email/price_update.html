@@ -1,0 +1,92 @@
+<!-- templates/email/price_update.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>价格更新通知</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .price-table th, .price-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        .price-table th {
+            background-color: #f2f2f2;
+            color: #2c3e50;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>价格更新通知：{{ component_title }}</h2>
+        <p>您收藏的配件 <strong>{{ component_title }}</strong> 添加了新的价格记录！</p>
+        <table class="price-table">
+            <tr>
+                <th>项目</th>
+                <th>价格</th>
+            </tr>
+            <tr>
+                <td>当前价格</td>
+                <td>¥{{ current_price|floatformat:2 }}</td>
+            </tr>
+            {% if previous_price %}
+            <tr>
+                <td>前一天价格</td>
+                <td>¥{{ previous_price|floatformat:2 }}</td>
+            </tr>
+            {% endif %}
+        </table>
+        <p style="text-align: center;">
+            <a href="{{ detail_url }}" class="btn">查看详情</a>
+        </p>
+        <div class="footer">
+            <p>硬件价格监控系统 &copy; 2025</p>
+            <p>如不需要此类通知，请在设置中取消收藏。</p>
+        </div>
+    </div>
+</body>
+</html>

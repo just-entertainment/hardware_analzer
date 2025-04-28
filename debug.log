@@ -1447,3 +1447,861 @@ Price history for chassis/1832: 0 records
 Price history for chassis/1844: 0 records
 Price history for chassis/1846: 1 records
 Price history for chassis/1852: 0 records
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Watching for file changes with StatReloader
+Error in average_price_trend: name 'FIELD_NAME_MAPPING' is not defined
+Traceback (most recent call last):
+  File "Z:\desk\code\hardware_analyzer\analyzer\views.py", line 348, in average_price_trend
+    field_name = FIELD_NAME_MAPPING.get(component_type, component_type)
+NameError: name 'FIELD_NAME_MAPPING' is not defined
+Internal Server Error: /api/average_price_trend/
+Error in average_price_trend: name 'FIELD_NAME_MAPPING' is not defined
+Traceback (most recent call last):
+  File "Z:\desk\code\hardware_analyzer\analyzer\views.py", line 348, in average_price_trend
+    field_name = FIELD_NAME_MAPPING.get(component_type, component_type)
+NameError: name 'FIELD_NAME_MAPPING' is not defined
+Internal Server Error: /api/average_price_trend/
+Price history for gpu/1: 1 records
+Price history for gpu/6: 0 records
+Price history for motherboard/1: 2 records
+Price history for gpu/30: 5 records
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Watching for file changes with StatReloader
+Bad Request: /api/average_price_trend/
+Z:\desk\code\hardware_analyzer\analyzer\admin.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /admin/analyzer/cpupricehistory/
+Traceback (most recent call last):
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\templatetags\base.py", line 45, in render
+    return super().render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 377, in date_hierarchy
+    date_range = cl.queryset.aggregate(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 605, in aggregate
+    return query.get_aggregation(self.db, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 549, in get_aggregation
+    result = next(compiler.apply_converters((result,), converters))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\compiler.py", line 1333, in apply_converters
+    value = converter(value, expression, connection)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\backends\sqlite3\operations.py", line 324, in convert_datefield_value
+    value = parse_date(value)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\utils\dateparse.py", line 74, in parse_date
+    return datetime.date.fromisoformat(value)
+TypeError: fromisoformat: argument must be str
+Price history for cpu/1: 4 records
+Price history for cpu/2: 17 records
+Price history for cpu/3: 10 records
+Price history for cpu/4: 10 records
+Price history for cpu/4: 10 records
+Price history for cpu/7: 0 records
+Price history for cpu/5: 1 records
+Price history for cpu/1: 4 records
+Price history for cpu/2: 17 records
+Price history for cpu/4: 10 records
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Z:\desk\code\hardware_analyzer\analyzer\apps.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\hardware_analyzer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Bad Request: /api/average_price_trend/
+Internal Server Error: /admin/analyzer/cpupricehistory/
+Traceback (most recent call last):
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\templatetags\base.py", line 45, in render
+    return super().render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 377, in date_hierarchy
+    date_range = cl.queryset.aggregate(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 605, in aggregate
+    return query.get_aggregation(self.db, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 549, in get_aggregation
+    result = next(compiler.apply_converters((result,), converters))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\compiler.py", line 1333, in apply_converters
+    value = converter(value, expression, connection)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\backends\sqlite3\operations.py", line 324, in convert_datefield_value
+    value = parse_date(value)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\utils\dateparse.py", line 74, in parse_date
+    return datetime.date.fromisoformat(value)
+TypeError: fromisoformat: argument must be str
+Internal Server Error: /admin/analyzer/cpupricehistory/
+Traceback (most recent call last):
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\templatetags\base.py", line 45, in render
+    return super().render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 377, in date_hierarchy
+    date_range = cl.queryset.aggregate(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 605, in aggregate
+    return query.get_aggregation(self.db, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 549, in get_aggregation
+    result = next(compiler.apply_converters((result,), converters))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\compiler.py", line 1333, in apply_converters
+    value = converter(value, expression, connection)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\backends\sqlite3\operations.py", line 324, in convert_datefield_value
+    value = parse_date(value)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\utils\dateparse.py", line 74, in parse_date
+    return datetime.date.fromisoformat(value)
+TypeError: fromisoformat: argument must be str
+Internal Server Error: /admin/analyzer/cpupricehistory/
+Traceback (most recent call last):
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\templatetags\base.py", line 45, in render
+    return super().render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 377, in date_hierarchy
+    date_range = cl.queryset.aggregate(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 605, in aggregate
+    return query.get_aggregation(self.db, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 549, in get_aggregation
+    result = next(compiler.apply_converters((result,), converters))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\compiler.py", line 1333, in apply_converters
+    value = converter(value, expression, connection)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\backends\sqlite3\operations.py", line 324, in convert_datefield_value
+    value = parse_date(value)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\utils\dateparse.py", line 74, in parse_date
+    return datetime.date.fromisoformat(value)
+TypeError: fromisoformat: argument must be str
+Internal Server Error: /admin/analyzer/cpupricehistory/
+Traceback (most recent call last):
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\templatetags\base.py", line 45, in render
+    return super().render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 377, in date_hierarchy
+    date_range = cl.queryset.aggregate(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 605, in aggregate
+    return query.get_aggregation(self.db, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 549, in get_aggregation
+    result = next(compiler.apply_converters((result,), converters))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\compiler.py", line 1333, in apply_converters
+    value = converter(value, expression, connection)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\backends\sqlite3\operations.py", line 324, in convert_datefield_value
+    value = parse_date(value)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\utils\dateparse.py", line 74, in parse_date
+    return datetime.date.fromisoformat(value)
+TypeError: fromisoformat: argument must be str
+Price history for gpu/1: 1 records
+Price history for gpu/30: 5 records
+Price history for gpu/30: 5 records
+Price history for gpu/30: 5 records
+Internal Server Error: /admin/analyzer/gpupricehistory/add/
+Traceback (most recent call last):
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\options.py", line 686, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\utils\decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\options.py", line 1890, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\utils\decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\options.py", line 1750, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\options.py", line 1802, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\options.py", line 1225, in save_model
+    obj.save()
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\base.py", line 831, in save
+    self.save_base(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\base.py", line 897, in save_base
+    post_save.send(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "Z:\desk\code\hardware_analyzer\analyzer\signals.py", line 36, in price_history_created
+    for key, model in COMPONENT_PRICE_HISTORY_MODELS.items():
+NameError: name 'COMPONENT_PRICE_HISTORY_MODELS' is not defined
+Internal Server Error: /admin/analyzer/gpupricehistory/add/
+Traceback (most recent call last):
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\options.py", line 686, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\utils\decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\options.py", line 1890, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\utils\decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\options.py", line 1750, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\options.py", line 1802, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\options.py", line 1225, in save_model
+    obj.save()
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\base.py", line 831, in save
+    self.save_base(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\base.py", line 897, in save_base
+    post_save.send(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\dispatch\dispatcher.py", line 176, in send
+    return [
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\dispatch\dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "Z:\desk\code\hardware_analyzer\analyzer\signals.py", line 36, in price_history_created
+    for key, model in COMPONENT_PRICE_HISTORY_MODELS.items():
+NameError: name 'COMPONENT_PRICE_HISTORY_MODELS' is not defined
+Internal Server Error: /admin/analyzer/cpupricehistory/
+Traceback (most recent call last):
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\defaulttags.py", line 322, in render
+    return nodelist.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\templatetags\base.py", line 45, in render
+    return super().render(context)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\template\library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 377, in date_hierarchy
+    date_range = cl.queryset.aggregate(
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\query.py", line 605, in aggregate
+    return query.get_aggregation(self.db, kwargs)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\query.py", line 549, in get_aggregation
+    result = next(compiler.apply_converters((result,), converters))
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\models\sql\compiler.py", line 1333, in apply_converters
+    value = converter(value, expression, connection)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\db\backends\sqlite3\operations.py", line 324, in convert_datefield_value
+    value = parse_date(value)
+  File "Z:\anaconda3\envs\Django\lib\site-packages\django\utils\dateparse.py", line 74, in parse_date
+    return datetime.date.fromisoformat(value)
+TypeError: fromisoformat: argument must be str
+Z:\desk\code\hardware_analyzer\analyzer\signals.py changed, reloading.
+Watching for file changes with StatReloader
+Price history for gpu/30: 5 records
+Price history for gpu/30: 5 records
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def send_price_update_notification(user_id, component_type, component_id, component_title, current_price, previous_price, detail_url):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+Connection to Redis lost: Retry (0/20) now.
+Connection to Redis lost: Retry (1/20) in 1.00 second.
+Connection to Redis lost: Retry (2/20) in 1.00 second.
+Connection to Redis lost: Retry (3/20) in 1.00 second.
+Connection to Redis lost: Retry (4/20) in 1.00 second.
+Connection to Redis lost: Retry (5/20) in 1.00 second.
+Connection to Redis lost: Retry (6/20) in 1.00 second.
+Connection to Redis lost: Retry (7/20) in 1.00 second.
+Connection to Redis lost: Retry (8/20) in 1.00 second.
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def send_price_update_notification(user_id, component_type, component_id, component_title, current_price, previous_price, detail_url):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def send_price_update_notification(user_id, component_type, component_id, component_title, current_price, previous_price, detail_url):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+Watching for file changes with StatReloader
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def send_price_update_notification(user_id, component_type, component_id, component_title, current_price, previous_price, detail_url):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+Z:\desk\code\hardware_analyzer\analyzer\signals.py changed, reloading.
+Watching for file changes with StatReloader
+Price history for gpu/30: 5 records
+
+def xmap(task, it):
+    return 1
+
+
+def send_price_update_notification(user_id, component_type, component_id, component_title, current_price, previous_price, detail_url):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+Z:\desk\code\hardware_analyzer\analyzer\signals.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\signals.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\signals.py changed, reloading.
+Watching for file changes with StatReloader
+Price history for cpu/1: 4 records
+Price history for gpu/30: 6 records
+Z:\desk\code\hardware_analyzer\analyzer\signals.py changed, reloading.
+Watching for file changes with StatReloader
+Price history for gpu/30: 5 records
+Z:\desk\code\hardware_analyzer\analyzer\signals.py changed, reloading.
+Watching for file changes with StatReloader
+Price history for motherboard/1: 2 records
+Price history for motherboard/2: 0 records
+Notification sent to entertainment33@qq.com for Î¢ÐÇMAG B650M MORTAR WIFI
+Price history for motherboard/2: 1 records
+Price history for motherboard/2: 1 records
+Not Found: /api/detail/
+Not Found: /api/detail/
+Z:\desk\code\hardware_analyzer\analyzer\signals.py changed, reloading.
+Watching for file changes with StatReloader
+Price history for motherboard/2: 1 records

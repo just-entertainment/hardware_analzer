@@ -7,13 +7,14 @@ HIVE_PORT = 10000
 HIVE_USERNAME = 'node1'
 DATABASE_NAME = 'default'
 
+
 # Hive 表定义
-TABLE_PRICE_HISTORY = 'ram_price_history'
-TABLE_PRODUCTS = 'ram_products'
+TABLE_PRICE_HISTORY = 'broad_price_history'
+TABLE_PRODUCTS = 'broad_products'
 
 # CSV 文件路径（本地Windows路径）
-CSV_PRICE_HISTORY = '../spider/csv/RAM_price_history.csv'
-CSV_PRODUCTS = '../spider/csv/RAM_products.csv'
+CSV_PRICE_HISTORY = '../spider/csv/broad_price_history.csv'
+CSV_PRODUCTS = '../spider/csv/borad_products.csv'
 
 
 def create_connection():
@@ -76,10 +77,7 @@ def create_tables(cursor):
 
 
 def load_data_to_hive(cursor, table_name, csv_file):
-    """
-    方案1：使用虚拟机本地路径
-    需要提前将文件上传到虚拟机上的/tmp目录
-    """
+
     # 虚拟机上的文件路径
     vm_path = f"/tmp/{os.path.basename(csv_file)}"
 
