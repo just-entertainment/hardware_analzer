@@ -4,19 +4,13 @@ from django.core.paginator import Paginator
 from django.core.cache import cache
 from django.db.models import Q, Avg, StdDev
 import numpy as np  # 添加 numpy 导入
-from django.db.models.functions import TruncDate
-from django.utils import timezone
-from datetime import timedelta
-import statistics
-import math
 import re
 from django.db.models import IntegerField
 from .models import RAM, GPU, CPU, Motherboard, SSD, Cooler, PowerSupply, Chassis, PriceHistory, CPUPriceHistory, \
-    RAMPriceHistory, SSDPriceHistory, MotherboardPriceHistory, GPUPriceHistory, CoolerPriceHistory, ChassisPriceHistory
+    RAMPriceHistory, SSDPriceHistory, MotherboardPriceHistory, GPUPriceHistory, CoolerPriceHistory, ChassisPriceHistory, \
+    PowerSupplyPriceHistory
 from django.db.models import F, FloatField, Case, When, Value
 import logging
-from django.db import models
-from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.contenttypes.models import ContentType
 from .models import Favorite
@@ -46,7 +40,7 @@ COMPONENT_PRICE_HISTORY_MODELS = {
     'motherboard': MotherboardPriceHistory,
     'ssd': SSDPriceHistory,
     'cooler': CoolerPriceHistory,
-    # 'power_supply': PowerSupplyPriceHistory,
+    'power_supply': PowerSupplyPriceHistory,
     'chassis': ChassisPriceHistory,
 }
 
@@ -514,3 +508,6 @@ def favorites_list(request):
     except Exception as e:
         logger.error(f"Favorites list error: {str(e)}")
         return JsonResponse({'error': str(e)}, status=500)
+
+
+

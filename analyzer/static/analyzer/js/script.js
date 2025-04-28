@@ -93,6 +93,7 @@ const Detail = {
                         <span>参考价: ¥${data.reference_price}</span>
                         <span>京东价: ¥${data.jd_price}</span>
                     </div>
+                    
                     <p>京东链接: <a href="${data.jd_link || '#'}" target="_blank">${data.jd_link ? '点击购买' : '暂无链接'}</a></p>
                     <div class="specs-list">
                         <h3>规格参数</h3>
@@ -511,7 +512,8 @@ const Config = {
 const Visualization = {
     charts: {
         priceDistribution: null,
-        averagePriceTrend: null
+        averagePriceTrend: null,
+        priceComment: null  // 新增散点图
     },
     currentType: 'cpu',
 
@@ -553,51 +555,52 @@ const Visualization = {
         console.log('Loading visualization data for type:', this.currentType);
         const priceChartCanvas = document.getElementById('priceDistributionChart');
         const trendChartCanvas = document.getElementById('averagePriceTrendChart');
+        const commentChartCanvas = document.getElementById('priceCommentChart');  // 新增
         const statsSummary = document.getElementById('statsSummary');
 
-        if (!priceChartCanvas || !trendChartCanvas || !statsSummary) {
-            console.error('图表元素缺失:', { priceChartCanvas, trendChartCanvas, statsSummary });
+        if (!priceChartCanvas || !trendChartCanvas || !commentChartCanvas || !statsSummary) {
+            console.error('图表元素缺失:', { priceChartCanvas, trendChartCanvas, commentChartCanvas, statsSummary });
             return;
         }
 
         priceChartCanvas.parentElement.classList.add('chart-loading');
         trendChartCanvas.parentElement.classList.add('chart-loading');
+        commentChartCanvas.parentElement.classList.add('chart-loading');
         statsSummary.innerHTML = '<div class="loading-spinner"></div>加载中...';
 
         try {
-            const [statsResponse, trendResponse] = await Promise.all([
+            const [statsResponse, trendResponse, commentResponse] = await Promise.all([
                 fetch(`/api/price_stats/?type=${this.currentType}`),
-                fetch(`/api/average_price_trend/?type=${this.currentType}`)
+                fetch(`/api/average_price_trend/?type=${this.currentType}`),
+                fetch(`/api/price_comment_analysis/?type=${this.currentType}`)  // 新增请求
             ]);
 
-            console.log('Price stats response:', statsResponse.status, await statsResponse.clone().json());
-            console.log('Trend response:', trendResponse.status, await trendResponse.clone().json());
-
-            if (!statsResponse.ok || !trendResponse.ok) {
-                throw new Error(`网络错误: ${statsResponse.status}, ${trendResponse.status}`);
+            if (!statsResponse.ok || !trendResponse.ok || !commentResponse.ok) {
+                throw new Error(`网络错误: ${statsResponse.status}, ${trendResponse.status}, ${commentResponse.status}`);
             }
 
             const statsData = await statsResponse.json();
             const trendData = await trendResponse.json();
+            const commentData = await commentResponse.json();
 
             priceChartCanvas.parentElement.classList.remove('chart-loading');
             trendChartCanvas.parentElement.classList.remove('chart-loading');
+            commentChartCanvas.parentElement.classList.remove('chart-loading');
 
-            if (statsData.error) {
-                throw new Error(statsData.error);
-            }
-            if (trendData.error) {
-                throw new Error(trendData.error);
-            }
+            if (statsData.error) throw new Error(statsData.error);
+            if (trendData.error) throw new Error(trendData.error);
+            if (commentData.error) throw new Error(commentData.error);
 
             this.renderPriceDistributionChart(statsData);
             this.renderAveragePriceTrendChart(trendData);
+            this.renderPriceCommentChart(commentData);
             this.renderStatsSummary(statsData);
         } catch (error) {
             console.error('可视化数据加载失败:', error);
             const errorMessage = error.message.includes('ChartDataLabels') ? '图表插件加载失败，请刷新页面' : error.message;
             priceChartCanvas.parentElement.innerHTML = `<div class="chart-error">${errorMessage} <button onclick="Visualization.loadData()">重试</button></div>`;
             trendChartCanvas.parentElement.innerHTML = `<div class="chart-error">${errorMessage} <button onclick="Visualization.loadData()">重试</button></div>`;
+            commentChartCanvas.parentElement.innerHTML = `<div class="chart-error">${errorMessage} <button onclick="Visualization.loadData()">重试</button></div>`;
             statsSummary.innerHTML = `<div class="error">${errorMessage}</div>`;
         }
     }, 300),
@@ -619,12 +622,7 @@ const Visualization = {
             return;
         }
 
-        // 检查 ChartDataLabels 是否可用
         const plugins = typeof ChartDataLabels !== 'undefined' ? [ChartDataLabels] : [];
-        if (!plugins.length) {
-            console.warn('ChartDataLabels 未加载，柱状图将不显示数据标签');
-        }
-
         this.charts.priceDistribution = new Chart(ctx, {
             type: 'bar',
             data: {
@@ -659,13 +657,8 @@ const Visualization = {
                     } : undefined
                 },
                 scales: {
-                    y: {
-                        beginAtZero: true,
-                        title: { display: true, text: '产品数量' }
-                    },
-                    x: {
-                        title: { display: true, text: '价格区间 (¥)' }
-                    }
+                    y: { beginAtZero: true, title: { display: true, text: '产品数量' } },
+                    x: { title: { display: true, text: '价格区间 (¥)' } }
                 }
             },
             plugins: plugins
@@ -729,6 +722,79 @@ const Visualization = {
                 }
             }
         });
+    },
+
+    renderPriceCommentChart(commentData) {
+        const ctx = document.getElementById('priceCommentChart')?.getContext('2d');
+        if (!ctx) {
+            console.error('Price-comment canvas not found');
+            return;
+        }
+
+        if (this.charts.priceComment) {
+            this.charts.priceComment.destroy();
+        }
+
+        const data = commentData.price_comment_data || [];
+        if (!data.length) {
+            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${commentData.message || '暂无价格-评论数据，请尝试其他配件类型'}</div>`;
+            return;
+        }
+
+        this.charts.priceComment = new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: '价格-评论数',
+                    data: data.map(item => ({ x: item.price, y: item.comment_count })),
+                    backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                    pointRadius: 5,
+                    pointHoverRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: `${this.getComponentName(this.currentType)} 价格与评论数关系 (相关系数: ${commentData.correlation.toFixed(3)})`,
+                        font: { size: 16 }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: ctx => `价格: ¥${ctx.raw.x.toFixed(2)}, 评论数: ${ctx.raw.y}`
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: { display: true, text: '价格 (¥)' },
+                        beginAtZero: false,
+                        suggestedMin: Math.max(0, Math.min(...data.map(item => item.price)) - 50),
+                        suggestedMax: Math.max(...data.map(item => item.price)) + 50
+                    },
+                    y: {
+                        title: { display: true, text: '评论数' },
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // 显示区间统计
+        const statsSummary = document.getElementById('statsSummary');
+        let summaryHtml = statsSummary.innerHTML;
+        summaryHtml += `
+            <p>价格-评论相关系数: ${commentData.correlation.toFixed(3)}</p>
+            <h4>价格区间平均评论数:</h4>
+            <ul>
+                ${commentData.price_range_stats.map(stat => 
+                    `<li>${stat.range}: ${stat.avg_comments} 条评论</li>`
+                ).join('')}
+            </ul>
+        `;
+        statsSummary.innerHTML = summaryHtml;
     },
 
     renderStatsSummary(statsData) {
