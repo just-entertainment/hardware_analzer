@@ -7,3 +7,6 @@ class AnalyzerConfig(AppConfig):
 
     def ready(self):
         import analyzer.signals
+        from .scheduler import PriceScraperScheduler
+        scheduler = PriceScraperScheduler()
+        scheduler.start()

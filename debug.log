@@ -5401,3 +5401,150 @@ Price history for ram/7: 0 records
 Price history for ram/9: 0 records
 Returning cached data for price_stats_cpu
 Returning cached data for average_price_trend_cpu
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Unauthorized: /api/favorites/
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Unauthorized: /api/favorites/
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Unauthorized: /api/favorites/
+尝试认证: login_field=root
+认证成功: 用户 root
+用户 root 登录成功
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+尝试认证: login_field=root
+认证成功: 用户 root
+用户 root 登录成功
+Caching response for average_price_trend_cpu
+Caching response for price_stats_cpu
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Z:\desk\code\hardware_analyzer\analyzer\apps.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\scheduler.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\scheduler.py changed, reloading.
+Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\scheduler.py changed, reloading.
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-04-30 02:00:00+08:00 (in 47116.640856 seconds)
+Watching for file changes with StatReloader
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-04-30 02:00:00+08:00 (in 47107.858732 seconds)
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-04-30 02:00:00+08:00 (in 47105.777257 seconds)
+Watching for file changes with StatReloader
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-04-29 13:00:00+08:00 (in 280.126307 seconds)
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-04-29 13:00:00+08:00 (in 278.306958 seconds)
+Watching for file changes with StatReloader
+Looking for jobs to run
+Looking for jobs to run
+Running job "PriceScraperScheduler.scrape_job (trigger: cron[hour='13', minute='0'], next run at: 2025-04-29 13:00:00 CST)" (scheduled at 2025-04-29 13:00:00+08:00)
+Running job "PriceScraperScheduler.scrape_job (trigger: cron[hour='13', minute='0'], next run at: 2025-04-29 13:00:00 CST)" (scheduled at 2025-04-29 13:00:00+08:00)
+Next wakeup is due at 2025-04-30 13:00:00+08:00 (in 86399.991417 seconds)
+Error in scrape job for power: __init__() got an unexpected keyword argument 'component_type'
+Error in scrape job for power: __init__() got an unexpected keyword argument 'component_type'
+Job "PriceScraperScheduler.scrape_job (trigger: cron[hour='13', minute='0'], next run at: 2025-04-30 13:00:00 CST)" executed successfully
+Job "PriceScraperScheduler.scrape_job (trigger: cron[hour='13', minute='0'], next run at: 2025-04-30 13:00:00 CST)" executed successfully
+Z:\desk\code\hardware_analyzer\analyzer\scheduler.py changed, reloading.
+Watching for file changes with StatReloader
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-04-30 13:04:00+08:00 (in 86398.312993 seconds)
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-04-30 13:04:00+08:00 (in 86396.525409 seconds)
+Watching for file changes with StatReloader
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-04-29 13:05:00+08:00 (in 42.926474 seconds)
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-04-29 13:05:00+08:00 (in 41.133116 seconds)
+Watching for file changes with StatReloader
+Looking for jobs to run
+Running job "PriceScraperScheduler.scrape_job (trigger: cron[hour='13', minute='5'], next run at: 2025-04-29 13:05:00 CST)" (scheduled at 2025-04-29 13:05:00+08:00)
+Running job "PriceScraperScheduler.scrape_job (trigger: cron[hour='13', minute='5'], next run at: 2025-04-29 13:05:00 CST)" (scheduled at 2025-04-29 13:05:00+08:00)
+Next wakeup is due at 2025-04-30 13:05:00+08:00 (in 86399.986617 seconds)
+Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+Starting new HTTP connection (1): 127.0.0.1:9222
+Starting new HTTP connection (1): 127.0.0.1:9222
+http://127.0.0.1:9222 "GET /json HTTP/11" 200 922
+http://127.0.0.1:9222 "GET /json HTTP/11" 200 922
+Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+Starting new HTTP connection (1): 127.0.0.1:9222
+http://127.0.0.1:9222 "GET /json/version HTTP/11" 200 423
+Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+Starting new HTTP connection (1): 127.0.0.1:9222
+http://127.0.0.1:9222 "GET /json/version HTTP/11" 200 423
+Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+Starting new HTTP connection (1): 127.0.0.1:9222
+Converted retries value: 0 -> Retry(total=0, connect=None, read=None, redirect=None, status=None)
+http://127.0.0.1:9222 "GET /json HTTP/11" 200 922
+Starting new HTTP connection (1): 127.0.0.1:9222
+http://127.0.0.1:9222 "GET /json HTTP/11" 200 922
+Error in scrape job: 
+与页面的连接已断开。
+版本: 4.1.0.17
+Job "PriceScraperScheduler.scrape_job (trigger: cron[hour='13', minute='5'], next run at: 2025-04-30 13:05:00 CST)" executed successfully
