@@ -277,6 +277,7 @@ def price_stats(request):
         cache_key = f'price_stats_{component_type}'
         cached_data = cache.get(cache_key)
         if cached_data:
+            logger.debug(f"Returning cached data for {cache_key}")
             return JsonResponse(cached_data)
 
         model = COMPONENT_MODELS[component_type]
@@ -293,17 +294,24 @@ def price_stats(request):
                 'message': f'暂无 {component_type} 的价格数据'
             })
 
-        prices = [float(price) for price in prices]
-        prices = np.array(prices)
+        prices = np.array([float(price) for price in prices])
         total_count = len(prices)
         median_price = float(np.median(prices))
         avg_price = float(np.mean(prices))
         std_dev_price = float(np.std(prices)) if total_count > 1 else 0.0
 
-        hist, bin_edges = np.histogram(prices, bins=10, density=False)
+        # 动态计算价格区间
+        min_price = np.floor(prices.min() / 10) * 10  # 向下取整到10
+        max_price = np.ceil(prices.max() / 10) * 10   # 向上取整到10
+        target_bins = 10  # 目标区间数
+        price_range = max_price - min_price
+        bin_width = max(10, np.ceil(price_range / target_bins / 10) * 10)  # 确保整十数
+        bins = np.arange(min_price, max_price + bin_width, bin_width)
+
+        hist, bin_edges = np.histogram(prices, bins=bins, density=False)
         price_distribution = [
             {'range': f'{int(bin_edges[i])}-{int(bin_edges[i + 1])}', 'count': int(hist[i])}
-            for i in range(len(hist))
+            for i in range(len(hist)) if hist[i] > 0  # 跳过空区间
         ]
 
         data = {
@@ -315,11 +323,11 @@ def price_stats(request):
             'message': ''
         }
         cache.set(cache_key, data, timeout=3600)
+        logger.debug(f"Caching response for {cache_key}")
         return JsonResponse(data)
     except Exception as e:
         logger.error(f"Error in price_stats: {str(e)}", exc_info=True)
         return JsonResponse({'error': str(e)}, status=500)
-
 
 @require_GET
 def average_price_trend(request):
@@ -332,6 +340,7 @@ def average_price_trend(request):
         cache_key = f'average_price_trend_{component_type}'
         cached_data = cache.get(cache_key)
         if cached_data:
+            logger.debug(f"Returning cached data for {cache_key}")
             return JsonResponse(cached_data)
 
         ninety_days_ago = timezone.now().date() - timedelta(days=90)
@@ -371,11 +380,11 @@ def average_price_trend(request):
 
         response = {'data': data, 'message': ''}
         cache.set(cache_key, response, timeout=3600)
+        logger.debug(f"Caching response for {cache_key}")
         return JsonResponse(response)
     except Exception as e:
         logger.error(f"Error in average_price_trend: {str(e)}", exc_info=True)
         return JsonResponse({'error': str(e)}, status=500)
-
 
 logger = logging.getLogger(__name__)
 

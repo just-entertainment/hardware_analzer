@@ -498,6 +498,7 @@ const Visualization = {
     bindEvents() {
         document.getElementById('vizComponentType').addEventListener('change', (e) => {
             this.currentType = e.target.value;
+            console.log(`Selected component type: ${this.currentType}`);
             this.loadData();
         });
         window.addEventListener('resize', () => {
@@ -526,11 +527,13 @@ const Visualization = {
                 fetch(`/api/average_price_trend/?type=${this.currentType}`)
             ]);
 
-            console.log('Price stats response:', statsResponse.status, await statsResponse.clone().json());
-            console.log('Trend response:', trendResponse.status, await trendResponse.clone().json());
-
-            if (!statsResponse.ok || !trendResponse.ok) {
-                throw new Error(`网络错误: ${statsResponse.status}, ${trendResponse.status}`);
+            if (!statsResponse.ok) {
+                const errorData = await statsResponse.json().catch(() => ({}));
+                throw new Error(`价格统计错误: ${errorData.error || statsResponse.statusText}`);
+            }
+            if (!trendResponse.ok) {
+                const errorData = await trendResponse.json().catch(() => ({}));
+                throw new Error(`价格趋势错误: ${errorData.error || trendResponse.statusText}`);
             }
 
             const statsData = await statsResponse.json();
@@ -539,22 +542,17 @@ const Visualization = {
             priceChartCanvas.parentElement.classList.remove('chart-loading');
             trendChartCanvas.parentElement.classList.remove('chart-loading');
 
-            if (statsData.error) {
-                throw new Error(statsData.error);
-            }
-            if (trendData.error) {
-                throw new Error(trendData.error);
-            }
+            if (statsData.error) throw new Error(statsData.error);
+            if (trendData.error) throw new Error(trendData.error);
 
             this.renderPriceDistributionChart(statsData);
             this.renderAveragePriceTrendChart(trendData);
             this.renderStatsSummary(statsData);
         } catch (error) {
             console.error('可视化数据加载失败:', error);
-            const errorMessage = error.message.includes('ChartDataLabels') ? '图表插件加载失败，请刷新页面' : error.message;
-            priceChartCanvas.parentElement.innerHTML = `<div class="chart-error">${errorMessage} <button onclick="Visualization.loadData()">重试</button></div>`;
-            trendChartCanvas.parentElement.innerHTML = `<div class="chart-error">${errorMessage} <button onclick="Visualization.loadData()">重试</button></div>`;
-            statsSummary.innerHTML = `<div class="error">${errorMessage}</div>`;
+            priceChartCanvas.parentElement.innerHTML = `<div class="chart-error">${error.message} <button onclick="Visualization.loadData()">重试</button></div>`;
+            trendChartCanvas.parentElement.innerHTML = `<div class="chart-error">${error.message} <button onclick="Visualization.loadData()">重试</button></div>`;
+            statsSummary.innerHTML = `<div class="error">${error.message}</div>`;
         }
     }, 300),
 
@@ -571,14 +569,8 @@ const Visualization = {
 
         const priceData = statsData.price_distribution || [];
         if (!priceData.length) {
-            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${statsData.message || '暂无价格分布数据，请尝试其他配件类型或稍后重试'}</div>`;
+            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${statsData.message || '暂无价格分布数据'}</div>`;
             return;
-        }
-
-        // 检查 ChartDataLabels 是否可用
-        const plugins = typeof ChartDataLabels !== 'undefined' ? [ChartDataLabels] : [];
-        if (!plugins.length) {
-            console.warn('ChartDataLabels 未加载，柱状图将不显示数据标签');
         }
 
         this.charts.priceDistribution = new Chart(ctx, {
@@ -607,24 +599,22 @@ const Visualization = {
                             label: ctx => `${ctx.parsed.y} 款产品`
                         }
                     },
-                    datalabels: plugins.length ? {
-                        anchor: 'end',
-                        align: 'top',
-                        formatter: value => value > 0 ? value : '',
-                        color: '#333'
-                    } : undefined
+                    legend: {
+                        display: false  // 隐藏图例
+                    }
                 },
                 scales: {
                     y: {
                         beginAtZero: true,
-                        title: { display: true, text: '产品数量' }
+                        title: { display: true, text: '产品数量' },
+                        ticks: { precision: 0 }
                     },
                     x: {
-                        title: { display: true, text: '价格区间 (¥)' }
+                        title: { display: true, text: '价格区间 (¥)' },
+                        ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 }
                     }
                 }
-            },
-            plugins: plugins
+            }
         });
     },
 
@@ -641,7 +631,7 @@ const Visualization = {
 
         const data = trendData.data || [];
         if (!data.length) {
-            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${trendData.message || '暂无价格趋势数据，请尝试其他配件类型或稍后重试'}</div>`;
+            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${trendData.message || '暂无价格趋势数据'}</div>`;
             return;
         }
 
@@ -672,6 +662,9 @@ const Visualization = {
                         callbacks: {
                             label: ctx => `¥${ctx.parsed.y.toFixed(2)}`
                         }
+                    },
+                    legend: {
+                        display: false  // 隐藏图例
                     }
                 },
                 scales: {
@@ -690,11 +683,12 @@ const Visualization = {
     renderStatsSummary(statsData) {
         const statsSummary = document.getElementById('statsSummary');
         if (!statsData || statsData.total_count === 0) {
-            statsSummary.innerHTML = `<div class="no-data">${statsData.message || '暂无统计数据，请尝试其他配件类型'}</div>`;
+            statsSummary.innerHTML = `<div class="no-data">${statsData.message || '暂无统计数据'}</div>`;
             return;
         }
 
         statsSummary.innerHTML = `
+            <h3>价格统计</h3>
             <p>总产品数: ${statsData.total_count}</p>
             <p>中位数价格: ¥${statsData.median_price ? statsData.median_price.toFixed(2) : '未知'}</p>
             <p>平均价格: ¥${statsData.avg_price ? statsData.avg_price.toFixed(2) : '未知'}</p>
@@ -717,6 +711,42 @@ const Visualization = {
     }
 };
 
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('price')?.classList.contains('active')) {
+        Visualization.init();
+    }
+});
+
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('price')?.classList.contains('active')) {
+        Visualization.init();
+    }
+});
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('price')?.classList.contains('active')) {
+        Visualization.init();
+    }
+});
+
 // 防抖函数
 
 
@@ -727,47 +757,6 @@ function debounce(func, wait) {
         clearTimeout(timeout);
         timeout = setTimeout(() => func.apply(this, args), wait);
     };
-}
-
-function displayConfiguration(data) {
-    const container = document.getElementById('configuration-result');
-    container.innerHTML = '';
-
-    // 显示总价和预算使用情况
-    const summary = document.createElement('div');
-    summary.className = 'configuration-summary';
-    summary.innerHTML = `
-        <h3>配置单总价: ¥${data.total_price.toFixed(2)} (预算: ¥${data.budget})</h3>
-        <p>预算使用率: ${(data.budget_usage * 100).toFixed(2)}%</p>
-    `;
-    container.appendChild(summary);
-
-    // 显示各个配件
-    for (const [type, component] of Object.entries(data.configuration)) {
-        const componentDiv = document.createElement('div');
-        componentDiv.className = 'configuration-component';
-        componentDiv.innerHTML = `
-            <h4>${getComponentName(type)}</h4>
-            <p>${component.title}</p>
-            <p class="price">¥${component.price.toFixed(2)}</p>
-            <a href="/detail/${type}/${component.id}" target="_blank">查看详情</a>
-        `;
-        container.appendChild(componentDiv);
-    }
-}
-
-function getComponentName(type) {
-    const names = {
-        'cpu': '处理器',
-        'gpu': '显卡',
-        'ram': '内存',
-        'motherboard': '主板',
-        'ssd': '固态硬盘',
-        'power_supply': '电源',
-        'chassis': '机箱',
-        'cooler': '散热器'
-    };
-    return names[type] || type;
 }
 
 
