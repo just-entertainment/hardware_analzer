@@ -67,7 +67,7 @@ def price_stats(request):
         cursor.execute(f"""
             WITH price_data AS (
                 SELECT
-                    reference_price,
+                    refer_ence_price,
                     FLOOR(reference_price / 100) * 100 AS price_bin
                 FROM {table}
                 WHERE reference_price IS NOT NULL AND reference_price > 0

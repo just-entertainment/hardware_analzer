@@ -7,8 +7,8 @@ from django.core.exceptions import ValidationError
 from decimal import Decimal
 
 # 在这里直接设置CSV文件路径 - 修改这两行即可
-PRODUCTS_CSV = os.path.join(os.path.dirname(__file__), '../../../spider/csv/RAM_products.csv')  # 替换为你的实际路径
-PRICE_HISTORY_CSV = os.path.join(os.path.dirname(__file__), '../../../spider/csv/RAM_price_history.csv')  # 替换为你的实际路径
+PRODUCTS_CSV = os.path.join(os.path.dirname(__file__), '../../../spider/cleaned/cleaned_RAM_products.csv')  # 替换为你的实际路径
+PRICE_HISTORY_CSV = os.path.join(os.path.dirname(__file__), '../../../spider/cleaned/cleaned_RAM_price_history.csv')  # 替换为你的实际路径
 
 
 class Command(BaseCommand):

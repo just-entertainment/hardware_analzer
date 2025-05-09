@@ -9,8 +9,8 @@ import re
 class CPUCrawler:
     def __init__(self):
 #############################################################
-        self.products_file = 'csv/power_products.csv'
-        self.prices_file = 'csv/power_price_history.csv'
+        self.products_file = 'csv/cpu_products.csv'
+        self.prices_file = 'csv/cpu_price_history.csv'
         self._init_csv_files()
 
     def _init_csv_files(self):
@@ -114,7 +114,7 @@ class CPUCrawler:
         """主爬虫函数"""
         dp = ChromiumPage()
         ########################################################################
-        dp.get("https://detail.zol.com.cn/power/")
+        dp.get("https://detail.zol.com.cn/cpu/")
 
         while True:
             dp.scroll.to_bottom()
@@ -137,7 +137,7 @@ class CPUCrawler:
                     good_link = good.ele('tag:h3').ele('tag:a')
                     tab = dp.new_tab(good_link.link)
                     ##################################################################################################
-                    specs = tab.ele('@class=section-content').ele('@class=product-param-item pi-35 clearfix').text
+                    specs = tab.ele('@class=section-content').ele('@class=product-param-item pi-28 clearfix').text
                     # specs =tab.ele("@id=proParamSection").ele('@class=section-content').ele('@class=clearfix').text
                     image = tab.ele('@class=big-pic').ele('tag:a').ele('tag:img').attr('src')
 

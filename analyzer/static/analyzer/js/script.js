@@ -719,10 +719,150 @@ function debounce(func, wait) {
     };
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    if (document.getElementById('price')?.classList.contains('active')) {
-        Visualization.init();
+document.addEventListener('DOMContentLoaded', function() {
+    const componentSelect = document.getElementById('componentSelect');
+    let priceDistributionChart, priceTrendChart, priceRangePieChart, priceBoxPlotChart, priceCommentScatterChart;
+
+    function fetchPriceAnalysis(componentType) {
+        fetch(`/api/price-analysis/?component_type=${componentType}`)
+            .then(response => response.json())
+            .then(data => {
+                // 柱状图
+                if (priceDistributionChart) priceDistributionChart.destroy();
+                priceDistributionChart = new Chart(document.getElementById('priceDistributionChart'), {
+                    type: 'bar',
+                    data: {
+                        labels: data.price_distribution.map(item => item.range),
+                        datasets: [{
+                            label: '产品数量',
+                            data: data.price_distribution.map(item => item.count),
+                            backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            title: { display: true, text: '价格分布' }
+                        },
+                        scales: { y: { beginAtZero: true, title: { display: true, text: '数量' } } }
+                    }
+                });
+
+                // 折线图
+                if (priceTrendChart) priceTrendChart.destroy();
+                priceTrendChart = new Chart(document.getElementById('averagePriceTrendChart'), {
+                    type: 'line',
+                    data: {
+                        labels: data.price_trend.map(item => item.date),
+                        datasets: [{
+                            label: '平均价格',
+                            data: data.price_trend.map(item => item.avg_price),
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            fill: false
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            title: { display: true, text: '价格趋势' }
+                        },
+                        scales: { y: { title: { display: true, text: '价格 (元)' } } }
+                    }
+                });
+
+                // 统计摘要
+                document.getElementById('statsSummary').innerHTML = `
+                    <p>总数: ${data.stats_summary.total_count}</p>
+                    <p>平均价格: ${data.stats_summary.avg_price} 元</p>
+                    <p>最低价格: ${data.stats_summary.min_price} 元</p>
+                    <p>最高价格: ${data.stats_summary.max_price} 元</p>
+                `;
+
+                // 新增饼图
+                if (priceRangePieChart) priceRangePieChart.destroy();
+                priceRangePieChart = new Chart(document.getElementById('priceRangePieChart'), {
+                    type: 'pie',
+                    data: {
+                        labels: data.price_range_pie.map(item => item.range),
+                        datasets: [{
+                            data: data.price_range_pie.map(item => item.percentage),
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.5)',
+                                'rgba(54, 162, 235, 0.5)',
+                                'rgba(255, 206, 86, 0.5)'
+                            ]
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            title: { display: true, text: '价格区间占比' },
+                            tooltip: { callbacks: { label: ctx => `${ctx.label}: ${ctx.raw}%` } }
+                        }
+                    }
+                });
+
+                // 新增箱线图
+                if (priceBoxPlotChart) priceBoxPlotChart.destroy();
+                priceBoxPlotChart = new Chart(document.getElementById('priceBoxPlotChart'), {
+                    type: 'boxplot',
+                    data: {
+                        labels: ['价格分布'],
+                        datasets: [{
+                            label: '价格 (元)',
+                            data: [{
+                                min: data.price_box_plot.min,
+                                q1: data.price_box_plot.q1,
+                                median: data.price_box_plot.median,
+                                q3: data.price_box_plot.q3,
+                                max: data.price_box_plot.max,
+                                outliers: data.price_box_plot.outliers
+                            }],
+                            backgroundColor: 'rgba(153, 102, 255, 0.5)',
+                            borderColor: 'rgba(153, 102, 255, 1)'
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            title: { display: true, text: '价格箱线图' }
+                        },
+                        scales: { y: { title: { display: true, text: '价格 (元)' } } }
+                    }
+                });
+
+                // 新增散点图
+                if (priceCommentScatterChart) priceCommentScatterChart.destroy();
+                priceCommentScatterChart = new Chart(document.getElementById('priceCommentScatterChart'), {
+                    type: 'scatter',
+                    data: {
+                        datasets: [{
+                            label: '价格 vs. 评论数',
+                            data: data.price_comment_scatter.map(item => ({
+                                x: item.price,
+                                y: item.comment_count
+                            })),
+                            backgroundColor: 'rgba(75, 192, 192, 0.5)'
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            title: { display: true, text: '价格与评论数关系' }
+                        },
+                        scales: {
+                            x: { title: { display: true, text: '价格 (元)' } },
+                            y: { title: { display: true, text: '评论数' } }
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
     }
+
+    componentSelect.addEventListener('change', () => {
+        fetchPriceAnalysis(componentSelect.value);
+    });
+
+    // 初始加载
+    fetchPriceAnalysis(componentSelect.value);
 });
 
 function debounce(func, wait) {
@@ -732,20 +872,6 @@ function debounce(func, wait) {
         timeout = setTimeout(() => func.apply(this, args), wait);
     };
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    if (document.getElementById('price')?.classList.contains('active')) {
-        Visualization.init();
-    }
-});
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    if (document.getElementById('price')?.classList.contains('active')) {
-        Visualization.init();
-    }
-});
 
 // 防抖函数
 
@@ -768,13 +894,7 @@ function getCsrfToken() {
     return token || '';
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    App.init();
-    document.querySelector('.modal .close').addEventListener('click', () => Detail.close());
-    document.querySelector('.modal').addEventListener('click', (e) => {
-        if (e.target === document.querySelector('.modal')) Detail.close();
-    });
-});
+
 
 // 暴露全局对象
 window.Navigation = Navigation;
@@ -786,9 +906,3 @@ window.showDetail = Detail.show;
 window.closeModal = Detail.close;
 window.generateConfig = Config.generateConfig;
 
-document.addEventListener('DOMContentLoaded', () => {
-    const favoritesSection = document.getElementById('favorites');
-    if (favoritesSection && favoritesSection.classList.contains('active')) {
-        Favorites.load();
-    }
-});

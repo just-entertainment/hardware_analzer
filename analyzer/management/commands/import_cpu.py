@@ -11,8 +11,8 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         # 设置CSV文件路径
         BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-        PRODUCTS_CSV = os.path.join(BASE_DIR, '../../../spider/csv/cpu_products.csv')
-        PRICE_HISTORY_CSV = os.path.join(BASE_DIR, '../../../spider/csv/cpu_price_history.csv')
+        PRODUCTS_CSV = os.path.join(BASE_DIR, '../../../spider/cleaned/cleaned_cpu_products.csv')
+        PRICE_HISTORY_CSV = os.path.join(BASE_DIR, '../../../spider/cleaned/cleaned_cpu_price_history.csv')
 
         try:
             with transaction.atomic():

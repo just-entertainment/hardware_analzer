@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爬虫开发实习生</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: #f9f9f9;
+            font-size: 14px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        h1 {
+            color: #2c3e50;
+            margin: 5px 0;
+            font-size: 24px;
+        }
+        .contact {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        h2 {
+            color: #3498db;
+            border-left: 4px solid #3498db;
+            padding-left: 8px;
+            margin: 15px 0 10px;
+            font-size: 18px;
+        }
+        .section {
+            margin-bottom: 15px;
+            background-color: white;
+            padding: 12px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .project-title {
+            font-weight: bold;
+            font-size: 16px;
+            color: #2c3e50;
+            margin-bottom: 3px;
+        }
+        .tech-stack {
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+        ul {
+            padding-left: 18px;
+            margin: 8px 0;
+        }
+        li {
+            margin-bottom: 6px;
+            position: relative;
+        }
+        li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .skill-tag {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+        .skill-tag.advanced {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+        .highlight {
+            background-color: #fff9c4;
+            padding: 0 2px;
+        }
+        .education-item {
+            margin-bottom: 5px;
+        }
+        .compact-list li {
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>申博文</h1>
+        <div class="contact">
+            电话: 15631128911 | 邮箱: entertainment33@qq.com | GitHub: github.com/just-entertainment
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>个人简介</h2>
+        <p>软件工程专业应届生，专注<span class="highlight">网络爬虫开发</span>，独立完成多个电商平台数据采集项目。熟悉<span class="highlight">Python爬虫生态</span>，掌握<span class="highlight">反爬应对策略</span>，具备<span class="highlight">数据清洗与存储</span>全流程开发能力。熟悉MySQL数据库，了解Redis缓存机制，对数据采集与处理有浓厚兴趣，学习能力强。</p>
+    </div>
+
+    <div class="section">
+        <h2>爬虫项目经验</h2>
+
+        <div class="project-title">京东商品数据采集系统</div>
+        <div class="tech-stack">技术栈: Selenium + Redis + MySQL + 代理IP池</div>
+        <ul class="compact-list">
+            <li>实现京东商品搜索列表页和详情页的全自动爬取，日均采集数据1万+</li>
+            <li>通过请求头随机化、IP代理轮换、请求频率控制等方式保证爬虫稳定运行</li>
+            <li>开发数据清洗管道，处理商品价格、评论数等字段的异常值</li>
+        </ul>
+
+        <div class="project-title" style="margin-top: 12px;">中关村在线产品比价系统</div>
+        <div class="tech-stack">技术栈: Selenium + Pandas + MySQL</div>
+        <ul class="compact-list">
+            <li>针对JavaScript动态渲染页面，使用Selenium模拟浏览器操作完成数据采集</li>
+            <li>设计MySQL数据库存储结构，实现产品数据的持久化存储</li>
+            <li>解决中关村在线反爬检测问题，通过模拟人类操作行为降低封禁风险</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>教育背景</h2>
+        <div class="education-item">
+            <strong>石家庄学院</strong> - 软件工程 本科 (2021-2025)
+        </div>
+        <ul class="compact-list">
+            <li>主修课程: 数据结构与算法、数据库原理、计算机网络、Python编程、Web开发</li>
+            <li>英语能力: CET-4，能阅读英文技术文档</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>技术技能</h2>
+        <div class="skills">
+            <span class="skill-tag advanced">Python</span>
+            <span class="skill-tag advanced">网络爬虫</span>
+            <span class="skill-tag">Selenium</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">Redis</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">HTML/CSS</span>
+            <span class="skill-tag">反爬策略</span>
+            <span class="skill-tag">数据清洗</span>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,3616 @@
+product_id,title,reference_price,current_price,jd_url,image_url,specs,shop_name,comment_count,crawl_time
+100187661752,七彩虹iGame GeForce RTX 5070 Ti Ultra W OC 16GB,7599.0,7599.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100187661752.html,https://2a.zol-img.com.cn/product/271_320x240/142/ceSSARvy3RipA.png,"产品型号	iGame GeForce RTX 5070 Ti Ultra W OC 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+核心频率	基础频率：2295-2452MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+内存带宽	896GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",七彩虹京东自营旗舰店,2000.0,2025-04-25 14:36:07
+10136926339207,NVIDIA GeForce RTX 4090 48GB涡轮,23999.0,2.4,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10136926339207.html,https://2b.zol-img.com.cn/product/271_320x240/483/ceZtjsoxrjZEQ.png,"芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4090
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	5纳米
+核心代号	AD102-300
+核心频率	2235-2520MHz
+CUDA核心	16384个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	48GB
+显存位宽	384bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+显卡类型	发烧级
+显卡设计	公版",AI服务器算力显卡小店,37.0,2025-04-27 19:16:03
+10141977047855,NVIDIA GeForce RTX 4090 D 48G涡轮,19999.0,2.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10141977047855.html,https://2f.zol-img.com.cn/product/271_320x240/451/ce94MTa9kqIXk.jpg,"芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4090 D
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	5纳米
+核心代号	AD102-250
+核心频率	2280-2520MHz
+CUDA核心	14592个
+显存类型	GDDR6X
+显存容量	48GB
+显存位宽	384bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin+8pin+8pin
+显卡类型	发烧级
+显卡设计	公版",AI服务器算力显卡小店,37.0,2025-04-27 19:16:26
+10107080581414,NVIDIA GeForce RTX 4090 D 24G涡轮,17499.0,1.75,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10107080581414.html,https://2f.zol-img.com.cn/product/271_320x240/451/ce94MTa9kqIXk.jpg,"芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4090 D
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	5纳米
+核心代号	AD102-250
+核心频率	2280-2520MHz
+CUDA核心	14592个
+显存类型	GDDR6X
+显存容量	24GB
+显存位宽	384bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin+8pin+8pin
+显卡类型	发烧级
+显卡设计	公版",AI服务器算力显卡小店,37.0,2025-04-27 19:16:48
+10139131550792,NVIDIA Tesla H200 141G,25.0,25.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10139131550792.html,https://2f.zol-img.com.cn/product/271_320x240/421/ce4yqzP6JoNZc.jpg,"芯片厂商	NVIDIA
+显卡芯片	Tesla H200
+制作工艺	4纳米
+核心代号	GH100
+核心频率	1830MHz
+CUDA核心	14592个
+显存频率	5240MHz
+显存类型	HBM3E
+显存容量	141GB
+显存位宽	6144bit
+内存带宽	4.8TB/s
+接口类型	PCI Express 5.0 16X
+电源接口	8pin
+显卡类型	专业级
+显卡设计	公版
+散热方式	风扇散热",AI智能服务器专业显卡小店,4.0,2025-04-27 19:17:09
+10115026649461,NVIDIA Tesla H800 80G,22.0,19.8,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10115026649461.html,https://2c.zol-img.com.cn/product/271_320x240/280/cetEfkjtSEbfk.png,"芯片厂商	NVIDIA
+显卡芯片	Tesla H800
+制作工艺	4纳米
+核心频率	1830MHz
+CUDA核心	14592个
+显存频率	5240MHz
+显存类型	HBM3
+显存容量	80GB
+显存位宽	5720bit
+内存带宽	1681GB/s
+接口类型	PCI Express 5.0 16X
+电源接口	8pin
+显卡类型	专业级
+显卡设计	公版
+散热方式	风扇散热
+产品尺寸	267×单槽×116mm",英伟达显卡平台小店,20.0,2025-04-27 19:17:31
+10143976194312,NVIDIA Tesla H100 80G,19.0,19.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10143976194312.html,https://2e.zol-img.com.cn/product/271_320x240/276/cerccjfY9x2lA.jpg,"芯片厂商	NVIDIA
+显卡芯片	Tesla H100
+制作工艺	4纳米
+核心代号	GH100
+核心频率	1830MHz
+CUDA核心	14592个
+显存频率	5240MHz
+显存类型	HBM3
+显存容量	80GB
+显存位宽	5120bit
+内存带宽	2039GB/s
+接口类型	PCI Express 5.0 16X
+显卡类型	专业级
+显卡设计	公版
+散热方式	风扇散热
+最大功耗	300-350W",北京AI显卡小店,200.0,2025-04-27 19:17:53
+10107529096691,蓝宝石PULSE 脉动 RX 9070 XT 16G D6,4999.0,4999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10107529096691.html,https://2d.zol-img.com.cn/product/271_320x240/677/ceMDSQ6AOz1vs.jpg,"产品型号	PULSE 脉动 RX 9070 XT 16G D6
+芯片厂商	AMD
+显卡芯片	Radeon RX 9070 XT
+显示芯片系列	AMD RX 9000系列
+制作工艺	4纳米
+核心代号	RDNA 4
+核心频率	2400-2970MHz
+流处理单元	4096个
+显存频率	20000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	640GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	2×HDMI接口，2×DisplayPort接口",蓝宝石显卡旗舰店,5000.0,2025-04-27 19:18:15
+10140681873555,蓝宝石PURE 极地 RX 9070 XT 16G D6 OC,5899.0,5899.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10140681873555.html,https://2d.zol-img.com.cn/product/271_320x240/677/ceMDSQ6AOz1vs.jpg,"产品型号	PURE 极地 RX 9070 XT 16G D6 OC
+芯片厂商	AMD
+显卡芯片	Radeon RX 9070 XT
+显示芯片系列	AMD RX 9000系列
+制作工艺	4纳米
+核心代号	RDNA 4
+核心频率	2460-3010MHz
+流处理单元	4096个
+显存频率	20000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	640GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	2×HDMI接口，2×DisplayPort接口",蓝宝石电脑旗舰店,2000.0,2025-04-27 19:18:28
+10111800802210,蓝宝石NITRO 氮动 RX 9070 XT 16G D6 OC,6399.0,6399.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10111800802210.html,https://2d.zol-img.com.cn/product/271_320x240/677/ceMDSQ6AOz1vs.jpg,"产品型号	NITRO 氮动 RX 9070 XT 16G D6 OC
+芯片厂商	AMD
+显卡芯片	Radeon RX 9070 XT
+显示芯片系列	AMD RX 9000系列
+制作工艺	4纳米
+核心代号	RDNA 4
+核心频率	2520-3060MHz
+流处理单元	4096个
+显存频率	20000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	640GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	2×HDMI接口，2×DisplayPort接口",蓝宝石显卡旗舰店,5000.0,2025-04-27 19:18:50
+10147231879740,蓝宝石AMD Radeon RX 7650 GRE 8G 极地,2069.0,2069.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10147231879740.html,https://2d.zol-img.com.cn/product/271_320x240/943/ce3kGtMlub22.jpg,"产品型号	AMD Radeon RX 7650 GRE 8G 极地
+芯片厂商	AMD
+显卡芯片	Radeon RX 7650 GRE
+显示芯片系列	AMD RX 7000系列
+制作工艺	6纳米
+核心代号	RDNA 3
+核心频率	2350-2695MHz
+流处理单元	2048个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin",蓝宝石电脑旗舰店,2000.0,2025-04-27 19:19:03
+10148957956711,蓝宝石NITRO 氮动 RX 9070 16GB GDDR6 OC,5699.0,5699.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10148957956711.html,https://2d.zol-img.com.cn/product/271_320x240/979/cecS3i3urO6eM.jpg,"产品型号	NITRO 氮动 RX 9070 16GB GDDR6 OC
+芯片厂商	AMD
+显卡芯片	Radeon RX 9070
+显示芯片系列	AMD RX 9000系列
+核心代号	RDNA 4
+流处理单元	3584个
+显存频率	20000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	2×HDMI接口，2×DisplayPort接口
+电源接口	8pin+8pin
+显卡类型	发烧级
+显卡设计	非公版",蓝宝石显卡旗舰店,5000.0,2025-04-27 19:19:15
+10140700506978,蓝宝石PULSE 脉动 RX 9070 16G D6,4499.0,4499.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10140700506978.html,https://2f.zol-img.com.cn/product/271_320x240/963/ceasbVJiWeDmk.jpg,"产品型号	PULSE 脉动 RX 9070 16G D6
+芯片厂商	AMD
+显卡芯片	Radeon RX 9070
+显示芯片系列	AMD RX 9000系列
+核心代号	RDNA 4
+核心频率	2070-2520MHz
+流处理单元	3584个
+显存频率	20000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	2×HDMI接口，2×DisplayPort接口
+电源接口	8pin+8pin
+显卡类型	发烧级",蓝宝石显卡旗舰店,5000.0,2025-04-27 19:19:36
+10143503346931,蓝宝石METAL 合金脉动 RX 9070 16G D6,4999.0,4999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10143503346931.html,https://2a.zol-img.com.cn/product/271_320x240/976/celkBeKhjuWo.jpg,"产品型号	METAL 合金脉动 RX 9070 16G D6
+芯片厂商	AMD
+显卡芯片	Radeon RX 9070
+显示芯片系列	AMD RX 9000系列
+核心代号	RDNA 4
+核心频率	2070-2520MHz
+流处理单元	3584个
+显存频率	20000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	2×HDMI接口，2×DisplayPort接口
+电源接口	8pin+8pin
+显卡类型	发烧级",蓝宝石电脑旗舰店,2000.0,2025-04-27 19:19:58
+10140681873552,蓝宝石PURE 极地 RX 9070 16G D6 OC,5299.0,5299.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10140681873552.html,https://2c.zol-img.com.cn/product/271_320x240/972/ceG4xD8AS5qc.jpg,"产品型号	PURE 极地 RX 9070 16G D6 OC
+芯片厂商	AMD
+显卡芯片	Radeon RX 9070
+显示芯片系列	AMD RX 9000系列
+核心代号	RDNA 4
+核心频率	2210-2700MHz
+流处理单元	3584个
+显存频率	20000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	2×HDMI接口，2×DisplayPort接口
+电源接口	8pin+8pin
+显卡类型	发烧级",蓝宝石电脑旗舰店,2000.0,2025-04-27 19:20:21
+10137343848579,NVIDIA RTX 5090FE公版,33999.0,3.44,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10137343848579.html,https://2c.zol-img.com.cn/product/271_320x240/136/ce6za4OfyDViU.jpg,"产品型号	RTX5090FE
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090
+显示芯片系列	NVIDIA RTX 50系列
+核心代号	GB202-300
+核心频率	2017MHz
+CUDA核心	21760个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+内存带宽	1792GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort 2.1a接口
+电源接口	16pin
+显卡类型	发烧级",Ai5090高端显卡经营部,200.0,2025-04-27 19:20:53
+10141728194249,耕升RTX 5070 追风OC,5599.0,5599.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10141728194249.html,https://2a.zol-img.com.cn/product/271_320x240/366/cecy61POxqTo.png,"产品型号	RTX 5070 追风OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2527MHz
+CUDA核心	6144个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	12GB
+显存位宽	192bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	12V-2X6
+显卡类型	发烧级
+显卡设计	非公版",耕升旗舰店,5.0,2025-04-27 19:21:24
+10141728194251,耕升RTX 5070 炫光OC,6599.0,6599.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10141728194251.html,https://2b.zol-img.com.cn/product/271_320x240/361/cepds93lOzj1k.png,"产品型号	RTX 5070 炫光OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2572MHz
+CUDA核心	6144个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	12GB
+显存位宽	192bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	12V-2X6
+显卡类型	发烧级
+显卡设计	非公版",耕升旗舰店,5.0,2025-04-27 19:21:47
+10141728194250,耕升RTX 5070 踏雪 OC,5799.0,5799.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10141728194250.html,https://2d.zol-img.com.cn/product/271_320x240/357/ceO5ahvmokazE.png,"产品型号	 RTX 5070 踏雪OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2542MHz
+CUDA核心	6144个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	12GB
+显存位宽	192bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	12V-2X6
+显卡类型	发烧级
+显卡设计	非公版",耕升旗舰店,5.0,2025-04-27 19:22:09
+100183080258,XFX讯景RADEON RX 9070 海外版Pro 白,4899.0,4999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100183080258.html,https://2c.zol-img.com.cn/product/271_320x240/694/cenS4L5MpAxdo.png,"芯片厂商	AMD
+显卡芯片	Radeon RX 9070
+显示芯片系列	AMD RX 9000系列
+制作工艺	4纳米
+核心频率	基础频率：1440MHz
+流处理单元	3584个
+显存频率	20000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+内存带宽	640GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin+8pin
+显卡类型	主流级
+显卡设计	非公版",XFX讯景京东自营旗舰店,2000.0,2025-04-27 19:22:55
+100183080256,XFX讯景RADEON RX 9070 海外版Pro 黑,4799.0,4899.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100183080256.html,https://2a.zol-img.com.cn/product/271_320x240/692/cerQj21A1UATM.png,"芯片厂商	AMD
+显卡芯片	Radeon RX 9070
+显示芯片系列	AMD RX 9000系列
+制作工艺	4纳米
+核心频率	基础频率：1440MHz
+流处理单元	3584个
+显存频率	20000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+内存带宽	640GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin+8pin
+显卡类型	主流级
+显卡设计	非公版",XFX讯景京东自营旗舰店,2000.0,2025-04-27 19:23:07
+100183080308,XFX讯景RADEON RX 9070 凤凰涅槃,4999.0,5099.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100183080308.html,https://2f.zol-img.com.cn/product/271_320x240/685/ceXdu0NCvcMQ.png,"芯片厂商	AMD
+显卡芯片	Radeon RX 9070
+显示芯片系列	AMD RX 9000系列
+制作工艺	4纳米
+核心频率	基础频率：1440MHz
+流处理单元	3584个
+显存频率	20000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+内存带宽	640GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin+8pin
+显卡类型	主流级
+显卡设计	非公版",XFX讯景京东自营旗舰店,2000.0,2025-04-27 19:23:18
+100193618176,瀚铠Radeon RX 9070 超合金,4999.0,4999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100193618176.html,https://2a.zol-img.com.cn/product/271_320x240/76/ceXhLmimsXzz.jpg,"产品型号	AH-907016DC5BR4R
+芯片厂商	AMD
+显卡芯片	Radeon RX 9070
+显示芯片系列	AMD RX 9000系列
+制作工艺	4纳米
+核心频率	基础频率：1440MHz
+流处理单元	3584个
+显存频率	20000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+内存带宽	640GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin+8pin
+显卡类型	主流级",瀚铠（VASTARMOR）显卡京东自营旗舰店,100.0,2025-04-27 19:24:06
+100192999440,瀚铠Radeon RX 9070 XT 超合金 白色,5799.0,5899.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100192999440.html,https://2f.zol-img.com.cn/product/271_320x240/21/ceo07gxOr3pwQ.jpg,"产品型号	AH-9070XT16TC5BRW7R
+芯片厂商	AMD
+显卡芯片	Radeon RX 9070 XT
+显示芯片系列	AMD RX 9000系列
+制作工艺	4纳米
+核心频率	基础频率：1870MHz
+流处理单元	4096个
+显存频率	20000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+内存带宽	640GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin+8pin+8pin
+显卡类型	主流级",瀚铠（VASTARMOR）显卡京东自营旗舰店,500.0,2025-04-27 19:24:18
+100192999482,瀚铠Radeon RX 9070 XT 超合金,5699.0,5799.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100192999482.html,https://2d.zol-img.com.cn/product/271_320x240/995/ceYWI7MrhMgC.jpg,"产品型号	AH-9070XT16TC5BR7R
+芯片厂商	AMD
+显卡芯片	Radeon RX 9070 XT
+显示芯片系列	AMD RX 9000系列
+制作工艺	4纳米
+核心频率	基础频率：1870MHz
+流处理单元	4096个
+显存频率	20000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+内存带宽	640GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin+8pin+8pin
+显卡类型	主流级",瀚铠（VASTARMOR）显卡京东自营旗舰店,500.0,2025-04-27 19:24:29
+10137424429133,索泰RTX 5070 Ti 16GB AMP EXTREME INFINITY,7999.0,7999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10137424429133.html,https://2f.zol-img.com.cn/product/271_320x240/639/ceQyr94y7qAKg.jpg,"产品型号	GeForce RTX 5070 Ti 16GB X GAMING
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	5纳米
+核心频率	2512MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 6.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",索泰ZOTAC旗舰店,70.0,2025-04-27 19:24:51
+10137424429135,索泰RTX 5070 Ti 16GB X GAMING,6299.0,6299.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10137424429135.html,https://2f.zol-img.com.cn/product/271_320x240/681/cecXDuJmT1db.jpg,"产品型号	GeForce RTX 5070 Ti 16GB X GAMING
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	5纳米
+核心频率	2452MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 6.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",索泰ZOTAC旗舰店,70.0,2025-04-27 19:25:15
+10138347238416,映众GeForce RTX 5070 Ti 映雪 X3 OC,8299.0,6888.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10138347238416.html,https://2f.zol-img.com.cn/product/271_320x240/627/ceSZ7Cz522182.jpg,"产品型号	GeForce RTX 5070 Ti 映雪 X3 OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	5纳米
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	896GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",小而美电脑小店,13.0,2025-04-27 19:25:37
+10137944511579,映众GeForce RTX 5070 Ti 曜夜 X3,6899.0,6899.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10137944511579.html,https://2b.zol-img.com.cn/product/271_320x240/623/cebxUEOO0tA9Y.jpg,"产品型号	GeForce RTX 5070 Ti 曜夜 X3
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	5纳米
+核心频率	2452MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	896GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin",映众电脑整机旗舰店,95.0,2025-04-27 19:26:00
+10137944511581,映众GeForce RTX 5070 Ti 曜夜 X3 OC,8099.0,6999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10137944511581.html,https://2b.zol-img.com.cn/product/271_320x240/623/cebxUEOO0tA9Y.jpg,"产品型号	GeForce RTX 5070 Ti 曜夜 X3 OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	5纳米
+核心频率	2482MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	896GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin",映众电脑整机旗舰店,95.0,2025-04-27 19:26:25
+10137112208456,耕升RTX 5070 Ti 踏雪OC,7599.0,7199.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10137112208456.html,https://2b.zol-img.com.cn/product/271_320x240/389/ceLfIi2kXf77o.png,"产品型号	RTX 5070 Ti 踏雪OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	5纳米
+核心频率	2482MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	12V-2X6
+显卡类型	发烧级
+显卡设计	非公版",耕升旗舰店,75.0,2025-04-27 19:26:38
+10137112208457,耕升RTX 5070 Ti 追风,6299.0,6299.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10137112208457.html,https://2b.zol-img.com.cn/product/271_320x240/383/ce4LpBtmA6eI.png,"产品型号	RTX 5070 Ti 追风
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	5纳米
+核心频率	2452MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	12V-2X6
+显卡类型	发烧级
+显卡设计	非公版",耕升旗舰店,75.0,2025-04-27 19:26:51
+10138234830440,耕升RTX 5070 Ti 追风OC,7399.0,6999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10138234830440.html,https://2d.zol-img.com.cn/product/271_320x240/379/ceKHQgQo8xHY.png,"产品型号	RTX 5070 Ti 追风OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	5纳米
+核心频率	2467MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	12V-2X6
+显卡类型	发烧级
+显卡设计	非公版",耕升旗舰店,75.0,2025-04-27 19:27:14
+10137112208455,耕升RTX 5070 Ti 炫光·超OC,8099.0,7899.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10137112208455.html,https://2d.zol-img.com.cn/product/271_320x240/403/ceNOYizgHERk.png,"产品型号	RTX 5070 Ti 炫光·超OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	5纳米
+核心频率	2512MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	12V-2X6
+显卡类型	发烧级
+显卡设计	非公版",耕升旗舰店,75.0,2025-04-27 19:27:36
+10137423207308,影驰GeForce RTX 5070 Ti 金属大师黑金版 OC,7499.0,7399.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10137423207308.html,https://2a.zol-img.com.cn/product/271_320x240/328/ceQzuU1BRRrQ.png,"产品型号	GeForce RTX 5070 Ti 金属大师黑金版 OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	5纳米
+核心频率	2295-2497MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	12V-2x6
+显卡类型	发烧级
+显卡设计	非公版",影驰旗舰店,1000.0,2025-04-27 19:27:48
+10137423207309,影驰GeForce RTX 5070 Ti 金属大师白金版 OC,7499.0,7399.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10137423207309.html,https://2d.zol-img.com.cn/product/271_320x240/319/cefSAuEXzdHMo.png,"产品型号	GeForce RTX 5070 Ti 金属大师白金版 OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	5纳米
+核心频率	2295-2497MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	12V-2x6
+显卡类型	发烧级
+显卡设计	非公版",影驰旗舰店,1000.0,2025-04-27 19:28:03
+10137423207306,影驰GeForce RTX 5070 Ti 圣刃,6299.0,6999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10137423207306.html,https://2a.zol-img.com.cn/product/271_320x240/316/cewrEtst2nY.png,"产品型号	GeForce RTX 5070 Ti 圣刃
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	5纳米
+核心频率	2295-2452MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	12V-2x6
+显卡类型	发烧级
+显卡设计	非公版",影驰旗舰店,1000.0,2025-04-27 19:28:16
+10137423207307,影驰GeForce RTX 5070 Ti 圣刃 OC,6999.0,6999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10137423207307.html,https://2b.zol-img.com.cn/product/271_320x240/311/cejNCzprQAo22.png,"产品型号	GeForce RTX 5070 Ti 圣刃 OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	5纳米
+核心频率	2295-2497MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	12V-2x6
+显卡类型	发烧级
+显卡设计	非公版",影驰旗舰店,1000.0,2025-04-27 19:28:38
+10137423207304,影驰GeForce RTX 5070 Ti 魔刃,6299.0,6999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10137423207304.html,https://2c.zol-img.com.cn/product/271_320x240/306/cetFJ7r3dLhIg.png,"产品型号	GeForce RTX 5070 Ti 魔刃
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	5纳米
+核心频率	2295-2452MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	12V-2x6
+显卡类型	发烧级
+显卡设计	非公版",影驰旗舰店,1000.0,2025-04-27 19:28:51
+10137423207305,影驰GeForce RTX 5070 Ti 魔刃 OC,6999.0,6999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10137423207305.html,https://2f.zol-img.com.cn/product/271_320x240/303/ce42VEXGfmTqU.png,"产品型号	GeForce RTX 5070 Ti 魔刃 OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	5纳米
+核心频率	2295-2497MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	12V-2x6
+显卡类型	发烧级
+显卡设计	非公版",影驰旗舰店,1000.0,2025-04-27 19:29:03
+100187310370,华硕TUF-RTX5070TI-O16G,8499.0,8299.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100187310370.html,https://2e.zol-img.com.cn/product/271_320x240/236/celgVGBRlSmRc.png,"产品型号	TUF-RTX5070TI-O16G-GAMING
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+核心频率	2588-2610MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	2×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",华硕京东自营旗舰店,1000.0,2025-04-27 19:29:15
+1745753381,华硕PRIME-RTX5070TI-16G,6299.0,,,https://2b.zol-img.com.cn/product/271_320x240/233/ce4xEqsfRfkU.jpg,"产品型号	PRIME-RTX5070TI-16G
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+核心频率	2452-2482MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",,,2025-04-27 19:29:41
+100187310368,华硕PRIME-RTX5070TI-O16G,7699.0,7699.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100187310368.html,https://2f.zol-img.com.cn/product/271_320x240/255/ceIN4Ts0KTVLs.jpg,"产品型号	PRIME-RTX5070TI-O16G
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+核心频率	2497-2527MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",华硕京东自营旗舰店,1000.0,2025-04-27 19:29:44
+100148892719,七彩虹战斧 GeForce RTX 5070 Ti 豪华版 16GB,6299.0,7199.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100148892719.html,https://2b.zol-img.com.cn/product/271_320x240/131/cedW3LbG7q5EU.png,"产品型号	战斧 GeForce RTX 5070 Ti 豪华版 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+核心频率	基础频率：2295-2452MHzMHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+内存带宽	896GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",七彩虹京东自营旗舰店,2000.0,2025-04-27 19:30:08
+1745753424,七彩虹iGame GeForce RTX 5070 Ti Vulcan OC 16GB,8799.0,,,https://2e.zol-img.com.cn/product/271_320x240/170/ceLk7VkLt9J5M.png,"产品型号	iGame GeForce RTX 5070 Ti Vulcan OC 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+核心频率	基础频率：2295-2452MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+内存带宽	896GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",,,2025-04-27 19:30:24
+100187661740,七彩虹iGame GeForce RTX 5070 Ti Advanced OC 16GB,7999.0,7999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100187661740.html,https://2f.zol-img.com.cn/product/271_320x240/123/ceDgFACH1bNto.png,"产品型号	iGame GeForce RTX 5070 Ti Advanced OC 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+核心频率	基础频率：2295-2452MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+内存带宽	896GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",七彩虹京东自营旗舰店,2000.0,2025-04-27 19:30:27
+100187661752,七彩虹iGame GeForce RTX 5070 Ti Ultra W OC 16GB,7599.0,7599.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100187661752.html,https://2a.zol-img.com.cn/product/271_320x240/142/ceSSARvy3RipA.png,"产品型号	iGame GeForce RTX 5070 Ti Ultra W OC 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070 Ti
+显示芯片系列	NVIDIA RTX 50系列
+核心频率	基础频率：2295-2452MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+内存带宽	896GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",七彩虹京东自营旗舰店,2000.0,2025-04-27 19:30:48
+10138382110168,msi微星GeForce RTX 5070 Ti 16G VANGUARD SOC LAUNCH EDITION,8999.0,8499.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10138382110168.html,https://2f.zol-img.com.cn/product/271_320x240/739/ceG8s6jWzucVo.jpg,"产品型号	GeForce RTX 5070 Ti 16G VANGUARD SOC LAUNCH EDITION
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070Ti
+显示芯片系列	NVIDIA RTX 50系列
+核心频率	2588-2602MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",微星显卡旗舰店,17.0,2025-04-27 19:31:12
+10138382110167,msi微星GeForce RTX 5070 Ti 16G INSPIRE 3X OC PLUS,8099.0,7599.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10138382110167.html,https://2b.zol-img.com.cn/product/271_320x240/735/ceaVFurwpvgA.jpg,"产品型号	GeForce RTX 5070 Ti 16G INSPIRE 3X OC PLUS
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070Ti
+显示芯片系列	NVIDIA RTX 50系列
+核心频率	2482-2497MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",微星显卡旗舰店,17.0,2025-04-27 19:31:35
+10138382110169,msi微星GeForce RTX 5070 Ti 16G VENTUS 3X OC,8099.0,7499.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10138382110169.html,https://2c.zol-img.com.cn/product/271_320x240/748/ceeaYZxy7G6LU.jpg,"产品型号	GeForce RTX 5070 Ti 16G VENTUS 3X OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070Ti
+显示芯片系列	NVIDIA RTX 50系列
+核心频率	2482-2497MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",微星显卡旗舰店,17.0,2025-04-27 19:31:56
+10138382110166,msi微星GeForce RTX 5070 Ti 16G GAMING TRIO OC PLUS,8499.0,7999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10138382110166.html,https://2d.zol-img.com.cn/product/271_320x240/731/ceVxss2XDd6M.jpg,"产品型号	GeForce RTX 5070 Ti 16G GAMING TRIO OC PLUS
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5070Ti
+显示芯片系列	NVIDIA RTX 50系列
+核心频率	2572-2580MHz
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",微星显卡旗舰店,17.0,2025-04-27 19:32:18
+1745753561,技嘉GeForce RTX 5070 Ti WindForce OC SFF 16G风魔,6299.0,,,https://2c.zol-img.com.cn/product/271_320x240/538/ce9irXXUaT3c.png,"产品型号	GV-N507TWF3OC-16GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce 5070 Ti 
+显示芯片系列	NVIDIA RTX 50系列
+核心代号	GB203-300
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",,,2025-04-27 19:32:41
+100149413505,技嘉GeForce RTX 5070 Ti Eagle OC SFF 16G猎鹰,7599.0,7599.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100149413505.html,https://2b.zol-img.com.cn/product/271_320x240/573/ceK4kaglZkLzs.png,"产品型号	GV-N507TEAGLE OC-16GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce 5070 Ti 
+显示芯片系列	NVIDIA RTX 50系列
+核心代号	GB203-300
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",技嘉京东自营官方旗舰店,2000.0,2025-04-27 19:32:44
+100149413507,技嘉GeForce RTX 5070 Ti Eagle OC ICE SFF 16G冰猎鹰,7699.0,7699.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100149413507.html,https://2e.zol-img.com.cn/product/271_320x240/534/ceuuTGngFRUM.png,"产品型号	GV-N507TEAGLEOC ICE-16GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce 5070 Ti 
+显示芯片系列	NVIDIA RTX 50系列
+核心代号	GB203-300
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",技嘉京东自营官方旗舰店,2000.0,2025-04-27 19:33:06
+100188447066,技嘉GeForce RTX 5070 Ti AORUS MASTER OC 16G超级雕,8999.0,8999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100188447066.html,https://2a.zol-img.com.cn/product/271_320x240/608/cevCgcSb8XWFM.png,"产品型号	GV-N507TAORUS M-16GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce 5070 Ti 
+显示芯片系列	NVIDIA RTX 50系列
+核心代号	GB203-300
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",技嘉京东自营官方旗舰店,2000.0,2025-04-27 19:33:18
+100188447064,技嘉GeForce RTX 5070 Ti AERO OC 16G雪鹰,8099.0,8099.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100188447064.html,https://2a.zol-img.com.cn/product/271_320x240/524/ceB7tAY5zKaNk.png,"产品型号	GV-N507TAERO OC-16GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce 5070 Ti 
+显示芯片系列	NVIDIA RTX 50系列
+核心代号	GB203-300
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",技嘉京东自营官方旗舰店,2000.0,2025-04-27 19:33:31
+100188447084,技嘉GeForce RTX 5070 Ti Gaming OC 16G魔鹰,7999.0,7999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100188447084.html,https://2b.zol-img.com.cn/product/271_320x240/519/celi1XK1CygIo.png,"产品型号	GV-N507TGAMING OC-16GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce 5070 Ti 
+显示芯片系列	NVIDIA RTX 50系列
+核心代号	GB203-300
+CUDA核心	8960个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",技嘉京东自营官方旗舰店,2000.0,2025-04-27 19:33:43
+10138963454436,蓝宝石AMD Radeon RX 7650 GRE 8G 黑钻版,2099.0,2099.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10138963454436.html,https://2c.zol-img.com.cn/product/271_320x240/30/cepQrIAcCKKv2.jpg,"产品型号	AMD Radeon RX 7650 GRE 8G 黑钻版
+芯片厂商	AMD
+显卡芯片	Radeon RX 7650 GRE
+显示芯片系列	AMD RX 7000系列
+制作工艺	6纳米
+核心代号	RDNA 3
+核心频率	2539-2810MHz
+CUDA核心	AMD RADEON RX 7650 GRE 8G个
+流处理单元	2048个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口",蓝宝石显卡旗舰店,10000.0,2025-04-27 19:33:56
+10107457457571,蓝宝石AMD Radeon RX 7650 GRE 8G 白金版,2049.0,2049.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10107457457571.html,https://2b.zol-img.com.cn/product/271_320x240/29/ce17SCNZ4Up6.jpg,"产品型号	AMD Radeon RX 7650 GRE 8G 白金版
+芯片厂商	AMD
+显卡芯片	Radeon RX 7650 GRE
+显示芯片系列	AMD RX 7000系列
+制作工艺	6纳米
+核心代号	RDNA 3
+核心频率	2350-2695MHz
+流处理单元	2048个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin",蓝宝石电脑旗舰店,2000.0,2025-04-27 19:34:09
+100185416312,瀚铠Radeon RX 7650 GRE 白色合金,2049.0,2049.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100185416312.html,https://2b.zol-img.com.cn/product/271_320x240/931/ceUppXr664saE.jpg,"芯片厂商	AMD
+显卡芯片	Radeon RX 7650 GRE
+显示芯片系列	AMD RX 7000系列
+核心频率	基础频率：1900MHz
+流处理单元	2048个
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+内存带宽	288GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin
+显卡类型	主流级
+显卡设计	非公版
+散热方式	双风扇散热+热管散热
+外观设计	白色",瀚铠（VASTARMOR）显卡京东自营旗舰店,200.0,2025-04-27 19:34:21
+100147395971,瀚铠Radeon RX 7650 GRE 黑色合金,2049.0,2049.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100147395971.html,https://2a.zol-img.com.cn/product/271_320x240/930/cezGT50LjC1Ps.jpg,"芯片厂商	AMD
+显卡芯片	Radeon RX 7650 GRE
+显示芯片系列	AMD RX 7000系列
+核心频率	基础频率：1900MHz
+流处理单元	2048个
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+内存带宽	288GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin
+显卡类型	主流级
+显卡设计	非公版
+散热方式	双风扇散热+热管散热
+外观设计	黑色",瀚铠（VASTARMOR）显卡京东自营旗舰店,200.0,2025-04-27 19:34:43
+10135600971584,耕升RTX 5090 D 踏雪OC,19999.0,2.6,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10135600971584.html,https://2d.zol-img.com.cn/product/271_320x240/147/ceJ47EOqnsSc.png,"产品型号	RTX 5090 D 踏雪OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2437MHz
+CUDA核心	21760个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",耕升旗舰店,7.0,2025-04-27 19:35:05
+10136045164272,耕升RTX 5090 D 踏雪,18499.0,2.5,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10136045164272.html,https://2a.zol-img.com.cn/product/271_320x240/144/ce1tXRhPCPgsc.png,"产品型号	RTX 5090 D 踏雪
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2407MHz
+CUDA核心	21760个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",耕升旗舰店,7.0,2025-04-27 19:35:38
+10135734406582,AX电竞叛客GeForce RTX 5090 D X3W 32GB,16499.0,1.65,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10135734406582.html,https://2c.zol-img.com.cn/product/271_320x240/92/cejdoG3mbCf3I.jpg,"产品型号	GeForce RTX 5090 D X3W 32GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	2407MHz
+CUDA核心	21760个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",电竞叛客旗舰店,0.0,2025-04-27 19:36:00
+10135733696237,AX电竞叛客GeForce RTX 5080 X3W OC 16GB,10999.0,8299.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10135733696237.html,https://2f.zol-img.com.cn/product/271_320x240/921/cebOw3eEbiWU.jpg,"产品型号	GeForce RTX 5080 X3W OC 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	2640MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",电竞叛客旗舰店,13.0,2025-04-27 19:36:22
+10136048971892,索泰GEFORCE RTX 5090 D 32GB SOLID,16499.0,1.65,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10136048971892.html,https://2a.zol-img.com.cn/product/271_320x240/868/ceR1M2ikhOBEk.jpg,"产品型号	GEFORCE RTX 5090 D 32GB SOLID OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2407MHz
+CUDA核心	21760个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+最大分辨率	15360×8460
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin
+显卡类型	发烧级",索泰ZOTAC旗舰店,0.0,2025-04-27 19:36:34
+10136045206895,索泰GEFORCE RTX 5090 D 32GB SOLID OC,16999.0,2.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10136045206895.html,https://2d.zol-img.com.cn/product/271_320x240/865/ce7Fhp7Oi5Dds.jpg,"产品型号	GEFORCE RTX 5090 D 32GB SOLID OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2437MHz
+CUDA核心	21760个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+最大分辨率	15360×8460
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin
+显卡类型	发烧级",索泰ZOTAC旗舰店,0.0,2025-04-27 19:36:59
+10135740092614,映众GeForce RTX 5090 D 曜夜 X3,16499.0,1.65,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10135740092614.html,https://2c.zol-img.com.cn/product/271_320x240/744/cejOhIViSVqMY.jpg,"产品型号	GeForce RTX 5090 D 曜夜 X3
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2400MHz
+CUDA核心	21760个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+最大分辨率	7680×4320
+内存带宽	1792GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin",映众显卡旗舰店,2.0,2025-04-27 19:37:21
+10135739320097,映众GeForce RTX 5080 曜夜 X3 OC,10999.0,9699.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10135739320097.html,https://2a.zol-img.com.cn/product/271_320x240/664/ce9NU25wQ1Gu6.jpg,"产品型号	GeForce RTX 5080 曜夜 X3 OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2295MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	960GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin",映众显卡旗舰店,41.0,2025-04-27 19:38:36
+10135739320095,映众GeForce RTX 5080 曜夜 X3,8299.0,8299.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10135739320095.html,https://2b.zol-img.com.cn/product/271_320x240/689/cetmiS1fYAdo.jpg,"产品型号	GeForce RTX 5080 曜夜 X3
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2295MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	960GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin",映众显卡旗舰店,41.0,2025-04-27 19:38:50
+10136244047439,msi微星GeForce RTX 5080 16G VENTUS 3X OC PLUS,10999.0,9899.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10136244047439.html,https://2e.zol-img.com.cn/product/271_320x240/252/cenORcKfOGBNE.jpg,"产品型号	GeForce RTX 5080 16G VENTUS 3X OC PLUS
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	Boost频率：2640MHz
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",微星DIY旗舰店,17.0,2025-04-27 19:39:02
+1745753965,msi微星GeForce RTX 5080 16G VENTUS 3X OC,8299.0,,,https://2e.zol-img.com.cn/product/271_320x240/198/ceFlPVLOFAs.jpg,"产品型号	GeForce RTX 5080 16G VENTUS 3X OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	Boost频率：2640MHz
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",,,2025-04-27 19:39:25
+100184439146,msi微星GeForce RTX 5080 16G VANGUARD SOC LAUNCH EDITION,11999.0,1.3,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100184439146.html,https://2f.zol-img.com.cn/product/271_320x240/193/ce8Grw0u1Qbjs.jpg,"产品型号	GeForce RTX 5080 16G VANGUARD SOC LAUNCH EDITION
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	Boost频率：2730MHz
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",微星京东自营旗舰店,2000.0,2025-04-27 19:39:58
+100146702269,msi微星GeForce RTX 5080 16G SUPRIM SOC,13999.0,1.5,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100146702269.html,https://2f.zol-img.com.cn/product/271_320x240/181/ceiZRhcISospI.jpg,"产品型号	GeForce RTX 5080 16G SUPRIM SOC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	Boost频率：2745MHz
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",微星京东自营旗舰店,2000.0,2025-04-27 19:40:22
+100184375850,msi微星GeForce RTX 5080 16G INSPIRE 3X OC,9899.0,9879.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100184375850.html,https://2b.zol-img.com.cn/product/271_320x240/171/cegYsVWZNDkC.jpg,"产品型号	GeForce RTX 5080 16G INSPIRE 3X OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	Boost频率：2640MHz
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",微星京东自营旗舰店,100.0,2025-04-27 19:40:54
+100146702267,msi微星GeForce RTX 5080 16G GAMING TRIO OC WHITE,10999.0,1.2,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100146702267.html,https://2d.zol-img.com.cn/product/271_320x240/209/ce5zkmeUck98Y.jpg,"产品型号	GeForce RTX 5080 16G GAMING TRIO OC WHITE
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	Boost频率：2700MHz
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",微星京东自营旗舰店,2000.0,2025-04-27 19:41:06
+100146702289,msi微星GeForce RTX 5080 16G GAMING TRIO OC,10999.0,1.2,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100146702289.html,https://2d.zol-img.com.cn/product/271_320x240/167/cemqPdFHves9g.jpg,"产品型号	GeForce RTX 5080 16G GAMING TRIO OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	Boost频率：2700MHz
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",微星京东自营旗舰店,2000.0,2025-04-27 19:41:28
+100146702271,msi微星GeForce RTX 5080 16G SHADOW 3X OC,8299.0,8299.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100146702271.html,https://2c.zol-img.com.cn/product/271_320x240/160/cepxnHreS35uY.jpg,"产品型号	GeForce RTX 5080 16G SHADOW 3X OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	Boost频率：2640MHz
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",微星京东自营旗舰店,2000.0,2025-04-27 19:41:40
+100186245944,msi微星GeForce RTX 5090 D 32G SUPRIM SOC,26999.0,3.3,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100186245944.html,https://2b.zol-img.com.cn/product/271_320x240/15/ceQunHcPdbFM.jpg,"产品型号	GeForce RTX 5090 D 32G SUPRIM SOC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	Boost频率: 2512-2565MHz
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",微星京东自营旗舰店,500.0,2025-04-27 19:41:53
+100186245916,msi微星GeForce RTX 5090 D 32G SUPRIM LIQUID SOC,27999.0,3.5,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100186245916.html,https://2b.zol-img.com.cn/product/271_320x240/33/ceOQYRIGYVXk.jpg,"产品型号	GeForce RTX 5090 D 32G SUPRIM LIQUID SOC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	Boost频率: 2512-2565MHz
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",微星京东自营旗舰店,500.0,2025-04-27 19:42:15
+100186245940,msi微星GeForce RTX 5090 D 32G VANGUARD SOC LAUNCH EDITION,25999.0,3.2,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100186245940.html,https://2e.zol-img.com.cn/product/271_320x240/24/ceVUqRDpk4TLM.jpg,"产品型号	GeForce RTX 5090 D 32G VANGUARD SOC LAUNCH EDITION
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	Boost频率: 2512MHz
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",微星京东自营旗舰店,500.0,2025-04-27 19:43:21
+100184505880,msi微星GeForce RTX 5090 D 32G GAMING TRIO OC,23999.0,3.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100184505880.html,https://2b.zol-img.com.cn/product/271_320x240/3/ceokpG1asye2.jpg,"产品型号	GeForce RTX 5090 D 32G GAMING TRIO OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	Boost频率: 2482MHz
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",微星京东自营旗舰店,500.0,2025-04-27 19:43:55
+1745754297,华硕ROG ASTRAL 夜神 RTX5090 D O32G GAMING,42999.0,,,https://2b.zol-img.com.cn/product/271_320x240/907/ceFf4HdpwOJ2.png,"产品型号	ROG ASTRAL 夜神 RTX5090 D O32G GAMING
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2580-2610MHz
+CUDA核心	21760个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	2×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",,,2025-04-27 19:44:57
+100184553376,华硕ROG ASTRAL 夜神 RTX5080 O16G GAMING,13999.0,1.6,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100184553376.html,https://2c.zol-img.com.cn/product/271_320x240/854/ceONSulGGFZM.jpg,"产品型号	ROG ASTRAL 夜神 RTX5080 O16G GAMING
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2760-2790MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	2×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",华硕京东自营旗舰店,500.0,2025-04-27 19:45:30
+100146820801,华硕TUF GAMING RTX5080 O16G GAMING,11999.0,1.26,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100146820801.html,https://2a.zol-img.com.cn/product/271_320x240/894/ceefne1G7sE.png,"产品型号	TUF GAMING RTX5080 O16G GAMING
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2700-2730MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	2×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",华硕京东自营旗舰店,500.0,2025-04-27 19:46:02
+100146820817,华硕PRIME RTX5080 O16G,9999.0,1.2,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100146820817.html,https://2c.zol-img.com.cn/product/271_320x240/854/ceONSulGGFZM.jpg,"产品型号	PRIME RTX5080 O16G
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2655-2685MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",华硕京东自营旗舰店,500.0,2025-04-27 19:46:50
+1745754434,技嘉GeForce RTX 5090 D WINDFORCE 32G,16499.0,,,https://2c.zol-img.com.cn/product/271_320x240/794/ceKujYsgnmGg.png,"产品型号	GV-N509DWF3-32GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2407MHz
+CUDA核心	21760个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",,,2025-04-27 19:47:14
+10062429832101,技嘉GeForce RTX 5090 D GAMING 32G,21999.0,2.65,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10062429832101.html,https://2a.zol-img.com.cn/product/271_320x240/750/ceR4L1iycYRyY.png,"产品型号	GV-N509DGAMING-32GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2407-2655MHz
+CUDA核心	21760个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",技嘉旗舰店,1000.0,2025-04-27 19:47:17
+100183373388,技嘉AORUS GeForce RTX 5090 D MASTER 32G,22999.0,2.7,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100183373388.html,https://2e.zol-img.com.cn/product/271_320x240/772/ceRWS518h08WY.jpg,"产品型号	GV-N509DAORUS M-32GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2407-2655MHz
+CUDA核心	21760个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",技嘉京东自营官方旗舰店,1000.0,2025-04-27 19:47:33
+100146799965,技嘉AORUS GeForce RTX 5090 D MASTER ICE 32G,23499.0,2.75,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100146799965.html,https://2f.zol-img.com.cn/product/271_320x240/791/ceXPclY13VMTo.jpg,"产品型号	GV-N509DAORUSM ICE-32GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2407MHz
+CUDA核心	21760个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",技嘉京东自营官方旗舰店,1000.0,2025-04-27 19:47:56
+10136416264853,技嘉GeForce RTX 5080 WINDFORCE OC SFF 16G,10499.0,1.05,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10136416264853.html,https://2b.zol-img.com.cn/product/271_320x240/823/cePjEtSF8ch6.png,"产品型号	GV-N5080WF3OC-16GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2617-2670MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",技嘉组装电脑旗舰店,30.0,2025-04-27 19:48:17
+100180790598,技嘉GeForce RTX 5080 AERO OC SFF 16G,10999.0,1.13,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100180790598.html,https://2e.zol-img.com.cn/product/271_320x240/634/ceTR6wILIVl0Y.png,"产品型号	GV-N5080AERO OC-16GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2617-2730MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",技嘉京东自营官方旗舰店,2000.0,2025-04-27 19:48:41
+100180790616,技嘉GeForce RTX 5080 GAMING OC 16G,10999.0,1.15,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100180790616.html,https://2d.zol-img.com.cn/product/271_320x240/819/ceiTfe8HYrs86.png,"产品型号	GV-N5080GAMING OC-16GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2617-2730MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",技嘉京东自营官方旗舰店,2000.0,2025-04-27 19:49:02
+100144287183,技嘉AORUS GeForce RTX 5080 MASTER ICE 16G,12299.0,1.33,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100144287183.html,https://2d.zol-img.com.cn/product/271_320x240/591/cephO75IFYKmg.png,"产品型号	GV-N5080AORUSM ICE-16GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2617-2805MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",技嘉京东自营官方旗舰店,2000.0,2025-04-27 19:49:24
+100180756116,技嘉AORUS GeForce RTX 5080 MASTER 16G,11999.0,1.3,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100180756116.html,https://2f.zol-img.com.cn/product/271_320x240/587/cey52t5mbnrQ.png,"产品型号	GV-N5080AORUS M-16GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA GTX 50系列
+制作工艺	4纳米
+核心频率	2617-2805MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",技嘉京东自营官方旗舰店,2000.0,2025-04-27 19:49:37
+1745754588,影驰GeForce RTX 5090 D 大将,16499.0,,,https://2b.zol-img.com.cn/product/271_320x240/767/ce1y1TNcUUaEE.png,"产品型号	GeForce RTX 5090 D 大将
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2017MHz
+CUDA核心	21760个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",,,2025-04-27 19:49:48
+10136625015687,影驰GeForce RTX 5080 金属大师黑金版,10999.0,9999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10136625015687.html,https://2f.zol-img.com.cn/product/271_320x240/533/ceY5woFO3h8k.png,"产品型号	GeForce RTX 5080 金属大师黑金版
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2295MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",影惢堂官方旗舰店,52.0,2025-04-27 19:49:52
+10136625015688,影驰GeForce RTX 5080 金属大师白金版,15999.0,9999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10136625015688.html,https://2b.zol-img.com.cn/product/271_320x240/481/cezFPswv0RLAQ.png,"产品型号	GeForce RTX 5080 金属大师白金版 OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2295MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",影惢堂官方旗舰店,52.0,2025-04-27 19:50:14
+10135567360420,影驰GeForce RTX 5080 金属大师白金版 OC,9999.0,9499.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10135567360420.html,https://2b.zol-img.com.cn/product/271_320x240/535/ceFRDfBvDXu1k.png,"产品型号	GeForce RTX 5080 金属大师白金版 OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2295MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",影驰电脑硬件旗舰店,43.0,2025-04-27 19:50:36
+10135567360418,影驰GeForce RTX 5080 金属大师黑金版 OC,9999.0,9499.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10135567360418.html,https://2c.zol-img.com.cn/product/271_320x240/476/ceAFqxK2rEir2.png,"产品型号	GeForce RTX 5080 金属大师黑金版 OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2295MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",影驰电脑硬件旗舰店,43.0,2025-04-27 19:50:48
+1745754660,影驰GeForce RTX 5080 圣刃,8299.0,,,https://2a.zol-img.com.cn/product/271_320x240/540/cexlkIiHkxFQ.png,"产品型号	GeForce RTX 5080 圣刃
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2295MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",,,2025-04-27 19:51:00
+10135473731416,影驰GeForce RTX 5080 圣刃 OC,9499.0,9299.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10135473731416.html,https://2c.zol-img.com.cn/product/271_320x240/470/ceo11NiTJ4KE.png,"产品型号	 GeForce RTX 5080 圣刃 OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2295MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",影驰电脑硬件旗舰店,43.0,2025-04-27 19:51:03
+1745754675,影驰GeForce RTX 5080 魔刃,8299.0,,,https://2d.zol-img.com.cn/product/271_320x240/489/ceCKKuxOtIkNE.png,"产品型号	GeForce RTX 5080 魔刃
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2295MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",,,2025-04-27 19:51:15
+10135473731414,影驰GeForce RTX 5080 魔刃 OC,9499.0,9299.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10135473731414.html,https://2d.zol-img.com.cn/product/271_320x240/465/ceGoQ7t1Ltryg.png,"产品型号	GeForce RTX 5080 魔刃 OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2295MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级
+显卡设计	非公版",影驰电脑硬件旗舰店,43.0,2025-04-27 19:51:18
+1745754690,七彩虹iGame GeForce RTX 5080 Ultra W 16GB,8299.0,,,https://2c.zol-img.com.cn/product/271_320x240/434/ceJCnu17LPCg.png,"产品型号	iGame GeForce RTX 5080 Ultra W 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2295-2617HzMHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+内存带宽	960GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",,,2025-04-27 19:51:30
+100172027926,七彩虹iGame GeForce RTX 5080 Vulcan OC 16GB,11999.0,1.2,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100172027926.html,https://2a.zol-img.com.cn/product/271_320x240/408/cefXAZnEnOofY.png,"产品型号	iGame GeForce RTX 5080 Vulcan OC 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2295-2617Hz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+内存带宽	960GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	2×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",七彩虹京东自营旗舰店,2000.0,2025-04-27 19:51:33
+100138475493,七彩虹iGame GeForce RTX 5080 Advanced OC 16GB,10999.0,1.1,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100138475493.html,https://2a.zol-img.com.cn/product/271_320x240/336/ceHnXVjmEhhg.png,"产品型号	iGame GeForce RTX 5080 Advanced OC 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2295-2617Hz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+内存带宽	960GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",七彩虹京东自营旗舰店,2000.0,2025-04-27 19:51:45
+100172027914,七彩虹iGame GeForce RTX 5080 Ultra W OC 16GB,9999.0,9999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100172027914.html,https://2c.zol-img.com.cn/product/271_320x240/362/cewJxjFxJpq9c.png,"产品型号	iGame GeForce RTX 5080 Ultra W OC 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2295-2617Hz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+内存带宽	960GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",七彩虹京东自营旗舰店,2000.0,2025-04-27 19:51:58
+100138475509,七彩虹iGame GeForce RTX 5080 Neptune OC 16GB,11699.0,1.17,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100138475509.html,https://2f.zol-img.com.cn/product/271_320x240/359/cejcuNLyaZbQ.png,"产品型号	iGame GeForce RTX 5080 Neptune OC 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2295-2617Hz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+内存带宽	960GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	2×HDMI 2.1b接口，3×DisplayPort 2.1b接口
+电源接口	16pin
+显卡类型	发烧级",七彩虹京东自营旗舰店,2000.0,2025-04-27 19:52:10
+1745754743,七彩虹iGame GeForce RTX 5090 D Vulcan OC 32GB,22499.0,,,https://2b.zol-img.com.cn/product/271_320x240/81/cewTJKe2OYGA.jpg,"产品型号	iGame GeForce RTX 5090 D Vulcan OC 32GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2017-2407MHz
+CUDA核心	21760个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+内存带宽	1792GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	2×HDMI 2.1b接口，3×DisplayPort2.1b接口
+电源接口	16pin
+显卡类型	发烧级",,,2025-04-27 19:52:23
+1745754746,七彩虹iGame GeForce RTX 5090 D Advanced OC 32GB,20499.0,,,https://2c.zol-img.com.cn/product/271_320x240/94/ceCiqrJqeYUuk.jpg,"产品型号	iGame GeForce RTX 5090 D Advanced OC 32GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2017-2407MHz
+CUDA核心	21760个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+内存带宽	1792GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI 2.1b接口，3×DisplayPort2.1b接口
+电源接口	16pin
+显卡类型	发烧级",,,2025-04-27 19:52:26
+1745754749,七彩虹iGame GeForce RTX 5090 D Neptune OC 32GB,21999.0,,,https://2a.zol-img.com.cn/product/271_320x240/86/ceoPGZtxZhZtQ.jpg,"产品型号	iGame GeForce RTX 5090 D Neptune OC 32GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2017-2407MHz
+CUDA核心	21760个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+内存带宽	1792GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	2×HDMI 2.1b接口，3×DisplayPort2.1b接口
+电源接口	16pin
+显卡类型	发烧级",,,2025-04-27 19:52:29
+1745754752,七彩虹iGame GeForce RTX 5090 D Vulcan W OC 32GB,22899.0,,,https://2b.zol-img.com.cn/product/271_320x240/51/ce86ABaRaRzg.jpg,"产品型号	iGame GeForce RTX 5090 D Vulcan W OC 32GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5090 D
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	基础频率：2017-2407MHz
+CUDA核心	21760个
+显存频率	28000MHz
+显存类型	GDDR7
+显存容量	32GB
+显存位宽	512bit
+内存带宽	1792GB/s
+接口类型	PCI Express 5.0 16X
+I/O接口	2×HDMI 2.1b接口，3×DisplayPort2.1b接口
+电源接口	16pin
+显卡类型	发烧级",,,2025-04-27 19:52:32
+10135475496203,耕升RTX 5080 炫光OC,9999.0,9999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10135475496203.html,https://2b.zol-img.com.cn/product/271_320x240/39/cecCpGCnajW.jpg,"产品型号	RTX 5080 炫光OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心代号	Blackwell
+核心频率	2655MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	12V-2x6
+显卡类型	发烧级",耕升旗舰店,100.0,2025-04-27 19:52:35
+10135475496204,耕升RTX 5080 追风OC,9499.0,9499.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10135475496204.html,https://2d.zol-img.com.cn/product/271_320x240/11/ceJ2MfziSXas.png,"产品型号	RTX 5080 追风OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心代号	Blackwell
+核心频率	2625MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	12V-2x6
+显卡类型	发烧级",耕升旗舰店,100.0,2025-04-27 19:52:47
+10136045040257,耕升RTX 5080 追风,8299.0,9499.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10136045040257.html,https://2e.zol-img.com.cn/product/271_320x240/6/ceKpmxPjw3hdk.jpg,"产品型号	RTX 5080 追风
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 5080
+显示芯片系列	NVIDIA RTX 50系列
+制作工艺	4纳米
+核心频率	2617MHz
+CUDA核心	10752个
+显存频率	30000MHz
+显存类型	GDDR7
+显存容量	16GB
+显存位宽	256bit
+接口类型	PCI Express 5.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	12V-2x6
+显卡类型	发烧级
+散热方式	三风扇散热+热管散热",耕升旗舰店,100.0,2025-04-27 19:53:00
+1745754836,瀚铠RX 6750 GRE 10GB 合金 白色,2398.0,,,https://2f.zol-img.com.cn/product/270_320x240/805/ceN40LIvVXjI.png,"芯片厂商	AMD
+显卡芯片	Radeon RX 6750 GRE
+显示芯片系列	AMD RX 6000系列
+核心频率	2140-2495MHz
+流处理单元	2304个
+显存类型	GDDR6
+显存容量	10GB
+显存位宽	160bit
+内存带宽	320GB/s
+接口类型	PCI Express 4.0
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡类型	主流级
+散热方式	双风扇散热+热管散热
+散热设计	支持智能启停
+产品尺寸	232.7×115.3×50.6mm",,,2025-04-27 19:53:56
+1745754859,傲世Odyssey 征途 B580,2099.0,,,https://2a.zol-img.com.cn/product/270_320x240/328/cedwNWu1T3DZI.png,"产品型号	Odyssey 征途 B580
+芯片厂商	Intel
+显卡芯片	Arc B580
+显示芯片系列	Intel Arc B580系列
+制作工艺	5纳米
+核心频率	2670MHz
+显存频率	19000MHz
+显存类型	GDDR6
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+内存带宽	456GB/s
+接口类型	PCI Express 4.0 8X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort2.1接口
+电源接口	8pin
+散热方式	双风扇散热+热管散热",,,2025-04-27 19:54:19
+1745754862,傲世LUMI 逐日 B580 OC,2199.0,,,https://2d.zol-img.com.cn/product/270_320x240/325/ced1EapR3j50s.png,"产品型号	LUMI 逐日 B580 OC
+芯片厂商	Intel
+显卡芯片	Arc B580
+显示芯片系列	Intel Arc B580系列
+制作工艺	5纳米
+核心频率	2740MHz
+显存频率	19000MHz
+显存类型	GDDR6
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+内存带宽	456GB/s
+接口类型	PCI Express 4.0 8X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort2.1接口
+电源接口	8pin
+显卡设计	非公版",,,2025-04-27 19:54:22
+1745754864,SPARKLE Intel Arc B580 TITAN OC,2049.0,,,https://2a.zol-img.com.cn/product/270_320x240/122/cewoYF0ViWhOI.jpg,"产品型号	Intel Arc B580 TITAN OC
+芯片厂商	Intel
+显卡芯片	Arc B580
+显示芯片系列	Intel Arc B580系列
+制作工艺	5纳米
+核心频率	2760MHz
+显存频率	19000MHz
+显存类型	GDDR6
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+内存带宽	456GB/s
+接口类型	PCI Express 4.0 8X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版",,,2025-04-27 19:54:24
+100161730444,Intel 锐炫 B580,2049.0,2049.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100161730444.html,https://2f.zol-img.com.cn/product/270_320x240/863/cestJnQZSCU8M.jpg,"产品型号	Intel 锐炫 B580
+芯片厂商	Intel
+显卡芯片	Arc B580
+显示芯片系列	Intel Arc B580系列
+制作工艺	5纳米
+核心频率	2670MHz
+显存频率	19000MHz
+显存类型	GDDR6
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+内存带宽	456GB/s
+接口类型	PCI Express 4.0 8X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort2.1接口
+电源接口	8pin
+显卡设计	公版",英特尔京东自营旗舰店,500.0,2025-04-27 19:54:28
+10129459120124,铭瑄 Intel Arc B580 Milestone 12G,2149.0,2099.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10129459120124.html,https://2e.zol-img.com.cn/product/270_320x240/150/ceTwLMnGv73qw.jpg,"产品型号	Intel Arc B580 Milestone 12G
+芯片厂商	Intel
+显卡芯片	Arc B580
+显示芯片系列	Intel Arc B580系列
+制作工艺	5纳米
+显存频率	19000MHz
+显存类型	GDDR6
+显存容量	12GB
+显存位宽	192bit
+接口类型	PCI Express 4.0
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版
+散热方式	双风扇散热+热管散热
+外观设计	经典红黑搭配，定制锐盾背板
+多屏设计	4",英特尔官方旗舰店,15.0,2025-04-27 19:54:46
+10129459120123,铭瑄 Intel Arc B580 iCraft 12G,2179.0,2149.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10129459120123.html,https://2e.zol-img.com.cn/product/270_320x240/162/ceAzwU6YTocuM.jpg,"产品型号	Intel Arc B580 iCraft 12G
+芯片厂商	Intel
+显卡芯片	Arc B580
+显示芯片系列	Intel Arc B580系列
+制作工艺	5纳米
+显存频率	19000MHz
+显存类型	GDDR6
+显存容量	12GB
+显存位宽	192bit
+接口类型	PCI Express 4.0
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin+8pin
+显卡设计	非公版
+散热方式	三风扇散热+热管散热
+RGB	ARGB灯光同步
+外观设计	白昼炫光镀层，iCraft合金背板",英特尔官方旗舰店,15.0,2025-04-27 19:55:08
+1745754930,耕升GeForce RTX 4070 SUPER 踏雪OC定制版,5299.0,,,https://2b.zol-img.com.cn/product/270_320x240/33/cehIEwongkJgY.jpg,"产品型号	GeForce RTX 4070 SUPER 踏雪OC定制版
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 SUPER
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD104
+核心频率	2550MHz
+CUDA核心	7168个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	12VHPWR
+显卡类型	主流级",,,2025-04-27 19:55:30
+100161128230,蓝戟Intel Arc B580 Index 12G,2199.0,2049.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100161128230.html,https://2b.zol-img.com.cn/product/270_320x240/597/ceTmLMX6HNcw.jpg,"产品型号	Intel Arc B580 Index 12G
+芯片厂商	Intel
+显卡芯片	Arc B580
+显示芯片系列	Intel Arc B580系列
+制作工艺	5纳米
+核心频率	2670MHz
+显存频率	19000MHz
+显存类型	GDDR6
+显存容量	12GB
+显存位宽	192bit
+内存带宽	456GB/s
+接口类型	PCI Express 4.0
+I/O接口	1×HDMI 2.1接口，3×DisplayPort2.1接口
+电源接口	8pin
+散热方式	双风扇散热+热管散热
+3D API	DirectX 12",蓝戟京东自营旗舰店,2000.0,2025-04-27 19:55:33
+100161128196,蓝戟Intel Arc B580 Photon W 12G OC,2419.0,2199.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100161128196.html,https://2e.zol-img.com.cn/product/270_320x240/498/cePl6lQrsK2ZU.jpg,"产品型号	Intel Arc B580 Photon W 12G OC
+芯片厂商	Intel
+显卡芯片	Arc B580
+显示芯片系列	Intel Arc B580系列
+制作工艺	5纳米
+核心频率	2850MHz
+显存频率	19000MHz
+显存类型	GDDR6
+显存容量	12GB
+显存位宽	192bit
+内存带宽	456GB/s
+接口类型	PCI Express 4.0
+I/O接口	1×HDMI 2.1接口，3×DisplayPort2.1接口
+电源接口	8pin+8pin
+显卡设计	非公版
+散热方式	三风扇散热+热管散热",蓝戟京东自营旗舰店,2000.0,2025-04-27 19:55:46
+100161128232,蓝戟Intel Arc B580 Photon 12G OC,2399.0,2199.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100161128232.html,https://2b.zol-img.com.cn/product/270_320x240/495/ceKUh9wFyJguM.jpg,"产品型号	Intel Arc B580 Photon 12G OC
+芯片厂商	Intel
+显卡芯片	Arc B580
+显示芯片系列	Intel Arc B580系列
+制作工艺	5纳米
+核心频率	2850MHz
+显存频率	19000MHz
+显存类型	GDDR6
+显存容量	12GB
+显存位宽	192bit
+内存带宽	456GB/s
+接口类型	PCI Express 4.0
+I/O接口	1×HDMI 2.1接口，3×DisplayPort2.1接口
+电源接口	8pin+8pin
+显卡设计	非公版
+散热方式	三风扇散热+热管散热",蓝戟京东自营旗舰店,2000.0,2025-04-27 19:55:58
+10107444272331,蓝宝石RX 7800 XT 16GB D6 白金版 OC,3999.0,3799.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10107444272331.html,https://2a.zol-img.com.cn/product/270_320x240/964/ceb9Wp9vaXU.jpg,"产品型号	RX 7800 XT 16GB D6 白金版 OC
+芯片厂商	AMD
+显卡芯片	Radeon RX 7800 XT
+显示芯片系列	AMD RX 7000系列
+制作工艺	5纳米
+核心代号	RDNA 3
+核心频率	加速频率：2430MHz
+流处理单元	3840个
+显存频率	19500MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	2×HDMI接口，2×DisplayPort 2.1接口
+电源接口	8pin+8pin",蓝宝石电脑旗舰店,1000.0,2025-04-27 19:56:19
+10107444272332,蓝宝石RX 7800 XT 16G D6 极地版 OC,4099.0,3899.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10107444272332.html,https://2e.zol-img.com.cn/product/270_320x240/956/ceNLGKE7fawpI.jpg,"产品型号	RX 7800 XT 16G D6 极地版 OC
+芯片厂商	AMD
+显卡芯片	Radeon RX 7800 XT
+显示芯片系列	AMD RX 7000系列
+制作工艺	5纳米
+核心代号	RDNA 3
+核心频率	加速频率：2475MHz
+流处理单元	3840个
+显存频率	19500MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	2×HDMI接口，2×DisplayPort 2.1接口
+电源接口	8pin+8pin",蓝宝石电脑旗舰店,1000.0,2025-04-27 19:56:42
+10119933932203,蓝宝石RX 7800 XT 16G D6 七日世界定制版,4199.0,3949.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10119933932203.html,https://2b.zol-img.com.cn/product/270_320x240/953/ceMgEUANFONQk.jpg,"产品型号	RX 7800 XT 16G D6 七日世界定制版
+芯片厂商	AMD
+显卡芯片	Radeon RX 7800 XT
+显示芯片系列	AMD RX 7000系列
+制作工艺	5纳米&6纳米
+核心代号	RDNA 3
+核心频率	加速频率：2475MHz
+流处理单元	3840个
+显存频率	19500MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	2×HDMI接口，2×DisplayPort 2.1接口
+电源接口	8pin+8pin",蓝宝石电脑旗舰店,1000.0,2025-04-27 19:56:55
+10021382722201,磐镭RTX3070 白铠 8G,2298.0,2299.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10021382722201.html,https://2d.zol-img.com.cn/product/270_320x240/83/ceZNxsEY7x99Q.png,"芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 3070
+显示芯片系列	NVIDIA RTX 30系列
+制作工艺	8纳米
+核心代号	GA104-300
+核心频率	1500MHz
+CUDA核心	5888个
+显存频率	14000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin+8pin
+显卡类型	发烧级",磐镭官方旗舰店,2000.0,2025-04-27 19:57:07
+10113722419277,NVIDIA RTX A1000,3349.0,3089.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10113722419277.html,https://2f.zol-img.com.cn/product/270_320x240/309/cefwe9ELifcU.jpg,"产品型号	RTX A1000
+芯片厂商	NVIDIA
+显卡芯片	RTX A1000
+核心代号	Ampere
+核心频率	727-1462MHz
+CUDA核心	2304个
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+最大分辨率	7680×4320
+内存带宽	192GB/s
+接口类型	PCI Express 4.0 8X
+I/O接口	4×Mini DisplayPort1.4a接口
+显卡类型	专业级
+显卡设计	公版
+散热方式	涡轮散热",英伟达楚霏专卖店,500.0,2025-04-27 19:57:19
+10115169446898,NVIDIA RTX A400,1349.0,1349.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10115169446898.html,https://2e.zol-img.com.cn/product/270_320x240/284/ceJKf5ncsBLgo.jpg,"产品型号	RTX A400
+芯片厂商	NVIDIA
+显卡芯片	RTX A400
+核心代号	Ampere
+核心频率	1417-1762MHz
+CUDA核心	768个
+显存类型	GDDR6
+显存容量	4GB
+显存位宽	64bit
+最大分辨率	5120×2800
+内存带宽	96GB/s
+接口类型	PCI Express 4.0 8X
+I/O接口	4×Mini HDMI1.4a接口
+显卡类型	专业级
+显卡设计	公版
+散热方式	涡轮散热",AI显卡服务器工作站小店,1.0,2025-04-27 19:57:31
+100118670057,NVIDIA RTX 2000 Ada,5099.0,5129.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100118670057.html,https://2e.zol-img.com.cn/product/270_320x240/648/ceht2tfpJXvd6.jpg,"产品型号	RTX 2000 Ada
+芯片厂商	NVIDIA
+显卡芯片	RTX 2000 Ada
+显示芯片系列	NVIDIA RTX 2000系列
+制作工艺	4纳米
+核心代号	AD107
+CUDA核心	2816个
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	128bit
+最大分辨率	7680×4320
+内存带宽	224GB/s
+接口类型	PCI Express 4.0 8X
+I/O接口	4×Mini DisplayPort接口
+显卡设计	公版
+散热方式	风扇散热",人工智能配件京东自营专区,2000.0,2025-04-27 19:57:53
+10076381813597,影驰GeForce RTX 4060 Ti 大将 V2,2899.0,3199.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10076381813597.html,https://2e.zol-img.com.cn/product/269_320x240/650/ceG56azXQrY.png,"产品型号	GeForce RTX 4060 Ti 大将 V2
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心频率	基础频率：2310MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin
+显卡类型	主流级",嘉砳威电脑配件专营店,100.0,2025-04-27 19:58:05
+10114466914936,影驰GeForce RTX 4060 Ti 大将 W,3299.0,3599.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10114466914936.html,https://2e.zol-img.com.cn/product/269_320x240/632/ce8B2X6XQ9LIE.png,"产品型号	GeForce RTX 4060 Ti 大将 W
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心频率	基础频率：2310MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin
+显卡类型	主流级",影驰旗舰店,5000.0,2025-04-27 19:58:19
+10107745574337,影驰GeForce RTX 4060 Ti 金属大师 B OC,3399.0,3499.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10107745574337.html,https://2d.zol-img.com.cn/product/269_320x240/607/cebgx9k9vb42.jpg,"产品型号	GeForce RTX 4060 Ti 金属大师 B OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心频率	基础频率：2310MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin
+显卡类型	主流级",影驰旗舰店,5000.0,2025-04-27 19:59:18
+10076381813598,影驰GeForce RTX 4060 Ti 金属大师V2 OC,2999.0,3299.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10076381813598.html,https://2a.zol-img.com.cn/product/269_320x240/622/ceLf96RgdooM.jpg,"产品型号	GeForce RTX 4060 Ti 金属大师V2 OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心频率	基础频率：2310MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin
+显卡类型	主流级",嘉砳威电脑配件专营店,100.0,2025-04-27 20:00:03
+1745755216,影驰GeForce RTX 4070 Ti SUPER 大将 OC V2,6038.0,,,https://2e.zol-img.com.cn/product/269_320x240/578/ceVZY9CGJj8Lc.png,"产品型号	GeForce RTX 4070 Ti SUPER 大将 OC V2
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti SUPER 
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	Ada
+核心频率	基础频率：2340MHz
+CUDA核心	8448个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	12VHPWR",,,2025-04-27 20:00:16
+1745755238,影驰GeForce RTX 4070 Ti SUPER 大将W OC,6599.0,,,https://2c.zol-img.com.cn/product/269_320x240/576/cepn6ZZOWr9hk.jpg,"产品型号	GeForce RTX 4070 Ti SUPER 大将W OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti SUPER 
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	Ada
+核心频率	基础频率：2340MHz
+CUDA核心	8448个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	12VHPWR",,,2025-04-27 20:00:38
+1745755252,影驰GeForce RTX 4070 Ti SUPER 星曜V2 OC,6399.0,,,https://2e.zol-img.com.cn/product/269_320x240/584/ceANEBTJQrcYY.png,"产品型号	GeForce RTX 4070 Ti SUPER 星曜V2 OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti SUPER 
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	Ada
+核心频率	基础频率：2340MHz
+CUDA核心	8448个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	12VHPWR",,,2025-04-27 20:00:52
+1745755256,影驰GeForce RTX 4070 Ti SUPER 经典金属大师 OC,6899.0,,,https://2b.zol-img.com.cn/product/269_320x240/575/ceYOvtnP6bOQ.png,"产品型号	GeForce RTX 4070 Ti SUPER 经典金属大师 OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti SUPER 
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	Ada
+核心频率	基础频率：2340MHz
+CUDA核心	8448个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	12VHPWR",,,2025-04-27 20:00:56
+1745755269,影驰GeForce RTX 4070 Ti SUPER 金属大师B OC,6119.0,,,https://2e.zol-img.com.cn/product/269_320x240/548/cehTwUJCdFc.png,"产品型号	GeForce RTX 4070 Ti SUPER 金属大师B OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti SUPER 
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	Ada
+核心频率	基础频率：2340MHz
+CUDA核心	8448个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	12VHPWR",,,2025-04-27 20:01:09
+10096088887635,影驰GeForce RTX 4070Ti SUPER 金属大师 V2 OC,6519.0,6399.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10096088887635.html,https://2a.zol-img.com.cn/product/269_320x240/514/cesl8fEC4Ngfk.jpg,"产品型号	GeForce RTX 4070Ti SUPER 金属大师 V2 OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti SUPER 
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	Ada
+核心频率	基础频率：2340MHz
+CUDA核心	8448个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	12VHPWR",影驰旗舰店,5000.0,2025-04-27 20:01:22
+1745755305,影驰GeForce RTX 4070 Ti SUPER HOF OC LAB Master-X,7099.0,,,https://2d.zol-img.com.cn/product/269_320x240/511/ceHoQrVIJUnOw.jpg,"产品型号	GeForce RTX 4070 Ti SUPER HOF OC LAB Master-X
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti SUPER 
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD 103
+核心频率	基础频率：2340MHz
+CUDA核心	8448个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	12VHPWR",,,2025-04-27 20:01:45
+1745755311,影驰GeForce RTX 4070 Ti SUPER 特别纪念版,7199.0,,,https://2f.zol-img.com.cn/product/269_320x240/537/ceXBKzzoWAg0g.png,"产品型号	GeForce RTX 4070 Ti SUPER 特别纪念版
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti SUPER 
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD103-275
+核心频率	基础频率：2340MHz
+CUDA核心	8448个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	12VHPWR",,,2025-04-27 20:01:51
+1745755398,影驰GeForce RTX 4070 金属大师 B,4599.0,,,https://2c.zol-img.com.cn/product/269_320x240/378/ceiAa1BvBIec.png,"产品型号	GeForce RTX 4070 金属大师 B
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心频率	基础频率：1920MHz
+CUDA核心	5888个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin
+显卡类型	主流级",,,2025-04-27 20:03:18
+1745755433,影驰GeForce RTX 4070 SUPER 大将 W,5299.0,,,https://2a.zol-img.com.cn/product/269_320x240/262/ceoDqWX73AnLs.png,"产品型号	GeForce RTX 4070 SUPER 大将 W
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 SUPER
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD104-350
+核心频率	基础频率：1980MHz
+CUDA核心	7168个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin",,,2025-04-27 20:03:53
+1745755447,影驰GeForce RTX 4070 SUPER 金属大师B,5499.0,,,https://2c.zol-img.com.cn/product/269_320x240/246/ceb5UX0x5lQIk.png,"产品型号	GeForce RTX 4070 SUPER 金属大师B
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 SUPER
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD104-350
+核心频率	基础频率：1980MHz
+CUDA核心	7168个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin",,,2025-04-27 20:04:07
+10107743969463,影驰GeForce RTX 4070 SUPER 金属大师B OC,5499.0,5399.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10107743969463.html,https://2d.zol-img.com.cn/product/269_320x240/241/cedqsctcy2Ytw.png,"产品型号	GeForce RTX 4070 SUPER 金属大师 OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 SUPER
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD104-350
+核心频率	基础频率：1980MHz
+CUDA核心	7168个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin",影驰旗舰店,5000.0,2025-04-27 20:04:10
+10096901712259,技嘉Radeon RX 7900 GRE GAMING OC 16G,4799.0,4699.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10096901712259.html,https://2e.zol-img.com.cn/product/269_320x240/852/ceO2FGjUygY6.png,"产品型号	GV-R79GREGAMING OC-16GD
+芯片厂商	AMD
+显卡芯片	Radeon RX 7900 GRE 
+显示芯片系列	AMD RX 7000系列
+核心代号	RDNA 3
+核心频率	提升频率：2245-2391MHz
+流处理单元	5120个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	2×HDMI 2.1接口，2×DisplayPort 2.1接口
+电源接口	8pin+8pin
+显卡设计	非公版",技嘉电脑硬件旗舰店,5.0,2025-04-27 20:05:40
+10025396578439,技嘉Radeon RX 7900 XTX GAMING 24G,8199.0,5349.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10025396578439.html,https://2e.zol-img.com.cn/product/269_320x240/324/cexGKGKfX2PQ.png,"产品型号	GV-R79XTXGAMING-24GD
+芯片厂商	AMD
+显卡芯片	Radeon RX 7900 XTX
+显示芯片系列	AMD RX 7000系列
+核心频率	2270-2500MHz
+流处理单元	6144个
+显存频率	20000MHz
+显存类型	GDDR6
+显存容量	24GB
+显存位宽	384bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	2×HDMI接口，2×DisplayPort接口
+电源接口	8pin+8pin
+显卡类型	主流级
+显卡设计	非公版",技嘉旗舰店,1000.0,2025-04-27 20:05:52
+1745755575,技嘉GeForce RTX 4060 D6 8G,2299.0,,,https://2b.zol-img.com.cn/product/269_320x240/273/ce6BtebOpGZI.jpg,"产品型号	GV-N4060D6-8GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060
+显示芯片系列	NVIDIA RTX 40系列
+核心频率	2460MHz
+CUDA核心	3072个
+显存频率	17000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0
+I/O接口	2×HDMI接口，2×DisplayPort接口
+电源接口	8pin
+散热方式	风扇散热+热管散热
+散热设计	90mm导流风扇",,,2025-04-27 20:06:15
+100062524658,技嘉GeForce RTX 4060 OC Low Profile 8G,2599.0,2749.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100062524658.html,https://2a.zol-img.com.cn/product/269_320x240/290/ce8w9swhvyxaE.png,"产品型号	GV-N4060OC-8GL
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060
+显示芯片系列	NVIDIA RTX 40系列
+核心频率	2460-2475MHz
+CUDA核心	3072个
+显存频率	17000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0
+I/O接口	2×HDMI接口，2×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版
+散热方式	三风扇散热+热管散热",技嘉京东自营官方旗舰店,20000.0,2025-04-27 20:06:18
+1745755591,技嘉GeForce RTX 4060 EAGLE OC ICE 8G,2449.0,,,https://2a.zol-img.com.cn/product/269_320x240/284/ceDtHxWYJx8Lw.jpg,"产品型号	GV-N4060EAGLEOC ICE-8GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060
+显示芯片系列	NVIDIA RTX 40系列
+核心频率	2460-2505MHz
+CUDA核心	3072个
+显存频率	17000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0
+I/O接口	2×HDMI接口，2×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版
+散热方式	三风扇散热+热管散热",,,2025-04-27 20:06:31
+1745755604,技嘉GeForce RTX 4060 Ti WINDFORCE OC 8G,3199.0,,,https://2f.zol-img.com.cn/product/269_320x240/199/ceQ3IsJ64rpsY.png,"产品型号	GV-N406TWF2OC-8GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心频率	2535-2550MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	2×HDMI接口，2×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版
+散热方式	双风扇散热+热管散热",,,2025-04-27 20:06:44
+100086888105,技嘉GeForce RTX 4060 Ti EAGLE OC ICE 8G,3349.0,3599.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100086888105.html,https://2d.zol-img.com.cn/product/269_320x240/233/ce7HijPwbus.jpg,"产品型号	GV-N406TEAGLEOC ICE-8GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心频率	2535-2550MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	2×HDMI接口，2×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版
+散热方式	三风扇散热+热管散热",技嘉京东自营官方旗舰店,20000.0,2025-04-27 20:06:46
+10112773175804,技嘉GeForce RTX 4060 Ti WINDFORCE OC 16G,3699.0,3899.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10112773175804.html,https://2e.zol-img.com.cn/product/269_320x240/156/cemVgii76l3IQ.png,"产品型号	GV-N406TWF2OC-16GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心频率	2535-2565MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	128bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	2×HDMI接口，2×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版
+散热方式	双风扇散热+热管散热",大蓝鲸渠道配件自选工作室,3.0,2025-04-27 20:07:09
+100062775975,技嘉GeForce RTX 4060 Ti AERO OC 16G,3999.0,4299.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100062775975.html,https://2e.zol-img.com.cn/product/269_320x240/162/ceOQrLLYAjFw.png,"产品型号	GV-N406TAERO OC-16GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心频率	2535-2595MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	128bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	2×HDMI接口，2×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版
+散热方式	三风扇散热+热管散热",技嘉京东自营官方旗舰店,20000.0,2025-04-27 20:07:22
+1745755729,技嘉GeForce RTX 4070 Ti GAMING OC V2 12G,5999.0,,,https://2a.zol-img.com.cn/product/226_320x240/356/ceqkvDtRZCn6.jpg,"产品型号	GV-N407TGAMING OCV2-12GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心频率	2610-2640MHz
+CUDA核心	7680个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin
+显卡类型	主流级
+散热方式	三风扇散热+热管散热",,,2025-04-27 20:08:49
+1745755733,技嘉RTX??  4070 Ti SUPER WINDFORCE MAX OC 16G,6899.0,,,https://2d.zol-img.com.cn/product/269_320x240/969/cezW2hbXbG75c.jpg,"产品型号	GV-N407TSWF3MAX OC-16GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti SUPER 
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD103
+核心频率	2610-2655MHz
+CUDA核心	8448个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin",,,2025-04-27 20:08:53
+1745755746,技嘉GeForce RTX  4070 Ti SUPER EAGLE OC ICE 16G,6999.0,,,https://2d.zol-img.com.cn/product/269_320x240/945/cevPTVqZ6pTc.png,"产品型号	GV-N407TSEAGLEOC ICE-16GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti SUPER 
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD103
+核心频率	2610-2670MHz
+CUDA核心	8448个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin",,,2025-04-27 20:09:06
+1745755750,技嘉GeForce RTX  4070 Ti SUPER AI 6G,7399.0,,,https://2a.zol-img.com.cn/product/269_320x240/954/cehlPJewmqTg2.jpg,"产品型号	GV-N407TSAI *6GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti SUPER 
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD103
+核心频率	2610MHz
+CUDA核心	8448个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin",,,2025-04-27 20:09:10
+1745755753,技嘉GeForce RTX 4080 SUPER WINDFORCE V2 16G,9299.0,,,https://2b.zol-img.com.cn/product/269_320x240/919/ceJ25RNOtn2Xo.png,"产品型号	GV-N408SWF3V2-16GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4080 SUPER
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD103-400
+核心频率	2550MHz
+CUDA核心	10240个
+显存频率	23000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin",,,2025-04-27 20:09:13
+1745755756,技嘉AORUS GeForce RTX 4080 SUPER XTREME ICE 16G,15999.0,,,https://2c.zol-img.com.cn/product/269_320x240/920/ceY44sjVB93rc.jpg,"产品型号	GV-N408SWF3V2-16GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4080 SUPER
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD103-400
+核心频率	2550-2700-MHz
+CUDA核心	10240个
+显存频率	23000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin",,,2025-04-27 20:09:16
+1745755773,技嘉GeForce RTX 4070 SUPER EAGLE OC ICE 12G,5499.0,,,https://2c.zol-img.com.cn/product/269_320x240/860/ce7yyR4Ji6g.jpg,"产品型号	GV-N407SEAGLEOC ICE-12GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 SUPER
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD104-350
+核心频率	2535MHz
+CUDA核心	7168个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin",,,2025-04-27 20:09:33
+1745755776,技嘉GeForce RTX 4070 SUPER WUKONG OC 12G,5599.0,,,https://2a.zol-img.com.cn/product/269_320x240/876/cew1toQ38BgFA.jpg,"产品型号	GV-N407SWUKONG OC-12GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 SUPER
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD104-350
+核心频率	2565-2475MHz
+CUDA核心	7168个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin",,,2025-04-27 20:09:36
+10112776202598,索泰GeForce RTX 4070 SUPER 12GB 悟空黑神话,4998.0,5099.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10112776202598.html,https://2f.zol-img.com.cn/product/269_320x240/987/ce0BFXmcaAGCc.jpg,"产品型号	GeForce RTX 4070 SUPER 12GB 悟空黑神话
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 SUPER
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD104-350
+核心频率	2505MHz
+CUDA核心	7168个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	新型12+4Pin",索泰ZOTAC旗舰店,2000.0,2025-04-27 20:09:49
+1745755802,技嘉GeForce RTX 4090 D WINDFORCE 24G,14299.0,,,https://2f.zol-img.com.cn/product/269_320x240/903/ceIKL4UnhdNlE.webp,"产品型号	GV-N409DWF3-24GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4090 D
+显示芯片系列	NVIDIA RTX 40系列
+核心频率	2520MHz
+CUDA核心	14592个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	24GB
+显存位宽	384bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort1.4a接口
+电源接口	16pin
+显卡类型	发烧级
+散热方式	三风扇散热+热管散热",,,2025-04-27 20:10:02
+10098970763131,技嘉GeForce RTX 4090 D AERO 24G,15299.0,3.25,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10098970763131.html,https://2c.zol-img.com.cn/product/269_320x240/900/ceKoSLkmR2IHE.jpg,"产品型号	GV-N409DAERO-24GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4090 D
+显示芯片系列	NVIDIA RTX 40系列
+核心频率	2520MHz
+CUDA核心	14592个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	24GB
+显存位宽	384bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort1.4a接口
+电源接口	16pin
+显卡类型	发烧级
+散热方式	三风扇散热+热管散热",AI智能专业显卡小店,2000.0,2025-04-27 20:10:05
+1745755819,技嘉GeForce RTX 4090 D GAMING 24G,14999.0,,,https://2a.zol-img.com.cn/product/269_320x240/898/cePOLJmjZLRk.png,"产品型号	GV-N409DGAMING-24GD
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4090 D
+显示芯片系列	NVIDIA RTX 40系列
+核心频率	2520MHz
+CUDA核心	14592个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	24GB
+显存位宽	384bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort1.4a接口
+电源接口	16pin
+显卡类型	发烧级
+散热方式	三风扇散热+热管散热",,,2025-04-27 20:10:19
+1745755909,七彩虹iGame GeForce RTX 4060 Ultra Z OC 8GB,2449.0,,,https://2e.zol-img.com.cn/product/269_320x240/256/ceg7GkUria9f6.jpg,"产品型号	iGame GeForce RTX 4060 Ultra Z OC 8GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD107
+核心频率	基础频率：1830-2460MHz
+CUDA核心	3072个
+显存频率	17000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+最大分辨率	7680×4320
+内存带宽	272GB/s
+接口类型	PCI Express 4.0
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin",,,2025-04-27 20:11:49
+1745755922,七彩虹iGame GeForce RTX 4060 Advanced OC 8GB,2599.0,,,https://2d.zol-img.com.cn/product/269_320x240/249/ce9RiCJGrMjE.jpg,"产品型号	iGame GeForce RTX 4060 Advanced OC 8GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD107
+核心频率	基础频率：1830-2460MHz
+CUDA核心	3072个
+显存频率	17000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+最大分辨率	7680×4320
+内存带宽	272GB/s
+接口类型	PCI Express 4.0
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin",,,2025-04-27 20:12:02
+10092713835999,七彩虹COLORFIRE GeForce RTX 4060 Ti 暗影紫 8GB,3499.0,2699.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10092713835999.html,https://2f.zol-img.com.cn/product/269_320x240/525/ceRobJdF7dwCI.jpg,"产品型号	COLORFIRE GeForce RTX 4060 Ti 暗影紫 8GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD106
+核心频率	基础频率：2310-2535MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+内存带宽	288GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版",七彩虹DIY电脑旗舰店,2000.0,2025-04-27 20:12:45
+10087637235720,七彩虹战斧 GeForce RTX 4060 Ti 豪华版 16GB,3799.0,4099.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10087637235720.html,https://2a.zol-img.com.cn/product/269_320x240/502/cevVQ9AdRWOWw.webp,"产品型号	战斧 GeForce RTX 4060 Ti 豪华版 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD106
+核心频率	基础频率：2310-2535MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	128bit
+内存带宽	288GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版",七彩虹电竞旗舰店,1000.0,2025-04-27 20:12:57
+100058595041,七彩虹iGame GeForce RTX 4060 Ti Advanced OC 8GB,3499.0,3479.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100058595041.html,https://2a.zol-img.com.cn/product/269_320x240/632/cej0alpzuVHs.jpg,"产品型号	iGame GeForce RTX 4060 Ti Advanced OC 8GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD106
+核心频率	基础频率：2310-2535MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+内存带宽	288GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版",七彩虹京东自营旗舰店,50000.0,2025-04-27 20:13:11
+1745756003,七彩虹iGame GeForce RTX 4060 Ti Advanced OC 16GB,3999.0,,,https://2f.zol-img.com.cn/product/269_320x240/495/ce2jUEsIuY0w.jpg,"产品型号	iGame GeForce RTX 4060 Ti Advanced OC 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD106
+核心频率	基础频率：2310-2535MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	128bit
+内存带宽	288GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版",,,2025-04-27 20:13:23
+10032777286864,七彩虹iGame GeForce RTX 4060 Ti Advanced 8GB,3799.0,3899.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10032777286864.html,https://2e.zol-img.com.cn/product/269_320x240/612/cePKvwUm0xGk.webp,"产品型号	iGame GeForce RTX 4060 Ti Advanced 8GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD106
+核心频率	基础频率：2310-2535MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+内存带宽	288GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版",Colorfire旗舰店,5000.0,2025-04-27 20:13:26
+1745756022,七彩虹iGame GeForce RTX 4060 Ti Advanced 16GB,4549.0,,,https://2c.zol-img.com.cn/product/269_320x240/486/cefo3YT3NOqo.webp,"产品型号	iGame GeForce RTX 4060 Ti Advanced 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD106
+核心频率	基础频率：2310-2535MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	128bit
+内存带宽	288GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版",,,2025-04-27 20:13:42
+10089575025293,七彩虹iGame GeForce RTX 4060 Ti 雾山五行定制版 OC 16GB,4299.0,3899.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10089575025293.html,https://2a.zol-img.com.cn/product/269_320x240/434/ceFUP7OsSTtRY.jpg,"产品型号	iGame GeForce RTX 4060 Ti 雾山五行定制版 OC 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD106
+核心频率	基础频率：2310-2535MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	128bit
+内存带宽	288GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版",七彩虹DIY电脑旗舰店,200.0,2025-04-27 20:13:45
+1745756040,七彩虹iGame GeForce RTX 4060 Ti 雾山五行定制版 8GB,2699.0,,,https://2c.zol-img.com.cn/product/269_320x240/460/cenu9sMvh3QxU.webp,"产品型号	iGame GeForce RTX 4060 Ti 雾山五行定制版 8GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD106
+核心频率	基础频率：2310-2535MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+内存带宽	288GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版",,,2025-04-27 20:14:00
+1745756043,七彩虹iGame GeForce RTX 4060 Ti 龙年限定 OC 8GB,3389.0,,,https://2f.zol-img.com.cn/product/269_320x240/451/cesAfiMrE60U.webp,"产品型号	iGame GeForce RTX 4060 Ti 龙年限定 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD106
+核心频率	基础频率：2310-2535MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+内存带宽	288GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版",,,2025-04-27 20:14:03
+1745756046,七彩虹iGame GeForce RTX 4060 Ti 龙年限定 OC 16GB,4049.0,,,https://2d.zol-img.com.cn/product/269_320x240/389/ceLvj9FRuuP9A.jpg,"产品型号	iGame GeForce RTX 4060 Ti 龙年限定 OC 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD106
+核心频率	基础频率：2310-2535MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	128bit
+内存带宽	288GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版",,,2025-04-27 20:14:06
+1745756070,七彩虹iGame GeForce RTX 4060 Ti Ultra Z OC 16GB,3799.0,,,https://2a.zol-img.com.cn/product/269_320x240/484/cekwV5cXJr2Ro.jpg,"产品型号	iGame GeForce RTX 4060 Ti Ultra Z OC 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD106
+核心频率	基础频率：2310-2535MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	128bit
+内存带宽	288GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版",,,2025-04-27 20:14:30
+1745756073,七彩虹iGame GeForce RTX 4060 Ti Ultra Z OC 8GB,3249.0,,,https://2a.zol-img.com.cn/product/269_320x240/484/cekwV5cXJr2Ro.jpg,"产品型号	iGame GeForce RTX 4060 Ti Ultra Z OC 8GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD106
+核心频率	基础频率：2310-2535MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+内存带宽	288GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版",,,2025-04-27 20:14:33
+1745756106,七彩虹iGame GeForce RTX 4060 Ti Ultra W OC 16GB,4101.0,,,https://2b.zol-img.com.cn/product/269_320x240/183/ceZCr6pejMfjQ.jpg,"产品型号	iGame GeForce RTX 4060 Ti Ultra W OC 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD106
+核心频率	基础频率：2310-2535MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	128bit
+内存带宽	288GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版",,,2025-04-27 20:15:06
+1745756109,七彩虹iGame GeForce RTX 4060 Ti Ultra W DUO OC 16GB,3993.0,,,https://2d.zol-img.com.cn/product/269_320x240/161/ceOUk9q4Iw9.jpg,"产品型号	iGame GeForce RTX 4060 Ti Ultra W DUO OC 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4060 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD106
+核心频率	基础频率：2310-2535MHz
+CUDA核心	4352个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	128bit
+内存带宽	288GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡设计	非公版",,,2025-04-27 20:15:09
+10072766081235,七彩虹iGame GeForce RTX 4070 Ultra Z OC,5449.0,8599.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10072766081235.html,https://2d.zol-img.com.cn/product/269_320x240/417/cevnrj9VN9WBQ.jpg,"产品型号	iGame GeForce RTX 4070 Ultra Z OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD104
+核心频率	基础频率：1920-2475MHz
+CUDA核心	5888个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+内存带宽	504GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin",七彩虹旗舰店,1000.0,2025-04-27 20:17:06
+1745756251,七彩虹iGame GeForce RTX 4070 Ultra W OC 12GB V3,4549.0,,,https://2c.zol-img.com.cn/product/269_320x240/416/ceAEs0B1X9c.webp,"产品型号	iGame GeForce RTX 4070 Ultra W OC 12GB V3
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD103
+核心频率	基础频率：1920-2475MHz
+CUDA核心	5888个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+内存带宽	504GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin",,,2025-04-27 20:17:31
+10073016035945,七彩虹iGame GeForce RTX 4070 Ultra W OC,4549.0,4499.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10073016035945.html,https://2c.zol-img.com.cn/product/269_320x240/350/cezh9bcij1Q6M.jpg,"产品型号	iGame GeForce RTX 4070 Ultra W OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD104
+核心频率	基础频率：1920-2475MHz
+CUDA核心	5888个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+内存带宽	504GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin",瑞达中腾官方旗舰店,90.0,2025-04-27 20:17:35
+10083911976472,七彩虹iGame GeForce RTX 4070 Ultra W DUO OC 12GB,5099.0,4199.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10083911976472.html,https://2b.zol-img.com.cn/product/269_320x240/367/cebiVgCOuFoQ.jpg,"产品型号	iGame GeForce RTX 4070 Ultra W DUO OC 12GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD104
+核心频率	基础频率：1920-2475MHz
+CUDA核心	5888个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+内存带宽	504GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin",COLORFUL iGame电竞旗舰店,5000.0,2025-04-27 20:18:00
+1745756354,七彩虹COLORFIRE GeForce RTX 4070 橘影橙 12GB V2,4399.0,,,https://2c.zol-img.com.cn/product/269_320x240/320/ceZIIwc78xv9Q.webp,"产品型号	COLORFIRE GeForce RTX 4070 橘影橙 12GB V2
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD106
+核心频率	基础频率：1920-2475MHz
+CUDA核心	5888个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+内存带宽	504GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin",,,2025-04-27 20:19:14
+1745756367,七彩虹COLORFIRE GeForce RTX 4070 暗影紫 12GB,4399.0,,,https://2b.zol-img.com.cn/product/269_320x240/313/cejahxjzYkp5Y.jpg,"产品型号	COLORFIRE GeForce RTX 4070 暗影紫 12GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD104
+核心频率	基础频率：1920-2475MHz
+CUDA核心	5888个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+内存带宽	504GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin",,,2025-04-27 20:19:27
+1745756371,七彩虹iGame GeForce RTX 4070 SUPER Vulcan 12GB,6699.0,,,https://2d.zol-img.com.cn/product/269_320x240/51/cewElQBRIAloQ.jpg,"产品型号	iGame GeForce RTX 4070 SUPER Vulcan 12GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 SUPER
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD104
+核心频率	基础频率：1980-2475MHz
+CUDA核心	7168个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+内存带宽	504GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin",,,2025-04-27 20:19:31
+1745756375,七彩虹iGame GeForce RTX 4070 SUPER 雾山五行定制版 OC 12GB,5999.0,,,https://2f.zol-img.com.cn/product/269_320x240/35/ceMXMJGHi2JBI.jpg,"产品型号	iGame GeForce RTX 4070 SUPER 雾山五行定制版 OC 12GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 SUPER
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD104
+核心频率	基础频率：1980-2475MHz
+CUDA核心	7168个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+内存带宽	504GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin",,,2025-04-27 20:19:35
+1745756378,七彩虹iGame GeForce RTX 4070 SUPER 龙年限定 12GB,6399.0,,,https://2c.zol-img.com.cn/product/269_320x240/26/ceFC0MrK4lYA.webp,"产品型号	iGame GeForce RTX 4070 SUPER 龙年限定 12GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 SUPER
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD104
+核心频率	基础频率：1980-2475MHz
+CUDA核心	7168个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+内存带宽	504GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin",,,2025-04-27 20:19:38
+1745756381,七彩虹iGame GeForce RTX 4070 SUPER Ultra Z OC 12GB,5399.0,,,https://2b.zol-img.com.cn/product/269_320x240/13/cepw47ZtDw59U.webp,"产品型号	iGame GeForce RTX 4070 SUPER Ultra Z OC 12GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 SUPER
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD104
+核心频率	基础频率：1980-2475MHz
+CUDA核心	7168个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+内存带宽	504GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin",,,2025-04-27 20:19:41
+10104540660302,七彩虹COLORFIRE GeForce RTX 4070 Ti 橘影橙 12GB,5899.0,5899.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10104540660302.html,https://2b.zol-img.com.cn/product/269_320x240/701/cem11oHe6BRRo.webp,"产品型号	COLORFIRE GeForce RTX 4070 Ti 橘影橙 12GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD104
+核心频率	基础频率：2310-2610MHz
+CUDA核心	7680个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+内存带宽	504GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin",瑞达中腾官方旗舰店,500.0,2025-04-27 20:19:44
+10075222054800,七彩虹iGame GeForce RTX 4070 Ti Vulcan W OC,7099.0,7099.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10075222054800.html,https://2a.zol-img.com.cn/product/269_320x240/718/ceTfVgJoOLGas.jpg,"产品型号	iGame GeForce RTX 4070 Ti Vulcan W OC
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti
+显示芯片系列	NVIDIA RTX 40系列
+核心代号	AD104
+核心频率	基础频率：2310-2610MHz
+CUDA核心	7680个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	12GB
+显存位宽	192bit
+最大分辨率	7680×4320
+内存带宽	504GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	16pin",瑞达中腾官方旗舰店,500.0,2025-04-27 20:20:07
+10096349975845,七彩虹iGame GeForce RTX 4070 Ti SUPER 龙年限定 OC 16GB,8099.0,7699.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10096349975845.html,https://2c.zol-img.com.cn/product/269_320x240/114/cerrCitPUPbbc.webp,"产品型号	iGame GeForce RTX 4070 Ti SUPER 龙年限定
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti SUPER 
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD103
+核心频率	核心频率：2340-2610Mhz
+CUDA核心	8448个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	672GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口",瑞达中腾官方旗舰店,3.0,2025-04-27 20:20:30
+1745756454,七彩虹iGame GeForce RTX 4070 Ti SUPER Ultra W 16GB,7199.0,,,https://2e.zol-img.com.cn/product/269_320x240/122/ceJ98DBSrrvNE.jpg,"产品型号	iGame GeForce RTX 4070 Ti SUPER Ultra W 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti SUPER 
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD103
+核心频率	核心频率：2340-2610Mhz
+CUDA核心	8448个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	672GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口",,,2025-04-27 20:20:54
+1745756457,七彩虹iGame GeForce RTX 4070 Ti SUPER Vulcan W 16GB,8399.0,,,https://2f.zol-img.com.cn/product/269_320x240/99/ceOwAS3bTCMS2.jpg,"产品型号	iGame GeForce RTX 4070 Ti SUPER Vulcan W 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti SUPER 
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD103
+核心频率	核心频率：2340-2610Mhz
+CUDA核心	8448个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	672GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口",,,2025-04-27 20:20:57
+1745756460,七彩虹iGame GeForce RTX 4070 Ti SUPER Advanced 16GB,7499.0,,,https://2a.zol-img.com.cn/product/269_320x240/130/ceInoNJo8szvY.webp,"产品型号	iGame GeForce RTX 4070 Ti SUPER Vulcan 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti SUPER 
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD103
+核心频率	核心频率：2340-2610Mhz
+CUDA核心	8448个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	672GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口",,,2025-04-27 20:21:00
+1745756464,七彩虹iGame GeForce RTX 4070 Ti SUPER Vulcan 16GB,8399.0,,,https://2d.zol-img.com.cn/product/269_320x240/109/ceEODm3GHoCB6.jpg,"产品型号	iGame GeForce RTX 4070 Ti SUPER Vulcan 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti SUPER 
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD103
+核心频率	核心频率：2340-2610Mhz
+CUDA核心	8448个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	672GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口",,,2025-04-27 20:21:04
+1745756467,七彩虹iGame GeForce RTX 4070 Ti SUPER Ultra Z OC 16GB,7299.0,,,https://2e.zol-img.com.cn/product/269_320x240/86/ceAkKAt1KgtUs.jpg,"产品型号	iGame GeForce RTX 4070 Ti SUPER Ultra Z OC 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4070 Ti SUPER 
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD103
+核心频率	核心频率：2340-2610Mhz
+CUDA核心	8448个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	672GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口",,,2025-04-27 20:21:07
+1745756470,七彩虹iGame GeForce RTX 4090 D Vulcan W,15499.0,,,https://2e.zol-img.com.cn/product/269_320x240/180/ced3DvjdTkjY.jpg,"产品型号	iGame GeForce RTX 4090 D Vulcan W
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4090 D
+显示芯片系列	NVIDIA GeForce 40 系列
+制作工艺	4纳米
+核心代号	AD102
+核心频率	核心频率：2280-2520MHz
+CUDA核心	14592个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	24GB
+显存位宽	384bit
+最大分辨率	7680×4320
+内存带宽	1008GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort 1.4接口",,,2025-04-27 20:21:10
+1745756474,七彩虹iGame GeForce RTX 4090 D 龙年限定 24GB,16599.0,,,https://2f.zol-img.com.cn/product/269_320x240/175/cetwKUgOeF7YY.webp,"产品型号	iGame GeForce RTX 4090 D 龙年限定 24GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4090 D
+显示芯片系列	NVIDIA GeForce 40 系列
+制作工艺	4纳米
+核心代号	AD102
+核心频率	核心频率：2280-2520MHz
+CUDA核心	14592个
+显存频率	21000MHz
+显存类型	GDDR6X
+显存容量	24GB
+显存位宽	384bit
+最大分辨率	7680×4320
+内存带宽	1008GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.1接口，3×DisplayPort 1.4接口",,,2025-04-27 20:21:14
+10065783838948,七彩虹iGame GeForce RTX 4080 SUPER Neptune 16GB,9999.0,9999.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10065783838948.html,https://2a.zol-img.com.cn/product/269_320x240/720/ceSo21Wk3McRE.jpg,"产品型号	iGame GeForce RTX 4080 SUPER Neptune 16GB
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4080 SUPER
+显示芯片系列	NVIDIA RTX 40系列
+制作工艺	4纳米
+核心代号	AD103
+核心频率	核心频率：2295-2550MHz
+CUDA核心	10240个
+显存频率	23000MHz
+显存类型	GDDR6X
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	736GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口",Colorfire旗舰店,200.0,2025-04-27 20:21:17
+100109747849,Leadtek（丽台）RTX A400,1339.0,1389.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100109747849.html,https://2b.zol-img.com.cn/product/268_320x240/677/cesZHx3nLrkJc.jpg,"芯片厂商	NVIDIA
+核心代号	Ampere
+核心频率	1417-1762MHz
+CUDA核心	768个
+显存类型	GDDR6
+显存容量	4GB
+显存位宽	64bit
+最大分辨率	5120×2880
+内存带宽	96GB/s
+接口类型	PCI Express 4.0 8X
+I/O接口	4×Mini DisplayPort接口
+显卡类型	专业级
+散热方式	风扇散热
+3D API	DirectX 12，OpenGL 4.6
+最大功耗	50W",丽台京东自营旗舰店,200.0,2025-04-27 20:23:38
+1745756631,蓝戟Arc A770 Photon 16G OC X,2249.0,,,https://2f.zol-img.com.cn/product/268_320x240/349/ce4xrkENbNfpQ.png,"产品型号	Arc A770 Photon 16G OC X
+芯片厂商	Intel
+显卡芯片	Arc A770
+显示芯片系列	Intel Arc A770系列
+核心频率	2400MHz
+显存频率	16000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	512GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin+8pin
+散热方式	三风扇散热
+供电模式	6+4相",,,2025-04-27 20:23:51
+100120753462,蓝戟Arc A750 Photon 8G OC X,1699.0,1499.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100120753462.html,https://2f.zol-img.com.cn/product/268_320x240/319/ce27nmzOKQ5oQ.png,"产品型号	Arc A750 Photon 8G OC X
+芯片厂商	Intel
+显卡芯片	Arc A750
+显示芯片系列	Intel Arc A750系列
+核心频率	2400MHz
+显存频率	16000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	512GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin+8pin
+散热方式	三风扇散热
+供电模式	6+4相",蓝戟京东自营旗舰店,5000.0,2025-04-27 20:23:54
+10105225491604,盈通RX 7700 XT 12G D6 大地之神 PLUS,3149.0,3099.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10105225491604.html,https://2f.zol-img.com.cn/product/268_320x240/199/ceQ0HtaRLbZM.png,"产品型号	RX7700XT-12GD6 大地之神 PLUS
+芯片厂商	AMD
+显卡芯片	Radeon RX 7700 XT
+显示芯片系列	AMD RX 7000系列
+制作工艺	5nm
+核心代号	Navi32
+核心频率	2171-2544MHz
+流处理单元	3456个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	12GB
+显存位宽	192bit
+接口类型	PCI Express 4.0
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin+8pin
+显卡类型	发烧级",盈通电脑整机旗舰店,200.0,2025-04-27 20:24:15
+100106235232,丽台RTX 4000 Ada,11100.0,1.14,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100106235232.html,https://2f.zol-img.com.cn/product/267_320x240/851/cevVsbJAz4zLc.png,"产品型号	RTX 4000 Ada
+芯片厂商	NVIDIA
+显卡芯片	GeForce RTX 4000
+显示芯片系列	NVIDIA RTX 40系列
+CUDA核心	6144个
+显存类型	GDDR6
+显存容量	20GB
+显存位宽	160bit
+最大分辨率	7680×4320
+内存带宽	360GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	4×DisplayPort接口
+显卡类型	专业级
+散热方式	风扇散热
+3D API	DirectX 12，OpenGL 4.6
+重量	0.528kg",丽台京东自营旗舰店,0.0,2025-04-27 20:24:31
+1745756706,撼讯RX 6750 GRE 竞技PLUS 10G,2079.0,,,https://2c.zol-img.com.cn/product/267_320x240/958/ceXCLb12UtVTo.jpg,"产品型号	RX 6750 GRE 竞技PLUS 10GB
+芯片厂商	AMD
+显卡芯片	RX 6750 GRE
+显示芯片系列	AMD RX 6000系列
+核心频率	2345-2495MHz
+流处理单元	2304个
+显存频率	16000MHz
+显存类型	GDDR6
+显存容量	10GB
+显存位宽	160bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	6pin+8pin
+显卡类型	主流级
+散热方式	三风扇散热",,,2025-04-27 20:25:06
+10103080549074,撼讯RX 6750 GRE 竞技 10G,1999.0,2149.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10103080549074.html,https://2f.zol-img.com.cn/product/267_320x240/961/ceZmtpNYLyuZg.png,"产品型号	RX 6750 GRE 竞技 10GB
+芯片厂商	AMD
+显卡芯片	RX 6750 GRE
+显示芯片系列	AMD RX 6000系列
+核心频率	2189-2450MHz
+流处理单元	2304个
+显存频率	16000MHz
+显存类型	GDDR6
+显存容量	10GB
+显存位宽	160bit
+最大分辨率	7680×4320
+接口类型	PCI Express 4.0
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡类型	主流级
+散热方式	双风扇散热",汇智蓝海电脑配件专营店,44.0,2025-04-27 20:25:09
+1745756746,瀚铠Radeon RX 7900 XT 合金,5749.0,,,https://2c.zol-img.com.cn/product/267_320x240/670/cebWXtHflMhZM.jpg,"产品型号	AH-79XT20TCBR
+芯片厂商	AMD
+显卡芯片	Radeon RX 7900 XTX
+显示芯片系列	AMD RX 7900系列
+制作工艺	5纳米
+核心代号	Navi 31
+核心频率	2560MHz
+流处理单元	5376个
+显存频率	20000MHz
+显存类型	GDDR6
+显存容量	20GB
+显存位宽	320bit
+最大分辨率	7680×4320
+内存带宽	800GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI接口，3×DisplayPort接口",,,2025-04-27 20:25:46
+1745756749,SPARKLE A580兽人OC超频版本,1399.0,,,https://2e.zol-img.com.cn/product/267_320x240/474/ceG6W8XgpJeH6.jpg,"产品型号	A580兽人OC超频版本
+芯片厂商	Intel
+显卡芯片	锐炫A580
+显示芯片系列	英特尔锐炫a系列
+制作工艺	6纳米
+核心频率	2000MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	512GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.0接口，3×DisplayPort 2.0接口
+电源接口	2个8pin或2个6pin+2pin
+散热方式	双风扇散热
+3D API	DirectX 12，OpenGL 4.6，OpenGL 3.0",,,2025-04-27 20:25:49
+1745756752,讯景RX 7900 XTX 24GB 凤凰涅槃,7899.0,,,https://2f.zol-img.com.cn/product/267_320x240/457/cedKDEPsQhFI.jpg,"产品型号	讯景 RX 7900 XTX 24GB 凤凰涅槃
+芯片厂商	AMD
+显卡芯片	Radeon RX 7900 XTX
+显示芯片系列	AMD RX 7000系列
+核心频率	2615MHz
+流处理单元	6144个
+显存频率	20000MHz
+显存类型	GDDR6
+显存容量	24GB
+显存位宽	384bit
+最大分辨率	7680×4320
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin+8pin+8pin
+显卡类型	发烧级
+散热方式	三风扇散热，磁吸涡扇
+产品尺寸	346×132×68mm",,,2025-04-27 20:25:52
+1745756790,讯景RX 7900 GRE 海外版,4299.0,,,https://2a.zol-img.com.cn/product/267_320x240/410/ceuTUsT7mDROo.jpg,"产品型号	讯景 RX 7900 GRE 海外版
+芯片厂商	AMD
+显卡芯片	Radeon RX 7900 GRE
+显示芯片系列	AMD RX 7000系列
+核心频率	2395MHz
+流处理单元	5120个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin+8pin
+显卡类型	发烧级
+散热方式	三风扇散热
+产品尺寸	335×130×52mm
+建议电源	700W以上",,,2025-04-27 20:26:30
+1745756794,讯景RX 7900 GRE 凤凰涅槃,4299.0,,,https://2e.zol-img.com.cn/product/267_320x240/426/ceoWXe5HLztU.jpg,"产品型号	讯景 RX 7900 GRE 凤凰涅槃
+芯片厂商	AMD
+显卡芯片	Radeon RX 7900 GRE
+显示芯片系列	AMD RX 7000系列
+核心频率	2395MHz
+流处理单元	5120个
+显存频率	18000MHz
+显存类型	GDDR6
+显存容量	16GB
+显存位宽	256bit
+I/O接口	1×HDMI接口，3×DisplayPort接口
+电源接口	8pin+8pin
+显卡类型	发烧级
+散热方式	三风扇散热，磁吸涡扇
+产品尺寸	337×132×59mm
+建议电源	700W以上",,,2025-04-27 20:26:34
+1745756797,瀚铠RX 6750 GRE 10G 合金PRO,2099.0,,,https://2d.zol-img.com.cn/product/267_320x240/359/cemK6lWNxhSUw.jpg,"芯片厂商	AMD
+显卡芯片	Radeon RX 6750 GRE
+显示芯片系列	AMD RX 6000系列
+核心频率	2140-2495MHz
+流处理单元	2304个
+显存类型	GDDR6
+显存容量	10GB
+显存位宽	160bit
+内存带宽	320GB/s
+接口类型	PCI Express 4.0
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡类型	主流级
+散热方式	双风扇散热+热管散热
+散热设计	支持智能启停
+产品尺寸	232.7×115.3×50.6mm",,,2025-04-27 20:26:37
+1745756800,瀚铠RX 6750 GRE 10G 合金,2099.0,,,https://2b.zol-img.com.cn/product/267_320x240/393/cemmQUKVH2UZg.jpg,"芯片厂商	AMD
+显卡芯片	Radeon RX 6750 GRE
+显示芯片系列	AMD RX 6000系列
+核心频率	2140-2495MHz
+流处理单元	2304个
+显存类型	GDDR6
+显存容量	10GB
+显存位宽	160bit
+内存带宽	320GB/s
+接口类型	PCI Express 4.0
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡类型	主流级
+散热方式	双风扇散热+热管散热
+散热设计	支持智能启停
+产品尺寸	232.7×115.3×50.6mm",,,2025-04-27 20:26:40
+10115469884222,瀚铠RX 6750 GRE 10G 白色合金,2099.0,2188.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/10115469884222.html,https://2a.zol-img.com.cn/product/267_320x240/392/ceug75RpWYlUU.jpg,"芯片厂商	AMD
+显卡芯片	Radeon RX 6750 GRE
+显示芯片系列	AMD RX 6000系列
+核心频率	2140-2495MHz
+流处理单元	2304个
+显存类型	GDDR6
+显存容量	10GB
+显存位宽	160bit
+内存带宽	320GB/s
+接口类型	PCI Express 4.0
+I/O接口	1×HDMI 2.1接口，3×DisplayPort接口
+电源接口	8pin
+显卡类型	主流级
+散热方式	双风扇散热+热管散热
+散热设计	支持智能启停
+产品尺寸	232.7×115.3×50.6mm",小而美电脑小店,500.0,2025-04-27 20:26:43
+100093509665,SPARKLE A750泰坦 OC 超频版本,1549.0,1459.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100093509665.html,https://2d.zol-img.com.cn/product/267_320x240/491/cey9f9iZdAvIs.jpg,"产品型号	A750泰坦 OC 超频版本
+芯片厂商	Intel
+显卡芯片	A750
+显示芯片系列	英特尔锐炫a系列显卡
+制作工艺	6纳米
+核心频率	2200MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	512GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.0接口，3×DisplayPort 2.0接口
+电源接口	2个8pin+8pin或2个6pin+2pin
+散热方式	三风扇散热
+3D API	DirectX 12，OpenGL 4.6，OpenGL 3.0",SPARKLE京东自营旗舰店,200.0,2025-04-27 20:27:51
+1745756893,SPARKLE A750兽人,1499.0,,,https://2a.zol-img.com.cn/product/267_320x240/494/ce2AUhq4E1K6.jpg,"产品型号	A750兽人
+芯片厂商	Intel
+显卡芯片	A750
+显示芯片系列	英特尔锐炫a系列显卡
+制作工艺	6纳米
+核心频率	2050MHz
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	256bit
+最大分辨率	7680×4320
+内存带宽	512GB/s
+接口类型	PCI Express 4.0 16X
+I/O接口	1×HDMI 2.0接口，3×DisplayPort 2.0接口
+电源接口	2个8pin+8pin或2个6pin+2pin
+散热方式	双风扇散热
+3D API	DirectX 12，OpenGL 4.6，OpenGL 3.0",,,2025-04-27 20:28:13
+100120958942,丽台RTX A1000,3399.0,3449.0,https://union-click.jd.com/sem.php?unionId=281&siteid=20170818001&to=https://item.jd.com/100120958942.html,https://2f.zol-img.com.cn/product/267_320x240/289/cegx7jIMFgkS6.jpg,"产品型号	丽台 RTX A1000
+芯片厂商	NVIDIA
+显卡芯片	RTX A1000
+显示芯片系列	NVIDIA RTX 10系列
+核心频率	727-1462MHz
+CUDA核心	2304个
+显存类型	GDDR6
+显存容量	8GB
+显存位宽	128bit
+最大分辨率	7680×4320
+内存带宽	192GB/s
+接口类型	PCI Express 4.0 8X
+I/O接口	4×Mini DisplayPort接口
+显卡类型	专业级
+散热方式	主动式
+3D API	DirectX 12，OpenGL 4.6",丽台京东自营旗舰店,100.0,2025-04-27 20:28:16
