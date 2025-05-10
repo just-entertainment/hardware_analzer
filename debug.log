@@ -21253,3 +21253,48 @@ Looking for jobs to run
 Scheduler started
 Next wakeup is due at 2025-05-11 02:00:00+08:00 (in 37700.029644 seconds)
 Watching for file changes with StatReloader
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-11 02:00:00+08:00 (in 37207.312442 seconds)
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-11 02:00:00+08:00 (in 36532.361926 seconds)
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-11 02:00:00+08:00 (in 36530.565784 seconds)
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-11 02:00:00+08:00 (in 35903.832760 seconds)
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-11 02:00:00+08:00 (in 35901.838582 seconds)
+Watching for file changes with StatReloader

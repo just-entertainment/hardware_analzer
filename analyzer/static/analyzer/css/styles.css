@@ -17,7 +17,7 @@ body {
 
 /* 侧边栏 */
 .sidebar {
-    width: 280px;
+    width: min(280px, 20vw); /* 灵活宽度 */
     height: 100vh;
     position: fixed;
     background-color: #fff;
@@ -49,7 +49,7 @@ body {
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
-    border-radius: 9999px;
+    border-radius: 50px; /* 优化圆角 */
     margin: 6px 12px;
     transition: background-color 0.2s;
 }
@@ -74,10 +74,10 @@ body {
     align-items: center;
     padding: 12px 20px;
     margin: 6px 12px;
-    border-radius: 9999px;
+    border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.2s;
-    position: relative; /* 为下拉菜单定位 */
+    position: relative;
 }
 
 /* 用户区域悬停 */
@@ -104,7 +104,7 @@ body {
     height: 44px;
     border-radius: 50%;
     background-color: #e1e8ed;
-    color: #536471;
+    color: #4a5568; /* 提高对比度 */
     font-size: 24px;
     margin-right: 12px;
     border: 2px solid #e1e8ed;
@@ -121,7 +121,7 @@ body {
 .user-menu {
     display: none;
     position: absolute;
-    bottom: 60px; /* 定位在 user-profile 上方 */
+    bottom: 60px;
     left: 12px;
     background-color: #fff;
     border: 1px solid #e1e8ed;
@@ -129,11 +129,16 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     min-width: 160px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.2s, transform 0.2s;
 }
 
 /* 下拉菜单显示状态 */
 .user-menu.active {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* 菜单项 */
@@ -154,93 +159,13 @@ body {
 
 /* 主内容区 */
 .main {
-    margin-left: 280px;
+    margin-left: min(280px, 20vw);
     flex: 1;
     padding: 24px;
     max-width: 1240px;
+    background-color: #f7f9fa;
 }
 
-
-/* 响应式：平板 */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 240px;
-    }
-    .main {
-        margin-left: 240px;
-        padding: 20px;
-    }
-    .user-menu {
-        left: 8px;
-        min-width: 140px;
-    }
-}
-
-/* 响应式：手机 */
-@media (max-width: 480px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        padding-bottom: 80px;
-        box-shadow: none;
-    }
-    .main {
-        margin-left: 0;
-        padding: 16px;
-    }
-    .user-profile {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        border-top: 1px solid #e1e8ed;
-        border-radius: 0;
-        padding: 12px 16px;
-        margin: 0;
-        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
-    }
-    .user-menu {
-        bottom: 64px; /* 适配手机端固定底部的 user-profile */
-        left: 8px;
-        width: calc(100% - 16px);
-    }
-}
-
-/* 暗色模式 */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #15202b;
-        color: #e7e9ea;
-    }
-    .sidebar {
-        background-color: #192734;
-        border-right-color: #38444d;
-    }
-    .sidebar .logo, .sidebar a, .user-name {
-        color: #e7e9ea;
-    }
-    .sidebar a:hover, .sidebar a.active, .user-profile:hover {
-        background-color: #22303c;
-    }
-    .user-menu {
-        background-color: #192734;
-        border-color: #38444d;
-    }
-    .menu-item {
-        color: #e7e9ea;
-    }
-    .menu-item:hover {
-        background-color: #22303c;
-        color: #1DA1F2;
-    }
-    .default-avatar {
-        background-color: #38444d;
-        color: #e7e9ea;
-        border-color: #38444d;
-    }
-}
 /* 隐藏非活跃区域 */
 .section {
     display: none;
@@ -274,7 +199,7 @@ body {
 .search-bar input, .search-bar select {
     padding: 12px 20px;
     border: 1px solid #e1e8ed;
-    border-radius: 9999px;
+    border-radius: 50px;
     font-size: 15px;
     background-color: #fff;
     outline: none;
@@ -287,6 +212,8 @@ body {
 /* 搜索框聚焦 */
 .search-bar input:focus, .search-bar select:focus {
     border-color: #1DA1F2;
+    outline: 2px solid #1DA1F2;
+    outline-offset: 2px;
 }
 
 /* 搜索按钮 */
@@ -295,23 +222,27 @@ body {
     background-color: #1DA1F2;
     color: #fff;
     border: none;
-    border-radius: 9999px;
+    border-radius: 50px;
     font-size: 15px;
     font-weight: 700;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
-/* 搜索按钮悬停 */
-.search-bar button:hover {
+/* 搜索按钮悬停和焦点 */
+.search-bar button:hover, .search-bar button:focus {
     background-color: #0a85c2;
+}
+.search-bar button:focus {
+    outline: 2px solid #1DA1F2;
+    outline-offset: 2px;
 }
 
 /* 排序下拉框 */
 .sort-control select {
     padding: 10px 20px;
     border: 1px solid #e1e8ed;
-    border-radius: 9999px;
+    border-radius: 50px;
     background-color: #fff;
     font-size: 15px;
 }
@@ -324,7 +255,7 @@ body {
     border-radius: 12px;
     margin-bottom: 12px;
     cursor: pointer;
-    transition: background-color 0.2s; /* 简化动画 */
+    transition: background-color 0.2s;
 }
 
 /* 搜索卡片悬停 */
@@ -342,7 +273,7 @@ body {
 
 /* 卡片信息 */
 .post .info {
-    color: #536471;
+    color: #4a5568; /* 提高对比度 */
     font-size: 14px;
     display: flex;
     gap: 20px;
@@ -354,16 +285,20 @@ body {
     padding: 8px 16px;
     background-color: #fff;
     border: 1px solid #1DA1F2;
-    border-radius: 9999px;
+    border-radius: 50px;
     color: #1DA1F2;
     font-size: 14px;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
-/* 收藏按钮悬停 */
-.favorite-btn:hover {
+/* 收藏按钮悬停和焦点 */
+.favorite-btn:hover, .favorite-btn:focus {
     background-color: #e8f0fe;
+}
+.favorite-btn:focus {
+    outline: 2px solid #1DA1F2;
+    outline-offset: 2px;
 }
 
 /* 已收藏状态 */
@@ -387,21 +322,25 @@ body {
     background-color: #1DA1F2;
     color: #fff;
     border: none;
-    border-radius: 9999px;
+    border-radius: 50px;
     font-size: 14px;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
-/* 分页按钮悬停 */
-.pagination button:hover {
+/* 分页按钮悬停和焦点 */
+.pagination button:hover, .pagination button:focus {
     background-color: #0a85c2;
+}
+.pagination button:focus {
+    outline: 2px solid #1DA1F2;
+    outline-offset: 2px;
 }
 
 /* 分页信息 */
 .pagination span {
     font-size: 14px;
-    color: #536471;
+    color: #4a5568;
 }
 
 /* 收藏列表容器 */
@@ -422,8 +361,8 @@ body {
     border: 1px solid #e1e8ed;
     border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.2s; /* 简化动画 */
-    position: relative; /* 确保子元素不干扰点击 */
+    transition: background-color 0.2s;
+    position: relative;
 }
 
 /* 收藏项悬停 */
@@ -436,7 +375,7 @@ body {
     font-size: 17px;
     font-weight: 700;
     color: #0f1419;
-    pointer-events: none; /* 防止拦截点击 */
+    pointer-events: none;
 }
 
 /* 收藏信息 */
@@ -444,9 +383,9 @@ body {
     display: flex;
     gap: 20px;
     font-size: 14px;
-    color: #536471;
+    color: #4a5568;
     flex-wrap: wrap;
-    pointer-events: none; /* 防止拦截点击 */
+    pointer-events: none;
 }
 
 /* 删除按钮 */
@@ -454,18 +393,23 @@ body {
     padding: 8px 16px;
     background-color: #fff;
     border: 1px solid #ff4d4f;
-    border-radius: 9999px;
+    border-radius: 50px;
     color: #ff4d4f;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s;
-    z-index: 1; /* 确保可点击 */
+    z-index: 2;
+    margin-left: auto;
 }
 
-/* 删除按钮悬停 */
-.favorite-item .delete-btn:hover {
+/* 删除按钮悬停和焦点 */
+.favorite-item .delete-btn:hover, .favorite-item .delete-btn:focus {
     background-color: #ffe6e6;
+}
+.favorite-item .delete-btn:focus {
+    outline: 2px solid #ff4d4f;
+    outline-offset: 2px;
 }
 
 /* 详情弹窗 */
@@ -478,12 +422,16 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 1000;
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
+
 /* 弹窗显示状态 */
 .modal.active {
     display: flex;
+    opacity: 1;
 }
 
 /* 弹窗内容 */
@@ -492,13 +440,15 @@ body {
     padding: 28px;
     width: 90%;
     max-width: 640px;
-    max-height: 80vh; /* 限制高度，防止溢出 */
+    min-height: 300px;
+    max-height: 80vh;
     border-radius: 16px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    overflow-y: auto; /* 内容多时可滚动 */
+    overflow-y: auto;
     position: relative;
-    margin: auto; /* 增强居中 */
+    margin: auto;
 }
+
 /* 关闭按钮 */
 .close-btn {
     position: absolute;
@@ -506,13 +456,17 @@ body {
     right: 16px;
     font-size: 26px;
     cursor: pointer;
-    color: #536471;
+    color: #4a5568;
     transition: color 0.2s;
 }
 
-/* 关闭按钮悬停 */
-.close-btn:hover {
+/* 关闭按钮悬停和焦点 */
+.close-btn:hover, .close-btn:focus {
     color: #0f1419;
+}
+.close-btn:focus {
+    outline: 2px solid #1DA1F2;
+    outline-offset: 2px;
 }
 
 /* 产品图片 */
@@ -551,34 +505,48 @@ body {
     color: #0f1419;
 }
 
-/* 加载和错误提示 */
-.loading, .error, .chart-error {
-    padding: 20px;
-    text-align: center;
-    color: #536471;
-    font-size: 15px;
-}
-/* 加载动画 */
-.loading-spinner {
-    text-align: center;
-    padding: 20px;
-    color: #536471;
-    font-size: 15px;
-}
-
-/* 错误提示 */
-.error {
-    color: #dc3545;
-    text-align: center;
-    padding: 20px;
-    font-size: 15px;
-}
-
-/* 错误提示 */
-.error, .chart-error {
-    color: #dc3545;
+/* 历史价格 */
+.price-history {
+    margin-top: 24px;
+    padding: 16px;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 12px;
+    border: 1px solid #e1e8ed;
+}
+
+/* 历史价格标题 */
+.price-history h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f1419;
+    margin-bottom: 16px;
+}
+
+/* 价格备注 */
+.price-note {
+    font-size: 0.9em;
+    color: #dc3545; /* 更显眼 */
+    margin-top: 12px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* 价格历史图表 */
+.price-history canvas {
+    max-height: 200px;
+}
+
+/* 加载动画 */
+.loading-spinner::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #1DA1F2;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-right: 8px;
 }
 
 /* 配置表单 */
@@ -588,6 +556,9 @@ body {
     border-radius: 12px;
     margin-bottom: 24px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* 表单组 */
@@ -610,7 +581,7 @@ body {
     width: 100%;
     max-width: 240px;
     border: 1px solid #e1e8ed;
-    border-radius: 9999px;
+    border-radius: 50px;
     font-size: 15px;
     background-color: #fff;
     color: #0f1419;
@@ -621,6 +592,8 @@ body {
 /* 表单聚焦 */
 .form-group input:focus, .form-group select:focus {
     border-color: #1DA1F2;
+    outline: 2px solid #1DA1F2;
+    outline-offset: 2px;
 }
 
 /* 生成按钮 */
@@ -629,21 +602,28 @@ body {
     color: #fff;
     padding: 12px 28px;
     border: none;
-    border-radius: 9999px;
+    border-radius: 50px;
     font-size: 15px;
     font-weight: 700;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
-/* 生成按钮悬停 */
-.generate-btn:hover {
+/* 生成按钮悬停和焦点 */
+.generate-btn:hover, .generate-btn:focus {
     background-color: #0a85c2;
+}
+.generate-btn:focus {
+    outline: 2px solid #1DA1F2;
+    outline-offset: 2px;
 }
 
 /* 配置结果 */
 .config-results {
     margin-top: 24px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* 配置卡片 */
@@ -702,7 +682,7 @@ body {
 
 /* 配置项价格 */
 .item-price {
-    color: #536471;
+    color: #4a5568;
     font-size: 14px;
 }
 
@@ -718,7 +698,7 @@ body {
 .viz-controls select, .viz-controls button {
     padding: 12px 20px;
     border: 1px solid #e1e8ed;
-    border-radius: 9999px;
+    border-radius: 50px;
     background-color: #fff;
     font-size: 15px;
     color: #0f1419;
@@ -732,68 +712,132 @@ body {
     cursor: pointer;
 }
 
-/* 可视化按钮悬停 */
-.viz-controls button:hover {
+/* 可视化按钮悬停和焦点 */
+.viz-controls button:hover, .viz-controls button:focus {
     background-color: #0a85c2;
+}
+.viz-controls button:focus, .viz-controls select:focus {
+    outline: 2px solid #1DA1F2;
+    outline-offset: 2px;
 }
 
 /* 图表容器 */
 .chart-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     margin-top: 20px;
 }
 
 /* 图表 */
-.chart {
-    flex: 1;
+.chart, .chart.sales-chart {
     min-width: 300px;
-    height: 400px;
+    aspect-ratio: 4 / 3;
+    max-height: 400px;
+    height: auto;
     position: relative;
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-.chart canvas {
+
+.chart.sales-chart {
+    border-color: #34D399; /* 销量图表独特边框 */
+}
+
+/* 图表画布 */
+.chart canvas, .chart.sales-chart canvas {
+    max-height: 100% !important;
     width: 100% !important;
-    height: 100% !important;
 }
 
 /* 图表加载状态 */
 .chart-loading::before {
-    content: '加载中...';
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #1DA1F2;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
     z-index: 10;
 }
 
-/* 图表加载提示 */
 .chart-loading::after {
-    content: '加载中...';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #536471;
-    font-size: 15px;
+    content: none;
 }
-.no-data, .chart-error {
-    text-align: center;
-    color: #666;
-    font-size: 1em;
-    margin-top: 20px;
+
+/* 图表工具提示 */
+.chart.sales-chart .chartjs-tooltip {
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    padding: 8px;
+    color: #0f1419;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* 统计摘要 */
 .stats-summary {
-    margin-top: 20px;
+    background-color: #f7f9fa;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 16px;
+    font-size: 14px;
+    color: #0f1419;
 }
+
+.stats-summary::before {
+    content: '统计摘要';
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #0f1419;
+}
+
 .stats-summary p {
-    margin: 5px 0;
+    margin: 8px 0;
+}
+
+/* 错误提示 */
+.error-message {
+    color: #dc3545;
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    font-size: 15px;
+    margin: 12px 0;
+}
+
+/* 无数据提示 */
+.no-data {
+    color: #4a5568;
+    font-size: 14px;
+    text-align: center;
+    padding: 16px;
+}
+
+/* 价格提醒通知 */
+.price-alert {
+    background-color: #e6f3ff;
+    border: 1px solid #1DA1F2;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #0f1419;
+}
+
+.price-alert.unread {
+    background-color: #b3d9ff;
 }
 
 /* 响应式：平板 */
@@ -805,6 +849,10 @@ body {
         margin-left: 240px;
         padding: 20px;
     }
+    .user-menu {
+        left: 8px;
+        min-width: 140px;
+    }
     .modal-content {
         width: 95%;
         margin: 15% auto;
@@ -815,8 +863,8 @@ body {
     .config-items {
         grid-template-columns: 1fr;
     }
-    .chart {
-        height: 320px;
+    .chart, .chart.sales-chart {
+        max-height: 320px;
     }
     .favorite-item .info {
         gap: 12px;
@@ -848,6 +896,11 @@ body {
         margin: 0;
         box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
     }
+    .user-menu {
+        bottom: 64px;
+        left: 8px;
+        width: calc(100% - 16px);
+    }
     .search-bar {
         flex-direction: column;
         gap: 8px;
@@ -867,7 +920,18 @@ body {
     }
     .favorite-item .info {
         flex-direction: column;
-        gap: 6px;
+        gap: 10px; /* 增加间距 */
+    }
+    .chart-container {
+        gap: 12px;
+    }
+    .chart, .chart.sales-chart {
+        min-width: 100%;
+        max-height: 280px;
+    }
+    .stats-summary {
+        font-size: 13px;
+        padding: 12px;
     }
 }
 
@@ -876,6 +940,9 @@ body {
     body {
         background-color: #15202b;
         color: #e7e9ea;
+    }
+    .main {
+        background-color: #15202b;
     }
     .sidebar {
         background-color: #192734;
@@ -887,14 +954,27 @@ body {
     .sidebar a:hover, .sidebar a.active, .user-profile:hover {
         background-color: #22303c;
     }
-    .main {
-        background-color: #15202b;
+    .user-menu {
+        background-color: #192734;
+        border-color: #38444d;
+    }
+    .menu-item {
+        color: #e7e9ea;
+    }
+    .menu-item:hover {
+        background-color: #22303c;
+        color: #1DA1F2;
+    }
+    .default-avatar {
+        background-color: #38444d;
+        color: #e7e9ea;
+        border-color: #38444d;
     }
     .section h2 {
         color: #e7e9ea;
         border-bottom-color: #38444d;
     }
-    .post, .favorite-item, .config-card, .stats-summary {
+    .post, .favorite-item, .config-card {
         background-color: #192734;
         border-color: #38444d;
         color: #e7e9ea;
@@ -911,43 +991,54 @@ body {
         color: #e7e9ea;
         border-color: #38444d;
     }
+    .chart, .chart.sales-chart {
+        background-color: #253341;
+        border-color: #38444d;
+    }
+    .chart.sales-chart {
+        border-color: #059669;
+    }
+    .chart.sales-chart .chartjs-tooltip {
+        background-color: #253341;
+        border-color: #38444d;
+        color: #e7e9ea;
+    }
+    .stats-summary {
+        background-color: #192734;
+        color: #e7e9ea;
+    }
+    .stats-summary::before, .stats-summary p {
+        color: #e7e9ea;
+    }
+    .error-message {
+        background-color: #253341;
+        color: #f87171;
+    }
+    .no-data, .close-btn {
+        color: #8b98a5;
+    }
+    .price-history {
+        background-color: #192734;
+        border-color: #38444d;
+    }
+    .price-history h3 {
+        color: #e7e9ea;
+    }
+    .config-form, .config-card {
+        background-color: #192734;
+        border-color: #38444d;
+    }
+    .price-alert {
+        background-color: #22303c;
+        border-color: #1DA1F2;
+        color: #e7e9ea;
+    }
+    .price-alert.unread {
+        background-color: #2a3f5b;
+    }
 }
 
-.price-history {
-    margin-top: 24px;
-    padding: 16px;
-    background-color: #fff;
-    border-radius: 12px;
-    border: 1px solid #e1e8ed;
-}
-.price-note {
-    font-size: 0.9em;
-    color: #666;
-    margin-top: 10px;
-    font-style: italic;
-}
-.price-history canvas {
-    max-height: 200px;
-}
-.no-data {
-    font-size: 0.9em;
-    color: #666;
-    margin-top: 10px;
-    text-align: center;
-}
-
-/* 历史价格标题 */
-.price-history h3 {
-    font-size: 18px;
-    font-weight: 700;
-    color: #0f1419;
-    margin-bottom: 16px;
-}
-
-/* 无数据提示 */
-.no-data {
-    color: #536471;
-    font-size: 14px;
-    text-align: center;
-    padding: 16px;
+/* 动画 */
+@keyframes spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
 }
