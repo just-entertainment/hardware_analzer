@@ -458,6 +458,3 @@ def favorites_list(request):
     except Exception as e:
         logger.error(f"Favorites list error: {str(e)}")
         return JsonResponse({'error': str(e)}, status=500)
-
-
-

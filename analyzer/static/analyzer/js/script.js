@@ -905,4 +905,3 @@ window.generateConfig = generateConfig;
 window.showDetail = Detail.show;
 window.closeModal = Detail.close;
 window.generateConfig = Config.generateConfig;
-

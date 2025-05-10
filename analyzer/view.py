@@ -9,9 +9,11 @@ from thrift.transport import TTransport
 logger = logging.getLogger(__name__)
 
 # Hive 连接配置
-HIVE_HOST = 'localhost'
+
+HIVE_HOST = '192.168.80.128'
 HIVE_PORT = 10000
-HIVE_DATABASE = 'default'
+HIVE_USERNAME = 'node1'
+DATABASE_NAME = 'default'
 
 # 硬件类型映射
 COMPONENT_TABLES = {
@@ -205,3 +207,103 @@ def average_price_trend(request):
         return JsonResponse({'error': str(e)}, status=500)
 
 # 占位视图
+def price_analysis(request):
+    try:
+        component_type = request.GET.get('component_type', 'cpu')
+        if component_type not in ['cpu', 'gpu', 'ram', 'ssd', 'cooler', 'power', 'chassis', 'broad']:
+            return JsonResponse({'error': 'Invalid component type'}, status=400)
+
+        # Hive 连接
+        conn = hive.connect(
+            host=HIVE_HOST,
+            port=HIVE_PORT,
+            username=HIVE_USERNAME,
+            database=DATABASE_NAME,
+            auth='NOSASL'
+        )
+        cursor = conn.cursor()
+
+        # 设置优化参数
+        configs = [
+            'SET hive.support.concurrency=false',
+            'SET hive.exec.dynamic.partition=true',
+            'SET hive.exec.dynamic.partition.mode=nonstrict',
+            'set mapreduce.map.memory.mb=4096',
+            'set mapreduce.reduce.memory.mb=4096',
+            'set hive.exec.reducers.bytes.per.reducer=256000000'
+            'set mapreduce.map.memory.mb=4096',
+            'set mapreduce.reduce.memory.mb=4096',
+            'set mapreduce.map.java.opts=-Xmx3686m',
+            'set mapreduce.reduce.java.opts=-Xmx3686m',
+            'set hive.exec.reducers.bytes.per.reducer=256000000',
+            # 'set hive.execution.engine=tez',  # 如果集群支持TEZ，比MR更高效
+            'set tez.am.resource.memory.mb=4096',
+            'set hive.auto.convert.join=true'
+        ]
+
+        for config in configs:
+            try:
+                cursor.execute(config)
+            except Exception as e:
+                logger.warning(f'Failed to set config {config}: {str(e)}')
+
+        # 1. 首先验证表是否存在
+        try:
+            cursor.execute(f"SHOW TABLES LIKE '{component_type}_products'")
+            if not cursor.fetchone():
+                return JsonResponse({'error': f'Table {component_type}_products not found'}, status=404)
+
+            cursor.execute(f"SHOW TABLES LIKE '{component_type}_price_history'")
+            if not cursor.fetchone():
+                return JsonResponse({'error': f'Table {component_type}_price_history not found'}, status=404)
+        except Exception as e:
+            return JsonResponse({'error': f'Table verification failed: {str(e)}'}, status=500)
+
+        result = {}
+
+        try:
+            # 价格分布 - 简化查询先测试
+            cursor.execute(f"""
+                SELECT COUNT(*) 
+                FROM {component_type}_products 
+                WHERE current_price IS NOT NULL
+                LIMIT 1
+            """)
+            test_result = cursor.fetchone()
+            if not test_result:
+                return JsonResponse({'error': 'No price data available'}, status=404)
+
+            # 2. 逐个执行查询并捕获单独异常
+            queries = {
+                'price_distribution': f"""
+                    SELECT
+                        CONCAT(FLOOR(COALESCE(p.current_price, 0) / 100) * 100, ' - ', 
+                        FLOOR(COALESCE(p.current_price, 0) / 100) * 100 + 99) AS price_range,
+                        COUNT(*) AS count
+                    FROM {component_type}_products p
+                    WHERE p.current_price IS NOT NULL
+                    GROUP BY FLOOR(COALESCE(p.current_price, 0) / 100)
+                    ORDER BY FLOOR(COALESCE(p.current_price, 0) / 100)
+                    LIMIT 100
+                """,
+                # 其他查询也类似简化...
+            }
+
+            for key, query in queries.items():
+                try:
+                    cursor.execute(query)
+                    rows = cursor.fetchall()
+                    # 根据不同的查询处理结果...
+                except Exception as e:
+                    logger.error(f'Query failed for {key}: {str(e)}')
+                    result[key] = {'error': str(e)}
+
+        finally:
+            cursor.close()
+            conn.close()
+
+        return JsonResponse(result)
+
+    except Exception as e:
+        logger.error(f'Price analysis error: {str(e)}', exc_info=True)
+        return JsonResponse({'error': str(e)}, status=500)

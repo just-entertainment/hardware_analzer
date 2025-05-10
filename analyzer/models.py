@@ -1,9 +1,6 @@
-from django.db import models
-from django.db import models
 from django.core.validators import MinValueValidator
-
 from hardware_analyzer import settings
-
+from django.db import models
 
 class Motherboard(models.Model):
     product_id = models.CharField(
@@ -39,8 +36,6 @@ class Motherboard(models.Model):
 
     def __str__(self):
         return self.title
-
-
 class MotherboardPriceHistory(models.Model):
     """
     主板专属历史价格模型
@@ -71,7 +66,6 @@ class MotherboardPriceHistory(models.Model):
 
     def __str__(self):
         return f"[主板] {self.motherboard.title} | {self.date} | ¥{self.price}"
-
 class CPU(models.Model):
     product_id = models.CharField(
         max_length=50,
@@ -111,9 +105,6 @@ class CPU(models.Model):
 
     def __str__(self):
         return f"{self.title} (ID: {self.product_id})"
-
-
-
 class CPUPriceHistory(models.Model):
     """
     CPU专属历史价格模型
@@ -145,10 +136,6 @@ class CPUPriceHistory(models.Model):
 
     def __str__(self):
         return f"[CPU] {self.cpu.title} | {self.date} | ¥{self.price}"
-
-from django.db import models
-
-
 class GPU(models.Model):
     # 基础信息
     product_id = models.CharField(
@@ -356,11 +343,6 @@ class GPU(models.Model):
 
     def __str__(self):
         return self.title
-
-
-from django.db import models
-from django.core.validators import MinValueValidator
-
 class GPUPriceHistory(models.Model):
     """
     GPU专属历史价格模型
@@ -391,11 +373,6 @@ class GPUPriceHistory(models.Model):
 
     def __str__(self):
         return f"[显卡] {self.gpu.title} | {self.date} | ¥{self.price}"
-
-
-from django.db import models
-
-
 class RAM(models.Model):
     product_id = models.CharField(
         max_length=50,
@@ -427,8 +404,6 @@ class RAM(models.Model):
 
     def __str__(self):
         return self.title
-
-
 class RAMPriceHistory(models.Model):
     """
     RAM专属历史价格模型
@@ -460,11 +435,6 @@ class RAMPriceHistory(models.Model):
 
     def __str__(self):
         return f"[内存] {self.ram.title} | {self.date} | ¥{self.price}"
-
-
-from django.db import models
-
-
 class SSD(models.Model):
     product_id = models.CharField(
         max_length=50,
@@ -499,7 +469,6 @@ class SSD(models.Model):
 
     def __str__(self):
         return self.title
-
 class SSDPriceHistory(models.Model):
     """
     SSD专属历史价格模型
@@ -531,10 +500,6 @@ class SSDPriceHistory(models.Model):
 
     def __str__(self):
         return f"[SSD] {self.ssd.title} | {self.date} | ¥{self.price}"
-
-
-
-
 class Cooler(models.Model):
     product_id = models.CharField(
         max_length=50,
@@ -559,9 +524,6 @@ class Cooler(models.Model):
 
     def __str__(self):
         return self.title
-from django.db import models
-from django.core.validators import MinValueValidator
-
 class CoolerPriceHistory(models.Model):
     """
     散热器专属历史价格模型
@@ -593,10 +555,6 @@ class CoolerPriceHistory(models.Model):
 
     def __str__(self):
         return f"[散热器] {self.cooler.title} | {self.date} | ¥{self.price}"
-
-
-
-
 class PowerSupply(models.Model):
     product_id = models.CharField(
         max_length=50,
@@ -631,10 +589,6 @@ class PowerSupply(models.Model):
 
     def __str__(self):
         return self.title
-
-from django.db import models
-from django.core.validators import MinValueValidator
-
 class PowerSupplyPriceHistory(models.Model):
     """
     电源专属历史价格模型
@@ -666,8 +620,6 @@ class PowerSupplyPriceHistory(models.Model):
 
     def __str__(self):
         return f"[电源] {self.power_supply.title} | {self.date} | ¥{self.price}"
-
-
 class Chassis(models.Model):
     product_id = models.CharField(
         max_length=50,
@@ -703,7 +655,6 @@ class Chassis(models.Model):
 
     def __str__(self):
         return self.title
-
 class ChassisPriceHistory(models.Model):
     """
     机箱专属历史价格模型
@@ -735,9 +686,6 @@ class ChassisPriceHistory(models.Model):
 
     def __str__(self):
         return f"[机箱] {self.chassis.title} | {self.date} | ¥{self.price}"
-
-from django.db import models
-
 class PriceHistory(models.Model):
     component_type = models.CharField(max_length=50)
     component_id = models.IntegerField()
@@ -751,7 +699,6 @@ class PriceHistory(models.Model):
 
     def __str__(self):
         return f"{self.component_type} {self.component_id} - {self.price} at {self.date}"
-
 
 
 from django.db import models
