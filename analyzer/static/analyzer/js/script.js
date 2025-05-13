@@ -228,7 +228,6 @@ const Favorites = {
     }
 }
 };
-
 const Navigation = {
     init() {
         // 初始化导航事件
@@ -265,7 +264,6 @@ const Navigation = {
         }
     }
 };
-
 const Search = {
     currentPage: 1,
     currentType: '',
@@ -458,20 +456,32 @@ const Search = {
 }
 };
 
-
-// 详情弹窗模块
-// 确保 DOM 加载完成
-// 详情弹窗模块
-
-
 const Visualization = {
     charts: {
         priceDistribution: null,
-        averagePriceTrend: null
+        averagePriceTrend: null,
+        salesDistribution: null,
+        priceCommentScatter: null,
+        salesRanking: null
     },
     currentType: 'cpu',
+    componentNames: {
+        'cpu': 'CPU',
+        'gpu': '显卡',
+        'ram': '内存',
+        'ssd': '固态硬盘',
+        'motherboard': '主板',
+        'cooler': '散热器',
+        'power_supply': '电源',
+        'chassis': '机箱'
+    },
 
     init() {
+        // 确保控件容器存在
+        if (!document.querySelector('.viz-controls')) {
+            console.error('Visualization controls container not found');
+            return;
+        }
         console.log('Visualization init');
         this.renderControls();
         this.loadData();
@@ -480,27 +490,37 @@ const Visualization = {
 
     renderControls() {
         const controlsDiv = document.querySelector('.viz-controls');
+        if (!controlsDiv) {
+            console.error('Controls container not found');
+            return;
+        }
+        // 动态生成选项，保持与 currentType 同步
         controlsDiv.innerHTML = `
             <select id="vizComponentType" class="filter-select">
-                <option value="cpu" selected>CPU</option>
-                <option value="gpu">显卡</option>
-                <option value="ram">内存</option>
-                <option value="ssd">固态硬盘</option>
-                <option value="motherboard">主板</option>
-                <option value="cooler">散热器</option>
-                <option value="power_supply">电源</option>
-                <option value="chassis">机箱</option>
+                ${Object.entries(this.componentNames).map(([value, name]) => 
+                    `<option value="${value}" ${value === this.currentType ? 'selected' : ''}>${name}</option>`
+                ).join('')}
             </select>
             <button onclick="Visualization.loadData()">刷新数据</button>
         `;
     },
 
     bindEvents() {
-        document.getElementById('vizComponentType').addEventListener('change', (e) => {
+        const select = document.getElementById('vizComponentType');
+        if (!select) {
+            console.error('Component type select not found');
+            return;
+        }
+        // 防止重复绑定
+        if (this.handleTypeChange) {
+            select.removeEventListener('change', this.handleTypeChange);
+        }
+        this.handleTypeChange = (e) => {
             this.currentType = e.target.value;
             console.log(`Selected component type: ${this.currentType}`);
             this.loadData();
-        });
+        };
+        select.addEventListener('change', this.handleTypeChange);
         window.addEventListener('resize', () => {
             Object.values(this.charts).forEach(chart => chart?.resize());
         });
@@ -508,50 +528,59 @@ const Visualization = {
 
     loadData: debounce(async function() {
         console.log('Loading visualization data for type:', this.currentType);
-        const priceChartCanvas = document.getElementById('priceDistributionChart');
-        const trendChartCanvas = document.getElementById('averagePriceTrendChart');
+        const chartIds = [
+            'priceDistributionChart', 'averagePriceTrendChart',
+            'salesDistributionChart', 'priceCommentScatterChart', 'salesRankingChart'
+        ];
         const statsSummary = document.getElementById('statsSummary');
 
-        if (!priceChartCanvas || !trendChartCanvas || !statsSummary) {
-            console.error('图表元素缺失:', { priceChartCanvas, trendChartCanvas, statsSummary });
+        if (chartIds.some(id => !document.getElementById(id)) || !statsSummary) {
+            console.error('图表元素缺失:', { chartIds, statsSummary });
             return;
         }
 
-        priceChartCanvas.parentElement.classList.add('chart-loading');
-        trendChartCanvas.parentElement.classList.add('chart-loading');
+        chartIds.forEach(id => document.getElementById(id).parentElement.classList.add('chart-loading'));
         statsSummary.innerHTML = '<div class="loading-spinner"></div>加载中...';
 
         try {
+            // 添加请求超时
+            const timeout = (promise, time) => Promise.race([
+                promise,
+                new Promise((_, reject) => setTimeout(() => reject(new Error('请求超时')), time))
+            ]);
             const [statsResponse, trendResponse] = await Promise.all([
-                fetch(`/api/price_stats/?type=${this.currentType}`),
-                fetch(`/api/average_price_trend/?type=${this.currentType}`)
+                timeout(fetch(`/api/price_stats/?type=${this.currentType}`), 5000),
+                timeout(fetch(`/api/average_price_trend/?type=${this.currentType}`), 5000)
             ]);
 
-            if (!statsResponse.ok) {
-                const errorData = await statsResponse.json().catch(() => ({}));
-                throw new Error(`价格统计错误: ${errorData.error || statsResponse.statusText}`);
-            }
-            if (!trendResponse.ok) {
-                const errorData = await trendResponse.json().catch(() => ({}));
-                throw new Error(`价格趋势错误: ${errorData.error || trendResponse.statusText}`);
+            if (!statsResponse.ok || !trendResponse.ok) {
+                const errorData = await (statsResponse.ok ? trendResponse : statsResponse).json().catch(() => ({}));
+                throw new Error(`数据加载错误: ${errorData.error || '网络错误'}`);
             }
 
             const statsData = await statsResponse.json();
             const trendData = await trendResponse.json();
 
-            priceChartCanvas.parentElement.classList.remove('chart-loading');
-            trendChartCanvas.parentElement.classList.remove('chart-loading');
+            // 验证数据
+            if (!statsData.price_distribution && !statsData.sales_distribution &&
+                !statsData.price_comment_scatter && !statsData.sales_ranking) {
+                throw new Error('无有效统计数据');
+            }
 
-            if (statsData.error) throw new Error(statsData.error);
-            if (trendData.error) throw new Error(trendData.error);
+            chartIds.forEach(id => document.getElementById(id).parentElement.classList.remove('chart-loading'));
 
             this.renderPriceDistributionChart(statsData);
             this.renderAveragePriceTrendChart(trendData);
+            this.renderSalesDistributionChart(statsData);
+            this.renderPriceCommentScatterChart(statsData);
+            this.renderSalesRankingChart(statsData);
             this.renderStatsSummary(statsData);
         } catch (error) {
             console.error('可视化数据加载失败:', error);
-            priceChartCanvas.parentElement.innerHTML = `<div class="chart-error">${error.message} <button onclick="Visualization.loadData()">重试</button></div>`;
-            trendChartCanvas.parentElement.innerHTML = `<div class="chart-error">${error.message} <button onclick="Visualization.loadData()">重试</button></div>`;
+            chartIds.forEach(id => {
+                const container = document.getElementById(id).parentElement;
+                container.innerHTML = `<div class="chart-error">${error.message}</div><canvas id="${id}"></canvas>`;
+            });
             statsSummary.innerHTML = `<div class="error">${error.message}</div>`;
         }
     }, 300),
@@ -563,11 +592,9 @@ const Visualization = {
             return;
         }
 
-        if (this.charts.priceDistribution) {
-            this.charts.priceDistribution.destroy();
-        }
+        if (this.charts.priceDistribution) this.charts.priceDistribution.destroy();
 
-        const priceData = statsData.price_distribution || [];
+        const priceData = (statsData.price_distribution || []).filter(x => x.count >= 0);
         if (!priceData.length) {
             ctx.canvas.parentElement.innerHTML = `<div class="no-data">${statsData.message || '暂无价格分布数据'}</div>`;
             return;
@@ -589,29 +616,15 @@ const Visualization = {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    title: {
-                        display: true,
-                        text: `${this.getComponentName(this.currentType)} 价格分布`,
-                        font: { size: 16 }
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: ctx => `${ctx.parsed.y} 款产品`
-                        }
-                    },
-                    legend: {
-                        display: false  // 隐藏图例
-                    }
+                    title: { display: true, text: `${this.getComponentName(this.currentType)} 价格分布`, font: { size: 16 } },
+                    tooltip: { callbacks: { label: ctx => `${ctx.parsed.y} 款产品` } },
+                    legend: { display: false }
                 },
                 scales: {
-                    y: {
-                        beginAtZero: true,
-                        title: { display: true, text: '产品数量' },
-                        ticks: { precision: 0 }
-                    },
+                    y: { beginAtZero: true, title: { display: true, text: '产品数量' }, ticks: { precision: 0 } },
                     x: {
                         title: { display: true, text: '价格区间 (¥)' },
-                        ticks: { autoSkip: false, maxRotation: 45, minRotation: 45 }
+                        ticks: { autoSkip: true, maxTicksLimit: 10, maxRotation: 45, minRotation: 0 }
                     }
                 }
             }
@@ -625,11 +638,9 @@ const Visualization = {
             return;
         }
 
-        if (this.charts.averagePriceTrend) {
-            this.charts.averagePriceTrend.destroy();
-        }
+        if (this.charts.averagePriceTrend) this.charts.averagePriceTrend.destroy();
 
-        const data = trendData.data || [];
+        const data = (trendData.data || []).filter(x => x.avg_price != null && x.avg_price >= 0);
         if (!data.length) {
             ctx.canvas.parentElement.innerHTML = `<div class="no-data">${trendData.message || '暂无价格趋势数据'}</div>`;
             return;
@@ -653,22 +664,12 @@ const Visualization = {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    title: {
-                        display: true,
-                        text: `${this.getComponentName(this.currentType)} 平均价格趋势`,
-                        font: { size: 16 }
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: ctx => `¥${ctx.parsed.y.toFixed(2)}`
-                        }
-                    },
-                    legend: {
-                        display: false  // 隐藏图例
-                    }
+                    title: { display: true, text: `${this.getComponentName(this.currentType)} 平均价格趋势`, font: { size: 16 } },
+                    tooltip: { callbacks: { label: ctx => `¥${ctx.parsed.y.toFixed(2)}` } },
+                    legend: { display: false }
                 },
                 scales: {
-                    x: { title: { display: true, text: '日期' } },
+                    x: { title: { display: true, text: '日期' }, ticks: { maxTicksLimit: 10 } },
                     y: {
                         title: { display: true, text: '平均价格 (¥)' },
                         beginAtZero: false,
@@ -680,44 +681,173 @@ const Visualization = {
         });
     },
 
-    renderStatsSummary(statsData) {
-        const statsSummary = document.getElementById('statsSummary');
-        if (!statsData || statsData.total_count === 0) {
-            statsSummary.innerHTML = `<div class="no-data">${statsData.message || '暂无统计数据'}</div>`;
+    renderSalesDistributionChart(statsData) {
+        const ctx = document.getElementById('salesDistributionChart')?.getContext('2d');
+        if (!ctx) {
+            console.error('Sales distribution canvas not found');
             return;
         }
 
+        if (this.charts.salesDistribution) this.charts.salesDistribution.destroy();
+
+        const salesData = (statsData.sales_distribution || []).filter(x => x.count >= 0);
+        if (!salesData.length) {
+            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${statsData.message || '暂无销量分布数据'}</div>`;
+            return;
+        }
+
+        this.charts.salesDistribution = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: salesData.map(x => x.range.replace(/(\d+)-(\d+)/, (m, a, b) => `${(a/1000).toFixed(0)}k-${(b/1000).toFixed(0)}k`)),
+                datasets: [{
+                    label: '产品数量',
+                    data: salesData.map(x => x.count),
+                    backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: `${this.getComponentName(this.currentType)} 销量分布`, font: { size: 16 } },
+                    tooltip: { callbacks: { label: ctx => `${ctx.parsed.y} 款产品` } },
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true, title: { display: true, text: '产品数量' }, ticks: { precision: 0 } },
+                    x: {
+                        title: { display: true, text: '评论数区间' },
+                        ticks: { autoSkip: true, maxTicksLimit: 10, maxRotation: 45, minRotation: 0 }
+                    }
+                }
+            }
+        });
+    },
+
+    renderPriceCommentScatterChart(statsData) {
+        const ctx = document.getElementById('priceCommentScatterChart')?.getContext('2d');
+        if (!ctx) {
+            console.error('Price vs comment scatter canvas not found');
+            return;
+        }
+
+        if (this.charts.priceCommentScatter) this.charts.priceCommentScatter.destroy();
+
+        const scatterData = (statsData.price_comment_scatter || []).filter(x => x.price >= 0 && x.comment_count >= 0).slice(0, 1000);
+        if (!scatterData.length) {
+            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${statsData.message || '暂无价格与销量数据'}</div>`;
+            return;
+        }
+
+        this.charts.priceCommentScatter = new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: '价格 vs 销量',
+                    data: scatterData.map(item => ({ x: item.price, y: item.comment_count })),
+                    backgroundColor: 'rgba(255, 159, 64, 0.7)',
+                    pointRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: `${this.getComponentName(this.currentType)} 价格与销量关系`, font: { size: 16 } },
+                    tooltip: { callbacks: { label: ctx => `价格: ¥${ctx.raw.x.toFixed(2)}, 销量: ${ctx.raw.y}` } },
+                    legend: { display: false }
+                },
+                scales: {
+                    x: { title: { display: true, text: '价格 (¥)' } },
+                    y: { title: { display: true, text: '评论数' }, beginAtZero: true }
+                }
+            }
+        });
+    },
+
+    renderSalesRankingChart(statsData) {
+        const ctx = document.getElementById('salesRankingChart')?.getContext('2d');
+        if (!ctx) {
+            console.error('Sales ranking canvas not found');
+            return;
+        }
+
+        if (this.charts.salesRanking) this.charts.salesRanking.destroy();
+
+        const rankingData = (statsData.sales_ranking || []).filter(x => x.comment_count >= 0);
+        if (!rankingData.length) {
+            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${statsData.message || '暂无销量排名数据'}</div>`;
+            return;
+        }
+
+        this.charts.salesRanking = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: rankingData.map(x => x.title.length > 20 ? x.title.substring(0, 17) + '...' : x.title),
+                datasets: [{
+                    label: '销量 (评论数)',
+                    data: rankingData.map(x => x.comment_count),
+                    backgroundColor: 'rgba(153, 102, 255, 0.7)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: `${this.getComponentName(this.currentType)} 销量排名 (Top 10)`, font: { size: 16 } },
+                    tooltip: { callbacks: { label: ctx => `${ctx.parsed.y} 条评论` } },
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true, title: { display: true, text: '评论数' }, ticks: { precision: 0 } },
+                    x: {
+                        title: { display: true, text: '产品' },
+                        ticks: { autoSkip: true, maxTicksLimit: 10, maxRotation: 45, minRotation: 0 }
+                    }
+                }
+            }
+        });
+    },
+
+    renderStatsSummary(statsData) {
+        const statsSummary = document.getElementById('statsSummary');
+        if (!statsSummary) {
+            console.error('Stats summary container not found');
+            return;
+        }
+
+        const formatNumber = (num) => num != null ? num.toFixed(2) : '未知';
+        if (!statsData || statsData.total_count === 0) {
+            statsSummary.innerHTML = `<div class="no-data">${statsData?.message || '暂无统计数据'}</div>`;
+            return;
+        }
+
+        const stats = [
+            { label: '总产品数', value: statsData.total_count },
+            { label: '中位数价格 (¥)', value: formatNumber(statsData.median_price) },
+            { label: '平均价格 (¥)', value: formatNumber(statsData.avg_price) },
+            { label: '价格标准差 (¥)', value: formatNumber(statsData.std_dev_price) },
+            { label: '总评论数', value: statsData.total_comments || 0 },
+            { label: '平均评论数', value: formatNumber(statsData.avg_comments) },
+            { label: '最大评论数', value: statsData.max_comments || 0 }
+        ];
+
         statsSummary.innerHTML = `
-            <h3>价格统计</h3>
-            <p>总产品数: ${statsData.total_count}</p>
-            <p>中位数价格: ¥${statsData.median_price ? statsData.median_price.toFixed(2) : '未知'}</p>
-            <p>平均价格: ¥${statsData.avg_price ? statsData.avg_price.toFixed(2) : '未知'}</p>
-            <p>价格标准差: ¥${statsData.std_dev_price ? statsData.std_dev_price.toFixed(2) : '未知'}</p>
+            <h3>价格与销量统计</h3>
+            ${stats.map(s => `<p>${s.label}: ${s.value}</p>`).join('')}
         `;
     },
 
     getComponentName(type) {
-        const names = {
-            'cpu': 'CPU',
-            'gpu': '显卡',
-            'ram': '内存',
-            'ssd': '固态硬盘',
-            'motherboard': '主板',
-            'cooler': '散热器',
-            'power_supply': '电源',
-            'chassis': '机箱'
-        };
-        return names[type] || type;
+        return this.componentNames[type] || type;
     }
 };
 
-function debounce(func, wait) {
-    let timeout;
-    return function (...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(this, args), wait);
-    };
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('price')?.classList.contains('active')) {
@@ -725,13 +855,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-function debounce(func, wait) {
-    let timeout;
-    return function (...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(this, args), wait);
-    };
-}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('price')?.classList.contains('active')) {

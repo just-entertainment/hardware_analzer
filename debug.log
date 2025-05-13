@@ -21470,3 +21470,24 @@ Returning cached data for price_stats_ram
 Returning cached data for average_price_trend_ram
 Returning cached data for price_stats_gpu
 Returning cached data for average_price_trend_gpu
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-14 02:00:00+08:00 (in 60306.463271 seconds)
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-14 02:00:00+08:00 (in 60304.204464 seconds)
+Watching for file changes with StatReloader
+NumExpr defaulting to 8 threads.
+Caching response for average_price_trend_gpu
+Caching response for price_stats_gpu
+Caching response for average_price_trend_ram
+Caching response for price_stats_ram
+Not Found: /.well-known/appspecific/com.chrome.devtools.json

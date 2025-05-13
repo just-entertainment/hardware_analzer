@@ -1,3 +1,4 @@
+import pandas as pd
 from django.shortcuts import render
 from django.views.decorators.http import require_GET
 from django.core.paginator import Paginator
@@ -268,7 +269,7 @@ def detail(request, component_type, id):
 
 @require_GET
 def price_stats(request):
-    """获取价格分布统计"""
+    """获取价格和销量统计"""
     try:
         component_type = request.GET.get('type', 'cpu')
         if component_type not in COMPONENT_MODELS:
@@ -281,45 +282,107 @@ def price_stats(request):
             return JsonResponse(cached_data)
 
         model = COMPONENT_MODELS[component_type]
-        prices = list(model.objects.filter(reference_price__isnull=False, reference_price__gt=0)
-                      .values_list('reference_price', flat=True))
+        # 查询价格、评论数、标题
+        products = model.objects.filter(reference_price__isnull=False, reference_price__gt=0).values(
+            'reference_price', 'comment_count', 'title'
+        )
 
-        if not prices:
+        if not products:
             return JsonResponse({
                 'price_distribution': [],
+                'sales_distribution': [],
+                'price_comment_scatter': [],
+                'sales_ranking': [],
                 'total_count': 0,
                 'median_price': None,
                 'avg_price': None,
                 'std_dev_price': None,
-                'message': f'暂无 {component_type} 的价格数据'
+                'total_comments': 0,
+                'avg_comments': None,
+                'max_comments': None,
+                'message': f'暂无 {component_type} 的价格或销量数据'
             })
 
-        prices = np.array([float(price) for price in prices])
+        # 转换为 DataFrame
+        df = pd.DataFrame.from_records(products)
+
+        # 清洗 comment_count
+        def clean_comment_count(x):
+            if pd.isna(x) or not x:
+                return 0
+            x = str(x).lower().strip()
+            try:
+                if x.endswith('k'):
+                    return float(x[:-1]) * 1000
+                if x.endswith('w'):
+                    return float(x[:-1]) * 10000
+                return int(x) if x.replace('.', '').isdigit() else 0
+            except (ValueError, TypeError):
+                return 0
+
+        df['comment_count'] = df['comment_count'].apply(clean_comment_count)
+
+        # 价格统计
+        prices = df['reference_price'].astype(float)
         total_count = len(prices)
-        median_price = float(np.median(prices))
-        avg_price = float(np.mean(prices))
+        median_price = float(np.median(prices)) if total_count > 0 else None
+        avg_price = float(np.mean(prices)) if total_count > 0 else None
         std_dev_price = float(np.std(prices)) if total_count > 1 else 0.0
 
-        # 动态计算价格区间
-        min_price = np.floor(prices.min() / 10) * 10  # 向下取整到10
-        max_price = np.ceil(prices.max() / 10) * 10   # 向上取整到10
-        target_bins = 10  # 目标区间数
+        # 价格分布
+        min_price = np.floor(prices.min() / 10) * 10
+        max_price = np.ceil(prices.max() / 10) * 10
+        target_bins = 10
         price_range = max_price - min_price
-        bin_width = max(10, np.ceil(price_range / target_bins / 10) * 10)  # 确保整十数
+        bin_width = max(10, np.ceil(price_range / target_bins / 10) * 10)
         bins = np.arange(min_price, max_price + bin_width, bin_width)
-
         hist, bin_edges = np.histogram(prices, bins=bins, density=False)
         price_distribution = [
             {'range': f'{int(bin_edges[i])}-{int(bin_edges[i + 1])}', 'count': int(hist[i])}
-            for i in range(len(hist)) if hist[i] > 0  # 跳过空区间
+            for i in range(len(hist)) if hist[i] > 0
         ]
+
+        # 销量分布
+        comments = df['comment_count'].astype(float)
+        max_comments = comments.max() if total_count > 0 else 0
+        bin_width_comments = max(100, np.ceil(max_comments / target_bins / 100) * 100)
+        bins_comments = np.arange(0, max_comments + bin_width_comments, bin_width_comments)
+        hist_comments, bin_edges_comments = np.histogram(comments, bins=bins_comments, density=False)
+        sales_distribution = [
+            {'range': f'{int(bin_edges_comments[i])}-{int(bin_edges_comments[i + 1])}', 'count': int(hist_comments[i])}
+            for i in range(len(hist_comments)) if hist_comments[i] > 0
+        ]
+
+        # 价格与销量散点图
+        price_comment_scatter = [
+            {'price': float(row['reference_price']), 'comment_count': float(row['comment_count'])}
+            for _, row in df.iterrows() if row['comment_count'] > 0
+        ]
+
+        # 销量排名
+        sales_ranking = (
+            df[df['comment_count'] > 0][['title', 'comment_count']]
+            .sort_values('comment_count', ascending=False)
+            .head(10)
+            .to_dict('records')
+        )
+
+        # 销量统计
+        total_comments = int(comments.sum()) if total_count > 0 else 0
+        avg_comments = float(comments.mean()) if total_count > 0 else None
 
         data = {
             'price_distribution': price_distribution,
+            'sales_distribution': sales_distribution,
+            'price_comment_scatter': price_comment_scatter,
+            'sales_ranking': sales_ranking,
             'total_count': total_count,
             'median_price': median_price,
             'avg_price': avg_price,
             'std_dev_price': std_dev_price,
+            'total_comments': total_comments,
+            'avg_comments': avg_comments,
+            'max_comments': max_comments,
             'message': ''
         }
         cache.set(cache_key, data, timeout=3600)
@@ -329,6 +392,61 @@ def price_stats(request):
         logger.error(f"Error in price_stats: {str(e)}", exc_info=True)
         return JsonResponse({'error': str(e)}, status=500)
 
+@require_GET
+def average_price_trend(request):
+    """获取平均价格趋势"""
+    try:
+        component_type = request.GET.get('type', 'cpu')
+        if component_type not in COMPONENT_MODELS:
+            return JsonResponse({'error': f'不支持的配件类型: {component_type}'}, status=400)
+
+        cache_key = f'average_price_trend_{component_type}'
+        cached_data = cache.get(cache_key)
+        if cached_data:
+            logger.debug(f"Returning cached data for {cache_key}")
+            return JsonResponse(cached_data)
+
+        ninety_days_ago = timezone.now().date() - timedelta(days=90)
+        price_history_model = COMPONENT_PRICE_HISTORY_MODELS.get(component_type)
+        if not price_history_model:
+            return JsonResponse({'error': f'未定义 {component_type} 的历史价格模型'}, status=400)
+
+        trend_data = price_history_model.objects.filter(
+            date__gte=ninety_days_ago
+        ).values('date').annotate(avg_price=Avg('price')).order_by('date')
+
+        data = [
+            {
+                'date': item['date'].strftime('%Y-%m-%d'),
+                'avg_price': float(item['avg_price']) if item['avg_price'] is not None else 0.0
+            } for item in trend_data
+        ]
+
+        if not data:
+            model = COMPONENT_MODELS[component_type]
+            avg_price = model.objects.filter(
+                reference_price__isnull=False, reference_price__gt=0
+            ).aggregate(Avg('reference_price'))['reference_price__avg']
+            if avg_price is None:
+                return JsonResponse({
+                    'data': [],
+                    'message': f'暂无 {component_type} 的历史价格数据'
+                })
+            current_date = timezone.now().date()
+            data = [
+                {
+                    'date': (current_date - timedelta(days=i)).strftime('%Y-%m-%d'),
+                    'avg_price': float(avg_price)
+                } for i in range(90, -1, -1)
+            ]
+
+        response = {'data': data, 'message': ''}
+        cache.set(cache_key, response, timeout=3600)
+        logger.debug(f"Caching response for {cache_key}")
+        return JsonResponse(response)
+    except Exception as e:
+        logger.error(f"Error in average_price_trend: {str(e)}", exc_info=True)
+        return JsonResponse({'error': str(e)}, status=500)
 @require_GET
 def average_price_trend(request):
     """获取平均价格趋势"""
