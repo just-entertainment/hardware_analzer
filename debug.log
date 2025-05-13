@@ -21446,3 +21446,27 @@ Looking for jobs to run
 Scheduler started
 Next wakeup is due at 2025-05-14 02:00:00+08:00 (in 61318.663467 seconds)
 Watching for file changes with StatReloader
+Caching response for price_stats_cpu
+Caching response for average_price_trend_cpu
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Caching response for average_price_trend_gpu
+Caching response for price_stats_gpu
+Caching response for average_price_trend_ram
+Caching response for price_stats_ram
+Caching response for average_price_trend_ssd
+Caching response for price_stats_ssd
+Caching response for average_price_trend_motherboard
+Caching response for price_stats_motherboard
+Caching response for average_price_trend_cooler
+Caching response for price_stats_cooler
+Caching response for average_price_trend_power_supply
+Caching response for price_stats_power_supply
+Caching response for average_price_trend_chassis
+Caching response for price_stats_chassis
+Returning cached data for price_stats_ram
+Returning cached data for average_price_trend_ram
+Returning cached data for price_stats_gpu
+Returning cached data for average_price_trend_gpu
