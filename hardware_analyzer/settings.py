@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'analyzer.apps.AnalyzerConfig',
     'accounts.apps.AccountsConfig',
     'django_celery_beat',
+    'django_extensions'
 
 ]
 

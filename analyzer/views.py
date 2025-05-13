@@ -291,7 +291,7 @@ def price_stats(request):
             return JsonResponse({
                 'price_distribution': [],
                 'sales_distribution': [],
-                'price_comment_scatter': [],
+                # 'price_comment_scatter': [],
                 'sales_ranking': [],
                 'total_count': 0,
                 'median_price': None,
@@ -353,11 +353,11 @@ def price_stats(request):
             for i in range(len(hist_comments)) if hist_comments[i] > 0
         ]
 
-        # 价格与销量散点图
-        price_comment_scatter = [
-            {'price': float(row['reference_price']), 'comment_count': float(row['comment_count'])}
-            for _, row in df.iterrows() if row['comment_count'] > 0
-        ]
+        # # 价格与销量散点图
+        # price_comment_scatter = [
+        #     {'price': float(row['reference_price']), 'comment_count': float(row['comment_count'])}
+        #     for _, row in df.iterrows() if row['comment_count'] > 0
+        # ]
 
         # 销量排名
         sales_ranking = (
@@ -374,7 +374,7 @@ def price_stats(request):
         data = {
             'price_distribution': price_distribution,
             'sales_distribution': sales_distribution,
-            'price_comment_scatter': price_comment_scatter,
+            # 'price_comment_scatter': price_comment_scatter,
             'sales_ranking': sales_ranking,
             'total_count': total_count,
             'median_price': median_price,

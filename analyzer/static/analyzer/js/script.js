@@ -461,7 +461,6 @@ const Visualization = {
         priceDistribution: null,
         averagePriceTrend: null,
         salesDistribution: null,
-        priceCommentScatter: null,
         salesRanking: null
     },
     currentType: 'cpu',
@@ -477,10 +476,17 @@ const Visualization = {
     },
 
     init() {
-        // 确保控件容器存在
-        if (!document.querySelector('.viz-controls')) {
+        const controlsDiv = document.querySelector('.viz-controls');
+        if (!controlsDiv) {
             console.error('Visualization controls container not found');
             return;
+        }
+        const chartContainer = document.querySelector('.chart-container');
+        if (chartContainer) {
+            console.log('Chart container size:', {
+                width: chartContainer.offsetWidth,
+                height: chartContainer.offsetHeight
+            });
         }
         console.log('Visualization init');
         this.renderControls();
@@ -494,7 +500,6 @@ const Visualization = {
             console.error('Controls container not found');
             return;
         }
-        // 动态生成选项，保持与 currentType 同步
         controlsDiv.innerHTML = `
             <select id="vizComponentType" class="filter-select">
                 ${Object.entries(this.componentNames).map(([value, name]) => 
@@ -511,7 +516,6 @@ const Visualization = {
             console.error('Component type select not found');
             return;
         }
-        // 防止重复绑定
         if (this.handleTypeChange) {
             select.removeEventListener('change', this.handleTypeChange);
         }
@@ -522,7 +526,12 @@ const Visualization = {
         };
         select.addEventListener('change', this.handleTypeChange);
         window.addEventListener('resize', () => {
-            Object.values(this.charts).forEach(chart => chart?.resize());
+            Object.values(this.charts).forEach(chart => {
+                if (chart) {
+                    chart.resize();
+                    chart.update();
+                }
+            });
         });
     },
 
@@ -530,7 +539,7 @@ const Visualization = {
         console.log('Loading visualization data for type:', this.currentType);
         const chartIds = [
             'priceDistributionChart', 'averagePriceTrendChart',
-            'salesDistributionChart', 'priceCommentScatterChart', 'salesRankingChart'
+            'salesDistributionChart', 'salesRankingChart'
         ];
         const statsSummary = document.getElementById('statsSummary');
 
@@ -543,7 +552,6 @@ const Visualization = {
         statsSummary.innerHTML = '<div class="loading-spinner"></div>加载中...';
 
         try {
-            // 添加请求超时
             const timeout = (promise, time) => Promise.race([
                 promise,
                 new Promise((_, reject) => setTimeout(() => reject(new Error('请求超时')), time))
@@ -561,10 +569,14 @@ const Visualization = {
             const statsData = await statsResponse.json();
             const trendData = await trendResponse.json();
 
-            // 验证数据
-            if (!statsData.price_distribution && !statsData.sales_distribution &&
-                !statsData.price_comment_scatter && !statsData.sales_ranking) {
-                throw new Error('无有效统计数据');
+            console.log(`Stats data for ${this.currentType}:`, {
+                sales_distribution: statsData.sales_distribution,
+                sales_ranking: statsData.sales_ranking,
+                total_comments: statsData.total_comments
+            });
+
+            if (!statsData.price_distribution && !statsData.sales_distribution && !statsData.sales_ranking) {
+                throw new Error(`无有效统计数据 for ${this.getComponentName(this.currentType)}`);
             }
 
             chartIds.forEach(id => document.getElementById(id).parentElement.classList.remove('chart-loading'));
@@ -572,7 +584,6 @@ const Visualization = {
             this.renderPriceDistributionChart(statsData);
             this.renderAveragePriceTrendChart(trendData);
             this.renderSalesDistributionChart(statsData);
-            this.renderPriceCommentScatterChart(statsData);
             this.renderSalesRankingChart(statsData);
             this.renderStatsSummary(statsData);
         } catch (error) {
@@ -596,7 +607,7 @@ const Visualization = {
 
         const priceData = (statsData.price_distribution || []).filter(x => x.count >= 0);
         if (!priceData.length) {
-            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${statsData.message || '暂无价格分布数据'}</div>`;
+            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${statsData.message || `暂无 ${this.getComponentName(this.currentType)} 价格分布数据`}</div>`;
             return;
         }
 
@@ -642,7 +653,7 @@ const Visualization = {
 
         const data = (trendData.data || []).filter(x => x.avg_price != null && x.avg_price >= 0);
         if (!data.length) {
-            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${trendData.message || '暂无价格趋势数据'}</div>`;
+            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${trendData.message || `暂无 ${this.getComponentName(this.currentType)} 价格趋势数据`}</div>`;
             return;
         }
 
@@ -691,8 +702,9 @@ const Visualization = {
         if (this.charts.salesDistribution) this.charts.salesDistribution.destroy();
 
         const salesData = (statsData.sales_distribution || []).filter(x => x.count >= 0);
+        console.log(`Sales distribution data for ${this.currentType}:`, salesData);
         if (!salesData.length) {
-            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${statsData.message || '暂无销量分布数据'}</div>`;
+            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${statsData.message || `暂无 ${this.getComponentName(this.currentType)} 销量分布数据，可能缺少评论数据`}</div>`;
             return;
         }
 
@@ -727,47 +739,6 @@ const Visualization = {
         });
     },
 
-    renderPriceCommentScatterChart(statsData) {
-        const ctx = document.getElementById('priceCommentScatterChart')?.getContext('2d');
-        if (!ctx) {
-            console.error('Price vs comment scatter canvas not found');
-            return;
-        }
-
-        if (this.charts.priceCommentScatter) this.charts.priceCommentScatter.destroy();
-
-        const scatterData = (statsData.price_comment_scatter || []).filter(x => x.price >= 0 && x.comment_count >= 0).slice(0, 1000);
-        if (!scatterData.length) {
-            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${statsData.message || '暂无价格与销量数据'}</div>`;
-            return;
-        }
-
-        this.charts.priceCommentScatter = new Chart(ctx, {
-            type: 'scatter',
-            data: {
-                datasets: [{
-                    label: '价格 vs 销量',
-                    data: scatterData.map(item => ({ x: item.price, y: item.comment_count })),
-                    backgroundColor: 'rgba(255, 159, 64, 0.7)',
-                    pointRadius: 5
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    title: { display: true, text: `${this.getComponentName(this.currentType)} 价格与销量关系`, font: { size: 16 } },
-                    tooltip: { callbacks: { label: ctx => `价格: ¥${ctx.raw.x.toFixed(2)}, 销量: ${ctx.raw.y}` } },
-                    legend: { display: false }
-                },
-                scales: {
-                    x: { title: { display: true, text: '价格 (¥)' } },
-                    y: { title: { display: true, text: '评论数' }, beginAtZero: true }
-                }
-            }
-        });
-    },
-
     renderSalesRankingChart(statsData) {
         const ctx = document.getElementById('salesRankingChart')?.getContext('2d');
         if (!ctx) {
@@ -778,8 +749,9 @@ const Visualization = {
         if (this.charts.salesRanking) this.charts.salesRanking.destroy();
 
         const rankingData = (statsData.sales_ranking || []).filter(x => x.comment_count >= 0);
+        console.log(`Sales ranking data for ${this.currentType}:`, rankingData);
         if (!rankingData.length) {
-            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${statsData.message || '暂无销量排名数据'}</div>`;
+            ctx.canvas.parentElement.innerHTML = `<div class="no-data">${statsData.message || `暂无 ${this.getComponentName(this.currentType)} 销量排名数据，可能缺少评论数据`}</div>`;
             return;
         }
 
@@ -823,7 +795,7 @@ const Visualization = {
 
         const formatNumber = (num) => num != null ? num.toFixed(2) : '未知';
         if (!statsData || statsData.total_count === 0) {
-            statsSummary.innerHTML = `<div class="no-data">${statsData?.message || '暂无统计数据'}</div>`;
+            statsSummary.innerHTML = `<div class="no-data">${statsData?.message || `暂无 ${this.getComponentName(this.currentType)} 统计数据`}</div>`;
             return;
         }
 
@@ -847,6 +819,20 @@ const Visualization = {
         return this.componentNames[type] || type;
     }
 };
+
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.viz-controls')) {
+        Visualization.init();
+    }
+});
 
 
 document.addEventListener('DOMContentLoaded', () => {
