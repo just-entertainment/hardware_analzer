@@ -21298,3 +21298,151 @@ Looking for jobs to run
 Scheduler started
 Next wakeup is due at 2025-05-11 02:00:00+08:00 (in 35901.838582 seconds)
 Watching for file changes with StatReloader
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-11 02:00:00+08:00 (in 31284.749890 seconds)
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-11 02:00:00+08:00 (in 31282.962472 seconds)
+Watching for file changes with StatReloader
+Caching response for price_stats_cpu
+Caching response for average_price_trend_cpu
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Price history for cpu/1: 4 records
+Price history for ram/1: 0 records
+Price history for ram/2: 0 records
+Price history for ram/3: 0 records
+Price history for ram/20: 0 records
+Price history for ram/19: 0 records
+Price history for ram/17: 0 records
+Price history for ram/14: 1 records
+Price history for ram/15: 1 records
+Price history for ram/11: 5 records
+Price history for ram/29: 0 records
+Unauthorized: /api/favorites/
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Unauthorized: /api/favorite/
+尝试认证: login_field=申博文
+认证成功: 用户 申博文
+用户 申博文 登录成功
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-12 02:00:00+08:00 (in 53328.133165 seconds)
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-12 02:00:00+08:00 (in 53326.194515 seconds)
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+尝试认证: login_field=申博文
+认证成功: 用户 申博文
+用户 申博文 登录成功
+Caching response for average_price_trend_cpu
+Caching response for price_stats_cpu
+Price history for gpu/1: 1 records
+Not Found: /favicon.ico
+尝试认证: login_field=申博文
+认证成功: 用户 申博文
+用户 申博文 登录成功
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-12 02:00:00+08:00 (in 17367.779538 seconds)
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-12 02:00:00+08:00 (in 17365.482092 seconds)
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+尝试认证: login_field=申博文
+认证成功: 用户 申博文
+用户 申博文 登录成功
+Unauthorized: /api/favorites/
+Unauthorized: /api/favorite/
+尝试认证: login_field=申博文
+认证成功: 用户 申博文
+用户 申博文 登录成功
+Not Found: /favicon.ico
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-12 02:00:00+08:00 (in 16195.886406 seconds)
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-13 02:00:00+08:00 (in 21556.190140 seconds)
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-13 02:00:00+08:00 (in 21554.205565 seconds)
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Caching response for average_price_trend_cpu
+Caching response for price_stats_cpu
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-14 02:00:00+08:00 (in 61530.126890 seconds)
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-14 02:00:00+08:00 (in 61527.808750 seconds)
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+尝试认证: login_field=root
+认证成功: 用户 root
+用户 root 登录成功
+Caching response for average_price_trend_cpu
+Caching response for price_stats_cpu
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Price history for ram/1: 0 records
+Z:\desk\code\hardware_analyzer\analyzer\views.py changed, reloading.
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-14 02:00:00+08:00 (in 61318.663467 seconds)
+Watching for file changes with StatReloader
