@@ -1,10 +1,10 @@
 # scripts/remove_decimal_zero.py
 from django.db import transaction
-from analyzer.models import RAM   # 替换成你的模型
+from analyzer.models import Cooler   # 替换成你的模型
 
 def run():
     # 找出所有 comment_count 以 .0 结尾的记录
-    records =RAM.objects.filter(comment_count__endswith='.0')
+    records =Cooler.objects.filter(comment_count__endswith='.0')
     print(f"Found {records.count()} records to update")
 
     with transaction.atomic():  # 使用事务确保数据安全

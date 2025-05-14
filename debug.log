@@ -21835,3 +21835,126 @@ Caching response for average_price_trend_ram
 Caching response for price_stats_ram
 Caching response for average_price_trend_motherboard
 Caching response for price_stats_motherboard
+Caching response for price_stats_gpu
+Caching response for average_price_trend_gpu
+尝试认证: login_field=root
+认证成功: 用户 root
+用户 root 登录成功
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-15 02:00:00+08:00 (in 62502.825165 seconds)
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-15 02:00:00+08:00 (in 62500.336164 seconds)
+Watching for file changes with StatReloader
+NumExpr defaulting to 8 threads.
+Not Found: /favicon.ico
+Caching response for average_price_trend_cpu
+Caching response for price_stats_cpu
+Price history for cpu/1: 4 records
+Price history for cpu/2: 16 records
+Price history for cpu/3: 9 records
+Price history for cpu/4: 11 records
+Price history for cpu/5: 0 records
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Caching response for average_price_trend_gpu
+Caching response for price_stats_gpu
+Caching response for average_price_trend_ram
+Caching response for price_stats_ram
+Caching response for average_price_trend_ssd
+Caching response for price_stats_ssd
+Caching response for average_price_trend_motherboard
+Caching response for price_stats_motherboard
+Caching response for average_price_trend_cooler
+Caching response for price_stats_cooler
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Caching response for average_price_trend_power_supply
+Caching response for price_stats_power_supply
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Caching response for average_price_trend_chassis
+Caching response for price_stats_chassis
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-15 02:00:00+08:00 (in 62058.220318 seconds)
+NumExpr defaulting to 8 threads.
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-15 02:00:00+08:00 (in 62036.873786 seconds)
+NumExpr defaulting to 8 threads.
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-15 02:00:00+08:00 (in 62016.502295 seconds)
+NumExpr defaulting to 8 threads.
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-15 02:00:00+08:00 (in 62012.884892 seconds)
+Looking up time zone info from registry
+Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Added job "PriceScraperScheduler.scrape_job" to job store "default"
+Scheduler started
+Looking for jobs to run
+Scheduler started
+Next wakeup is due at 2025-05-15 02:00:00+08:00 (in 62011.035815 seconds)
+Watching for file changes with StatReloader
+NumExpr defaulting to 8 threads.
+Caching response for average_price_trend_cpu
+Caching response for price_stats_cpu
+Price history for ram/1: 0 records
+Price history for ram/2: 0 records
+Price history for ram/1: 0 records
+Price history for ram/11: 5 records
+Price history for ram/11: 5 records
+Price history for ram/11: 5 records
+Price history for cpu/1: 4 records
+Price history for cpu/2: 16 records
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Caching response for price_stats_power_supply
+Caching response for average_price_trend_power_supply
+Caching response for average_price_trend_chassis
+Caching response for price_stats_chassis
+Caching response for average_price_trend_cooler
+Caching response for price_stats_cooler
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Returning cached data for price_stats_cpu
+Returning cached data for average_price_trend_cpu
+Caching response for average_price_trend_motherboard
+Caching response for price_stats_motherboard
+Caching response for average_price_trend_ssd
+Caching response for price_stats_ssd
